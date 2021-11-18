@@ -27,7 +27,7 @@ namespace Kjemidagen.Controllers
             {
                 ID = index,
                 Name = Names[Random.Shared.Next(Names.Length)],
-                HashedPassword = Hamlet.GeneratePassword(10),
+                HashedPassword = Hamlet.GeneratePassword(15)+Random.Shared.Next(100),
                 EmailAddress = Hamlet.GeneratePassword(1) + "@" + Hamlet.GeneratePassword(1) + ".com",
                 NumberOfCompanyRepresentatives = Random.Shared.Next(1, 10),
                 Information = "No information"
