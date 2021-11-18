@@ -33,7 +33,6 @@ namespace Kjemidagen.Controllers
                 Information = "No information"
             })
             .ToArray();
-
         }
     }
 }

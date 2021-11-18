@@ -1,7 +1,13 @@
 namespace Kjemidagen.Helpers
 {
     public class Hamlet {
-        public static string GeneratePassword(int MinLength) {
+        public static string HashPassword(string Password)
+        {
+            return "";
+        }
+
+        public static string GeneratePassword(int MinLength) 
+        {
             string Password = "";
             while(Password.Length < MinLength) {
                 Password += WordArray[Random.Shared.Next(WordArray.Length)];

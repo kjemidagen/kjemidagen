@@ -2,17 +2,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Kjemidagen.Models
 {
-    public class Company
+    public record Company
     {
         public int ID;
         [Required]
         [DataType(DataType.EmailAddress)]
-        public string EmailAddress { get; set; } = string.Empty;
+        public string EmailAddress { get; init; } = string.Empty;
         [Required]
-        public string HashedPassword {get; set; } = string.Empty;
+        public string HashedPassword {get; init; } = string.Empty;
         [Required]
-        public string Name {get; set; } = string.Empty;
-        public string Information {get; set; } = string.Empty;
-        public int NumberOfCompanyRepresentatives { get; set; } = 0;
+        public string Name {get; init; } = string.Empty;
+        public string Information {get; init; } = string.Empty;
+        public int NumberOfCompanyRepresentatives { get; init; } = 0;
     }
 }
