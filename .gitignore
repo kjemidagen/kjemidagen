@@ -460,3 +460,4 @@ $RECYCLE.BIN/
 .vs
 .vscode
 bin/
+obj/
