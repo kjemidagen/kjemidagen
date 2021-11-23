@@ -1,40 +1,37 @@
 version: "3.8"
 services:
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - 8000:5000
-    volumes:
-      - .:/app
-    depends_on:
-      - db
-  db:
-    image: mysql:8.0.26
-    restart: on-failure
-    environment:
-      MYSQL_DATABASE: timini
-      MYSQL_USER: bucky
-      MYSQL_PASSWORD: timini
-      MYSQL_ROOT_PASSWORD: timini
-    volumes:
-      - .dbdata:/var/lib/mysql
-    ports:
-      - 33068:3306
-    command:
-      [
-        "mysqld",
-        "--character-set-server=utf8mb4",
-        "--collation-server=utf8mb4_unicode_ci",
-      ]
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    restart: on-failure
-    ports:
-      - 8081:80
-    environment:
-      PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: timini
-    depends_on:
-      - db
+    postgres:
+        image: postgres:14.1
+        restart: always
+        environment:
+          - POSTGRES_DATABASE=kjemidagen
+          - POSTGRES_USER=admin
+          - POSTGRES_PASSWORD=kjemidagen
+        logging:
+          options:
+            max-size: 10m
+            max-file: "3"
+        ports:
+          - '5432:5432'
+        volumes: 
+          - ./postgres-data:/var/lib/postgresql/data
+          # copy the sql script to create tables
+          - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    pgadmin:
+        image: dpage/pgadmin4:6.2
+        restart: always
+        environment:
+            PGADMIN_DEFAULT_EMAIL: admin@kjemidagen.no
+            PGADMIN_DEFAULT_PASSWORD: kjemidagen
+            PGADMIN_LISTEN_PORT: 80
+        ports:
+            - "8081:80"
+        volumes:
+            - pgadmin-data:/var/lib/pgadmin
+        links:
+            - "postgres:pgsql-server"
+        depends_on:
+            - postgres
+volumes:
+    db-data:
+    pgadmin-data:

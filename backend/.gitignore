@@ -461,3 +461,4 @@ $RECYCLE.BIN/
 .vscode
 bin/
 obj/
+postgres-data/

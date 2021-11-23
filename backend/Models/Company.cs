@@ -4,7 +4,7 @@ namespace Kjemidagen.Models
 {
     public record Company
     {
-        public int ID;
+        public int Id { get; init; }
         [Required]
         [DataType(DataType.EmailAddress)]
         public string EmailAddress { get; init; } = string.Empty;
