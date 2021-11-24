@@ -1,5 +1,17 @@
 version: "3.8"
 services:
+  backend:
+    stdin_open: true
+    tty: true
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - 8001:80
+    environment:
+      - DBServer=postgres
   postgres:
     image: postgres:14.1
     restart: always
