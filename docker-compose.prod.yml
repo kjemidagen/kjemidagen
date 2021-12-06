@@ -29,21 +29,6 @@ services:
       - ./backend/postgres-data:/var/lib/postgresql/data
       # copy the sql script to create tables
       - ./backend/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
-  pgadmin:
-    image: dpage/pgadmin4:6.2
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@kjemidagen.no
-      PGADMIN_DEFAULT_PASSWORD: kjemidagen
-      PGADMIN_LISTEN_PORT: 8080
-    ports:
-      - "8081:8080"
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
-    links:
-      - "postgres:pgsql-server"
-    depends_on:
-      - postgres
 volumes:
   db-data:
   pgadmin-data:
