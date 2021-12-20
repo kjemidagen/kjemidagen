@@ -4,6 +4,7 @@ services:
     image: postgres:14.1
     restart: always
     environment:
+      - PGUSER=kjemidagen
       - POSTGRES_DATABASE=kjemidagen
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=kjemidagen
@@ -14,11 +15,11 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./backend/postgres-data:/var/lib/postgresql/data
+      - ./api/postgres-data:/var/lib/postgresql/data
       # copy the sql script to create tables
-      - ./backend/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      - ./api/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
   pgadmin:
-    image: dpage/pgadmin4:6.2
+    image: dpage/pgadmin4:6.3
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@kjemidagen.no
