@@ -21,22 +21,24 @@ type Company struct {
 func GetCompanies(c *gin.Context) {
 	db := DBConn
 	var companies []Company
-	result := db.Find(&companys)
+	result := db.Find(&companies)
 	fmt.Println(companies, result)
-	c.JSON(http.StatusOK, companys)
+	c.JSON(http.StatusOK, companies)
 }
 
 func Getcompany(c *gin.Context) {
 	id := c.Param("id")
 	db := DBConn
-	var company company
+	var company Company
 	db.First(&company, id)
 	c.JSON(http.StatusOK, company)
 }
 
 func Postcompany(c *gin.Context) {
+	userName := c.PostForm("userName")
+	
 	db := DBConn
-	var company company
+	var company Company
 	company.ID = 1
 	company.companyame = "bucky"
 	company.HashedPassword = "asndfjuiqanf"

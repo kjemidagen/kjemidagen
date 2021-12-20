@@ -15,9 +15,9 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./api/postgres-data:/var/lib/postgresql/data
+      - ./backend/postgres-data:/var/lib/postgresql/data
       # copy the sql script to create tables
-      - ./api/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      - ./backend/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
   pgadmin:
     image: dpage/pgadmin4:6.3
     restart: always
