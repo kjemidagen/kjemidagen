@@ -1,0 +1,1 @@
+/* Her kan vi legge sql-kode som må kjøres på container build */

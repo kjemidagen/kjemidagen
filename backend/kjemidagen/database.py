@@ -1,8 +1,7 @@
 import os
-from sqlmodel import SQLModel, Session
+from sqlmodel import SQLModel
 from sqlmodel.ext.asyncio.session import AsyncSession
 from sqlalchemy.ext.asyncio import create_async_engine
-from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 
 
@@ -28,7 +27,7 @@ async def get_session():
         finally:
             session.close()
 
-# import all SQLModels which are tables in the database
+# import all SQLModels which are tables in the database to get their metadata
 from kjemidagen.company import Company
 from kjemidagen.user import User
 
