@@ -2,10 +2,8 @@ import os
 from sqlmodel import SQLModel
 from sqlmodel.ext.asyncio.session import AsyncSession
 from sqlalchemy.ext.asyncio import create_async_engine
-from dotenv import load_dotenv
 
 
-load_dotenv()
 host = os.getenv("DBServer")
 user = os.getenv("DBUser")
 dbname = os.getenv("Database")
@@ -30,6 +28,7 @@ async def get_session():
 # import all SQLModels which are tables in the database to get their metadata
 from kjemidagen.company import Company
 from kjemidagen.user import User
+from kjemidagen.auth import RefreshToken
 
 async def create_db_and_tables():
     """Only for testing"""
