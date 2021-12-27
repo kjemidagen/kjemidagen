@@ -4,7 +4,7 @@ from sqlmodel.ext.asyncio.session import AsyncSession
 from httpx import AsyncClient
 
 from kjemidagen.user import User
-from kjemidagen.auth import hash_password
+from kjemidagen.crypto import hash_password
 
 from .conftest import session_fixture, client_fixture
 

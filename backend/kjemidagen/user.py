@@ -1,13 +1,13 @@
 from datetime import datetime
 from sqlalchemy import func
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING, List, Optional
 from fastapi import APIRouter, HTTPException, Depends
 from sqlmodel.ext.asyncio.session import AsyncSession
 from sqlmodel import SQLModel, Field, Relationship, Session
 from sqlmodel.sql.expression import select
 
 from kjemidagen.database import get_session
-from kjemidagen.auth import hash_password
+from kjemidagen.crypto import hash_password
 
 if TYPE_CHECKING:
     from kjemidagen.company import Company
@@ -45,7 +45,8 @@ user_router = APIRouter()
 
 @user_router.get("/")
 async def get_users(session: AsyncSession = Depends(get_session)):
-    users = await session.get(User)
+    result = await session.exec(select(User))
+    users: List[User] = result.all()
     if not users:
         raise HTTPException(status_code=404, detail="No users")
     return users
