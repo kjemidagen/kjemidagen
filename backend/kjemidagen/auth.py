@@ -2,7 +2,7 @@ import datetime
 import os
 import uuid
 from dotenv import load_dotenv
-from fastapi import APIRouter, status, HTTPException, Depends
+from fastapi import APIRouter, status, HTTPException, Depends, Body
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from sqlmodel import SQLModel, Field, select
@@ -16,9 +16,6 @@ from kjemidagen.crypto import verify_password
 class RefreshToken(SQLModel, table=True):
     token_id: Optional[uuid.UUID] = Field(default=uuid.uuid4(), primary_key=True)
     is_revoked: bool = False
-
-class TokenString(SQLModel):
-    refresh_token: str
 
 load_dotenv()
 ACCESS_TOKEN_KEY = os.getenv("ACCESS_TOKEN_KEY")
@@ -79,8 +76,7 @@ async def login_for_refresh_token(form_data: OAuth2PasswordRequestForm = Depends
     return await get_tokens(user, session)
 
 @auth_router.post("/token")
-async def refresh_access_token(refresh_token: TokenString, session: AsyncSession = Depends(get_session)):
-    refresh_token = refresh_token.refresh_token # This is silly but we need to unpack the one field pydantic model
+async def refresh_access_token(session: AsyncSession = Depends(get_session), refresh_token: str = Body(..., embed=True)):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
