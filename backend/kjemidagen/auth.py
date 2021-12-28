@@ -17,6 +17,9 @@ class RefreshToken(SQLModel, table=True):
     token_id: Optional[uuid.UUID] = Field(default=uuid.uuid4(), primary_key=True)
     is_revoked: bool = False
 
+class TokenString(SQLModel):
+    refresh_token: str
+
 load_dotenv()
 ACCESS_TOKEN_KEY = os.getenv("ACCESS_TOKEN_KEY")
 REFRESH_TOKEN_KEY = os.getenv("REFRESH_TOKEN_KEY")
@@ -76,7 +79,8 @@ async def login_for_refresh_token(form_data: OAuth2PasswordRequestForm = Depends
     return await get_tokens(user, session)
 
 @auth_router.post("/token")
-async def refresh_access_token(*, session: AsyncSession = Depends(get_session), refresh_token: str):
+async def refresh_access_token(refresh_token: TokenString, session: AsyncSession = Depends(get_session)):
+    refresh_token = refresh_token.refresh_token # This is silly but we need to unpack the one field pydantic model
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -91,7 +95,7 @@ async def refresh_access_token(*, session: AsyncSession = Depends(get_session), 
         raise credentials_exception
     
     # Check if token already has been used
-    old_token_in_db: RefreshToken = await session.get(RefreshToken, old_token.get())
+    old_token_in_db: RefreshToken = await session.get(RefreshToken, old_token.get("token_id"))
     if old_token_in_db.is_revoked:
         raise credentials_exception
 
@@ -99,7 +103,8 @@ async def refresh_access_token(*, session: AsyncSession = Depends(get_session), 
     # TODO: possibly mark all tokens from this user as revoked
     old_token_in_db.is_revoked = True
     # setattr(old_token_in_db, "is_revoked", True) # "old_token_in_db.is_revoked = True" is not allowed
-    await session.update(old_token_in_db)
+    session.add(old_token_in_db)
+    await session.commit()
 
     user = await session.get(User, user_id)
     return await get_tokens(user, session)
