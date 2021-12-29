@@ -1,4 +1,5 @@
 import pytest
+from sqlalchemy.sql.expression import null
 
 from sqlmodel.ext.asyncio.session import AsyncSession
 from httpx import AsyncClient
@@ -7,6 +8,19 @@ from kjemidagen.user import User
 from kjemidagen.crypto import hash_password
 
 from .conftest import session_fixture, client_fixture
+
+@pytest.mark.anyio
+async def test_get_all(session: AsyncSession, client: AsyncClient):
+    created_user = User(username="testuser", hashed_password=hash_password("password123"))
+    session.add(created_user)
+    await session.commit()
+    await session.refresh(created_user)
+
+    response = await client.get(f"/v1/users/")
+    data = response.json()
+
+    assert response.status_code == 200
+    assert data is not None
 
 @pytest.mark.anyio
 async def test_get(session: AsyncSession, client: AsyncClient):
@@ -22,7 +36,7 @@ async def test_get(session: AsyncSession, client: AsyncClient):
     assert data["username"] == "testuser"
 
 @pytest.mark.anyio
-async def test_post(session: AsyncSession, client: AsyncClient):
+async def test_create_user(session: AsyncSession, client: AsyncClient):
     response = await client.post(
         "/v1/users/",
         json={

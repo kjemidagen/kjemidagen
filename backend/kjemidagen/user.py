@@ -60,6 +60,9 @@ async def get_user(user_id: int, session: AsyncSession = Depends(get_session)):
 
 @user_router.post("/")
 async def create_user(user: UserCreate, session: AsyncSession = Depends(get_session)):
+    result = await session.exec(select(User).filter_by(username=user.username))
+    if result.one_or_none() != None:
+        raise HTTPException(status_code=409, detail="Username already taken")
     user = User(username=user.username, hashed_password=hash_password(password=user.password))
     session.add(user)
     await session.commit()

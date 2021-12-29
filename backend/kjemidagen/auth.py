@@ -24,7 +24,7 @@ ALGORITHM = os.getenv("ALGORITHM") if not os.getenv("ALGORITHM") is None else "H
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/v1/auth/login")
 
 
-async def verify_access_token(token: str = Depends(oauth2_scheme), session: AsyncSession = Depends(get_session)):
+async def get_current_user(token: str = Depends(oauth2_scheme), session: AsyncSession = Depends(get_session)):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -37,10 +37,14 @@ async def verify_access_token(token: str = Depends(oauth2_scheme), session: Asyn
             raise credentials_exception
     except JWTError:
         raise credentials_exception
-    user = await session.get(User, user_id=user_id)
+    user = await session.get(User, user_id)
     if user is None:
         raise credentials_exception
     return user
+
+async def get_current_admin(current_user: User = Depends(get_current_user)):
+    if not current_user.is_admin:
+        raise HTTPException(status_code=400, detail="Resource for admins only")
 
 async def get_tokens(user: User, session: AsyncSession):
     access_token_data = {
@@ -68,7 +72,7 @@ auth_router = APIRouter()
 async def login_for_refresh_token(form_data: OAuth2PasswordRequestForm = Depends(), session: AsyncSession = Depends(get_session)):
     query = select(User).filter_by(username=form_data.username)
     results = await session.exec(query)
-    user: User = results.one()
+    user: User = results.one_or_none()
     if user.id is None:
         raise HTTPException(status_code=400, detail="Incorrect username or password")
     if not verify_password(plaintext_password= form_data.password, hashed_password= user.hashed_password):
@@ -83,7 +87,7 @@ async def refresh_access_token(session: AsyncSession = Depends(get_session), ref
         headers={"WWW-Authenticate": "Bearer"},
     )
     try:
-        old_token: str = jwt.decode(refresh_token, REFRESH_TOKEN_KEY, algorithms=[ALGORITHM])
+        old_token: dict = jwt.decode(refresh_token, REFRESH_TOKEN_KEY, algorithms=[ALGORITHM])
         user_id: int = old_token.get("user_id")
         if user_id is None:
             raise credentials_exception
@@ -91,7 +95,7 @@ async def refresh_access_token(session: AsyncSession = Depends(get_session), ref
         raise credentials_exception
     
     # Check if token already has been used
-    old_token_in_db: RefreshToken = await session.get(RefreshToken, old_token.get("token_id"))
+    old_token_in_db: RefreshToken = await session.get(RefreshToken, str(old_token.get("token_id")))
     if old_token_in_db.is_revoked:
         raise credentials_exception
 
