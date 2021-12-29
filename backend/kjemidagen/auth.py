@@ -57,7 +57,7 @@ async def get_tokens(user: User, session: AsyncSession):
     refresh_token_id: uuid.UUID = uuid.uuid4()
     refresh_token_data = {
         "user_id": user.id,
-        "token_id": str(refresh_token_id)
+        "token_id": refresh_token_id.hex
     }
     refresh_token = jwt.encode(refresh_token_data, REFRESH_TOKEN_KEY, algorithm=ALGORITHM)
 
@@ -95,7 +95,7 @@ async def refresh_access_token(session: AsyncSession = Depends(get_session), ref
         raise credentials_exception
     
     # Check if token already has been used
-    old_token_in_db: RefreshToken = await session.get(RefreshToken, str(old_token.get("token_id")))
+    old_token_in_db: RefreshToken = await session.get(RefreshToken, uuid.UUID(old_token.get("token_id")))
     if old_token_in_db.is_revoked:
         raise credentials_exception
 

@@ -28,15 +28,15 @@ class Company(CompanyBase, table=True):
 class CompanyAndUserCreate(CompanyBase, UserBase):
     pass
 class CompanyCreateResponse(CompanyBase, UserBase):
+    id: int
     password: str
-class CompanyEditResponse(CompanyBase, UserBase):
-    pass
 class CompanyUpdate(SQLModel):
     title: Optional[str]
     email_address: Optional[EmailStr]
     number_of_representatives: Optional[int]
-    additional_data: Optional[int]
-    password: Optional[str]
+    additional_data: Optional[str]
+class CompanyEditResponse(CompanyBase):
+    id: int
 
 credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -85,7 +85,6 @@ async def create_company(company: CompanyAndUserCreate, session: AsyncSession = 
     return CompanyCreateResponse(
         username=company_in_db.user.username,
         id=company_in_db.user_id,
-        is_admin=company_in_db.user.is_admin,
         title=company_in_db.title,
         email_address=company_in_db.email_address,
         number_of_representatives=company_in_db.number_of_representatives,
@@ -96,12 +95,14 @@ async def create_company(company: CompanyAndUserCreate, session: AsyncSession = 
     )
 
 @company_router.patch("/{company_id}")
-async def edit_company(company_id: int, updated_company: CompanyUpdate, session: AsyncSession = Depends(get_session)):
+async def edit_company(company_id: int, updated_company: CompanyUpdate, session: AsyncSession = Depends(get_session), current_user: User = Depends(get_current_user)):
+    if not ( current_user.is_admin or current_user.id == company_id):
+        raise credentials_exception
     company = await session.get(Company, company_id)
     if not company:
         raise HTTPException(status_code=404, detail="User not found")
     updated_data = updated_company.dict(exclude_unset=True) # get only the values which are not empty
-    if "password" in updated_data.keys:
+    if "password" in updated_data.keys():
         updated_data["hashed_password"] = hash_password(updated_data["password"])
         updated_data.pop("password")
 
@@ -110,4 +111,12 @@ async def edit_company(company_id: int, updated_company: CompanyUpdate, session:
     session.add(company)
     await session.commit()
     await session.refresh(company)
-    return CompanyCreateResponse.from_orm(company)
+    return CompanyEditResponse(
+        id=company.user_id,
+        title=company.title,
+        email_address=company.email_address,
+        number_of_representatives=company.number_of_representatives,
+        additional_data=company.additional_data,
+        created_at=company.created_at,
+        updated_at=company.updated_at
+    )

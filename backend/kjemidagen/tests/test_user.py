@@ -82,7 +82,7 @@ async def test_patch(session: AsyncSession, client: AsyncClient):
     assert data["is_admin"] == True
 
 @pytest.mark.anyio
-async def test_delete(session: AsyncSession, client: AsyncClient):
+async def test_delete(session: AsyncSession, client: AsyncClient, admin_access_token):
     user = User(username="hanschristian", hashed_password=hash_password("linjeforening"))
     session.add(user)
     await session.commit()
@@ -90,7 +90,11 @@ async def test_delete(session: AsyncSession, client: AsyncClient):
 
     assert user.id is not None
 
-    response = await client.delete(f"/v1/users/{user.id}")
+    response = await client.delete(
+        f"/v1/users/{user.id}",
+        headers={
+            "Authorization": "Bearer " + admin_access_token
+        })
 
     assert response.status_code == 200
 

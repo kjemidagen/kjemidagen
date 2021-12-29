@@ -78,11 +78,71 @@ async def test_create_company(client: AsyncClient, admin_access_token):
     data = response.json()
 
     assert response.status_code == 200
-    assert data["hashed_password"] is not None
-    assert data["is_admin"] == False
+    assert data["password"] is not None
     assert data["username"] == "the_Zucc_96"
 
 @pytest.mark.anyio
-async def test_edit_company(session: AsyncSession, client: AsyncClient, admin_access_token):
-    # TODO: test this mess
-    assert 1 == 0
+async def test_edit_company(client: AsyncClient, admin_access_token):
+    res_1 = await client.post(
+        "/v1/companies/",
+        json={
+            "username": "the_Zucc_96",
+            "title": "Metagross TM",
+            "email_address": "marcus@berger.gov",
+            "number_of_representatives": "2",
+            "additional_data": "I am a human i swear"
+        },
+        headers={
+            "Authorization": "Bearer " + admin_access_token
+        }
+    )
+    created_company: dict = res_1.json()
+    
+    company_id = created_company.get('id')
+    response = await client.patch(
+        f"/v1/companies/{company_id}",
+        json={
+            "additional_data": "I am still human"
+        },
+        headers={
+            "Authorization": "Bearer " + admin_access_token
+        }
+    )
+    data = response.json()
+
+    assert response.status_code == 200
+    assert data["title"] == "Metagross TM"
+    assert data["additional_data"] == "I am still human"
+
+@pytest.mark.anyio
+async def test_delete_company(client: AsyncClient, admin_access_token):
+    res_1 = await client.post(
+        "/v1/companies/",
+        json={
+            "username": "the_Zucc_96",
+            "title": "Metagross TM",
+            "email_address": "marcus@berger.gov",
+            "number_of_representatives": "2",
+            "additional_data": "I am a human i swear"
+        },
+        headers={
+            "Authorization": "Bearer " + admin_access_token
+        }
+    )
+    created_company: dict = res_1.json()
+
+    res_2 = await client.delete(
+        f"/v1/users/{created_company.get('id')}",
+        headers={
+            "Authorization": "Bearer " + admin_access_token
+        }
+    )
+    assert res_2.status_code == 200
+
+    res_3 = await client.get(
+        f"/v1/users/{created_company.get('id')}",
+        headers={
+            "Authorization": "Bearer " + admin_access_token
+        }
+    )
+    assert res_3.status_code == 404

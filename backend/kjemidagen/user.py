@@ -19,7 +19,7 @@ class UserBase(SQLModel):
 class User(UserBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     hashed_password: str
-    company: Optional["Company"] = Relationship(back_populates="user")
+    company: Optional["Company"] = Relationship(back_populates="user", sa_relationship_kwargs={"cascade": "all, delete-orphan"})
     is_admin: bool = False
     created_at: Optional[datetime] = Field(sa_column_kwargs={"server_default": func.now()})
     updated_at: Optional[datetime] = Field(sa_column_kwargs={"server_default": func.now(), "server_onupdate": func.now()})
