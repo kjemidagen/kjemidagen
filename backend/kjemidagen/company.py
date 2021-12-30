@@ -11,32 +11,9 @@ from kjemidagen.auth import get_current_admin, get_current_user
 from kjemidagen.crypto import generate_random_password, hash_password
 
 from kjemidagen.database import get_session
-from kjemidagen.user import User, UserBase, UserCreate, UserCreateResponse
 
-class CompanyBase(SQLModel):
-    title: str
-    email_address: EmailStr
-    number_of_representatives: int
-    additional_data: Optional[str]
-    created_at: Optional[datetime] = Field(sa_column_kwargs={"server_default": func.now()})
-    updated_at: Optional[datetime] = Field(sa_column_kwargs={"server_default": func.now(), "server_onupdate": func.now()})
+from kjemidagen.models import Company, CompanyAndUserCreate, CompanyCreateResponse, CompanyUpdate, CompanyUpdateResponse, User
 
-class Company(CompanyBase, table=True):
-    user_id: Optional[int] = Field(default=None, primary_key=True, foreign_key="user.id")
-    user: "User" = Relationship(back_populates="company")
-
-class CompanyAndUserCreate(CompanyBase, UserBase):
-    pass
-class CompanyCreateResponse(CompanyBase, UserBase):
-    id: int
-    password: str
-class CompanyUpdate(SQLModel):
-    title: Optional[str]
-    email_address: Optional[EmailStr]
-    number_of_representatives: Optional[int]
-    additional_data: Optional[str]
-class CompanyEditResponse(CompanyBase):
-    id: int
 
 credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -111,7 +88,7 @@ async def edit_company(company_id: int, updated_company: CompanyUpdate, session:
     session.add(company)
     await session.commit()
     await session.refresh(company)
-    return CompanyEditResponse(
+    return CompanyUpdateResponse(
         id=company.user_id,
         title=company.title,
         email_address=company.email_address,

@@ -8,42 +8,16 @@ from sqlmodel.sql.expression import select
 
 from kjemidagen.database import get_session
 from kjemidagen.crypto import hash_password
+from kjemidagen.auth import get_current_user, get_current_admin
+
+from kjemidagen.models import User, UserCreate, UserCreateResponse, UserGetResponse, UserUpdate
 
 if TYPE_CHECKING:
     from kjemidagen.company import Company
 
-
-class UserBase(SQLModel):
-    username: str
-
-class User(UserBase, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    hashed_password: str
-    company: Optional["Company"] = Relationship(back_populates="user", sa_relationship_kwargs={"cascade": "all, delete-orphan"})
-    is_admin: bool = False
-    created_at: Optional[datetime] = Field(sa_column_kwargs={"server_default": func.now()})
-    updated_at: Optional[datetime] = Field(sa_column_kwargs={"server_default": func.now(), "server_onupdate": func.now()})
-
-class UserCreate(UserBase):
-    password: str
-
-class UserCreateResponse(UserBase):
-    """Contains fields returned on user creation"""
-    id: int
-    is_admin: bool
-
-class UserGet(UserBase):
-    """Contains fields returned from get requests"""
-    id: int
-    is_admin: bool
-
-class UserUpdate(SQLModel):
-    """Contains fields which you can update"""
-    is_admin: Optional[bool]
-
 user_router = APIRouter()
 
-@user_router.get("/")
+@user_router.get("/", dependencies=[Depends(get_current_admin)], response_model=List[UserGetResponse])
 async def get_users(session: AsyncSession = Depends(get_session)):
     result = await session.exec(select(User))
     users: List[User] = result.all()

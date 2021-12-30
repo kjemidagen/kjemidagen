@@ -10,12 +10,8 @@ from sqlmodel.ext.asyncio.session import AsyncSession
 from typing import Optional
 
 from kjemidagen.database import get_session
-from kjemidagen.user import User
 from kjemidagen.crypto import verify_password
-
-class RefreshToken(SQLModel, table=True):
-    token_id: Optional[uuid.UUID] = Field(default=uuid.uuid4(), primary_key=True)
-    is_revoked: bool = False
+from kjemidagen.models import User, RefreshToken
 
 load_dotenv()
 ACCESS_TOKEN_KEY = os.getenv("ACCESS_TOKEN_KEY")

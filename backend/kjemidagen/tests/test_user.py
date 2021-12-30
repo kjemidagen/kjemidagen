@@ -7,29 +7,33 @@ from httpx import AsyncClient
 from kjemidagen.user import User
 from kjemidagen.crypto import hash_password
 
-from .conftest import session_fixture, client_fixture
-
 @pytest.mark.anyio
-async def test_get_all(session: AsyncSession, client: AsyncClient):
+async def test_get_all(session: AsyncSession, client: AsyncClient, admin_access_token):
     created_user = User(username="testuser", hashed_password=hash_password("password123"))
     session.add(created_user)
     await session.commit()
     await session.refresh(created_user)
 
-    response = await client.get(f"/v1/users/")
+    response = await client.get(f"/v1/users/",
+    headers={
+            "Authorization": "Bearer " + admin_access_token
+        })
     data = response.json()
 
     assert response.status_code == 200
     assert data is not None
 
 @pytest.mark.anyio
-async def test_get(session: AsyncSession, client: AsyncClient):
+async def test_get(session: AsyncSession, client: AsyncClient, admin_access_token):
     created_user = User(username="testuser", hashed_password=hash_password("password123"))
     session.add(created_user)
     await session.commit()
     await session.refresh(created_user)
 
-    response = await client.get(f"/v1/users/{created_user.id}")
+    response = await client.get(f"/v1/users/{created_user.id}",
+    headers={
+            "Authorization": "Bearer " + admin_access_token
+        })
     data = response.json()
 
     assert response.status_code == 200
