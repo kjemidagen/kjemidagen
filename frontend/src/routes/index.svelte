@@ -45,6 +45,7 @@
       </div>
     </div>
   </section>
+
   <section class="about" id="about">
     <div class="content">
       <div class="about-intro">
