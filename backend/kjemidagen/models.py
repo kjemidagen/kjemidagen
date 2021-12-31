@@ -37,6 +37,10 @@ class UserUpdate(SQLModel):
     """Contains fields which you can update"""
     is_admin: Optional[bool]
 
+class UserUpdateResponse(UserBase):
+    id: int
+    is_admin: bool
+
 
 class CompanyBase(SQLModel):
     title: str

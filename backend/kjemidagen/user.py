@@ -1,19 +1,19 @@
-from datetime import datetime
-from sqlalchemy import func
-from typing import TYPE_CHECKING, List, Optional
-from fastapi import APIRouter, HTTPException, Depends
+from typing import List
+from fastapi import APIRouter, HTTPException, Depends, status
 from sqlmodel.ext.asyncio.session import AsyncSession
-from sqlmodel import SQLModel, Field, Relationship, Session
 from sqlmodel.sql.expression import select
 
 from kjemidagen.database import get_session
 from kjemidagen.crypto import hash_password
 from kjemidagen.auth import get_current_user, get_current_admin
 
-from kjemidagen.models import User, UserCreate, UserCreateResponse, UserGetResponse, UserUpdate
+from kjemidagen.models import User, UserCreate, UserCreateResponse, UserGetResponse, UserUpdate, UserUpdateResponse
 
-if TYPE_CHECKING:
-    from kjemidagen.company import Company
+credentials_exception = HTTPException(
+    status_code=status.HTTP_401_UNAUTHORIZED,
+    detail="Could not validate credentials",
+    headers={"WWW-Authenticate": "Bearer"},
+)
 
 user_router = APIRouter()
 
@@ -25,14 +25,16 @@ async def get_users(session: AsyncSession = Depends(get_session)):
         raise HTTPException(status_code=404, detail="No users")
     return users
 
-@user_router.get("/{user_id}")
-async def get_user(user_id: int, session: AsyncSession = Depends(get_session)):
+@user_router.get("/{user_id}", response_model=UserGetResponse)
+async def get_user(user_id: int, session: AsyncSession = Depends(get_session), current_user: User = Depends(get_current_user)):
+    if not (current_user.is_admin or current_user.id == user_id):
+        raise credentials_exception
     user = await session.get(User, user_id)
     if not user:
         raise HTTPException(status_code=404, detail="No users")
     return user
 
-@user_router.post("/")
+@user_router.post("/", dependencies=[Depends(get_current_admin)], response_model=UserCreateResponse)
 async def create_user(user: UserCreate, session: AsyncSession = Depends(get_session)):
     result = await session.exec(select(User).filter_by(username=user.username))
     if result.one_or_none() != None:
@@ -43,8 +45,10 @@ async def create_user(user: UserCreate, session: AsyncSession = Depends(get_sess
     await session.refresh(user)
     return UserCreateResponse.from_orm(user)
 
-@user_router.patch("/{user_id}")
-async def edit_user(user_id: int, updated_user: UserUpdate, session: AsyncSession = Depends(get_session)):
+@user_router.patch("/{user_id}", response_model=UserUpdateResponse)
+async def edit_user(user_id: int, updated_user: UserUpdate, session: AsyncSession = Depends(get_session), current_user: User = Depends(get_current_user)):
+    if not (current_user.is_admin or current_user.id == user_id):
+        raise credentials_exception
     user = await session.get(User, user_id)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
@@ -57,7 +61,7 @@ async def edit_user(user_id: int, updated_user: UserUpdate, session: AsyncSessio
     return UserCreateResponse.from_orm(user)
 
 
-@user_router.delete("/{user_id}")
+@user_router.delete("/{user_id}", dependencies=[Depends(get_current_admin)])
 async def delete_user(user_id: int, session: AsyncSession = Depends(get_session)):
     user = await session.get(User, user_id)
     if not user:

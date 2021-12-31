@@ -40,12 +40,15 @@ async def test_get(session: AsyncSession, client: AsyncClient, admin_access_toke
     assert data["username"] == "testuser"
 
 @pytest.mark.anyio
-async def test_create_user(session: AsyncSession, client: AsyncClient):
+async def test_create_user(session: AsyncSession, client: AsyncClient, admin_access_token):
     response = await client.post(
         "/v1/users/",
         json={
             "username": "bucky",
             "password": "kjemidagen22"
+        },
+        headers={
+            "Authorization": "Bearer " + admin_access_token
         })
     data = response.json()
 
@@ -58,17 +61,20 @@ async def test_create_user(session: AsyncSession, client: AsyncClient):
     assert user.username == data["username"]
 
 @pytest.mark.anyio
-async def test_post_bad_schema(client: AsyncClient):
+async def test_post_bad_schema(client: AsyncClient, admin_access_token):
     response = await client.post(
         "/v1/users/",
         json={
             "username": "no password"
+        },
+        headers={
+            "Authorization": "Bearer " + admin_access_token
         })
     assert response.status_code == 422
 
 
 @pytest.mark.anyio
-async def test_patch(session: AsyncSession, client: AsyncClient):
+async def test_patch(session: AsyncSession, client: AsyncClient, admin_access_token):
     user = User(username="ricky", hashed_password=hash_password("morty2"), is_admin=False)
     session.add(user)
     await session.commit()
@@ -78,6 +84,9 @@ async def test_patch(session: AsyncSession, client: AsyncClient):
         f"/v1/users/{user.id}",
         json={
             "is_admin": "True"
+        },
+        headers={
+            "Authorization": "Bearer " + admin_access_token
         })
     data = response.json()
 

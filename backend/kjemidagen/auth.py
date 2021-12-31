@@ -19,13 +19,13 @@ REFRESH_TOKEN_KEY = os.getenv("REFRESH_TOKEN_KEY")
 ALGORITHM = os.getenv("ALGORITHM") if not os.getenv("ALGORITHM") is None else "HS256"
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/v1/auth/login")
 
+credentials_exception = HTTPException(
+    status_code=status.HTTP_401_UNAUTHORIZED,
+    detail="Could not validate credentials",
+    headers={"WWW-Authenticate": "Bearer"},
+)
 
 async def get_current_user(token: str = Depends(oauth2_scheme), session: AsyncSession = Depends(get_session)):
-    credentials_exception = HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Could not validate credentials",
-        headers={"WWW-Authenticate": "Bearer"},
-    )
     try:
         payload = jwt.decode(token, ACCESS_TOKEN_KEY, algorithms=[ALGORITHM])
         user_id: str = payload.get("user_id")
