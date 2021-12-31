@@ -43,22 +43,25 @@ async def get_current_admin(current_user: User = Depends(get_current_user)):
         raise HTTPException(status_code=400, detail="Resource for admins only")
 
 async def get_tokens(user: User, session: AsyncSession):
+    user_id = user.id
     access_token_data = {
-        "user_id": user.id,
+        "user_id": user_id,
         "is_admin": user.is_admin,
         "exp": datetime.datetime.utcnow()+datetime.timedelta(minutes=30)
     }
     access_token = jwt.encode(access_token_data, ACCESS_TOKEN_KEY, algorithm=ALGORITHM)
 
-    refresh_token_id: uuid.UUID = uuid.uuid4()
+    refresh_token_in_db = RefreshToken()
+    session.add(refresh_token_in_db)
+    await session.commit()
+    await session.refresh(refresh_token_in_db)
+
     refresh_token_data = {
-        "user_id": user.id,
-        "token_id": refresh_token_id.hex
+        "user_id": user_id,
+        "token_id": refresh_token_in_db.token_id.hex
     }
     refresh_token = jwt.encode(refresh_token_data, REFRESH_TOKEN_KEY, algorithm=ALGORITHM)
 
-    session.add(RefreshToken(token_id=refresh_token_id))
-    await session.commit()
 
     return {"access_token": access_token, "refresh_token": refresh_token}
 
@@ -98,7 +101,6 @@ async def refresh_access_token(session: AsyncSession = Depends(get_session), ref
     # Mark token as used
     # TODO: possibly mark all tokens from this user as revoked
     old_token_in_db.is_revoked = True
-    # setattr(old_token_in_db, "is_revoked", True) # "old_token_in_db.is_revoked = True" is not allowed
     session.add(old_token_in_db)
     await session.commit()
 

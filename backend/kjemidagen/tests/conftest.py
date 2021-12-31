@@ -1,4 +1,5 @@
 import pytest
+from sqlalchemy.pool.impl import NullPool
 from sqlmodel import SQLModel
 from httpx import AsyncClient
 from sqlmodel.ext.asyncio.session import AsyncSession
@@ -8,7 +9,8 @@ from kjemidagen.crypto import hash_password
 
 from kjemidagen.main import app
 from kjemidagen.database import get_session
-from kjemidagen.user import User
+from kjemidagen.models import User
+import kjemidagen.models
 
 @pytest.fixture
 def anyio_backend():
@@ -20,8 +22,6 @@ async def session_fixture():
         "sqlite+aiosqlite://", connect_args={"check_same_thread": False}, poolclass=StaticPool
     )
     async with engine.begin() as conn:
-        from kjemidagen.user import User
-        from kjemidagen.company import Company
         await conn.run_sync(SQLModel.metadata.create_all)
 
     async with AsyncSession(engine) as session:

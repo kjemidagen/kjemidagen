@@ -1,10 +1,13 @@
 import datetime
 import uuid
+from pydantic.errors import ArbitraryTypeError
 from sqlalchemy import func
+from sqlalchemy.sql.schema import Column
 from sqlmodel import SQLModel, Relationship, Field
 from pydantic import EmailStr
 from typing import Optional
 
+from kjemidagen.sql_uuid import UUID
 
 class UserBase(SQLModel):
     username: str
@@ -64,5 +67,8 @@ class CompanyUpdateResponse(CompanyBase):
     id: int
 
 class RefreshToken(SQLModel, table=True):
-    token_id: Optional[uuid.UUID] = Field(default=uuid.uuid4().hex, primary_key=True)
+    token_id: Optional[UUID] = Field(sa_column=(Column(UUID(), primary_key=True, default=uuid.uuid4)))
     is_revoked: bool = False
+
+    class Config:
+        arbitrary_types_allowed = True

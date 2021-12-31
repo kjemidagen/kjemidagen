@@ -12,5 +12,5 @@ python-dotenv==0.19.2
 python-jose[cryptography]==3.3.0
 python-multipart==0.0.5
 SQLAlchemy==1.4.22
-SQLModel==0.0.4
+SQLModel==0.0.6
 Uvicorn[standard]==0.15.0
