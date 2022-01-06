@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "version": "0.0.1",
+  "license": "Unlisenced",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -36,6 +37,10 @@
     "@fontsource/fira-mono": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
     "cookie": "^0.4.1",
+    "i18next": "^21.6.4",
+    "install-peers": "^1.0.3",
+    "postcss": "^8.4.5",
+    "svelte-intl-precompile": "^0.8.0",
     "yarn": "^1.22.17"
   }
 }
