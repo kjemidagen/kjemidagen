@@ -7,7 +7,7 @@
     <div class="about-intro">
       <h3>{$t('about.header')}</h3>
 
-      <p>{$t('about.intro')}</p>
+      <p>{@html $t('about.intro')}</p>
     </div>
 
     <div class="about-content">

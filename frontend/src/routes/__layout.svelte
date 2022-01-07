@@ -1,22 +1,26 @@
 <script context="module" lang="ts">
-  /* DOCS: https://svelte-intl-precompile.com/en/docs/ */
+  import '../app.css';
   import { addMessages, init, getLocaleFromQueryString } from 'svelte-intl-precompile';
-  import { session } from '$app/stores';
   import no from '$lib/translations/no.json';
   import en from '$lib/translations/en.json';
+  /* DOCS: https://svelte-intl-precompile.com/en/docs/ */
   addMessages('no', no);
   addMessages('en', en);
 
-  import '../app.css';
+  /** @type {import('@sveltejs/kit').Load} */
+  export async function load({ url }) {
+    const lang = url.searchParams.get('lang');
+    init({
+      initialLocale: lang,
+      fallbackLocale: 'no'
+    });
+    return {};
+  }
 </script>
 
 <script lang="ts">
   import Header from '$lib/layout/Header.svelte';
   import Footer from '$lib/layout/Footer.svelte';
-  init({
-    fallbackLocale: 'no',
-    initialLocale: getLocaleFromQueryString('lang')
-  });
 </script>
 
 <Header />
@@ -26,3 +30,11 @@
 </main>
 
 <Footer />
+
+<style>
+  main {
+    align-items: center;
+    max-width: var(--document-width);
+    margin: auto;
+  }
+</style>

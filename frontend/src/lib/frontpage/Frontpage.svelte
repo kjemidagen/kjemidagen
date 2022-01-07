@@ -15,7 +15,7 @@
     </nav>
     <div class="frontpage-content">
       <p class="bigger">{$t('index.start')}</p>
-      <p>{$t('index.text')}</p>
+      <p>{@html $t('index.text')}</p>
       <p>{$t('index.seeingyou')}</p>
     </div>
   </div>

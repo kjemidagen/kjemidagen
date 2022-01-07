@@ -30,7 +30,6 @@
 					</li>
 				</ul>
 			-->
-      */
     </figure>
 
     <p>{$t('contact.text')}</p>
