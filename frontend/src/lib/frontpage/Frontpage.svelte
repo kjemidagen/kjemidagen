@@ -19,4 +19,29 @@
       <p>{$t('index.seeingyou')}</p>
     </div>
   </div>
+  <img alt="jotun" src="jotun.jpg" />
 </section>
+
+<style>
+  .content {
+    max-width: var(--document-width);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-gap: 2rem;
+    padding: 4rem 0;
+  }
+  .navigation {
+    grid-column-start: 2;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+  img {
+    z-index: -1;
+    object-fit: cover;
+    height: 35rem;
+    width: 100%;
+  }
+</style>

@@ -40,6 +40,7 @@
     top: 0;
     left: 0;
     background-color: var(--color-bg-primary);
+    z-index: 1000;
   }
   .center {
     align-items: center;

@@ -25,6 +25,7 @@
 </svelte:head>
 
 <BigHeader />
+<!-- <div style="height: 1000px; background-color: white;">.</div> -->
 <Frontpage />
 <About />
 <Program />

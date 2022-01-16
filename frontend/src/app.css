@@ -5,10 +5,61 @@
   --color-text-brand: #a92f0f;
   --color-bg-primary: #a92f0f;
   --color-bg-secondary: #ecdac1;
-
-  --document-width: 61rem;
+  --document-width: 88rem;
 
   //--color-dark: #1e1a1d;
+}
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+section {
+  position: relative;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  background: var(--color-bg-primary);
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text-inverted);
+  overflow-x: hidden;
+}
+a {
+  color: var(--color-text-loud);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+p {
+  margin-bottom: 0.5rem;
+}
+.bigger {
+  font-size: 1.5rem;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 4rem;
+}
+h4 {
+  font-size: 2rem;
+}
+h5 {
+  font-size: 1.5rem;
+}
+
+header,
+footer,
+section {
+  position: relative;
+  max-width: 100%;
 }
 
 /*

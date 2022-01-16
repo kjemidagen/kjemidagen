@@ -34,7 +34,6 @@
 <style>
   main {
     align-items: center;
-    max-width: var(--document-width);
     margin: auto;
   }
 </style>
