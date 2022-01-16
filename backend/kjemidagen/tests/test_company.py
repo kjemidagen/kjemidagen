@@ -12,7 +12,7 @@ from .conftest import session_fixture, client_fixture
 
 @pytest.mark.anyio
 async def test_get_all(session: AsyncSession, client: AsyncClient, admin_access_token: str):
-    created_user = User(username="companyuser", hashed_password=hash_password("etmegetsterktpassword123"))
+    created_user = User(username="test@user.com", hashed_password=hash_password("etmegetsterktpassword123"))
     created_company = Company(
         title="Pengefirmaet",
         public_email="sjefen@pengefirmaet.no",
@@ -36,7 +36,7 @@ async def test_get_all(session: AsyncSession, client: AsyncClient, admin_access_
 
 @pytest.mark.anyio
 async def test_get(session: AsyncSession, client: AsyncClient, admin_access_token):
-    created_user = User(username="companyuser", hashed_password=hash_password("etmegetsterktpassword123"))
+    created_user = User(username="test@user.com", hashed_password=hash_password("etmegetsterktpassword123"))
     created_company = Company(
         title="Pengefirmaet",
         public_email="sjefen@pengefirmaet.no",
@@ -65,7 +65,7 @@ async def test_create_company(client: AsyncClient, admin_access_token):
     response = await client.post(
         "/v1/companies/",
         json={
-            "username": "the_Zucc_96",
+            "username": "test@user.com",
             "title": "Metagross TM",
             "public_email": "marcus@berger.gov",
             "number_of_representatives": "2",
@@ -79,14 +79,14 @@ async def test_create_company(client: AsyncClient, admin_access_token):
 
     assert response.status_code == 200
     assert data["password"] is not None
-    assert data["username"] == "the_Zucc_96"
+    assert data["username"] == "test@user.com"
 
 @pytest.mark.anyio
 async def test_edit_company(client: AsyncClient, admin_access_token):
     res_1 = await client.post(
         "/v1/companies/",
         json={
-            "username": "the_Zucc_96",
+            "username": "test@user.com",
             "title": "Metagross TM",
             "public_email": "marcus@berger.gov",
             "number_of_representatives": "2",
@@ -119,7 +119,7 @@ async def test_delete_company(client: AsyncClient, admin_access_token):
     res_1 = await client.post(
         "/v1/companies/",
         json={
-            "username": "the_Zucc_96",
+            "username": "test@user.com",
             "title": "Metagross TM",
             "public_email": "marcus@berger.gov",
             "number_of_representatives": "2",

@@ -10,7 +10,7 @@ from .conftest import session_fixture, client_fixture
 
 @pytest.mark.anyio
 async def test_login(session: AsyncSession, client: AsyncClient):
-    created_user = User(username="testuser", hashed_password=hash_password("hunter2"))
+    created_user = User(username="test@user.com", hashed_password=hash_password("hunter2"))
     session.add(created_user)
     await session.commit()
     await session.refresh(created_user)
@@ -18,7 +18,7 @@ async def test_login(session: AsyncSession, client: AsyncClient):
     response = await client.post(
         "/v1/auth/login",
         data={
-            "username": "testuser",
+            "username": "test@user.com",
             "password": "hunter2"
         })
     data = response.json()
@@ -30,7 +30,7 @@ async def test_login(session: AsyncSession, client: AsyncClient):
 
 @pytest.mark.anyio
 async def test_refresh(session: AsyncSession, client: AsyncClient):
-    created_user = User(username="testuser", hashed_password=hash_password("hunter2"))
+    created_user = User(username="test@user.com", hashed_password=hash_password("hunter2"))
     session.add(created_user)
     await session.commit()
     await session.refresh(created_user)
@@ -38,7 +38,7 @@ async def test_refresh(session: AsyncSession, client: AsyncClient):
     login_response = await client.post(
         "/v1/auth/login",
         data={
-            "username": "testuser",
+            "username": "test@user.com",
             "password": "hunter2"
         })
     login_tokens = login_response.json()
@@ -56,7 +56,7 @@ async def test_refresh(session: AsyncSession, client: AsyncClient):
 
 @pytest.mark.anyio
 async def test_refresh_theft(session: AsyncSession, client: AsyncClient):
-    created_user = User(username="testuser", hashed_password=hash_password("hunter2"))
+    created_user = User(username="test@user.com", hashed_password=hash_password("hunter2"))
     session.add(created_user)
     await session.commit()
     await session.refresh(created_user)
@@ -64,7 +64,7 @@ async def test_refresh_theft(session: AsyncSession, client: AsyncClient):
     login_response = await client.post(
         "/v1/auth/login",
         data={
-            "username": "testuser",
+            "username": "test@user.com",
             "password": "hunter2"
         })
     login_tokens = login_response.json()

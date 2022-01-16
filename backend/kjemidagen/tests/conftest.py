@@ -1,5 +1,4 @@
 import pytest
-from sqlalchemy.pool.impl import NullPool
 from sqlmodel import SQLModel
 from httpx import AsyncClient
 from sqlmodel.ext.asyncio.session import AsyncSession
@@ -39,15 +38,15 @@ async def client_fixture(session: AsyncSession):
 
 @pytest.fixture(name="admin_access_token")
 async def admin_fixture(session: AsyncSession, client: AsyncClient):
-    admin_user = User(username="testadmin", is_admin=True, hashed_password=hash_password("testadminpw"))    
+    admin_user = User(username="test@user.com", is_admin=True, hashed_password=hash_password("test@user.compw"))    
     session.add(admin_user)
     await session.commit()
 
     response = await client.post(
         "/v1/auth/login",
         data={
-            "username": "testadmin",
-            "password": "testadminpw"
+            "username": "test@user.com",
+            "password": "test@user.compw"
         })
     data = response.json()
 
