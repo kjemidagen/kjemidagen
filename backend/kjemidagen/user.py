@@ -53,6 +53,9 @@ async def edit_user(user_id: int, updated_user: UserUpdate, session: AsyncSessio
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
     updated_data = updated_user.dict(exclude_unset=True) # get only the values which are not empty
+    if "password" in updated_data.keys():
+        hashed_password = hash_password(updated_data.pop("password"))
+        setattr(user, "hashed_password", hashed_password)
     for field, value in updated_data.items():
         setattr(user, field, value)
     session.add(user)

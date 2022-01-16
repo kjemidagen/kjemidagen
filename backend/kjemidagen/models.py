@@ -37,6 +37,7 @@ class UserUpdate(SQLModel):
     """Contains fields which you can update"""
     username: Optional[EmailStr]
     is_admin: Optional[bool]
+    password: Optional[str]
 
 class UserUpdateResponse(UserBase):
     id: int
