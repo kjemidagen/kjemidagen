@@ -10,7 +10,7 @@ from typing import Optional
 from kjemidagen.sql_uuid import UUID
 
 class UserBase(SQLModel):
-    username: str
+    username: EmailStr
 
 class User(UserBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
@@ -35,6 +35,7 @@ class UserGetResponse(UserBase):
 
 class UserUpdate(SQLModel):
     """Contains fields which you can update"""
+    username: Optional[EmailStr]
     is_admin: Optional[bool]
 
 class UserUpdateResponse(UserBase):
