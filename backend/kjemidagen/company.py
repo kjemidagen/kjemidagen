@@ -48,7 +48,7 @@ async def create_company(company: CompanyAndUserCreate, session: AsyncSession = 
         hashed_password=hash_password(generated_password))
     company_in_db = Company(
         title=company.title,
-        email_address=company.email_address,
+        public_email=company.public_email,
         number_of_representatives=company.number_of_representatives,
         additional_data=company.additional_data,
         user = user
@@ -63,7 +63,7 @@ async def create_company(company: CompanyAndUserCreate, session: AsyncSession = 
         username=company_in_db.user.username,
         id=company_in_db.user_id,
         title=company_in_db.title,
-        email_address=company_in_db.email_address,
+        public_email=company_in_db.public_email,
         number_of_representatives=company_in_db.number_of_representatives,
         additional_data=company_in_db.additional_data,
         password=generated_password,
@@ -91,7 +91,7 @@ async def edit_company(company_id: int, updated_company: CompanyUpdate, session:
     return CompanyUpdateResponse(
         id=company.user_id,
         title=company.title,
-        email_address=company.email_address,
+        public_email=company.public_email,
         number_of_representatives=company.number_of_representatives,
         additional_data=company.additional_data,
         created_at=company.created_at,

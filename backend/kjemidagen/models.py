@@ -44,7 +44,7 @@ class UserUpdateResponse(UserBase):
 
 class CompanyBase(SQLModel):
     title: str
-    email_address: EmailStr
+    public_email: EmailStr
     number_of_representatives: int
     additional_data: Optional[str]
     created_at: Optional[datetime.datetime] = Field(sa_column_kwargs={"server_default": func.now()})
@@ -63,7 +63,7 @@ class CompanyCreateResponse(CompanyBase, UserBase):
 
 class CompanyUpdate(SQLModel):
     title: Optional[str]
-    email_address: Optional[EmailStr]
+    public_email: Optional[EmailStr]
     number_of_representatives: Optional[int]
     additional_data: Optional[str]
 

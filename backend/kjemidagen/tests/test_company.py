@@ -15,7 +15,7 @@ async def test_get_all(session: AsyncSession, client: AsyncClient, admin_access_
     created_user = User(username="companyuser", hashed_password=hash_password("etmegetsterktpassword123"))
     created_company = Company(
         title="Pengefirmaet",
-        email_address="sjefen@pengefirmaet.no",
+        public_email="sjefen@pengefirmaet.no",
         number_of_representatives=2,
         additional_data="{}",
         user=created_user)
@@ -39,7 +39,7 @@ async def test_get(session: AsyncSession, client: AsyncClient, admin_access_toke
     created_user = User(username="companyuser", hashed_password=hash_password("etmegetsterktpassword123"))
     created_company = Company(
         title="Pengefirmaet",
-        email_address="sjefen@pengefirmaet.no",
+        public_email="sjefen@pengefirmaet.no",
         number_of_representatives=2,
         additional_data="{}",
         user=created_user)
@@ -67,7 +67,7 @@ async def test_create_company(client: AsyncClient, admin_access_token):
         json={
             "username": "the_Zucc_96",
             "title": "Metagross TM",
-            "email_address": "marcus@berger.gov",
+            "public_email": "marcus@berger.gov",
             "number_of_representatives": "2",
             "additional_data": "I am a human i swear"
         },
@@ -88,7 +88,7 @@ async def test_edit_company(client: AsyncClient, admin_access_token):
         json={
             "username": "the_Zucc_96",
             "title": "Metagross TM",
-            "email_address": "marcus@berger.gov",
+            "public_email": "marcus@berger.gov",
             "number_of_representatives": "2",
             "additional_data": "I am a human i swear"
         },
@@ -121,7 +121,7 @@ async def test_delete_company(client: AsyncClient, admin_access_token):
         json={
             "username": "the_Zucc_96",
             "title": "Metagross TM",
-            "email_address": "marcus@berger.gov",
+            "public_email": "marcus@berger.gov",
             "number_of_representatives": "2",
             "additional_data": "I am a human i swear"
         },
