@@ -5,7 +5,7 @@ services:
     restart: always
     environment:
       - PGUSER=kjemidagen
-      - POSTGRES_DATABASE=kjemidagen
+      - POSTGRES_DB=kjemidagen
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=kjemidagen
     logging:

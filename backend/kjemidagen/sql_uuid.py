@@ -1,28 +1,40 @@
-from sqlalchemy import types
-from sqlalchemy.dialects.mysql.base import MSBinary
+from sqlalchemy.types import TypeDecorator, CHAR
+from sqlalchemy.dialects.postgresql import UUID
 import uuid
 
-# Thanks to Tom Willis from stackoverflow
-class UUID(types.TypeDecorator):
-    impl = MSBinary
+class UUID(TypeDecorator):
+    """Platform-independent GUID type.
+
+    Uses PostgreSQL's UUID type, otherwise uses
+    CHAR(32), storing as stringified hex values.
+
+    Takk til https://docs.sqlalchemy.org/en/14/core/custom_types.html#backend-agnostic-guid-type
+    """
+    impl = CHAR
     cache_ok = True
-    def __init__(self):
-        self.impl.length = 16
-        types.TypeDecorator.__init__(self,length=self.impl.length)
 
-    def process_bind_param(self,value,dialect=None):
-        if value and isinstance(value,uuid.UUID):
-            return value.bytes
-        elif value and not isinstance(value,uuid.UUID):
-            raise ValueError('value %s is not a valid uuid.UUID' % value)
+    def load_dialect_impl(self, dialect):
+        if dialect.name == 'postgresql':
+            return dialect.type_descriptor(UUID())
         else:
-            return None
+            return dialect.type_descriptor(CHAR(32))
 
-    def process_result_value(self,value,dialect=None):
-        if value:
-            return uuid.UUID(bytes=value)
+    def process_bind_param(self, value, dialect):
+        if value is None:
+            return value
+        elif dialect.name == 'postgresql':
+            return str(value)
         else:
-            return None
+            if not isinstance(value, uuid.UUID):
+                return "%.32x" % uuid.UUID(value).int
+            else:
+                # hexstring
+                return "%.32x" % value.int
 
-    def is_mutable(self):
-        return False
+    def process_result_value(self, value, dialect):
+        if value is None:
+            return value
+        else:
+            if not isinstance(value, uuid.UUID):
+                value = uuid.UUID(value)
+            return value

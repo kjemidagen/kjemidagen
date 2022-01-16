@@ -22,7 +22,7 @@ services:
     image: postgres:14.1
     restart: always
     environment:
-      - POSTGRES_DATABASE=kjemidagen
+      - POSTGRES_DB=kjemidagen
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=kjemidagen
     logging:

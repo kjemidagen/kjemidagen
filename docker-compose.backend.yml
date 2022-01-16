@@ -12,11 +12,13 @@ services:
       - 8001:8001
     environment:
       - DBServer=postgres
+    volumes:
+      - ./backend/migrations:/app/migrations
   postgres:
     image: postgres:14.1
     restart: always
     environment:
-      - POSTGRES_DATABASE=kjemidagen
+      - POSTGRES_DB=kjemidagen
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=kjemidagen
     logging:
@@ -27,8 +29,6 @@ services:
       - "5432:5432"
     volumes:
       - ./backend/postgres-data:/var/lib/postgresql/data
-      # copy the sql script to create tables
-      - ./backend/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
 volumes:
   db-data:
   pgadmin-data:
