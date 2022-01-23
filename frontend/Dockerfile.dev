@@ -1,6 +1,5 @@
 # Our Node base image
 FROM node:16.4.2
-RUN npm install yarn -g
 
 # Set the Node environment to development to ensure all packages are installed
 ENV NODE_ENV development
@@ -9,12 +8,12 @@ ENV NODE_ENV development
 WORKDIR /usr/src/app
 
 # Copy over `package.json` and lock files to optimize the build process
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "yarn.lock", "./"]
+COPY ["package.json", "yarn.lock", "/"]
 # Install Node modules
 RUN yarn install
 
 # Copy over rest of the project files
-COPY . .
+COPY . /
 
 # Expose port 3000 for the SvelteKit app and 24678 for Vite's HMR
 EXPOSE 3000

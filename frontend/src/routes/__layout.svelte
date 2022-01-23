@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   import '../app.css';
-  import { addMessages, init, getLocaleFromQueryString } from 'svelte-intl-precompile';
+  import { addMessages, init, getLocaleFromPathname } from 'svelte-intl-precompile';
   import no from '$lib/translations/no.json';
   import en from '$lib/translations/en.json';
   /* DOCS: https://svelte-intl-precompile.com/en/docs/ */
@@ -9,9 +9,9 @@
 
   /** @type {import('@sveltejs/kit').Load} */
   export async function load({ url }) {
-    const lang = url.searchParams.get('lang');
+    const noOrEn = new RegExp('/^/((no|en)(-ww)?)/');
     init({
-      initialLocale: lang,
+      initialLocale: getLocaleFromPathname(noOrEn),
       fallbackLocale: 'no'
     });
     return {};

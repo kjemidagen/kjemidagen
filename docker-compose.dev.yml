@@ -11,6 +11,8 @@ services:
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
+    depends_on:
+      - backend
   backend:
     stdin_open: true
     tty: true

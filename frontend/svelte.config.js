@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
 import preprocess from 'svelte-preprocess';
 import precompileIntl from 'svelte-intl-precompile/sveltekit-plugin';
 
@@ -9,7 +9,10 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      out: 'build',
+      precompress: false
+    }),
 
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',

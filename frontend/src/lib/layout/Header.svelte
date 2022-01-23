@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { t, locale, locales } from 'svelte-intl-precompile';
+  import { locale, locales } from 'svelte-intl-precompile';
+  import 
 
   const handleLangChange = (loc) => {
     $locale = loc;
     if (window && 'URLSearchParams' in window) {
-      let searchParams = new URLSearchParams(window.location.search);
-      searchParams.set('lang', $locale);
-      const newRelativePathQuery =
-        window.location.pathname + '?' + searchParams.toString() + window.location.hash;
+      const pathname = window.location.pathname.split('/');
+      const newPathname = '/' + loc + '/' + pathname.slice(2).join('/');
+      const newRelativePathQuery = newPathname + window.location.search + window.location.hash;
       history.pushState(null, '', newRelativePathQuery);
     }
   };
@@ -23,7 +23,7 @@
       {#each $locales as loc}
         <a
           class={'lang ' + (loc === $locale && 'current-locale')}
-          href={'?lang=' + loc}
+          href={loc}
           on:click|preventDefault={(e) => handleLangChange(loc)}>{loc}</a
         >
       {/each}

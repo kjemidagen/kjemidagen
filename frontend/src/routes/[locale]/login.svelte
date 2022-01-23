@@ -1,5 +1,8 @@
 <script context="module" lang="ts">
-  export const prerender = true;
+  import { browser, dev } from '$app/env';
+  export const hydrate = dev;
+  export const router = browser;
+  export const prerender = false;
 </script>
 
 <script lang="ts">
