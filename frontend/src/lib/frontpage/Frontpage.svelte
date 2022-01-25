@@ -19,7 +19,7 @@
       <p>{$t('index.seeingyou')}</p>
     </div>
   </div>
-  <img alt="jotun" src="jotun.jpg" />
+  <img alt="jotun" src="/jotun.jpg" />
 </section>
 
 <style>

@@ -7,7 +7,7 @@
     <h3>{$t('program.header')}</h3>
     <p class="program-ingress">{$t('program.text1')}</p>
     <div class="program-body">
-      <img src="raworth-lecture.jpg" alt="lecture room" width="400px" height="400px" object-fit />
+      <img src="/raworth-lecture.jpg" alt="lecture room" width="400px" height="400px" object-fit />
       <div class="program-text">
         <table class="program-table">
           <tr><td class="left-col"><b>{$t('date_short')}</b></td> </tr>

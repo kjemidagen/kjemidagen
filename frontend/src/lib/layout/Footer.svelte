@@ -14,7 +14,7 @@
         <li>Samarbeidsforum</li>
       </ul>
       <br />
-      <img src="sf_logo.png" alt="Samarbeidsforum logo" />
+      <img src="/sf_logo.png" alt="Samarbeidsforum logo" />
     </div>
 
     <div class="footer-about">
@@ -27,7 +27,7 @@
       Sem Sælands vei 4<br />
       7491 Trondheim<br />&nbsp;<br />&nbsp;<br />
 
-      <a class="back-to-top" href="#header">{$t('backtotop')}</a>
+      <a class="back-to-top" href="#banner">{$t('backtotop')}</a>
     </div>
   </div>
 </footer>

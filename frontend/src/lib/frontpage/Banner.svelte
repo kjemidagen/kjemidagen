@@ -2,18 +2,18 @@
   import { t } from 'svelte-intl-precompile';
 </script>
 
-<header class="header" id="header">
+<section class="banner" id="banner">
   <div class="title">
-    <h1><a href="/">{$t('Kjemidagen')}</a></h1>
+    <h1>{$t('Kjemidagen')}</h1>
     <h2>{$t('date')}</h2>
   </div>
-</header>
+</section>
 
 <style>
-  header {
+  section {
     position: relative;
     max-width: 100%;
-    background: url('header.jpg') no-repeat center center;
+    background: url('/header.jpg') no-repeat center center;
     background-size: cover;
     height: 600px;
   }
@@ -24,15 +24,15 @@
     max-width: var(--document-width);
     margin: 0 auto;
     padding: 65px 0 0 260px;
-    background: url('logo250.png') no-repeat;
+    background: url('/logo250.png') no-repeat;
   }
 
-  h1 a {
+  h1 {
     text-decoration: none;
     color: var(--color-text-brand);
     font-size: 5rem;
   }
-  h1 a:hover {
+  h1:hover {
     text-decoration: none;
   }
   h2 {

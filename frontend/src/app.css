@@ -17,6 +17,7 @@ section {
 }
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 body {
   background: var(--color-bg-primary);

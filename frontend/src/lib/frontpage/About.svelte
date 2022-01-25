@@ -27,7 +27,7 @@
       </article>
     </div>
   </div>
-  <img src="exxon.jpg" alt="exxon" />
+  <img src="/exxon.jpg" alt="exxon" />
 </section>
 
 <style>

@@ -1,22 +1,23 @@
 <script lang="ts">
   import { locale, locales } from 'svelte-intl-precompile';
-  import 
 
-  const handleLangChange = (loc) => {
-    $locale = loc;
-    if (window && 'URLSearchParams' in window) {
-      const pathname = window.location.pathname.split('/');
-      const newPathname = '/' + loc + '/' + pathname.slice(2).join('/');
-      const newRelativePathQuery = newPathname + window.location.search + window.location.hash;
-      history.pushState(null, '', newRelativePathQuery);
+  const handleLangChange = (loc: string) => {
+    if ($locale !== loc) {
+      $locale = loc;
+      if (typeof window !== 'undefined' && 'URLSearchParams' in window) {
+        const pathname = window.location.pathname.split('/');
+        const newPathname = '/' + $locale + '/' + pathname.slice(2).join('/');
+        const newRelativePathQuery = newPathname + window.location.search + window.location.hash;
+        history.pushState(null, '', newRelativePathQuery);
+      }
     }
   };
 </script>
 
 <header id="header">
   <div class="center">
-    <a class="home" href="/">
-      <img class="logo" src="logo_inverted.svg" alt="logo" width="40" />
+    <a class="home" href={'/' + $locale + '/'}>
+      <img class="logo" src="/logo_inverted.svg" alt="logo" width="40" />
       <span>Kjemidagen</span>
     </a>
     <aside class="language-selector">

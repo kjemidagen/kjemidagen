@@ -9,8 +9,7 @@ services:
       - 80:3000
       - 24678:24678
     volumes:
-      - ./:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./frontend:/usr/src/app
     depends_on:
       - backend
   backend:

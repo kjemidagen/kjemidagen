@@ -1,6 +1,6 @@
 <script context="module">
   import { browser, dev } from '$app/env';
-  import BigHeader from '$lib/frontpage/BigHeader.svelte';
+  import Banner from '$lib/frontpage/Banner.svelte';
   import Frontpage from '$lib/frontpage/Frontpage.svelte';
   import About from '$lib/frontpage/About.svelte';
   import Program from '$lib/frontpage/Program.svelte';
@@ -25,7 +25,7 @@
   <title>DEV Kjemidagen</title>
 </svelte:head>
 
-<BigHeader />
+<Banner />
 <!-- <div style="height: 1000px; background-color: white;">.</div> -->
 <Frontpage />
 <About />

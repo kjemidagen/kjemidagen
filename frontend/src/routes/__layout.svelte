@@ -8,10 +8,10 @@
   addMessages('en', en);
 
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ url }) {
-    const noOrEn = new RegExp('/^/((no|en)(-ww)?)/');
+  export async function load({ params }) {
     init({
-      initialLocale: getLocaleFromPathname(noOrEn),
+      // initialLocale: getLocaleFromPathname(/^\/(.*?)\//),
+      initialLocale: params['locale'],
       fallbackLocale: 'no'
     });
     return {};

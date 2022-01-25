@@ -7,7 +7,7 @@
     <h3>{$t('contact.header')}</h3>
 
     <figure class="contact-image">
-      <img src="styret21.jpg" alt="styret 2021" />
+      <img src="/styret21.jpg" alt="styret 2021" />
     </figure>
 
     <p>{$t('contact.text')}</p>

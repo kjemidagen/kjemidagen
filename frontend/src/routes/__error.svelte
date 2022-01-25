@@ -1,11 +1,21 @@
-<script context="module" lang="ts">
+<!-- <script context="module" lang="ts">
   import { browser, dev } from '$app/env';
   export const hydrate = dev;
   export const router = browser;
   export const prerender = false;
-  import { t } from 'svelte-intl-precompile';
+
+  /** @type {import('@sveltejs/kit').ErrorLoad} */
+  export function load({ error, status }) {
+    return {
+      props: {
+        title: `${status}: ${error.message}`
+      }
+    };
+  }
 </script>
 
-<h1>
-  {$t('error')}
-</h1>
+<script>
+  export let title;
+</script>
+
+<h1>{title}</h1> -->
