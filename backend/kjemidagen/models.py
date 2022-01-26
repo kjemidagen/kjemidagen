@@ -1,80 +1,94 @@
 import datetime
 import uuid
-from pydantic.errors import ArbitraryTypeError
-from sqlalchemy import func
-from sqlalchemy.sql.schema import Column
-from sqlmodel import SQLModel, Relationship, Field
-from pydantic import EmailStr
+import pymongo
+from beanie import Document, Indexed, Link, Insert, Replace, SaveChanges, before_event
+from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 
-from kjemidagen.sql_uuid import UUID
-
-class UserBase(SQLModel):
-    username: EmailStr
-
-class User(UserBase, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
+class User(Document):
+    id: Indexed(int, unique=True)
+    username: Indexed(str, index_type=pymongo.TEXT)
     hashed_password: str
-    company: Optional["Company"] = Relationship(back_populates="user", sa_relationship_kwargs={"cascade": "all, delete-orphan"})
     is_admin: bool = False
-    created_at: Optional[datetime.datetime] = Field(sa_column_kwargs={"server_default": func.now()})
-    updated_at: Optional[datetime.datetime] = Field(sa_column_kwargs={"server_default": func.now(), "server_onupdate": func.now()})
+    created_at: datetime.datetime
+    updated_at: datetime.datetime
 
-class UserCreate(UserBase):
+    @before_event([Insert])
+    def set_created_time(self):
+        self.created_at = datetime.datetime.now()
+
+    @before_event([Insert, Replace, SaveChanges])
+    def set_updated_time(self):
+        self.updated_at = datetime.datetime.now()
+
+class UserCreate(BaseModel):
+    username: EmailStr
     password: str
 
-class UserCreateResponse(UserBase):
+class UserCreateResponse(BaseModel):
     """Contains fields returned on user creation"""
+    username: EmailStr
     id: int
     is_admin: bool
 
-class UserGetResponse(UserBase):
+class UserGetResponse(BaseModel):
     """Contains fields returned from get requests"""
+    username: EmailStr
     id: int
     is_admin: bool
 
-class UserUpdate(SQLModel):
+class UserUpdate(BaseModel):
     """Contains fields which you can update"""
     username: Optional[EmailStr]
     is_admin: Optional[bool]
     password: Optional[str]
 
-class UserUpdateResponse(UserBase):
+class UserUpdateResponse(BaseModel):
+    username: EmailStr
     id: int
     is_admin: bool
 
 
-class CompanyBase(SQLModel):
+class Company(Document):
+    id: Indexed(int, unique=True)
+    user: Link[User]
+    title: Indexed(str)
+    public_email: EmailStr
+    number_of_representatives: int
+    additional_data: Optional[str]
+
+    @before_event([Insert])
+    def set_created_time(self):
+        self.created_at = datetime.datetime.now()
+
+    @before_event([Insert, Replace, SaveChanges])
+    def set_updated_time(self):
+        self.updated_at = datetime.datetime.now()
+
+class CompanyBase(BaseModel):
+    username: EmailStr
     title: str
     public_email: EmailStr
     number_of_representatives: int
     additional_data: Optional[str]
-    created_at: Optional[datetime.datetime] = Field(sa_column_kwargs={"server_default": func.now()})
-    updated_at: Optional[datetime.datetime] = Field(sa_column_kwargs={"server_default": func.now(), "server_onupdate": func.now()})
+class CompanyAndUserCreate(CompanyBase):
+    username: EmailStr
 
-class Company(CompanyBase, table=True):
-    user_id: Optional[int] = Field(default=None, primary_key=True, foreign_key="user.id")
-    user: "User" = Relationship(back_populates="company")
-
-class CompanyAndUserCreate(CompanyBase, UserBase):
-    pass
-
-class CompanyCreateResponse(CompanyBase, UserBase):
+class CompanyCreateResponse(CompanyBase):
+    username: EmailStr
     id: int
     password: str
 
-class CompanyUpdate(SQLModel):
+class CompanyUpdate(BaseModel):
     title: Optional[str]
     public_email: Optional[EmailStr]
     number_of_representatives: Optional[int]
     additional_data: Optional[str]
 
 class CompanyUpdateResponse(CompanyBase):
+    username: EmailStr
     id: int
 
-class RefreshToken(SQLModel, table=True):
-    token_id: Optional[UUID] = Field(sa_column=(Column(UUID(), primary_key=True, default=uuid.uuid4)))
+class RefreshToken(Document):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4)
     is_revoked: bool = False
-
-    class Config:
-        arbitrary_types_allowed = True

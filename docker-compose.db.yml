@@ -1,38 +1,13 @@
 version: "3.8"
 services:
-  postgres:
-    image: postgres:14.1
-    restart: always
+  mongodb:
+    image: mongo
+    container_name: mongodb
     environment:
-      - PGUSER=kjemidagen
-      - POSTGRES_DB=kjemidagen
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=kjemidagen
-    logging:
-      options:
-        max-size: 10m
-        max-file: "3"
-    ports:
-      - "5432:5432"
+      - PUID=1000
+      - PGID=1000
     volumes:
-      - ./backend/postgres-data:/var/lib/postgresql/data
-      # copy the sql script to create tables
-      - ./backend/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
-  pgadmin:
-    image: dpage/pgadmin4:6.3
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@kjemidagen.no
-      PGADMIN_DEFAULT_PASSWORD: kjemidagen
-      PGADMIN_LISTEN_PORT: 8080
+      - ./database:/data/db
     ports:
-      - "8081:8080"
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
-    links:
-      - "postgres:pgsql-server"
-    depends_on:
-      - postgres
-volumes:
-  db-data:
-  pgadmin-data:
+      - 27017:27017
+    restart: unless-stopped
