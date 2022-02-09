@@ -1,5 +1,5 @@
 import os
-from beanie import init_beanie, Document
+from beanie import init_beanie
 import motor.motor_asyncio
 from dotenv import load_dotenv
 from kjemidagen.models import User, RefreshToken, Company

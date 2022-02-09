@@ -1,9 +1,6 @@
 from typing import List
 from fastapi import APIRouter, HTTPException, Depends, status
-from sqlmodel.ext.asyncio.session import AsyncSession
-from sqlmodel.sql.expression import select
 
-from kjemidagen.database import get_session
 from kjemidagen.crypto import hash_password
 from kjemidagen.auth import get_current_user, get_current_admin
 

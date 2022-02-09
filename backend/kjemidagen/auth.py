@@ -5,10 +5,7 @@ from dotenv import load_dotenv
 from fastapi import APIRouter, status, HTTPException, Depends, Body
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
-from sqlmodel import  select
-from sqlmodel.ext.asyncio.session import AsyncSession
 
-from kjemidagen.database import get_session
 from kjemidagen.crypto import verify_password
 from kjemidagen.models import User, RefreshToken
 
