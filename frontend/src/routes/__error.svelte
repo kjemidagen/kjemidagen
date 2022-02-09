@@ -1,4 +1,4 @@
-<!-- <script context="module" lang="ts">
+<script context="module" lang="ts">
   import { browser, dev } from '$app/env';
   export const hydrate = dev;
   export const router = browser;
@@ -18,4 +18,4 @@
   export let title;
 </script>
 
-<h1>{title}</h1> -->
+<h1>{title}</h1>
