@@ -1,27 +1,37 @@
 <script lang="ts">
-  import { t } from 'svelte-intl-precompile';
 </script>
 
 <section class="program" id="program">
   <div class="content">
-    <h3>{$t('program.header')}</h3>
-    <p class="program-ingress">{$t('program.text1')}</p>
+    <h3>Årets program</h3>
+    <p class="program-ingress">
+      Kjemidagen har som mål å bidra til god kontakt mellom studentene vi representerer og faglig
+      relevante bedrifter. Som en følge av dette sørger vi for å tilby et bredest mulig utvalg av
+      arenaer hvor bedrifter og studenter kan møtes og bli bedre kjent.
+    </p>
     <div class="program-body">
       <img src="/raworth-lecture.jpg" alt="lecture room" width="400px" height="400px" object-fit />
       <div class="program-text">
         <table class="program-table">
-          <tr><td class="left-col"><b>{$t('date_short')}</b></td> </tr>
-          <tr><td class="left-col">{$t('program.time1')}</td><td>{$t('program.table1')} </td></tr>
-          <tr><td class="left-col">{$t('program.time2')}</td><td>{$t('program.table2')} </td></tr>
-          <tr><td class="left-col">{$t('program.time3')}</td><td>{$t('program.table3')} </td></tr>
-          <tr><td class="left-col">{$t('program.time4')}</td><td>{$t('program.table4')} </td></tr>
-          <tr><td class="left-col">{$t('program.time5')}</td><td>{$t('program.table5')} </td></tr>
-          <tr><td class="left-col">{$t('program.time6')}</td><td>{$t('program.table6')} </td></tr>
-          <tr><td class="left-col">{$t('program.time7')}</td><td>{$t('program.table7')} </td></tr>
+          <tr><th class="left-col"><b>19. oktober</b></th></tr>
+          <tr><td class="left-col">10:00</td> <td>Åpning og utdeling av goodiebags </td></tr>
+          <tr><td class="left-col">10:15 - 15:00</td> <td>Bedriftsstands </td></tr>
+          <tr><td class="left-col">10:15 - 15:00</td> <td>Speedintervju </td></tr>
+          <tr><td class="left-col">10:30 - 13:00</td> <td>CV-fotografering </td></tr>
+          <tr><td class="left-col">11:15 - 12:00</td> <td>Motivasjonsforedrag </td></tr>
+          <tr><td class="left-col">13:15 - 14:00</td> <td>Sommerjobbmaraton </td></tr>
+          <tr><td class="left-col">18:30</td> <td>Bankett </td></tr>
         </table>
         <div>
-          <p>{$t('program.text2')}</p>
-          <p>{$t('program.text3')}</p>
+          <p>
+            Dette året har vi invitert Ragnhild Sofie Ragnhildstveit Sætra og Jacob Hadler-Jacobsen,
+            som er tidligere studenter ved MTNANO og MTKJ, til Kjemidagen.
+          </p>
+          <p>
+            Ragnhild forsker på molekylærmekanismer i tuberkulose, mens Jacob jobber med modellering
+            av katodematerialer for magnesiumbatterier. Sammen skal de diskutere seg gjennom hvordan
+            hverdagen etter endt studie ser ut, og hvilken nytte de fikk av studiet.
+          </p>
         </div>
       </div>
     </div>

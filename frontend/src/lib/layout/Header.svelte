@@ -1,34 +1,9 @@
-<script lang="ts">
-  import { locale, locales } from 'svelte-intl-precompile';
-
-  const handleLangChange = (loc: string) => {
-    if ($locale !== loc) {
-      $locale = loc;
-      if (typeof window !== 'undefined' && 'URLSearchParams' in window) {
-        const pathname = window.location.pathname.split('/');
-        const newPathname = '/' + $locale + '/' + pathname.slice(2).join('/');
-        const newRelativePathQuery = newPathname + window.location.search + window.location.hash;
-        history.pushState(null, '', newRelativePathQuery);
-      }
-    }
-  };
-</script>
-
 <header id="header">
   <div class="center">
-    <a class="home" href={'/' + $locale + '/'}>
+    <a class="home" href={'/'}>
       <img class="logo" src="/logo_inverted.svg" alt="logo" width="40" />
       <span>Kjemidagen</span>
     </a>
-    <aside class="language-selector">
-      {#each $locales as loc}
-        <a
-          class={'lang ' + (loc === $locale && 'current-locale')}
-          href={loc}
-          on:click|preventDefault={(e) => handleLangChange(loc)}>{loc}</a
-        >
-      {/each}
-    </aside>
   </div>
 </header>
 
@@ -60,11 +35,5 @@
   }
   .logo {
     margin-right: 0.5rem;
-  }
-  a.lang {
-    border: none;
-    background-color: inherit;
-    color: var(--color-text-inverted);
-    margin: 0.25rem;
   }
 </style>

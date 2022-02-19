@@ -1,18 +1,17 @@
 <script lang="ts">
-  import { t } from 'svelte-intl-precompile';
 </script>
 
 <section class="contact" id="contact">
   <div class="content">
-    <h3>{$t('contact.header')}</h3>
+    <h3>Ta kontakt</h3>
 
     <figure class="contact-image">
       <img src="/styret21.jpg" alt="styret 2021" />
     </figure>
 
-    <p>{$t('contact.text')}</p>
+    <p>Skulle du ha noen spørsmål om arrangementet, ikke nøl med å ta kontakt på e-post:</p>
     <p class="contact-email"><a href="mailto:kontakt@kjemidagen.no">kontakt@kjemidagen.no</a></p>
-    <p>{$t('contact.footer')}</p>
+    <p>Styret i Kjemidagen ønsker alle studenter hjertelig velkommen!</p>
   </div>
 </section>
 
