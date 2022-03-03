@@ -20,7 +20,7 @@
     position: relative;
     top: 100px;
     left: 30px;
-    max-width: var(--document-width);
+    max-width: 88rem;
     margin: 0 auto;
     padding: 65px 0 0 260px;
     background: url('/logo250.png') no-repeat;

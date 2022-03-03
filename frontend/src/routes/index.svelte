@@ -2,10 +2,6 @@
   import { browser, dev } from '$app/env';
   import Banner from '$lib/frontpage/Banner.svelte';
   import Frontpage from '$lib/frontpage/Frontpage.svelte';
-  import About from '$lib/frontpage/About.svelte';
-  import Program from '$lib/frontpage/Program.svelte';
-  import Companies from '$lib/frontpage/Companies.svelte';
-  import Contact from '$lib/frontpage/Contact.svelte';
 
   // we don't need any JS on this page, though we'll load
   // it in dev so that we get hot module replacement...
@@ -21,12 +17,8 @@
 </script>
 
 <svelte:head>
-  <title>DEV Kjemidagen</title>
+  <title>Kjemidagen</title>
 </svelte:head>
 
 <Banner />
 <Frontpage />
-<About />
-<Program />
-<Companies />
-<Contact />
