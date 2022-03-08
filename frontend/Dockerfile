@@ -2,11 +2,11 @@ FROM mhart/alpine-node:16.4.2 as builder
 
 # install dependencies
 WORKDIR /app
-COPY package.json yarn.lock /
+COPY package.json yarn.lock ./
 RUN yarn install --immutable --immutable-cache --check-cache
 
 # Copy all local files into the image.
-COPY . /
+COPY . .
 
 RUN yarn build
 
@@ -14,11 +14,11 @@ RUN yarn build
 # Only copy over the Node pieces we need
 # ~> Saves 35MB
 ###
-FROM mhart/alpine-node:slim-16.4.2
+# FROM mhart/alpine-node:slim-16.4.2
 
-WORKDIR /app
-COPY --from=builder /app /
-COPY . /
+# WORKDIR /app
+# COPY --from=builder ./app .
+# COPY . .
 
 EXPOSE 3000
-CMD ["node", "./build"]
+CMD ["node", "build"]

@@ -37,7 +37,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    background-color: var(--color-bg-primary);
+    background-color: var(--color-bg-brand);
     z-index: 1000;
   }
   .center {

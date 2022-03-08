@@ -11,6 +11,7 @@ password = os.getenv("DBPassword")
 port = os.getenv("DBPort")
 
 DATABASE_URL = f"mongodb://{user}:{password}@{host}:{port}"
+# DATABASE_URL = f"mongodb://root:kjemidagen@mongodb:27017"
 
 async def init_database():
     client = motor.motor_asyncio.AsyncIOMotorClient(DATABASE_URL)

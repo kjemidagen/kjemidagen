@@ -6,7 +6,7 @@ from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 
 class User(Document):
-    id: Indexed(int, unique=True)
+    id: Indexed(int)
     username: Indexed(str, index_type=pymongo.TEXT)
     hashed_password: str
     is_admin: bool = False
@@ -50,7 +50,7 @@ class UserUpdateResponse(BaseModel):
 
 
 class Company(Document):
-    id: Indexed(int, unique=True)
+    id: Indexed(int)
     user: Link[User]
     title: Indexed(str)
     public_email: EmailStr

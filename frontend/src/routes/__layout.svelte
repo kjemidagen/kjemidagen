@@ -11,9 +11,11 @@
 
 <Header />
 
-<main>
-  <slot />
-</main>
+<div class="border">
+  <main>
+    <slot />
+  </main>
+</div>
 
 <Footer />
 
@@ -25,5 +27,12 @@
   main {
     align-items: center;
     margin: auto;
+  }
+
+  .border {
+    width: 100%;
+    height: 100%;
+    border: 10px solid var(--color-bg-secondary);
+    box-sizing: border-box;
   }
 </style>

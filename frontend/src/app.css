@@ -1,10 +1,11 @@
 :root {
   --color-text-base: #000;
-  --color-text-inverted: #ecdac1;
+  --color-text-inverted: #ffffff;
   --color-text-loud: #ffffff;
   --color-text-brand: #a92f0f;
-  --color-bg-primary: #a92f0f;
-  --color-bg-secondary: #ecdac1;
+  --color-bg-brand: #a92f0f;
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #f54316;
   --document-width: 65rem;
 
   --color-dark: #1e1a1d;
@@ -24,7 +25,7 @@ body {
   font-family: 'Trebuchet MS', sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--color-text-inverted);
+  color: var(--color-text-base);
   overflow-x: hidden;
 }
 a {

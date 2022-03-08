@@ -56,13 +56,10 @@
       </article>
     </div>
   </div>
-  <img src="/exxon.jpg" alt="exxon" />
+  <!-- <img src="/exxon.jpg" alt="exxon" /> -->
 </section>
 
 <style>
-  .about {
-    background: var(--color-bg-secondary);
-  }
   .content {
     max-width: var(--document-width);
     align-items: center;
@@ -71,7 +68,7 @@
   }
   h3,
   h4 {
-    color: var(--color-text-brand);
+    color: var(--color-text-base);
   }
   h3 {
     margin-bottom: 2rem;

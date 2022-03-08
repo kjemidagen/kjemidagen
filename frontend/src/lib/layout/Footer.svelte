@@ -32,7 +32,7 @@
 
 <style>
   footer {
-    background-color: var(--color-bg-primary);
+    background-color: var(--color-bg-brand);
   }
   .center {
     align-items: center;

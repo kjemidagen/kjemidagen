@@ -13,4 +13,4 @@ app.include_router(company_router, prefix="/v1/companies", tags=["companies"])
 
 @app.on_event("startup")
 async def connect_to_db():
-    init_database()
+    await init_database()

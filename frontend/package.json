@@ -13,7 +13,7 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^1.0.0-next.11",
+    "@sveltejs/adapter-node": "^1.0.0-next.62",
     "@sveltejs/kit": "^1.0.0-next.232",
     "@types/cookie": "^0.4.1",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
@@ -36,7 +36,6 @@
     "@babel/core": "^7.16.7",
     "@fontsource/fira-mono": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
-    "@sveltejs/adapter-node": "^1.0.0-next.62",
     "cookie": "^0.4.1",
     "install-peers": "^1.0.3",
     "postcss": "^8.4.5",
