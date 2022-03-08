@@ -14,7 +14,7 @@ Migrere: `docker-compose -f <docker-compose[.filen som du bruker].yml> exec back
 
 ## Testing
 
-Testing er støttet av pytest og kjøres enkelt ved å kjøre `pytest`.
+Testing fungerer ikke lengre etter vi byttet til mongodb. ~~Testing er støttet av pytest og kjøres enkelt ved å kjøre `pytest`.~~
 
 ## Porøse systemer
 

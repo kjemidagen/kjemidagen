@@ -1,34 +1,31 @@
-<script lang="ts">
-  import { locale, locales } from 'svelte-intl-precompile';
-
-  const handleLangChange = (loc: string) => {
-    if ($locale !== loc) {
-      $locale = loc;
-      if (typeof window !== 'undefined' && 'URLSearchParams' in window) {
-        const pathname = window.location.pathname.split('/');
-        const newPathname = '/' + $locale + '/' + pathname.slice(2).join('/');
-        const newRelativePathQuery = newPathname + window.location.search + window.location.hash;
-        history.pushState(null, '', newRelativePathQuery);
-      }
-    }
-  };
+<script>
+  import { isLoginOpen } from '$lib/stores';
 </script>
 
 <header id="header">
   <div class="center">
-    <a class="home" href={'/' + $locale + '/'}>
+    <a class="home" href={'/'}>
       <img class="logo" src="/logo_inverted.svg" alt="logo" width="40" />
       <span>Kjemidagen</span>
     </a>
-    <aside class="language-selector">
-      {#each $locales as loc}
-        <a
-          class={'lang ' + (loc === $locale && 'current-locale')}
-          href={loc}
-          on:click|preventDefault={(e) => handleLangChange(loc)}>{loc}</a
+    <ul>
+      <li><a href="/">Hjem</a></li>
+      <li><a href="/about">Om kjemidagen</a></li>
+      <li><a href="/program">Program</a></li>
+      <li><a href="/contact">Ta kontakt</a></li>
+      <li><a href="/companies">Bedrifter</a></li>
+      <li><a href="/english">English</a></li>
+      <li>
+        <button
+          href="/login"
+          on:click={(event) => {
+            event.preventDefault;
+            $isLoginOpen = true;
+            return false;
+          }}>Logg inn</button
         >
-      {/each}
-    </aside>
+      </li>
+    </ul>
   </div>
 </header>
 
@@ -40,7 +37,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    background-color: var(--color-bg-primary);
+    background-color: var(--color-bg-brand);
     z-index: 1000;
   }
   .center {
@@ -61,10 +58,12 @@
   .logo {
     margin-right: 0.5rem;
   }
-  a.lang {
-    border: none;
-    background-color: inherit;
-    color: var(--color-text-inverted);
-    margin: 0.25rem;
+
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+    margin: auto 0.3rem;
   }
 </style>

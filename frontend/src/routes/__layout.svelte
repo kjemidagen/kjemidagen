@@ -1,39 +1,38 @@
 <script context="module" lang="ts">
   import '../app.css';
-  import { addMessages, init, getLocaleFromPathname } from 'svelte-intl-precompile';
-  import no from '$lib/translations/no.json';
-  import en from '$lib/translations/en.json';
-  /* DOCS: https://svelte-intl-precompile.com/en/docs/ */
-  addMessages('no', no);
-  addMessages('en', en);
-
-  /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ params }) {
-    init({
-      // initialLocale: getLocaleFromPathname(/^\/(.*?)\//),
-      initialLocale: params['locale'],
-      fallbackLocale: 'no'
-    });
-    return {};
-  }
 </script>
 
 <script lang="ts">
+  import { isLoginOpen } from '$lib/stores';
   import Header from '$lib/layout/Header.svelte';
   import Footer from '$lib/layout/Footer.svelte';
+  import Login from '$lib/internal/Login.svelte';
 </script>
 
 <Header />
 
-<main>
-  <slot />
-</main>
+<div class="border">
+  <main>
+    <slot />
+  </main>
+</div>
 
 <Footer />
+
+{#if $isLoginOpen}
+  <Login />
+{/if}
 
 <style>
   main {
     align-items: center;
     margin: auto;
+  }
+
+  .border {
+    width: 100%;
+    height: 100%;
+    border: 10px solid var(--color-bg-secondary);
+    box-sizing: border-box;
   }
 </style>

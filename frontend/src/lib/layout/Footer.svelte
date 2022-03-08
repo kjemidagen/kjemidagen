@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { t } from 'svelte-intl-precompile';
 </script>
 
 <footer>
@@ -18,23 +17,22 @@
     </div>
 
     <div class="footer-about">
-      &copy; {$t('year')}
-      {$t('Kjemidagen')} <br />
-      {$t('orgnr')} 992 641 231<br />&nbsp;<br />
+      &copy; 2022 Kjemidagen <br />
+      Org.nr 992 641 231<br />&nbsp;<br />
 
-      {$t('address')}:<br />
+      Adresse:<br />
       Institutt for kjemisk prosessteknologi<br />
       Sem Sælands vei 4<br />
       7491 Trondheim<br />&nbsp;<br />&nbsp;<br />
 
-      <a class="back-to-top" href="#banner">{$t('backtotop')}</a>
+      <a class="back-to-top" href="#banner">Tilbake til toppen</a>
     </div>
   </div>
 </footer>
 
 <style>
   footer {
-    background-color: var(--color-bg-primary);
+    background-color: var(--color-bg-brand);
   }
   .center {
     align-items: center;

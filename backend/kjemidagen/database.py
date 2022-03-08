@@ -1,29 +1,18 @@
 import os
-from sqlmodel.ext.asyncio.session import AsyncSession
-from sqlalchemy.ext.asyncio import create_async_engine
+from beanie import init_beanie
+import motor.motor_asyncio
 from dotenv import load_dotenv
+from kjemidagen.models import User, RefreshToken, Company
 
 load_dotenv()
 host = os.getenv("DBServer")
 user = os.getenv("DBUser")
-dbname = os.getenv("Database")
 password = os.getenv("DBPassword")
 port = os.getenv("DBPort")
 
-DATABASE_URL = f"postgresql+asyncpg://{user}:{password}@{host}:{port}/{dbname}"
+DATABASE_URL = f"mongodb://{user}:{password}@{host}:{port}"
+# DATABASE_URL = f"mongodb://root:kjemidagen@mongodb:27017"
 
-engine = create_async_engine(
-    DATABASE_URL,
-    echo=True, #Remember to turn this off when going to prod
-    future=True
-)
-
-async def get_session():
-    async with AsyncSession(engine) as session:
-        try:
-            yield session
-        finally:
-            await session.close()
-
-# import all SQLModels which are tables in the database to get their metadata
-import kjemidagen.models
+async def init_database():
+    client = motor.motor_asyncio.AsyncIOMotorClient(DATABASE_URL)
+    await init_beanie(database=client.db_name, document_models=[User, Company, RefreshToken])
