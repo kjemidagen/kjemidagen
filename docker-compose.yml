@@ -24,8 +24,8 @@ services:
     image: mongo
     container_name: mongodb
     environment:
-      - PUID=1000
-      - PGID=1000
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=kjemidagen
     volumes:
       - ./database:/data/db
     ports:
