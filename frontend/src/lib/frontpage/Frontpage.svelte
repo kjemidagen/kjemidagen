@@ -17,13 +17,13 @@
       <p>Vi gleder oss til å se dere på Kjemidagen!</p>
     </div>
   </div>
-  <img alt="jotun" src="/jotun.jpg" />
 </section>
 
 <style>
   .content {
     max-width: var(--document-width);
     margin: auto;
+    margin-top: 5rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 2rem;

@@ -17,6 +17,7 @@
       <li><a href="/english">English</a></li>
       <li>
         <button
+          class="login"
           href="/login"
           on:click={(event) => {
             event.preventDefault;
@@ -57,6 +58,14 @@
   }
   .logo {
     margin-right: 0.5rem;
+  }
+
+  .login {
+    border: 1px solid var(--color-text-inverted);
+    border-radius: 3px;
+    background-color: inherit;
+    color: var(--color-text-inverted);
+    cursor: pointer;
   }
 
   ul {

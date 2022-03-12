@@ -17,8 +17,7 @@
 
 <style>
   .contact {
-    background: var(--color-bg-secondary);
-    color: var(--color-text-brand);
+    background: var(--color-bg-primary);
     padding: 40px 0;
   }
   .content {

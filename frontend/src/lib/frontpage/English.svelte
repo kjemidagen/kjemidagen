@@ -61,7 +61,7 @@
 
 <style>
   .about {
-    background: var(--color-bg-secondary);
+    background: var(--color-bg-primary);
   }
   .content {
     max-width: var(--document-width);
@@ -69,10 +69,7 @@
     margin: auto;
     padding: 3rem 0;
   }
-  h3,
-  h4 {
-    color: var(--color-text-brand);
-  }
+
   h3 {
     margin-bottom: 2rem;
   }

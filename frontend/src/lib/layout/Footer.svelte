@@ -33,6 +33,7 @@
 <style>
   footer {
     background-color: var(--color-bg-brand);
+    color: var(--color-text-muted);
   }
   .center {
     align-items: center;
@@ -51,5 +52,9 @@
   }
   .list-collaborators {
     padding-left: 16px;
+  }
+
+  .back-to-top {
+    color: var(--color-text-muted);
   }
 </style>

@@ -3,7 +3,7 @@
 
 <section class="companies">
   <div class="content" id="companies">
-    <h3>bedrifter</h3>
+    <h3>Bedrifter</h3>
     <p>Følgende bedrifter kommer på kjemidagen i høst</p>
     <img src="/companies_21.png" alt="bedriftene som er med på kjemidagen" />
   </div>
@@ -12,7 +12,6 @@
 <style>
   .companies {
     background: var(--color-text-loud);
-    color: var(--color-text-brand);
     padding: 40px 0;
   }
   .content {
