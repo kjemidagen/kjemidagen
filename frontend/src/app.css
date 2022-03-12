@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
 }
 a {
-  color: var(--color-text-loud);
+  color: var(--color-text-brand);
   text-decoration: none;
 }
 a:hover {

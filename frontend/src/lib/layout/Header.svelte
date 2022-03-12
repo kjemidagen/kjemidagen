@@ -66,4 +66,8 @@
     display: inline-block;
     margin: auto 0.3rem;
   }
+
+  a {
+    color: var(--color-text-loud);
+  }
 </style>

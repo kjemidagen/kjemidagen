@@ -12,9 +12,8 @@
   section {
     position: relative;
     max-width: 100%;
-    background: url('/header.jpg') no-repeat center center;
     background-size: cover;
-    height: 600px;
+    box-sizing: border-box;
   }
   .title {
     position: relative;
@@ -35,7 +34,7 @@
     text-decoration: none;
   }
   h2 {
-    color: #fff;
+    color: var(--color-text-brand);
     font-size: 6rem;
     line-height: 1;
   }
