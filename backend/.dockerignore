@@ -12,3 +12,6 @@ README-secret.md
 Dockerfile
 README.md
 docker-compose.yml
+
+# ignore pycache
+__pycache__
