@@ -19,9 +19,11 @@ services:
     depends_on:
       - mongodb
     ports:
-      - 8001:8001
+      - 8000:80
     environment:
       - DBServer=mongodb
+    volumes:
+      - ./backend/kjemidagen:/kjemidagen
   mongodb:
     image: mongo
     container_name: mongodb
