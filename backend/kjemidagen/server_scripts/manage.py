@@ -1,7 +1,7 @@
 import typer
-from models import User
-from crypto import hash_password
-from database import init_database
+from ..models import User
+from ..crypto import hash_password
+from ..database import init_database
 import re
 import asyncio
 
@@ -17,7 +17,7 @@ async def _validate_username(email: str):
     if not re.fullmatch(email_regex, email):
         raise typer.BadParameter(f"\"{email}\" not an email.")
 
-    check_if_taken = User.find(User.username==email).to_list()
+    check_if_taken = await User.find(User.username==email).to_list()
     if len(check_if_taken) > 0:
         raise typer.BadParameter(f"Email \"{email}\" is taken.")
 

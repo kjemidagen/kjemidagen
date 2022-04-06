@@ -16,6 +16,11 @@ Migrere: `docker-compose -f <docker-compose[.filen som du bruker].yml> exec back
 
 Testing fungerer ikke lengre etter vi byttet til mongodb. ~~Testing er støttet av pytest og kjøres enkelt ved å kjøre `pytest`.~~
 
+### Admin-kontrollpanel
+
+Få tilgang ved `docker compose exec backend python -m kjemidagen.server_scripts.manage`.
+Brukes til å f.eks. opprette den første admin-brukeren.
+
 ## Porøse systemer
 
 ### Refresh-token-rullering
