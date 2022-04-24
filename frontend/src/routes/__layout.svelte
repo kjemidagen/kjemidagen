@@ -4,14 +4,20 @@
 
 <script lang="ts">
   import { isLoginOpen } from '$lib/stores';
+  import MobileHeader from '$lib/layout/MobileHeader.svelte';
   import Header from '$lib/layout/Header.svelte';
   import Footer from '$lib/layout/Footer.svelte';
   import Login from '$lib/internal/Login.svelte';
+
+  export const mobile = true;
 </script>
 
 <a class="skiptocontent" href="#main">Hopp til innhold</a>
-
-<Header />
+{#if mobile}
+  <MobileHeader />
+{:else}
+  <Header />
+{/if}
 
 <div class="border">
   <main id="main">

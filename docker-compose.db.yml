@@ -4,7 +4,7 @@ services:
     image: mongo
     container_name: mongodb
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=kjemidagen
     volumes:
       - ./database:/data/db
