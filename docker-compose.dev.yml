@@ -24,7 +24,9 @@ services:
     environment:
       - DBServer=mongodb
     volumes:
-      - ./backend/kjemidagen:/kjemidagen
+      - type: bind
+        source: ./backend/kjemidagen
+        target: /kjemidagen
   mongodb:
     image: mongo
     container_name: mongodb

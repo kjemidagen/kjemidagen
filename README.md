@@ -10,6 +10,8 @@ default filnavn er `docker-compose.yml` og i det tilfellet kan `-f <filnavn>` dr
 
 ### Filene
 
+https://docs.docker.com/storage/bind-mounts/#use-a-bind-mount-with-compose
+
 `docker-compose.db.yml` postgres-database og pgadmin. Intended for rask utvikling av backend.
 `docker-compose.backend.yml` backendserver og postgres-database. Intended for rask utvikling av frontend.
 `docker-compose.dev.yml` frontend, backendserver og postgres-database. Intended for utvikling av hele stacken.

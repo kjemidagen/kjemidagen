@@ -11,8 +11,9 @@
 
   --color-dark: #1e1a1d;
 }
+
 body {
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 section {
   position: relative;

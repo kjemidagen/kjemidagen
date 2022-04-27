@@ -8,25 +8,26 @@
       <img class="logo" src="/logo_inverted.svg" alt="logo" width="40" />
       <span>Kjemidagen</span>
     </a>
-    <ul>
+    <ul class="navigation">
       <li><a href="/">Hjem</a></li>
       <li><a href="/about">Om kjemidagen</a></li>
       <li><a href="/program">Program</a></li>
       <li><a href="/contact">Ta kontakt</a></li>
       <li><a href="/companies">Bedrifter</a></li>
       <li><a href="/english">English</a></li>
-      <li>
-        <button
-          class="login"
-          href="/login"
-          on:click={(event) => {
-            event.preventDefault;
-            $isLoginOpen = true;
-            return false;
-          }}>Logg inn</button
-        >
-      </li>
     </ul>
+    <button>
+      <img src="hamburgermeny.svg" alt="hamburgermeny" />
+    </button>
+    <button
+      class="login"
+      href="/login"
+      on:click={(event) => {
+        event.preventDefault;
+        $isLoginOpen = true;
+        return false;
+      }}>Logg inn</button
+    >
   </div>
 </header>
 
@@ -68,9 +69,6 @@
     cursor: pointer;
   }
 
-  ul {
-    list-style: none;
-  }
   li {
     display: inline-block;
     margin: auto 0.3rem;
@@ -78,5 +76,15 @@
 
   a {
     color: var(--color-text-loud);
+  }
+
+  .navigation {
+    list-style: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .navigation {
+      visibility: hidden;
+    }
   }
 </style>
