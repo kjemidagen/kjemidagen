@@ -1,62 +1,45 @@
 <script lang="ts">
+  import { t } from '$lib/translations/translations';
 </script>
 
 <section class="about" id="about">
   <div class="content">
     <div class="about-intro">
-      <h3>Om Kjemidagen</h3>
-
-      <p>
-        Kjemidagen er en unik bedriftsdag på NTNU for sivilingeniørstudenter på linjene
-        Nanoteknologi, og Industriell Kjemi og Bioteknologi. Dette er en dag for og av studenter,
-        noe som skaper et stort engasjement rundt arrangementet. Vi er opptatt av å skape god
-        kontakt mellom studentene ved våre linjer og aktører i næringslivet. Derfor tilbyr vi
-        Kjemidagen som et helhetlig arrangement hvor bedriftene får anledning til å komme i kontakt
-        med studentene på flere arenaer i løpet av dagen. Kjemidagen er en populær begivenhet for
-        studentene og derfor er oppmøtet og oppslutningen alltid stor. Dagen trekker studenter på
-        alle årstrinn og fra alle studieretninger.
-      </p>
+      <h3>{$t('about.theboard')}</h3>
     </div>
 
     <div class="about-content">
       <article>
-        <h4>Engasjement</h4>
-        <p>
-          Kjemidagens aller sterkeste side er studentenes engasjement rundt selve dagen. Dette er en
-          bedriftsdag for og av studenter. Det er den store dugnadsånden, og ikke minst et brennende
-          engasjement, som gjør at Kjemidagen har blitt en stor suksess i løpet av sine få år. Dagen
-          engasjerer hele 3. klasse, i tillegg til flere frivillige, som bruker mye av tiden sin på
-          å gjøre Kjemidagen til NTNUs beste bedriftsdag. Vi ønsker at Kjemidagen skal være en
-          begivenhet som studentene ser frem til og ikke kun en vanlig bedriftsdag.
-        </p>
+        <h4>Pia Nedreås</h4>
+        <h5>{$t('about.leader')}</h5>
+        <h5><a href="mailto:leder@kjemidagen.no">leder@kjemidagen.no</a></h5>
       </article>
 
       <article>
-        <h4>Interaksjon</h4>
-        <p>
-          På Kjemidagen i 2019, som var forrige gang karrieredagen ble gjennomført på fysisk på
-          campus, deltok 23 bedrifter samt flere av instituttene ved NTNU. Dette er en størrelse vi
-          ønsker å beholde slik at både bedrifter og studenter skal føle seg sett. I tillegg til
-          dette mener vi at rekruttering strekker seg langt utover kombinasjonen stand og
-          bedriftspresentasjon. For å gi bedrifter muligheten til å bli kjent med studentene,
-          arrangerer vi bankett med lett underholdning på kvelden.
-        </p>
+        <h4>Celina Ryholt</h4>
+        <h5>{$t('about.deputy')}</h5>
+        <h5><a href="mailto:nestleder@kjemidagen.no">nestleder@kjemidagen.no</a></h5>
       </article>
 
       <article>
-        <h4>Relevans</h4>
-        <p>
-          På Kjemidagen i 2019, som var forrige gang karrieredagen ble gjennomført på fysisk på
-          campus, deltok 23 bedrifter samt flere av instituttene ved NTNU. Dette er en størrelse vi
-          ønsker å beholde slik at både bedrifter og studenter skal føle seg sett. I tillegg til
-          dette mener vi at rekruttering strekker seg langt utover kombinasjonen stand og
-          bedriftspresentasjon. For å gi bedrifter muligheten til å bli kjent med studentene,
-          arrangerer vi bankett med lett underholdning på kvelden.
-        </p>
+        <h4>Herman Berggren</h4>
+        <h5>{$t('about.economist')}</h5>
+        <h5><a href="mailto:okonomiansvarlig@kjemidagen.no">okonomiansvarlig@kjemidagen.no</a></h5>
+      </article>
+
+      <article>
+        <h4>Vivi Gunnarsrud</h4>
+        <h5>{$t('prboss')}</h5>
+        <h5><a href="mailto:pr-sjef@kjemidagen.no">pr-sjef@kjemidagen.no</a></h5>
+      </article>
+
+      <article>
+        <h4>Cecilie Bakketun</h4>
+        <h5>{$t('rigg')}</h5>
+        <h5><a href="mailto:riggeansvarlig@kjemidagen.no">riggeansvarlig@kjemidagen.no</a></h5>
       </article>
     </div>
   </div>
-  <!-- <img src="/exxon.jpg" alt="exxon" /> -->
 </section>
 
 <style>

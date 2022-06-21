@@ -1,13 +1,13 @@
 <script lang="ts">
   import { browser, dev } from '$app/env';
-  import English from '$lib/frontpage/English.svelte';
+  import Sponsors from '$lib/frontpage/Sponsors.svelte';
   export const hydrate = dev;
   export const router = browser;
   export const prerender = true;
 </script>
 
 <svelte:head>
-  <title>Chemistry day</title>
+  <title>Ta kontakt</title>
 </svelte:head>
 
-<English />
+<Sponsors />

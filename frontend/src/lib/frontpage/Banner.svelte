@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { t } from '$lib/translations/translations';
 </script>
 
 <section class="banner" id="banner">
   <div class="title">
-    <h1>Kjemidagen</h1>
-    <h2>Tirsdag 19. Oktober 2021</h2>
+    <h1>{$t('common.chemday')}</h1>
+    <h2>{$t('frontpage.when')}</h2>
+    <h2>{$t('frontpage.where')}</h2>
   </div>
 </section>
 

@@ -1,16 +1,16 @@
 <script lang="ts">
 </script>
 
-<section class="companies">
-  <div class="content" id="companies">
-    <h3>Bedrifter</h3>
-    <p>Mer informasjon om bedrifter kommer</p>
-    <!-- <img src="/companies_21.png" alt="bedriftene som er med på kjemidagen" /> -->
+<section class="sponsors">
+  <div class="content" id="sponsors">
+    <h3>Sponsorer</h3>
+    <p>Mer informasjon om sponsorer kommer</p>
+    <!-- <img src="/sponsors_22.png" alt="bedriftene som er med på kjemidagen" /> -->
   </div>
 </section>
 
 <style>
-  .companies {
+  .sponsors {
     background: var(--color-text-loud);
     padding: 40px 0;
   }

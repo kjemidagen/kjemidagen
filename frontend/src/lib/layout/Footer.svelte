@@ -1,31 +1,28 @@
 <script lang="ts">
+  import { t } from '$lib/translations/translations';
 </script>
 
 <footer>
   <div class="center">
-    <div class="footer-collaborators">
-      I samarbeid med:
-      <ul class="list-collaborators">
-        <li>Institutt for materialteknologi</li>
-        <li>Institutt for kjemisk prosessteknologi</li>
-        <li>Institutt for kjemi</li>
-        <li>Institutt for bioteknologi</li>
-        <li>Samarbeidsforum</li>
-      </ul>
-      <br />
-      <img src="/sf_logo.png" alt="Samarbeidsforum logo" />
-    </div>
-
     <div class="footer-about">
-      &copy; 2022 Kjemidagen <br />
+      Kjemidagen 2022<br />
       Org.nr 992 641 231<br />&nbsp;<br />
 
-      Adresse:<br />
-      Institutt for kjemisk prosessteknologi<br />
-      Sem Sælands vei 4<br />
-      7491 Trondheim<br />&nbsp;<br />&nbsp;<br />
+      Realfagbygget (NTNU)<br />
+      Høgskoleringen 5<br />
+      7034 Trondheim<br />&nbsp;<br />&nbsp;<br />
 
       <a class="back-to-top" href="#banner">Tilbake til toppen</a>
+    </div>
+    <div>
+      {$t('common.contactus')} <br />
+      <a href="mailto:kontakt@kjemidagen.no">kontakt@kjemidagen.no</a>
+    </div>
+    <div class="footer-collaborators">
+      <h6>SoMe</h6>
+      LinkedIn-link<br />
+      Facebook-link<br />
+      Insta-link<br />
     </div>
   </div>
 </footer>
@@ -46,12 +43,6 @@
   .footer-collaborators {
     padding: 16px 40px;
     float: left;
-  }
-  img {
-    max-width: 100%;
-  }
-  .list-collaborators {
-    padding-left: 16px;
   }
 
   .back-to-top {

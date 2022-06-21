@@ -1,21 +1,24 @@
-<script context="module" lang="ts">
-  import { browser, dev } from '$app/env';
-  export const hydrate = dev;
-  export const router = browser;
-  export const prerender = false;
+<script context="module">
+  import { t, locale, loadTranslations } from '$lib/translations/translations';
 
-  /** @type {import('@sveltejs/kit').ErrorLoad} */
-  export function load({ error, status }) {
-    return {
-      props: {
-        title: `${status}: ${error.message}`
-      }
-    };
-  }
+  /** @type {import('@sveltejs/kit').Load} */
+  export const load = async ({ stuff, props }) => {
+    await loadTranslations(stuff.lang, 'error');
+
+    return {};
+  };
 </script>
 
 <script>
-  export let title;
+  import { page } from '$app/stores';
+
+  export let status = $page.status;
 </script>
 
-<h1>{title}</h1>
+<div class="content">
+  <h1>{$t('error.shit.happens')} ({status})</h1>
+  <p>{$t(`error.${status}`, { default: $t('error.default') })}</p>
+  <br />
+  <br />
+  {$locale} - {$t(`lang.${$locale}`)}
+</div>

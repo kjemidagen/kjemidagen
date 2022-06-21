@@ -40,6 +40,7 @@
     "install-peers": "^1.0.3",
     "postcss": "^8.4.5",
     "svelte-kit": "^1.0.0",
+    "sveltekit-i18n": "^2.2.2",
     "yarn": "^1.22.17"
   }
 }

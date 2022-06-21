@@ -1,24 +1,39 @@
-<script>
+<script lang="ts">
   import { isLoginOpen } from '$lib/stores';
+
+  import { t, locales, locale } from '$lib/translations/translations';
+  import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
+
+  $: ({ route } = $page.stuff);
+  const handleLanguageSwitch: svelte.JSX.ChangeEventHandler<HTMLSelectElement> = ({ target }) => {
+    const target2 = target as HTMLOptionElement; // This is ugly
+    console.log(target2.value);
+    goto(target2.value);
+  };
 </script>
 
 <header id="header">
   <div class="center">
     <a class="home" href={'/'}>
       <img class="logo" src="/logo_inverted.svg" alt="logo" width="40" />
-      <span>Kjemidagen</span>
+      <span>{$t('common.chemday')}</span>
     </a>
     <ul class="navigation">
-      <li><a href="/">Hjem</a></li>
-      <li><a href="/about">Om kjemidagen</a></li>
-      <li><a href="/program">Program</a></li>
-      <li><a href="/contact">Ta kontakt</a></li>
-      <li><a href="/companies">Bedrifter</a></li>
-      <li><a href="/english">English</a></li>
+      <li><a href="/">{$t('common.home')}</a></li>
+      <li><a href="/about">{$t('common.about')}</a></li>
+      <li><a href="/program">{$t('common.program')}</a></li>
+      <li><a href="/companies">{$t('common.companies')}</a></li>
+      <li><a href="/sponsors">{$t('common.sponsors')}</a></li>
     </ul>
     <button>
       <img src="hamburgermeny.svg" alt="hamburgermeny" />
     </button>
+    <select on:change={handleLanguageSwitch}>
+      {#each $locales as lc}
+        <option value="/{lc}{route}" selected={lc === $locale}>{$t(`lang.${lc}`)}</option>
+      {/each}
+    </select>
     <button
       class="login"
       href="/login"
@@ -26,7 +41,7 @@
         event.preventDefault;
         $isLoginOpen = true;
         return false;
-      }}>Logg inn</button
+      }}>{$t('common.login')}</button
     >
   </div>
 </header>
