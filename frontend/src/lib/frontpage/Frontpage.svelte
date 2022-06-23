@@ -1,6 +1,7 @@
 <script lang="ts">
 </script>
 
+<!-- For øyeblikket ubrukt, men jeg lar den stå til inspirasjon i fremtiden -->
 <section class="frontpage" id="frontpage">
   <div class="content">
     <div class="frontpage-content">

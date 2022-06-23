@@ -1,8 +1,8 @@
 {
   "theboard": "Styret",
-  "leader": "Leder",
-  "deputy": "Nestleder",
+  "leader": "Leiar",
+  "deputy": "Nestleiar",
   "economist": "Økonomisjef",
   "prboss": "PR-Sjef",
-  "rigg": "Riggeansvarlig"
+  "rigg": "Riggeansvarleg"
 }

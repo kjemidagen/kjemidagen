@@ -1,47 +1,40 @@
 <script lang="ts">
+  import { t } from '$lib/translations/translations';
 </script>
 
 <section class="program" id="program">
   <div class="content">
-    <h3>Årets program</h3>
+    <h3>{$t('program.title')}</h3>
     <div class="program-body">
       <img src="/raworth-lecture.jpg" alt="lecture room" width="400px" height="400px" object-fit />
       <div class="program-text">
         <table class="program-table">
           <tr><th class="left-col"><b>19. oktober</b></th></tr>
-          <tr><td class="left-col">10:00</td> <td>Åpning med ballongslipp </td></tr>
-          <tr><td class="left-col">10:15 - 15:00</td> <td>Bedriftsstands </td></tr>
-          <tr><td class="left-col">10:15 - 15:00</td> <td>Speedintervju </td></tr>
-          <tr><td class="left-col">10:30 - 13:00</td> <td>CV-fotografering </td></tr>
-          <tr><td class="left-col">11:15</td> <td>Motivasjonsforedrag </td></tr>
-          <tr><td class="left-col">13:15</td> <td>Sommerjobbmaraton </td></tr>
-          <tr><td class="left-col">14:00</td> <td>Jobbmaraton </td></tr>
-          <tr><td class="left-col">18:30</td> <td>Bankett </td></tr>
+          <tr><td class="left-col">10:00</td> <td>{$t('program.opening')}</td></tr>
+          <tr><td class="left-col">10:15 - 15:00</td> <td>{$t('program.stands')}</td></tr>
+          <tr><td class="left-col">10:15 - 15:00</td> <td> {$t('program.speedinterview')} </td></tr>
+          <tr><td class="left-col">10:30 - 13:00</td> <td> {$t('program.cvphoto')} </td></tr>
+          <tr><td class="left-col">11:15</td> <td> {$t('program.motivationalspeaking')} </td></tr>
+          <tr><td class="left-col">13:15</td> <td> {$t('program.summerjob')} </td></tr>
+          <tr><td class="left-col">14:00</td> <td>{$t('program.jobmarathon')} </td></tr>
+          <tr><td class="left-col">18:30</td> <td>{$t('program.banquet')} </td></tr>
         </table>
         <div>
-          <h3>Speedintervju</h3>
+          <h3>{$t('program.speedinterview')}</h3>
           <p>
-            Alle bedriftene vil på forhånd ha mulighet til å reservere et eget rom for speedintervju
-            i løpet av dagen. Dette er en spennende mulighet for studenter og bedrifter, og en fin
-            mulighet for deltakende bedrift å finne sin neste kollega.
+            {$t('program.speedinterview_p')}
           </p>
-          <h3>Sommerjobbmaraton</h3>
+          <h3>{$t('program.summerjob')}</h3>
           <p>
-            Sommerjobbmaraton er et event hvor alle bedrifter som deltar på Kjemidagen får to
-            minutter til rådighet for å presentere sine sommerjobber og sommerprogram. Dette er et
-            meget populært arrangement med gode tilbakemeldinger fra både bedrifter og studenter.
+            {$t('program.summerjob_p')}
           </p>
-          <h3>Jobbmaraton</h3>
+          <h3>{$t('program.jobmarathon')}</h3>
           <p>
-            Jobbmaraton er et liknende event som sommerjobbmaraton, men istedenfor sommerjobber får
-            deltakende bedrifter mulighet til å kort presentere sine graduate- program,
-            traineestillinger, internships, masteroppgaver, Ph.d.-stillinger, og fulltidsstillinger.
+            {$t('program.jobmarathon_p')}
           </p>
-          <h3>Bankett</h3>
+          <h3>{$t('program.banquet')}</h3>
           <p>
-            På kvelden vil det arrangeres en bankett med bedriftsrepresentanter og 4. og 5.
-            årsstudenter. Banketten er en viktig del av Kjemidagen, og en fin mulighet for
-            bedriftene til å bli bedre kjent med våre studenter.
+            {$t('program.banquet_p')}
           </p>
         </div>
       </div>

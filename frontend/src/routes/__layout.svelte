@@ -10,6 +10,7 @@
     const route = pathname.replace(new RegExp(`^/${lang}`), '');
 
     await loadTranslations(lang, route);
+    console.log(lang, route);
 
     return { stuff: { route, lang } };
   };

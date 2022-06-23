@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { t } from '$lib/translations/translations';
 </script>
 
 <section class="companies">
   <div class="content" id="companies">
-    <h3>Bedrifter</h3>
-    <p>Mer informasjon om bedrifter kommer</p>
+    <h3>{$t('companies.companies')}</h3>
+    <p>{$t('companies.moreinfo')}</p>
     <!-- <img src="/companies_21.png" alt="bedriftene som er med på kjemidagen" /> -->
   </div>
 </section>

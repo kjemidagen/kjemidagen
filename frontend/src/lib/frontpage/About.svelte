@@ -56,7 +56,7 @@
   h3 {
     margin-bottom: 2rem;
   }
-  p {
+  h5 {
     color: #000;
   }
   .about-content {
@@ -64,11 +64,5 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
-  }
-  img {
-    z-index: -1;
-    object-fit: cover;
-    height: 35rem;
-    width: 100%;
   }
 </style>

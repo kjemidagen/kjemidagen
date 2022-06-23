@@ -6,11 +6,6 @@
   import { goto } from '$app/navigation';
 
   $: ({ route } = $page.stuff);
-  const handleLanguageSwitch: svelte.JSX.ChangeEventHandler<HTMLSelectElement> = ({ target }) => {
-    const target2 = target as HTMLOptionElement; // This is ugly
-    console.log(target2.value);
-    goto(target2.value);
-  };
 </script>
 
 <header id="header">
@@ -20,20 +15,20 @@
       <span>{$t('common.chemday')}</span>
     </a>
     <ul class="navigation">
-      <li><a href="/">{$t('common.home')}</a></li>
-      <li><a href="/about">{$t('common.about')}</a></li>
-      <li><a href="/program">{$t('common.program')}</a></li>
-      <li><a href="/companies">{$t('common.companies')}</a></li>
-      <li><a href="/sponsors">{$t('common.sponsors')}</a></li>
+      <li><a href="/{$locale}">{$t('common.home')}</a></li>
+      <li><a href="/{$locale}/about">{$t('common.about')}</a></li>
+      <li><a href="/{$locale}/program">{$t('common.program')}</a></li>
+      <li><a href="/{$locale}/companies">{$t('common.companies')}</a></li>
+      <li><a href="/{$locale}/sponsors">{$t('common.sponsors')}</a></li>
     </ul>
     <button>
-      <img src="hamburgermeny.svg" alt="hamburgermeny" />
+      <img src="/hamburgermeny.svg" alt="hamburgermeny" />
     </button>
-    <select on:change={handleLanguageSwitch}>
+    <ul class="language">
       {#each $locales as lc}
-        <option value="/{lc}{route}" selected={lc === $locale}>{$t(`lang.${lc}`)}</option>
+        <li><a href="/{lc}{route}">{lc}</a></li>
       {/each}
-    </select>
+    </ul>
     <button
       class="login"
       href="/login"
