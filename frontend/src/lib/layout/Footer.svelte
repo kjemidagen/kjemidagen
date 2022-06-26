@@ -20,9 +20,9 @@
     </div>
     <div class="footer-collaborators">
       <h6>SoMe</h6>
-      LinkedIn-link<br />
-      Facebook-link<br />
-      Insta-link<br />
+      <a href="https://www.linkedin.com/company/kjemidagen/">LinkedIn</a><br />
+      <a href="https://www.facebook.com/Kjemidagen/">Facebook</a><br />
+      <a href="https://www.instagram.com/kjemidagen/">Instagram</a><br />
     </div>
   </div>
 </footer>
