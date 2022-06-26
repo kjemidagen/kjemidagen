@@ -3,26 +3,32 @@
 
   import { t, locales, locale } from '$lib/translations/translations';
   import { page } from '$app/stores';
-  import { goto } from '$app/navigation';
 
   $: ({ route } = $page.stuff);
+  const routes = ['/', '/about/', '/program/', '/companies/', '/sponsors/'];
 </script>
 
-<header id="header">
-  <div class="center">
-    <a class="home" href={'/'}>
+<header id="header" class="bg-red">
+  <div class="px-4 grid grid-cols-8 h-16">
+    <a class="home col-span-2" href={'/'}>
       <img class="logo" src="/logo_inverted.svg" alt="logo" width="40" />
       <span>{$t('common.chemday')}</span>
     </a>
-    <ul class="navigation">
-      <li><a href="/{$locale}">{$t('common.home')}</a></li>
-      <li><a href="/{$locale}/about">{$t('common.about')}</a></li>
-      <li><a href="/{$locale}/program">{$t('common.program')}</a></li>
-      <li><a href="/{$locale}/companies">{$t('common.companies')}</a></li>
-      <li><a href="/{$locale}/sponsors">{$t('common.sponsors')}</a></li>
+    <ul class="navigation col-span-5">
+      {#each routes as routeName}
+        <li class="h-full flex flex-col float-left {route === routeName ? 'bg-red-light' : ''}">
+          <a class="justify-self-center m-auto" href="/{$locale}{routeName}">
+            {#if routeName === '/'}
+              {$t('common.home')}
+            {:else}
+              {$t('common.' + routeName.replace('/', '').replace('/', ''))}
+            {/if}
+          </a>
+        </li>
+      {/each}
     </ul>
-    <button>
-      <img src="/hamburgermeny.svg" alt="hamburgermeny" />
+    <button class="hidden">
+      <img class="w-8" src="/hamburgermeny.svg" alt="hamburgermeny" />
     </button>
     <ul class="language">
       {#each $locales as lc}
@@ -30,7 +36,7 @@
       {/each}
     </ul>
     <button
-      class="login"
+      class="hidden login"
       href="/login"
       on:click={(event) => {
         event.preventDefault;
@@ -49,16 +55,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    background-color: var(--color-bg-brand);
     z-index: 1000;
-  }
-  .center {
-    align-items: center;
-    max-width: var(--document-width);
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    padding: 1rem;
   }
   .home {
     display: flex;
@@ -80,8 +77,9 @@
   }
 
   li {
-    display: inline-block;
-    margin: auto 0.3rem;
+    display: inline-flex;
+    margin: auto 0;
+    padding: 0 0.5rem;
   }
 
   a {

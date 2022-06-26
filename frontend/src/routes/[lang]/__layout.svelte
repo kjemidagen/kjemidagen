@@ -13,26 +13,21 @@
 </script>
 
 <a class="skiptocontent" href="#main">{$t('common.skiptocontent')}</a>
-<Header />
+<div class="flex flex-col justify-between h-screen">
+  <Header />
 
-<div class="border">
-  <main id="main">
+  <main id="main" class="border-8 border-red-light p-0 flex-grow">
     <slot />
   </main>
-</div>
 
-<Footer />
+  <Footer />
+</div>
 
 {#if $isLoginOpen}
   <Login />
 {/if}
 
 <style>
-  main {
-    align-items: center;
-    margin: auto;
-  }
-
   main::before {
     display: block;
     content: ' ';
@@ -40,13 +35,6 @@
     height: 285px;
     visibility: hidden;
     pointer-events: none;
-  }
-
-  .border {
-    width: 100%;
-    height: 100%;
-    border: 10px solid var(--color-bg-secondary);
-    box-sizing: border-box;
   }
 
   .skiptocontent {

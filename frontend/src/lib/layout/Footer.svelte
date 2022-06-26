@@ -2,50 +2,27 @@
   import { t } from '$lib/translations/translations';
 </script>
 
-<footer>
-  <div class="center">
-    <div class="footer-about">
+<footer class="bg-red text-gray-200 py-7 grid-area-footer">
+  <div class="grid max-w-5xl m-auto grid-cols-3 mb-7">
+    <div>
       Kjemidagen 2022<br />
-      Org.nr 992 641 231<br />&nbsp;<br />
+      Org.nr 992 641 231<br />
 
       Realfagbygget (NTNU)<br />
       Høgskoleringen 5<br />
-      7034 Trondheim<br />&nbsp;<br />&nbsp;<br />
-
-      <a class="back-to-top" href="#banner">Tilbake til toppen</a>
+      7034 Trondheim<br />
     </div>
     <div>
       {$t('common.contactus')} <br />
-      <a href="mailto:kontakt@kjemidagen.no">kontakt@kjemidagen.no</a>
+      <a href="mailto:kontakt@kjemidagen.no" class="text-gray-200">kontakt@kjemidagen.no</a>
     </div>
-    <div class="footer-collaborators">
-      <h6>SoMe</h6>
-      <a href="https://www.linkedin.com/company/kjemidagen/">LinkedIn</a><br />
-      <a href="https://www.facebook.com/Kjemidagen/">Facebook</a><br />
-      <a href="https://www.instagram.com/kjemidagen/">Instagram</a><br />
+    <div class="text-gray-200">
+      <h6 class="text-lg underline">SoMe</h6>
+      <a href="https://www.linkedin.com/company/kjemidagen/" class="text-gray-200">LinkedIn</a><br
+      />
+      <a href="https://www.facebook.com/Kjemidagen/" class="text-gray-200">Facebook</a><br />
+      <a href="https://www.instagram.com/kjemidagen/" class="text-gray-200">Instagram</a><br />
     </div>
   </div>
+  <a class="text-gray-300 ml-96 underline" href="#banner">Tilbake til toppen</a>
 </footer>
-
-<style>
-  footer {
-    background-color: var(--color-bg-brand);
-    color: var(--color-text-muted);
-  }
-  .center {
-    align-items: center;
-    max-width: var(--document-width);
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    padding: 1rem;
-  }
-  .footer-collaborators {
-    padding: 16px 40px;
-    float: left;
-  }
-
-  .back-to-top {
-    color: var(--color-text-muted);
-  }
-</style>
