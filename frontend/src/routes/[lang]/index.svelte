@@ -1,6 +1,6 @@
 <script context="module">
   import { browser, dev } from '$app/env';
-  import Banner from '$lib/frontpage/Banner.svelte';
+  import Frontpage from '$lib/frontpage/Frontpage.svelte';
 
   // we don't need any JS on this page, though we'll load
   // it in dev so that we get hot module replacement...
@@ -19,4 +19,4 @@
   <title>Kjemidagen</title>
 </svelte:head>
 
-<Banner />
+<Frontpage />

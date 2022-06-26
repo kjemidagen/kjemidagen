@@ -24,9 +24,4 @@
     color: var(--color-text-base);
     padding: 0 1rem;
   }
-  img {
-    display: block;
-    margin: 30px auto;
-    max-width: 100%;
-  }
 </style>

@@ -23,7 +23,7 @@ services:
     environment:
       - DBServer=mongodb
   mongodb:
-    image: mongo
+    image: mongo:4.2.21
     container_name: mongodb
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
