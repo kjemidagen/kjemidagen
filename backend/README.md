@@ -6,12 +6,6 @@ Alt av endpoints og slik ligger på `localhost:8000/docs`
 
 FastAPI og SQLModel har begge fantastisk dokumentasjon. Den finner du på [fastapi.tiangolo.com](fastapi.tiangolo.com) og [sqlmodel.tiangolo.com](sqlmodel.tiangolo.com).
 
-## Alembic
-
-Generere migration: `docker-compose -f <docker-compose[.filen som du bruker].yml> exec backend alembic revision --autogenerate -m <informativ tekst>`
-NBNB! Husk å lese over at de stemmer. Spesielt må `kjemidagen.sql_uuid.UUID` må skrives om til `sqlalchemy.dialects.postgresql.UUID`.
-Migrere: `docker-compose -f <docker-compose[.filen som du bruker].yml> exec backend alembic upgrade head`
-
 ## Testing
 
 Testing fungerer ikke lengre etter vi byttet til mongodb. ~~Testing er støttet av pytest og kjøres enkelt ved å kjøre `pytest`.~~
