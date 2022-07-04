@@ -4,9 +4,10 @@ from kjemidagen.database import init_database
 from getpass import getpass
 import re
 import asyncio
+from datetime import datetime
 
 async def _create_initial_user(email: str, password: str):
-    new_user = User(username=email, hashed_password=hash_password(password=password), )
+    new_user = User(username=email, hashed_password=hash_password(password=password), created_at=datetime.now(), updated_at=datetime.now())
     await new_user.insert()
     print("Success, user created")
 

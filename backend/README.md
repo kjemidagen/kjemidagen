@@ -12,10 +12,8 @@ Testing fungerer ikke lengre etter vi byttet til mongodb. ~~Testing er støttet 
 
 ### Admin-kontrollpanel
 
-Få tilgang ved `docker compose exec backend python -m kjemidagen.server_scripts.manage`.
+Få tilgang ved `docker compose exec backend python -m kjemidagen.server_scripts.create_initial_user`.
 Brukes til å f.eks. opprette den første admin-brukeren.
-
-## Porøse systemer
 
 ### Refresh-token-rullering
 
