@@ -1,9 +1,9 @@
-FROM node:18
+FROM node:18 as builder
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci
 
 # Copy all the silly config files because i cant be bothered to bind mount
 COPY *.js *.json *.cjs .env ./

@@ -3,7 +3,7 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: frontend.dockerfile
+      dockerfile: frontend.prod.dockerfile
     volumes:
       - ./frontend/static:/app/static:ro
       - ./frontend/src:/app/src:ro
@@ -14,8 +14,7 @@ services:
       - backend
     environment:
       - VITE_PUBLIC_API_URL=http://backend:8000
-    command: npm run dev -- --host 0.0.0.0
-    # command: /bin/sh -c "BUILD_OUT_DIR=/build npm run build; node build" # Prod??
+    command: /bin/sh -c "npm run build; node build/index.js"
   backend:
     build:
       context: ./backend
