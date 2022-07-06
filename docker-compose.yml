@@ -5,15 +5,17 @@ services:
       context: ./frontend
       dockerfile: frontend.dockerfile
     volumes:
-      - ./frontend/:/app/
+      - ./frontend/static:/app/static:ro
+      - ./frontend/src:/app/src:ro
     working_dir: /app/
     ports:
-      - 80:3000
+      - 3000:3000
     depends_on:
       - backend
     environment:
       - VITE_PUBLIC_API_URL=http://backend:8000
-    command: node build
+    command: npm run dev -- --host 0.0.0.0
+    # command: /bin/sh -c "BUILD_OUT_DIR=/build npm run build; node build" # Prod??
   backend:
     build:
       context: ./backend
@@ -29,10 +31,9 @@ services:
       - DBServer=mongodb
     command: uvicorn kjemidagen.main:app --host 0.0.0.0 --port 8000
   mongodb:
-    image: mongo:4.2.21
-    container_name: mongodb
+    image: mongo:5.0
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=kjemidagen
     volumes:
       - database:/data/db
@@ -42,3 +43,4 @@ services:
 
 volumes:
   database:
+  build:

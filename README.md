@@ -4,15 +4,10 @@ Se respektive readmes for frontend og backend
 
 ## Docker
 
-For å kjøre: `docker-compose -f <filnavn> up`.
-For å "skru av og på igjen" `docker-compose -f <filnavn> down -v`.
-default filnavn er `docker-compose.yml` og i det tilfellet kan `-f <filnavn>` droppes.
+For å kjøre: `docker-compose up`.
+For å "skru av og på igjen" grundig `docker-compose down -v`, så `up`.
 
-### Filene
+## Filewatcher
 
-https://docs.docker.com/storage/bind-mounts/#use-a-bind-mount-with-compose
-
-`docker-compose.db.yml` postgres-database og pgadmin. Intended for rask utvikling av backend.
-`docker-compose.backend.yml` backendserver og postgres-database. Intended for rask utvikling av frontend.
-`docker-compose.dev.yml` frontend, backendserver og postgres-database. Intended for utvikling av hele stacken.
-`docker-compose.yml` production-containeren.
+Fordi file watching og docker ikke spiller så godt på lag på windows har jeg laget et hjelpeskript i python.  
+Kjør det med `python run_docker.py` og ikke vær redd for å endre det. Det eneste det gjør er å kjørr `docker compose restart <service>` når filer endres i den tilhørende mappen.

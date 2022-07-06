@@ -29,13 +29,13 @@
 
       <article>
         <h4>Vivi Gunnarsrud</h4>
-        <h5>{$t('prboss')}</h5>
+        <h5>{$t('about.prboss')}</h5>
         <h5><a href="mailto:pr-sjef@kjemidagen.no">pr-sjef@kjemidagen.no</a></h5>
       </article>
 
       <article>
         <h4>Cecilie Bakketun</h4>
-        <h5>{$t('rigg')}</h5>
+        <h5>{$t('about.rigg')}</h5>
         <h5><a href="mailto:riggeansvarlig@kjemidagen.no">riggeansvarlig@kjemidagen.no</a></h5>
       </article>
     </div>

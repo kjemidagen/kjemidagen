@@ -5,10 +5,16 @@ from getpass import getpass
 import re
 import asyncio
 from datetime import datetime
+from pprint import pprint
 
 async def _create_initial_user(email: str, password: str):
-    new_user = User(username=email, hashed_password=hash_password(password=password), created_at=datetime.now(), updated_at=datetime.now())
-    await new_user.insert()
+    new_user = User(
+        username=email, 
+        hashed_password=hash_password(password=password), 
+        is_admin=True
+    )
+    new_user = await User.insert_one(new_user)
+    pprint(new_user)
     print("Success, user created")
 
 async def _validate_email(email: str):
@@ -28,7 +34,7 @@ async def main():
     while True:
         print("Email: ", end="")
         email = input().strip().lower()
-        if _validate_email: 
+        if (await _validate_email(email)) == True: 
             break
     # Get password
     while True:

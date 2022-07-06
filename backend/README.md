@@ -12,7 +12,12 @@ Testing fungerer ikke lengre etter vi byttet til mongodb. ~~Testing er støttet 
 
 ### Admin-kontrollpanel
 
-Få tilgang ved `docker compose exec backend python -m kjemidagen.server_scripts.create_initial_user`.
+Få tilgang ved ~~`docker compose exec backend python -m kjemidagen.server_scripts.create_initial_user`. ~~
+Ser ut til at dette ^ lager en separat mongo server...
+Bruk heller cli fra docker desktop appen.  
+![docker cli](./imgs/docker_cli.png =300x)  
+Kjør kommandoen `python -m kjemidagen.server_scripts.create_initial_user` for å opprette en bruker.
+
 Brukes til å f.eks. opprette den første admin-brukeren.
 
 ### Refresh-token-rullering
@@ -21,5 +26,5 @@ Auth-systemet er jeg redd kan være noe porøst fordi det rullerer refresh token
 
 ## PGSQL Command line
 
-Komme til cli: `docker-compose -f docker-compose.backend.yml exec postgres bash -it` eller docker desktop cli.
-For å koble til: `psql --username <brukernavn> --dbname kjemidagen`. Resten får du google.
+Komme til cli: `docker-compose exec mongodb bash -it` eller docker desktop cli.
+For å koble til: `mongo -u <brukernavn> -p <passord>`. Resten får du google.

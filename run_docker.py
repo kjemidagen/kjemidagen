@@ -6,7 +6,10 @@ import asyncio
 curr_path = pathlib.Path(__file__).parent.absolute().__str__()
 
 async def main():
-    print("Watching")
+    ls_result = subprocess.run("docker compose ls -q", capture_output=True, text=True)
+    if ls_result.stdout is None or "kjemidagen" not in ls_result.stdout:
+        subprocess.call("docker compose up -d")
+    print("Watching for file changes")
     async for changes in awatch(curr_path):
         frontend_changed = False
         backend_changed = False
@@ -17,10 +20,12 @@ async def main():
             if (changed_path.parts[0] == "backend"):
                 backend_changed = True
         if frontend_changed:
-            subprocess.call("docker compose restart frontend")
+            subprocess.run("docker compose restart frontend")
         if backend_changed:
-            subprocess.call("docker compose restart backend")
+            subprocess.run("docker compose restart backend")
 
 if __name__ == "__main__":
-    subprocess.call("docker compose up -d")
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        subprocess.run("docker compose stop")

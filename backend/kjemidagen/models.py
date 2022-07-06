@@ -6,19 +6,18 @@ from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 
 class User(Document):
-    username: Indexed(str, index_type=pymongo.TEXT)
+    id: uuid.UUID = Field(default_factory=uuid.uuid4)
+    username: Indexed(str, index_type=pymongo.TEXT, unique=True)
     hashed_password: str
     is_admin: bool = False
-    created_at: datetime.datetime
-    updated_at: datetime.datetime
+    created_at: datetime.datetime = Field(default_factory=datetime.datetime.now)
+    updated_at: datetime.datetime = Field(default_factory=datetime.datetime.now)
 
-    @before_event([Insert])
-    def set_created_time(self):
-        self.created_at = datetime.datetime.now()
-
-    @before_event([Insert, Replace, SaveChanges])
+    @before_event([Replace, SaveChanges])
     def set_updated_time(self):
         self.updated_at = datetime.datetime.now()
+    class Settings:
+        validate_on_save = True
 
 class UserCreate(BaseModel):
     username: EmailStr
@@ -47,21 +46,23 @@ class UserUpdateResponse(BaseModel):
     id: int
     is_admin: bool
 
-
 class Company(Document):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4)
     user: Link[User]
     title: Indexed(str)
     public_email: EmailStr
     number_of_representatives: int
     additional_data: Optional[str]
+    created_at: datetime.datetime = Field(default_factory=datetime.datetime.now)
+    updated_at: datetime.datetime = Field(default_factory=datetime.datetime.now)
 
-    @before_event([Insert])
-    def set_created_time(self):
-        self.created_at = datetime.datetime.now()
-
-    @before_event([Insert, Replace, SaveChanges])
+    @before_event([Replace, SaveChanges])
     def set_updated_time(self):
         self.updated_at = datetime.datetime.now()
+
+    class Settings:
+        validate_on_save = True
+
 
 class CompanyBase(BaseModel):
     username: EmailStr

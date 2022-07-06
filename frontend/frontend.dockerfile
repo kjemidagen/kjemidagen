@@ -1,11 +1,9 @@
-FROM node:16.15-bullseye as builder
+FROM node:18
 
-# install dependencies
-WORKDIR /app/
-COPY package.json ./
-RUN yarn install --immutable --immutable-cache --check-cache
+WORKDIR /app
 
-# Copy all local files into the image.
-COPY . .
+COPY package.json package-lock.json ./
+RUN npm install
 
-RUN yarn build
+# Copy all the silly config files because i cant be bothered to bind mount
+COPY *.js *.json *.cjs .env ./
