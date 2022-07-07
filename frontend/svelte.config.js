@@ -9,11 +9,7 @@ const config = {
     postcss: true
   }),
   kit: {
-    adapter: adapter({
-      out: 'build',
-      precompress: false
-    }),
-    trailingSlash: 'always'
+    adapter: adapter(),
   }
 };
 

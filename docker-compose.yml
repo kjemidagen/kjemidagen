@@ -14,7 +14,7 @@ services:
       - backend
     environment:
       - VITE_PUBLIC_API_URL=http://backend:8000
-    command: /bin/sh -c "npm run build; node build/index.js"
+    command: /bin/sh -c "ls -l; npm run build; ls -l ; node build/index.js"
   backend:
     build:
       context: ./backend

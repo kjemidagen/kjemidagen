@@ -1,8 +1,9 @@
 import i18n from 'sveltekit-i18n';
+import type { Config } from 'sveltekit-i18n';
+
 import lang from './lang.json';
 
-/** @type {import('sveltekit-i18n').Config} */
-const config = {
+const config: Config = {
   translations: {
     no: { lang },
     nn: { lang },
@@ -114,7 +115,10 @@ const config = {
       routes: ['/sponsors/'],
       loader: async () => (await import('./en/sponsors.json')).default
     }
-  ]
+  ],
+  log: {
+    level: 'debug'
+  }
 };
 
 export const defaultLocale = 'no';
