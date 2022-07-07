@@ -1,6 +1,5 @@
 <script lang="ts">
   import { isLoginOpen } from '$lib/stores';
-
   import { t, locales, locale } from '$lib/translations/translations';
   import { page } from '$app/stores';
 
@@ -8,7 +7,7 @@
   const routes = ['/', '/about/', '/program/', '/companies/', '/sponsors/'];
 </script>
 
-<header id="header" class="bg-red">
+<header id="header" class="bg-red px-25">
   <div class="px-4 grid grid-cols-8 h-16">
     <a class="home col-span-2" href={'/'}>
       <img class="logo" src="/logo_inverted.svg" alt="logo" width="40" />
@@ -32,7 +31,7 @@
     </button>
     <ul class="language">
       {#each $locales as lc}
-        <li><a href="/{lc}{route}">{lc}</a></li>
+        <li><a class="h-full flex flex-col float-right" href="/{lc}{route}">{lc}</a></li>
       {/each}
     </ul>
     <button

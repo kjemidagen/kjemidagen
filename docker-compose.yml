@@ -3,7 +3,7 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: frontend.prod.dockerfile
+      dockerfile: frontend.dockerfile
     volumes:
       - ./frontend/static:/app/static:ro
       - ./frontend/src:/app/src:ro
