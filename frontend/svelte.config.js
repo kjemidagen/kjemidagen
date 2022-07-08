@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -9,7 +9,7 @@ const config = {
     postcss: true
   }),
   kit: {
-    adapter: adapter(),
+    adapter: adapter()
   }
 };
 
