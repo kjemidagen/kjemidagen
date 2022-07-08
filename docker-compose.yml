@@ -1,20 +1,20 @@
 version: "3.8"
 services:
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: frontend.dockerfile
-    volumes:
-      - ./frontend/static:/app/static:ro
-      - ./frontend/src:/app/src:ro
-    working_dir: /app/
-    ports:
-      - 3000:3000
-    depends_on:
-      - backend
-    environment:
-      - VITE_PUBLIC_API_URL=http://backend:8000
-    command: /bin/sh -c "ls -l; npm run build; ls -l ; node build/index.js"
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: frontend.dockerfile
+  #   volumes:
+  #     - ./frontend/static:/app/static:ro
+  #     - ./frontend/src:/app/src:ro
+  #   working_dir: /app/
+  #   ports:
+  #     - 3000:3000
+  #   depends_on:
+  #     - backend
+  #   environment:
+  #     - VITE_PUBLIC_API_URL=http://backend:8000
+  #   command: /bin/sh -c "ls -l; npm run build; ls -l ; node build/index.js"
   backend:
     build:
       context: ./backend
