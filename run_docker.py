@@ -20,8 +20,7 @@ async def main():
         for change in changes:
             changed_path = pathlib.Path(change[1]).relative_to(curr_path)
             if (changed_path.parts[0] == "frontend"): 
-                frontend_changed = False # True # Disabled because i moved frontend off docker.
-                # Docker+node dev experience is terrible
+                frontend_changed = True 
             if (changed_path.parts[0] == "backend"):
                 backend_changed = True
         if frontend_changed:
