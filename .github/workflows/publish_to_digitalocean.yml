@@ -2,8 +2,6 @@
 # on:
 #   push:
 #     branches: [master]
-#   pull_request:
-#     branches: [master]
 #   # lar oss manuelt trigge
 #   worflow_dispatch:
 
