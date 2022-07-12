@@ -28,7 +28,7 @@ services:
       - 8000:8000
     environment:
       - DBServer=mongodb
-    command: uvicorn kjemidagen.main:app --host 0.0.0.0 --port 8000
+    command: uvicorn kjemidagen.main:app --proxy-headers --host 0.0.0.0 --port 8000
   mongodb:
     image: mongo:5.0
     environment:
