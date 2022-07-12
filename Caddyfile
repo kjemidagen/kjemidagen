@@ -1,0 +1,6 @@
+kjemidagen.no, 157.230.28.172 {
+    root * /app/kjemidagen
+    reverse_proxy * localhost:3000
+    respond /caddytest "Caddy is up"
+    reverse_proxy /api localhost:8000
+}
