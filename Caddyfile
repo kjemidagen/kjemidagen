@@ -1,5 +1,5 @@
 kjemidagen.no, 157.230.28.172 {
-    respond /caddytest "Caddy is up"
-    reverse_proxy /v1/* localhost:8000
-    reverse_proxy localhost:3000
+	respond /caddytest "Caddy is up"
+	reverse_proxy /v1/* localhost:8000
+	reverse_proxy localhost:3000
 }
