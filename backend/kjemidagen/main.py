@@ -15,6 +15,6 @@ app.include_router(company_router, prefix="/v1/companies", tags=["companies"])
 async def connect_to_db():
     await init_database()
 
-@app.get("/")
+@app.get("/v1/")
 async def assert_server_works():
     return ("Server is up", 200)
