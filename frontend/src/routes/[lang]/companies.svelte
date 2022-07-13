@@ -12,8 +12,8 @@
 
 <section class="companies">
   <div class="content" id="companies">
-    <h3>{$t('companies.companies')}</h3>
-    <p>{$t('companies.moreinfo')}</p>
+    <h3 class="text-3xl">{$t('companies.companies')}</h3>
+    <p class="text-lg">{$t('companies.moreinfo')}</p>
   </div>
 </section>
 

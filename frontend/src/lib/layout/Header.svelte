@@ -3,8 +3,12 @@
   import { t, locales, locale } from '$lib/translations/translations';
   import { page } from '$app/stores';
 
+  import MobileMenu from '$lib/components/MobileMenu.svelte';
+
   $: ({ route } = $page.stuff);
   const routes = ['', '/about', '/program', '/companies', '/sponsors'];
+
+  let navOpen = false;
 </script>
 
 <header id="header" class="bg-red px-25 sticky top-0 left-0">
@@ -35,7 +39,12 @@
         </li>
       {/each}
     </ul>
-    <button class="col-span-2 md:hidden items-right">
+    <button
+      class="col-span-2 md:hidden items-right"
+      on:click|preventDefault={() => {
+        navOpen = !navOpen;
+      }}
+    >
       <img class="w-8 m-auto" src="/hamburgermeny.svg" alt="hamburgermeny" />
     </button>
     <button
@@ -48,4 +57,12 @@
       }}>{$t('common.login')}</button
     >
   </div>
+  {#if navOpen}
+    <MobileMenu
+      {routes}
+      on:clicked={() => {
+        navOpen = false;
+      }}
+    />
+  {/if}
 </header>

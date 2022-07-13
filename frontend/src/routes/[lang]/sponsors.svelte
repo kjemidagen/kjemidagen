@@ -12,8 +12,8 @@
 
 <section class="sponsors">
   <div class="content" id="sponsors">
-    <h3>{$t('sponsors.sponsors')}</h3>
-    <p>{$t('sponsors.moreinfo')}</p>
+    <h3 class="text-3xl">{$t('sponsors.sponsors')}</h3>
+    <p class="text-lg">{$t('sponsors.moreinfo')}</p>
     <!-- <img src="/sponsors_22.png" alt="bedriftene som er med på kjemidagen" /> -->
   </div>
 </section>
