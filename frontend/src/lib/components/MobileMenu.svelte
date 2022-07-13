@@ -12,12 +12,12 @@
 <ul class="absolute w-full bg-red border-red-light border-y-8 text-white">
   {#each routes as routeName}
     <li
-      class="px-2 py-2 {route === routeName ? 'bg-red-light' : ''}"
+      class={route === routeName ? 'bg-red-light' : ''}
       on:click={() => {
         dispatch('clicked');
       }}
     >
-      <a class="" href="/{$locale}{routeName}">
+      <a class="block px-2 py-2 " href="/{$locale}{routeName}">
         {#if routeName === ''}
           {$t('common.home')}
         {:else}
