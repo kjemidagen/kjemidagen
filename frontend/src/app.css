@@ -24,3 +24,10 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
+.content {
+  max-width: var(--document-width);
+  align-items: center;
+  margin: auto;
+  padding: 2rem 0;
+}

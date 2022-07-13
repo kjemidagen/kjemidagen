@@ -14,3 +14,5 @@ yarn dev -- --open
 ## Building
 
 Building gjøres med docker, se Readme i foreldre-mappe.
+
+TODO: Husk å unpinne versjonen til adapter-node i package.json når <https://github.com/sveltejs/kit/issues/5431> er fiksa

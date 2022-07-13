@@ -1,4 +1,5 @@
 <script lang="ts">
+  // TODO: JUST MAKE A ROUTE, SO MUCH EASIER
   import { isLoginOpen } from '$lib/stores';
   import { env } from '$lib/envVars';
 

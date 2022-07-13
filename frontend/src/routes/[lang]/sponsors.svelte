@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { browser, dev } from '$app/env';
-  export const hydrate = dev;
+  import { browser } from '$app/env';
+  export const hydrate = true;
   export const router = browser;
   export const prerender = true;
   import { t } from '$lib/translations/translations';
@@ -22,10 +22,6 @@
   .sponsors {
     background: var(--color-text-loud);
     padding: 40px 0;
-  }
-  .content {
-    max-width: var(--document-width);
-    margin: auto;
   }
 
   p {

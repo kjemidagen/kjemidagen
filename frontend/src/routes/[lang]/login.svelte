@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
-  import { browser, dev } from '$app/env';
-  export const hydrate = dev;
+  import { browser } from '$app/env';
+  export const hydrate = true;
   export const router = browser;
   export const prerender = false;
 </script>
