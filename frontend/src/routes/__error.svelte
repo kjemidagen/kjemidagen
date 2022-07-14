@@ -3,7 +3,7 @@
 
   /** @type {import('@sveltejs/kit').Load} */
   export const load = async ({ stuff, props }) => {
-    await loadTranslations(stuff.lang, 'error');
+    await loadTranslations(stuff?.lang || 'no', 'error');
 
     return {};
   };

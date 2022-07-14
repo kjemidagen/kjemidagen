@@ -12,7 +12,7 @@
 
 <section class="sponsors">
   <div class="content" id="sponsors">
-    <h3 class="text-3xl">{$t('sponsors.sponsors')}</h3>
+    <h1 class="text-3xl mb-8">{$t('sponsors.sponsors')}</h1>
     <p class="text-lg">{$t('sponsors.moreinfo')}</p>
     <!-- <img src="/sponsors_22.png" alt="bedriftene som er med på kjemidagen" /> -->
   </div>

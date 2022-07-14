@@ -21,11 +21,11 @@
 
 <section class="banner" id="banner">
   <div class="mx-auto max-w-4xl my-24 grid grid-cols-1 md:grid-cols-3">
-    <img class="w-60 row-start-2 mx-auto md:row-start-1" src="/logo.svg" alt="logo" />
-    <div class="font-bold text-red mx-auto md:col-span-2">
-      <h1 class="text-4xl md:text-7xl">{$t('common.chemday')}</h1>
-      <h2 class="text-xl md:text-4xl">{$t('frontpage.when')}</h2>
-      <h2 class="text-xl md:text-4xl">{$t('frontpage.where')}</h2>
+    <div class="mx-auto md:col-span-2">
+      <h1 class="my-3 font-bold text-red text-4xl md:text-7xl">{$t('common.chemday')}</h1>
+      <h2 class="my-1 text-lg md:text-3xl">{$t('frontpage.when')}</h2>
+      <h2 class="my-1 text-lg md:text-3xl">{$t('frontpage.where')}</h2>
     </div>
+    <img class="w-60 mx-auto m-6 md:row-start-1" src="/logo.svg" alt="logo" />
   </div>
 </section>

@@ -12,7 +12,7 @@
 
 <section class="companies">
   <div class="content" id="companies">
-    <h3 class="text-3xl">{$t('companies.companies')}</h3>
+    <h1 class="text-3xl mb-8">{$t('companies.companies')}</h1>
     <p class="text-lg">{$t('companies.moreinfo')}</p>
   </div>
 </section>
