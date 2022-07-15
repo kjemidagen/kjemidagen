@@ -1,6 +1,5 @@
 <script context="module">
   import { browser } from '$app/env';
-  import { t } from '$lib/translations/translations';
 
   // We need js for the mobile menu on every page
   export const hydrate = true;
@@ -15,17 +14,30 @@
   // See more at kit.svelte.dev/docs/page-options
 </script>
 
+<script lang="ts">
+  import { t } from '$lib/translations/translations';
+  import Hero from '$lib/3D/Hero.svelte';
+</script>
+
 <svelte:head>
   <title>{$t('common.chemday')}</title>
 </svelte:head>
 
-<section class="banner" id="banner">
-  <div class="mx-auto max-w-4xl my-24 grid grid-cols-1 md:grid-cols-3">
-    <div class="mx-auto md:col-span-2">
-      <h1 class="my-3 font-bold text-red text-4xl md:text-7xl">{$t('common.chemday')}</h1>
-      <h2 class="my-1 text-lg md:text-3xl">{$t('frontpage.when')}</h2>
-      <h2 class="my-1 text-lg md:text-3xl">{$t('frontpage.where')}</h2>
+<section class="hero" id="hero">
+  <Hero />
+  <div class="force-space h-[60vh] mx-auto max-w-3xl pointer-events-none">
+    <div
+      class="mt-[20vh] mx-auto mb-auto px-6 py-8 md:p-16 bg-black/60 backdrop-blur-md rounded-xl border-red/20 border z-10 pointer-events-auto"
+    >
+      <h1 class="mb-4 font-bold text-red text-4xl md:text-7xl">{$t('common.chemday')}</h1>
+      <h2 class="mb-2 text-lg text-white md:text-3xl">{$t('frontpage.when')}</h2>
+      <h2 class="mb-1 text-lg text-white md:text-3xl">{$t('frontpage.where')}</h2>
     </div>
-    <img class="w-60 mx-auto m-6 md:row-start-1" src="/logo.svg" alt="logo" />
   </div>
 </section>
+
+<style>
+  .force-space::after {
+    content: '';
+  }
+</style>

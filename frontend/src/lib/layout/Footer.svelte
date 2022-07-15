@@ -2,7 +2,7 @@
   import { t } from '$lib/translations/translations';
 </script>
 
-<footer class="bg-red text-gray-200 py-7 grid-area-footer px-2">
+<footer class="bg-red text-gray-200 py-7 grid-area-footer px-2 z-10">
   <div class="grid max-w-5xl m-auto grid-cols-2 gap-7 md:grid-cols-3">
     <div>
       <h6 class="text-lg underline">Kjemidagen 2022</h6>

@@ -1,10 +1,13 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { browser } from '$app/env';
-  import AboutCard from '$lib/components/AboutCard.svelte';
-  import { t } from '$lib/translations/translations';
   export const hydrate = true;
   export const router = browser;
   export const prerender = true;
+</script>
+
+<script lang="ts">
+  import AboutCard from '$lib/components/AboutCard.svelte';
+  import { t } from '$lib/translations/translations';
 </script>
 
 <svelte:head>
