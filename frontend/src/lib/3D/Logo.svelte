@@ -15,9 +15,7 @@
   });
   geometry.center();
 
-  export let rx = 0;
   export let ry = 0;
-  export let rz = 0;
 </script>
 
 <SC.Mesh
@@ -26,7 +24,7 @@
     color: 0xa92f0f
   })}
   position={[0, 0, 0]}
-  rotation={[rx, ry, rz]}
+  rotation={[0, ry, 0]}
   scale={0.015}
   castShadow
 />

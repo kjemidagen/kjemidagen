@@ -15,9 +15,7 @@
     loaded = true;
   });
 
-  let rx = 0;
   let ry = 0;
-  let rz = 0;
 
   // Handling click and drag
   function onMouseDown() {
@@ -67,10 +65,15 @@
   on:mousedown={onMouseDown}
   on:touchstart={onTouchStart}
 >
-  <SC.Canvas background={new THREE.Color(0xffffff)} shadows={THREE.VSMShadowMap} antialias>
+  <SC.Canvas
+    background={new THREE.Color(0xdedede)}
+    shadows={THREE.VSMShadowMap}
+    antialias
+    powerPreference={'low-power'}
+  >
     <!-- objects -->
     <Backdrop {map} />
-    <Logo {rx} {ry} {rz} />
+    <Logo {ry} />
 
     <!-- camera -->
     <SC.PerspectiveCamera
@@ -85,25 +88,25 @@
 
     <SC.SpotLight
       angle={0.8}
-      penumbra={0.3}
-      position={[8, -1, 2]}
+      penumbra={0.8}
+      position={[3, 3, 8]}
       intensity={0.5}
       shadow={{
-        radius: 20,
+        radius: 10,
         bias: -0.001,
-        mapSize: [2048, 2048]
+        mapSize: [1024, 1024]
       }}
     />
 
     <SC.SpotLight
       angle={0.8}
       penumbra={0.8}
-      position={[3, 0, 8]}
+      position={[2, 0, 2]}
       intensity={0.5}
       shadow={{
-        radius: 20,
+        radius: 10,
         bias: -0.001,
-        mapSize: [2048, 2048]
+        mapSize: [1024, 1024]
       }}
     />
   </SC.Canvas>
