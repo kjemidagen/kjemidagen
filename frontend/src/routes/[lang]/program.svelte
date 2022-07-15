@@ -1,8 +1,11 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { browser } from '$app/env';
   export const hydrate = true;
   export const router = browser;
   export const prerender = true;
+</script>
+
+<script lang="ts">
   import { t } from '$lib/translations/translations';
 </script>
 
@@ -13,16 +16,24 @@
 <section class="program" id="program">
   <div class="content">
     <h1 class="text-3xl mb-8">{$t('program.title')}</h1>
-    <table class="grid max-w-lg mb-16 text-lg mx-auto font-medium ">
-      <td>10:00</td> <td>{$t('program.opening')}</td>
-      <td>10:15 - 15:00</td> <td>{$t('program.stands')}</td>
-      <td>10:15 - 15:00</td> <td> {$t('program.speedinterview')} </td>
-      <td>10:30 - 13:00</td> <td> {$t('program.cvphoto')} </td>
-      <td>11:15</td> <td> {$t('program.motivationalspeaking')} </td>
-      <td>13:15</td> <td> {$t('program.summerjob')} </td>
-      <td>14:00</td> <td>{$t('program.jobmarathon')} </td>
-      <td>18:30</td> <td>{$t('program.banquet')} </td>
-    </table>
+    <figure class="table grid max-w-lg mb-16 text-lg mx-auto font-medium ">
+      <div>10:00</div>
+      <div>{$t('program.opening')}</div>
+      <div>10:15 - 15:00</div>
+      <div>{$t('program.stands')}</div>
+      <div>10:15 - 15:00</div>
+      <div>{$t('program.speedinterview')}</div>
+      <div>10:30 - 13:00</div>
+      <div>{$t('program.cvphoto')}</div>
+      <div>11:15</div>
+      <div>{$t('program.motivationalspeaking')}</div>
+      <div>13:15</div>
+      <div>{$t('program.summerjob')}</div>
+      <div>14:00</div>
+      <div>{$t('program.jobmarathon')}</div>
+      <div>18:30</div>
+      <div>{$t('program.banquet')}</div>
+    </figure>
     <div class="my-8">
       <h3 class="font-medium text-xl my-4">{$t('program.speedinterview')}</h3>
       <p>
@@ -45,7 +56,7 @@
 </section>
 
 <style>
-  table {
+  .table {
     grid-template-columns: minmax(auto, 1fr) 1fr;
   }
 </style>

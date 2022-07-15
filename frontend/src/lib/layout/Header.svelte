@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { isLoginOpen } from '$lib/stores';
   import { t, locales, locale } from '$lib/translations/translations';
   import { page } from '$app/stores';
 
@@ -11,7 +10,7 @@
   let navOpen = false;
 </script>
 
-<header id="header" class="bg-red px-25 sticky top-0 left-0">
+<header id="header" class="bg-red px-25 sticky top-0 left-0 z-50">
   <div class="text-white px-6 grid h-16 grid-cols-8">
     <a class="flex text-lg items-center color-white col-span-2" href={'/'}>
       <img class="mr-1" src="/logo_inverted.svg" alt="logo" width="40" />
@@ -47,15 +46,6 @@
     >
       <img class="w-8 m-auto" src="/hamburgermeny.svg" alt="hamburgermeny" />
     </button>
-    <button
-      class="hidden login"
-      href="/login"
-      on:click={(event) => {
-        event.preventDefault;
-        $isLoginOpen = true;
-        return false;
-      }}>{$t('common.login')}</button
-    >
   </div>
   {#if navOpen}
     <MobileMenu
