@@ -119,10 +119,3 @@ async def logout(response: Response, refresh_token: str | None = Cookie(default=
     await old_token_in_db.set({RefreshToken.is_revoked: True})
     response.delete_cookie(key="refresh") #, path="/v1/auth/token") # unsets the cookie
     return ("logged out", 200)
-
-
-@auth_router.get("/token", response_model=TokenResponse)
-async def refresh_access_token(response: Response, request: Request, refresh_token: str | None = Cookie(default=None, alias="refresh")): 
-    print("request", request.url, request.client, request.method)
-    print("refresh token", refresh_token)
-    response.status_code = 405

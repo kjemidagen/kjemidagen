@@ -17,3 +17,5 @@ Min foretrukne workflow er å bruke run_docker bare på backend også kjøre fro
 ## Server
 
 Server hostes på DigitalOcean. Vi bruker [caddy](https://caddyserver.com/) for å holde styr på ssl-sertifikater.
+
+TODO: Fiks slik at ssr har tilgang til backend
