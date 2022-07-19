@@ -11,16 +11,14 @@
 </script>
 
 <header id="header" class="bg-red px-25 sticky top-0 left-0 z-50">
-  <div class="text-white px-6 grid h-16 grid-cols-8">
-    <a class="flex text-lg items-center color-white col-span-2" href={'/'}>
+  <div class="text-white px-6 flex h-16 justify-between md:justify-evenly">
+    <a class="flex text-lg items-center color-white lg:w-40" href={'/'}>
       <img class="mr-1" src="/logo_inverted.svg" alt="logo" width="40" />
-      <span class="hidden md:inline">{$t('common.chemday')}</span>
+      <span class="hidden lg:inline">{$t('common.chemday')}</span>
     </a>
-    <ul class="list-none col-span-5 hidden md:block">
+    <ul class="list-none hidden md:block flex-grow max-w-5xl mx-4 overflow-hidden">
       {#each routes as routeName}
-        <li
-          class="h-full flex flex-col float-left px-2 {route === routeName ? 'bg-red-light' : ''}"
-        >
+        <li class="h-full flex flex-col float-left px-2" class:bg-red-light={route === routeName}>
           <a class="justify-self-center m-auto" href="/{$locale}{routeName}">
             {#if routeName === ''}
               {$t('common.home')}
@@ -31,7 +29,7 @@
         </li>
       {/each}
     </ul>
-    <ul class="language list-none col-span-4 md:col-span-1">
+    <ul class="language list-none col-span-4 overflow-hidden lg:w-40">
       {#each $locales as lc}
         <li class="h-full flex flex-col px-2 float-left md:float-right ">
           <a class="justify-self-center m-auto" href="/{lc}{route}">{lc}</a>
@@ -39,7 +37,7 @@
       {/each}
     </ul>
     <button
-      class="col-span-2 md:hidden items-right"
+      class="md:hidden items-right"
       on:click|preventDefault={() => {
         navOpen = !navOpen;
       }}
@@ -50,7 +48,7 @@
   {#if navOpen}
     <MobileMenu
       {routes}
-      on:clicked={() => {
+      on:closemenu={() => {
         navOpen = false;
       }}
     />

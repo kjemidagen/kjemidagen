@@ -1,7 +1,5 @@
 <script lang="ts" context="module">
-  import { browser } from '$app/env';
   export const hydrate = true;
-  export const router = browser;
   export const prerender = true;
 </script>
 
@@ -19,15 +17,3 @@
     <p class="text-lg">{$t('companies.moreinfo')}</p>
   </div>
 </section>
-
-<style>
-  .companies {
-    background: var(--color-text-loud);
-    padding: 40px 0;
-  }
-
-  p {
-    color: var(--color-text-base);
-    padding: 0 1rem;
-  }
-</style>

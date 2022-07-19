@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import type { Handle } from '@sveltejs/kit';
 import { defaultLocale, locales } from '$lib/translations/translations';
 
 const routeRegex = new RegExp(/^\/[^.]*([?#].*)?$/);
 
-/** @type {import('@sveltejs/kit').Handle} */
-export const handle = async ({ event, resolve }) => {
+export const handle: Handle = async ({ event, resolve }) => {
   const { url, request } = event;
   const { pathname } = url;
 

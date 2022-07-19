@@ -26,8 +26,15 @@ html {
 }
 
 .content {
-  max-width: var(--document-width);
+  @apply max-w-5xl;
   align-items: center;
   margin: auto;
   padding: 2rem 0;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background-color: #3b2e2b;
+  }
+} */

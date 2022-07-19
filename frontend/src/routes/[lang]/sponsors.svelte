@@ -1,7 +1,5 @@
 <script lang="ts" context="module">
-  import { browser } from '$app/env';
   export const hydrate = true;
-  export const router = browser;
   export const prerender = true;
 </script>
 
@@ -20,15 +18,3 @@
     <!-- <img src="/sponsors_22.png" alt="bedriftene som er med på kjemidagen" /> -->
   </div>
 </section>
-
-<style>
-  .sponsors {
-    background: var(--color-text-loud);
-    padding: 40px 0;
-  }
-
-  p {
-    color: var(--color-text-base);
-    padding: 0 1rem;
-  }
-</style>

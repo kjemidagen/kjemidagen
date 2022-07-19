@@ -1,9 +1,22 @@
 import datetime
 import uuid
 import pymongo
+import re
 from beanie import Document, Indexed, Link, Insert, Replace, SaveChanges, before_event
 from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
+
+def to_camel(string: str):
+    """snake_case to camelCase"""
+    def camel(match: re.Match):
+        return match.group(1) + match.group(2).upper()
+    return re.sub(r"(.*?)_([a-z])", camel, string)
+
+class CamelBaseModel(BaseModel):
+    class Config:
+        alias_generator = to_camel
+        allow_population_by_field_name = True
+
 
 class User(Document):
     id: uuid.UUID = Field(default_factory=uuid.uuid4)
@@ -19,29 +32,29 @@ class User(Document):
     class Settings:
         validate_on_save = True
 
-class UserCreate(BaseModel):
+class UserCreate(CamelBaseModel):
     username: EmailStr
     password: str
 
-class UserCreateResponse(BaseModel):
+class UserCreateResponse(CamelBaseModel):
     """Contains fields returned on user creation"""
     username: EmailStr
     id: int
     is_admin: bool
 
-class UserGetResponse(BaseModel):
+class UserGetResponse(CamelBaseModel):
     """Contains fields returned from get requests"""
     username: EmailStr
     id: int
     is_admin: bool
 
-class UserUpdate(BaseModel):
+class UserUpdate(CamelBaseModel):
     """Contains fields which you can update"""
     username: Optional[EmailStr]
     is_admin: Optional[bool]
     password: Optional[str]
 
-class UserUpdateResponse(BaseModel):
+class UserUpdateResponse(CamelBaseModel):
     username: EmailStr
     id: int
     is_admin: bool
@@ -64,7 +77,7 @@ class Company(Document):
         validate_on_save = True
 
 
-class CompanyBase(BaseModel):
+class CompanyBase(CamelBaseModel):
     username: EmailStr
     title: str
     public_email: EmailStr
@@ -78,7 +91,7 @@ class CompanyCreateResponse(CompanyBase):
     id: int
     password: str
 
-class CompanyUpdate(BaseModel):
+class CompanyUpdate(CamelBaseModel):
     title: Optional[str]
     public_email: Optional[EmailStr]
     number_of_representatives: Optional[int]
@@ -91,3 +104,7 @@ class CompanyUpdateResponse(CompanyBase):
 class RefreshToken(Document):
     id: uuid.UUID = Field(default_factory=uuid.uuid4)
     is_revoked: bool = False
+
+class TokenResponse(CamelBaseModel):
+    email: EmailStr
+    access_token: str

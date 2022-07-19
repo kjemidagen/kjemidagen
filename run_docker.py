@@ -20,7 +20,8 @@ async def main():
         for change in changes:
             changed_path = pathlib.Path(change[1]).relative_to(curr_path)
             if (changed_path.parts[0] == "frontend"): 
-                frontend_changed = True 
+                # Comment out and replace with false to disable and use npm run dev instead for faster feedback loop
+                frontend_changed = False # True 
             if (changed_path.parts[0] == "backend"):
                 backend_changed = True
         if frontend_changed:

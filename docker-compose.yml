@@ -13,7 +13,7 @@ services:
     depends_on:
       - backend
     environment:
-      - VITE_PUBLIC_API_URL=http://backend:8000
+      - VITE_SSR_API_URL=http://backend:8000
     command: /bin/sh -c "npm run build; node build/index.js"
   backend:
     build:

@@ -30,6 +30,14 @@ async def get_user(user_id: int, current_user: User = Depends(get_current_user))
         raise HTTPException(status_code=404, detail="No users")
     return user
 
+@user_router.get("/self}", response_model=UserGetResponse)
+async def get_user(user_id: int, current_user: User = Depends(get_current_user)):
+    """Get info about current user"""
+    if not (current_user.is_admin or current_user.id == user_id):
+        raise credentials_exception
+    return current_user
+
+
 @user_router.post("/", dependencies=[Depends(get_current_admin)], response_model=UserCreateResponse)
 async def create_user(user: UserCreate):
     check_if_taken = await User.find(User.username==user.username).to_list()

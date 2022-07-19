@@ -13,14 +13,21 @@
     </div>
     <div class="text-gray-200">
       <h6 class="text-lg underline">SoMe</h6>
-      <a href="https://www.linkedin.com/company/kjemidagen/" class="text-gray-200">LinkedIn</a><br
-      />
-      <a href="https://www.facebook.com/Kjemidagen/" class="text-gray-200">Facebook</a><br />
-      <a href="https://www.instagram.com/kjemidagen/" class="text-gray-200">Instagram</a><br />
+      <a href="https://www.linkedin.com/company/kjemidagen/" class="text-gray-200"
+        ><img src="/linkedin.svg" alt="" class="h-4 inline" /> LinkedIn</a
+      ><br />
+      <a href="https://www.facebook.com/Kjemidagen/" class="text-gray-200"
+        ><img src="/facebook.svg" alt="" class="h-4 inline" /> Facebook</a
+      ><br />
+      <a href="https://www.instagram.com/kjemidagen/" class="text-gray-200"
+        ><img src="/instagram.svg" alt="" class="h-4 inline" /> Instagram</a
+      ><br />
     </div>
     <div>
       <h6 class="text-lg underline">{$t('common.contactus')}</h6>
-      <a href="mailto:kontakt@kjemidagen.no" class="text-gray-200">kontakt@kjemidagen.no</a>
+      <a href="mailto:kontakt@kjemidagen.no" class="text-gray-200"
+        ><img src="/email.svg" alt="" class="h-4 inline" /> kontakt@kjemidagen.no</a
+      >
     </div>
     <a class="text-gray-300 underline" href="#banner">Tilbake til toppen</a>
   </div>

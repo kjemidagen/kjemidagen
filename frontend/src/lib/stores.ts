@@ -1,3 +1,9 @@
 import { writable } from 'svelte/store';
 
-export const someStore = writable(false);
+interface UserData {
+  accessToken: string;
+  refreshToken: string;
+  email: string;
+}
+
+export const userData = writable<UserData | undefined>();
