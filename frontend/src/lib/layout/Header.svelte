@@ -4,6 +4,8 @@
 
   import MobileMenu from '$lib/components/MobileMenu.svelte';
 
+  import logo from '$lib/assets/logo_inverted.svg';
+
   $: ({ route } = $page.stuff);
   const routes = ['', '/about', '/program', '/companies', '/sponsors'];
 
@@ -13,7 +15,7 @@
 <header id="header" class="bg-red px-25 sticky top-0 left-0 z-50">
   <div class="text-white px-6 flex h-16 justify-between md:justify-evenly">
     <a class="flex text-lg items-center color-white lg:w-40" href={'/'}>
-      <img class="mr-1" src="/logo_inverted.svg" alt="logo" width="40" />
+      <img class="mr-1" src={logo} alt="logo" width="40" />
       <span class="hidden lg:inline">{$t('common.chemday')}</span>
     </a>
     <ul class="list-none hidden md:block flex-grow max-w-5xl mx-4 overflow-hidden">

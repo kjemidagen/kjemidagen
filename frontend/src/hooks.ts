@@ -1,4 +1,4 @@
-import type { Handle } from '@sveltejs/kit';
+import type { Handle, ExternalFetch } from '@sveltejs/kit';
 import { defaultLocale, locales } from '$lib/translations/translations';
 
 const routeRegex = new RegExp(/^\/[^.]*([?#].*)?$/);
@@ -41,4 +41,14 @@ export const handle: Handle = async ({ event, resolve }) => {
   }
 
   return resolve(event);
+};
+
+const publicApiUrl: string = import.meta.env.VITE_PUBLIC_API_URL; // https://www.kjemidagen.com
+const localApiUrl: string = import.meta.env.VITE_SSR_API_URL; // https://backend:8000
+
+export const externalFetch: ExternalFetch = async (request) => {
+  if (request.url.startsWith(publicApiUrl)) {
+    request = new Request(request.url.replace(publicApiUrl, localApiUrl), request);
+  }
+  return fetch(request);
 };

@@ -1,9 +1,6 @@
-import { browser } from '$app/env';
 import { userData } from '$lib/stores';
 
-const apiUrl: string = browser
-  ? import.meta.env.VITE_PUBLIC_API_URL
-  : import.meta.env.VITE_SSR_API_URL;
+const apiUrl: string = import.meta.env.VITE_PUBLIC_API_URL;
 
 type fetchFunc = (input: RequestInfo, init?: RequestInit) => Promise<Response>;
 
