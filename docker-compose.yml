@@ -43,7 +43,7 @@ services:
       - 8000:8000
     volumes:
       - caddy:/data
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
 volumes:
   database:
   build:
