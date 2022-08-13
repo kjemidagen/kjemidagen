@@ -4,8 +4,8 @@ name: Restart frontend
 on:
   # Triggers the workflow on push for the "main" branch
   push:
-    branches: [ "main" ]
-    paths: [ "frontend/**" ]
+    branches: ["main"]
+    paths: ["frontend/**"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,10 +21,10 @@ jobs:
       # Clean: 'false' means we preserve manual file changes, e.g. the .env-files
       - uses: actions/checkout@v3
         with:
-          clean: 'false'
-          
+          clean: "false"
+
       - name: Build the frontend with the recent changes
         run: docker compose build frontend
-        
+
       - name: Start the newly built frontend
         run: docker compose up frontend --force-recreate -d

@@ -36,7 +36,7 @@ services:
       - 27017:27017
     restart: unless-stopped
   caddy:
-    image: caddy:2.5.2-alpine
+    image: caddy:2.5.2
     ports:
       - 80:80
       - 443:443
@@ -44,6 +44,7 @@ services:
     volumes:
       - caddy:/data
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/static:/home/user/static_files
 volumes:
   database:
   build:

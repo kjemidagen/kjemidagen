@@ -4,8 +4,8 @@ name: Reload reverse proxy
 on:
   # Triggers the workflow on push for the "main" branch
   push:
-    branches: [ "main" ]
-    paths: [ "Caddyfile" ]
+    branches: ["main"]
+    paths: ["caddy/**"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,7 +21,10 @@ jobs:
       # Clean: 'false' means we preserve manual file changes, e.g. the .env-files
       - uses: actions/checkout@v3
         with:
-          clean: 'false'
-          
-      - name: Reload the new config
-        run: caddy reload
+          clean: "false"
+
+      - name: Build the reverse proxy with the recent changes
+        run: docker compose build caddy
+
+      - name: Start the newly built reverse proxy
+        run: docker compose up caddy --force-recreate -d

@@ -5,6 +5,7 @@
   import MobileMenu from '$lib/components/MobileMenu.svelte';
 
   import logo from '$lib/assets/logo_inverted.svg';
+  import hamburgerMenuPic from '$lib/assets/hamburgermeny.svg';
 
   $: ({ route } = $page.stuff);
   const routes = ['', '/about', '/program', '/companies', '/sponsors'];
@@ -44,7 +45,7 @@
         navOpen = !navOpen;
       }}
     >
-      <img class="w-8 m-auto" src="/hamburgermeny.svg" alt="hamburgermeny" />
+      <img class="w-8 m-auto" src={hamburgerMenuPic} alt="hamburgermeny" />
     </button>
   </div>
   {#if navOpen}
