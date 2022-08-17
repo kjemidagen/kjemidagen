@@ -1,2 +1,6 @@
 # database data
 database/
+
+# code workspace file 
+*.code-workspace
+
