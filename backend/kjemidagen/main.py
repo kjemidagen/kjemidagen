@@ -13,7 +13,8 @@ origins = [
     "http://localhost:3001",
     "https://www.kjemidagen.no",
     "https://kjemidagen.no",
-    "http://frontend"
+    "http://frontend",
+    "http://caddy",
 ]
 
 app.add_middleware(
@@ -21,16 +22,18 @@ app.add_middleware(
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
 
 app.include_router(user_router, prefix="/v1/users", tags=["users"])
 app.include_router(auth_router, prefix="/v1/auth", tags=["auth"])
 app.include_router(company_router, prefix="/v1/companies", tags=["companies"])
 
+
 @app.on_event("startup")
 async def connect_to_db():
     await init_database()
+
 
 @app.get("/v1/")
 async def assert_server_works():

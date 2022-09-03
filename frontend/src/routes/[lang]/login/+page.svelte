@@ -1,7 +1,4 @@
-<script context="module" lang="ts">
-  export const hydrate = true;
-  export const prerender = false;
-</script>
+
 
 <script lang="ts">
   import { goto } from '$app/navigation';
@@ -23,7 +20,7 @@
   <form on:submit|preventDefault={onSubmit}>
     <input type="email" name="username" placeholder="email" bind:value={email} />
     <input type="password" name="password" placeholder="password" bind:value={password} />
-    <input type="submit" />
+    <input type="submit" value="Logg Inn" />
   </form>
 </section>
 

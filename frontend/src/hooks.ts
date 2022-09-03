@@ -17,6 +17,11 @@ export const handle: Handle = async ({ event, resolve }) => {
       (l) => `${l}`.toLowerCase() === `${pathname.match(/[^/]+?(?=\/|$)/)}`.toLowerCase()
     );
 
+    // Escape hatch to verify sveltekit is working
+    if (pathname === "/timini") {
+      return resolve(event);
+    }
+
     // If route locale is not supported
     if (!locale) {
       // Get user preferred locale
@@ -36,10 +41,9 @@ export const handle: Handle = async ({ event, resolve }) => {
 
     // Add html `lang` attribute
     return resolve(event, {
-      transformPage: ({ html }) => html.replace(/<html.*>/, `<html lang="${locale}">`)
+      transformPageChunk: ({ html }) => html.replace(/<html.*>/, `<html lang="${locale}">`)
     });
   }
-
   return resolve(event);
 };
 

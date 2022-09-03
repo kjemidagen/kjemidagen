@@ -1,12 +1,4 @@
-<script context="module">
-  // We need js for the mobile menu on every page
-  export const hydrate = true;
 
-  // since there's no dynamic data here, we can prerender
-  // it so that it gets served as a static asset in prod
-  export const prerender = true;
-  // See more at kit.svelte.dev/docs/page-options
-</script>
 
 <script lang="ts">
   import { t } from '$lib/translations/translations';

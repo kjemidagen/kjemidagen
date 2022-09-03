@@ -15,7 +15,9 @@ export async function login(fetch: fetchFunc, email: string, password: string) {
     body: formData,
     credentials: 'include' //'same-origin'
   });
+  console.log(res);
   const data = await res.json();
+  console.log(data);
   userData.set(data);
 }
 

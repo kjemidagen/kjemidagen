@@ -1,7 +1,4 @@
-<script lang="ts" context="module">
-  export const hydrate = true;
-  export const prerender = true;
-</script>
+
 
 <script lang="ts">
   import { t } from '$lib/translations/translations';

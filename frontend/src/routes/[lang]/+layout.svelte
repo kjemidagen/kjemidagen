@@ -1,13 +1,7 @@
-<script context="module" lang="ts">
-  import '../../app.css';
-</script>
-
 <script lang="ts">
   import Header from '$lib/layout/Header.svelte';
   import Footer from '$lib/layout/Footer.svelte';
   import { t } from '$lib/translations/translations';
-
-  export const mobile = true;
 </script>
 
 <a class="skiptocontent" href="#main">{$t('common.skiptocontent')}</a>

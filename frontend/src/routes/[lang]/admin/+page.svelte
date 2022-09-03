@@ -1,14 +1,4 @@
-<script lang="ts" context="module">
-  // import type { Load } from './__types/index';
 
-  // export const load: Load = async ({ fetch }) => {
-  //   return {
-  //
-  //   };
-  // };
-  export const hydrate = true;
-  export const prerender = true;
-</script>
 
 <script lang="ts">
   import { userData } from '$lib/stores';

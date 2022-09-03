@@ -1,4 +1,4 @@
-import { browser } from '$app/env';
+import { browser } from '$app/environment';
 import * as THREE from 'three';
 
 const cache = new Map();

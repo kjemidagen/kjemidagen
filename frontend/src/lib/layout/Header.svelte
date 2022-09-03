@@ -7,8 +7,12 @@
   import logo from '$lib/assets/logo_inverted.svg';
   import hamburgerMenuPic from '$lib/assets/hamburgermeny.svg';
 
-  $: ({ route } = $page.stuff);
-  const routes = ['', '/about', '/program', '/companies', '/sponsors'];
+  let route = '';
+  $: {
+    route = $page.routeId?.split('/').slice(1, undefined).join('/') || '';
+  }
+
+  const routes = ['', 'about', 'program', 'companies', 'sponsors', 'login'];
 
   let navOpen = false;
 </script>
@@ -22,11 +26,11 @@
     <ul class="list-none hidden md:block flex-grow max-w-5xl mx-4 overflow-hidden">
       {#each routes as routeName}
         <li class="h-full flex flex-col float-left px-2" class:bg-red-light={route === routeName}>
-          <a class="justify-self-center m-auto" href="/{$locale}{routeName}">
+          <a class="justify-self-center m-auto" href="/{$locale}/{routeName}">
             {#if routeName === ''}
               {$t('common.home')}
             {:else}
-              {$t('common.' + routeName.replace('/', ''))}
+              {$t('common.' + routeName)}
             {/if}
           </a>
         </li>
@@ -35,7 +39,7 @@
     <ul class="language list-none col-span-4 overflow-hidden lg:w-40">
       {#each $locales as lc}
         <li class="h-full flex flex-col px-2 float-left md:float-right ">
-          <a class="justify-self-center m-auto" href="/{lc}{route}">{lc}</a>
+          <a class="justify-self-center m-auto" href="/{lc}/{route}">{lc}</a>
         </li>
       {/each}
     </ul>
