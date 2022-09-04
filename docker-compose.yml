@@ -12,7 +12,9 @@ services:
       - backend
     environment:
       - VITE_SSR_API_URL=http://backend:8000
-    command: /bin/sh -c "npm run build; node build/index.js"
+    ports:
+      - "3000:3000"
+    command: /bin/sh -c "npm i; npm run build; node build/index.js"
   backend:
     build:
       context: ./backend
@@ -24,6 +26,8 @@ services:
       - mongodb
     environment:
       - DBServer=mongodb
+    ports:
+      - "8000:8000"
     command: uvicorn kjemidagen.main:app --proxy-headers --host 0.0.0.0 --port 8000
   mongodb:
     image: mongo:5.0
@@ -35,16 +39,6 @@ services:
     ports:
       - 27017:27017
     restart: unless-stopped
-  caddy:
-    image: caddy:2.5.2
-    ports:
-      - 80:80
-      - 443:443
-      - 8000:8000
-    volumes:
-      - caddy:/data
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-      - ./caddy/static:/home/user/static_files
 volumes:
   database:
   build:

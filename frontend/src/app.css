@@ -32,6 +32,10 @@ html {
   padding: 2rem 0;
 }
 
+a {
+  @apply text-red-light;
+}
+
 /* @media (prefers-color-scheme: dark) {
   body {
     color: white;

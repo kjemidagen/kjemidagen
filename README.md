@@ -2,6 +2,10 @@
 
 Se respektive readmes for frontend og backend
 
+<!-- ## Reverse proxy
+
+For at applikasjonen skal fungere på localhost må du installere caddy lokalt.  -->
+
 ## Docker
 
 For å kjøre: `docker-compose up`.

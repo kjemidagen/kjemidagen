@@ -9,6 +9,10 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   // If this request is a route request
   if (routeRegex.test(pathname)) {
+    if (pathname.slice(0, 6) === "/admin") {
+      return resolve(event);
+    }
+
     // Get defined locales
     const supportedLocales = locales.get();
 
@@ -16,11 +20,6 @@ export const handle: Handle = async ({ event, resolve }) => {
     let locale = supportedLocales.find(
       (l) => `${l}`.toLowerCase() === `${pathname.match(/[^/]+?(?=\/|$)/)}`.toLowerCase()
     );
-
-    // Escape hatch to verify sveltekit is working
-    if (pathname === "/timini") {
-      return resolve(event);
-    }
 
     // If route locale is not supported
     if (!locale) {

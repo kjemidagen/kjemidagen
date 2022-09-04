@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { t, locales, locale } from '$lib/translations/translations';
   import { page } from '$app/stores';
 
   import MobileMenu from '$lib/components/MobileMenu.svelte';
@@ -8,39 +7,14 @@
   import hamburgerMenuPic from '$lib/assets/hamburgermeny.svg';
 
   let currentRoute = '';
-  let currentRouteNoLang = '';
   $: {
     currentRoute = $page.routeId || '';
   }
-  $: {
-    currentRouteNoLang = $page.routeId?.split('/').splice(1, undefined).join('/') || '';
-  }
 
   const routes = [
-    {
-      link: `/{$locale}/`,
-      label: $t('common.home')
-    },
-    {
-      link: `/{$locale}/about`,
-      label: $t('common.about')
-    },
-    {
-      link: `/{$locale}/program`,
-      label: $t('common.program')
-    },
-    {
-      link: `/{$locale}/companies`,
-      label: $t('common.companies')
-    },
-    {
-      link: `/{$locale}/sponsors`,
-      label: $t('common.sponsors')
-    },
-    {
-      link: `/{$locale}/login`,
-      label: $t('common.login')
-    }
+    { label: 'Hjem', link: '/admin' },
+    { label: 'Brukere', link: '/admin/users' },
+    { label: 'Bedrifter', link: '/admin/companies' }
   ];
 
   let navOpen = false;
@@ -50,7 +24,7 @@
   <div class="text-white px-6 flex h-16 justify-between md:justify-evenly">
     <a class="flex text-lg text-white items-center color-white lg:w-40" href={'/'}>
       <img class="mr-1" src={logo} alt="logo" width="40" />
-      <span class="hidden lg:inline">{$t('common.chemday')}</span>
+      <span class="hidden lg:inline">Kjemidagen</span>
     </a>
     <ul class="list-none hidden md:block flex-grow max-w-5xl mx-4 overflow-hidden">
       {#each routes as route}
@@ -58,17 +32,7 @@
           class="h-full flex flex-col float-left px-2"
           class:bg-red-light={currentRoute === route.link}
         >
-          <a class="justify-self-center m-auto text-white" href={route.link}>
-            {route.label}
-          </a>
-        </li>
-      {/each}
-    </ul>
-    <ul class="language list-none col-span-4 overflow-hidden lg:w-40">
-      {#each $locales as lc}
-        <li class="h-full flex flex-col px-2 float-left md:float-right ">
-          <a class="justify-self-center m-auto text-white" href="/{lc}/{currentRouteNoLang}">{lc}</a
-          >
+          <a class="justify-self-center m-auto text-white" href={route.link}>{route.label}</a>
         </li>
       {/each}
     </ul>

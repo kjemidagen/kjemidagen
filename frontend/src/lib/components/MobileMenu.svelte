@@ -1,13 +1,11 @@
 <script lang="ts">
-  import { t, locale } from '$lib/translations/translations';
-  import { page } from '$app/stores';
   import { slide, fade } from 'svelte/transition';
   import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
 
-  $: ({ route } = $page.stuff);
-  export let routes: string[];
+  export let currentRoute: string;
+  export let routes: { label: string; link: string }[];
 </script>
 
 <div
@@ -23,19 +21,15 @@
   in:slide|local={{ duration: 200 }}
   out:slide|local={{ duration: 50 }}
 >
-  {#each routes as routeName}
+  {#each routes as route}
     <li
-      class:bg-red-light={route === routeName}
+      class:bg-red-light={route.link === currentRoute}
       on:click={() => {
         dispatch('closemenu');
       }}
     >
-      <a class="block px-2 py-4 " href="/{$locale}{routeName}">
-        {#if routeName === ''}
-          {$t('common.home')}
-        {:else}
-          {$t('common.' + routeName.replace('/', ''))}
-        {/if}
+      <a class="block px-2 py-4 " href={route.link}>
+        {route.label}
       </a>
     </li>
   {/each}

@@ -1,9 +1,0 @@
-kjemidagen.no, localhost {
-	respond /caddytest "Caddy is up"
-	reverse_proxy /v1/* backend:8000 
-	reverse_proxy frontend:3000
-}
-
-www.kjemidagen.no {
-	redir https://kjemidagen.no{uri}
-}

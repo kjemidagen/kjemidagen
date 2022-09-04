@@ -1,5 +1,3 @@
-
-
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { login } from '$lib/auth';
@@ -7,7 +5,7 @@
   let password: string;
   async function onSubmit() {
     await login(fetch, email, password);
-    goto(`admin`);
+    goto(`/admin`);
   }
 </script>
 

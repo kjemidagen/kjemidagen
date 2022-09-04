@@ -5,17 +5,20 @@ from kjemidagen.user import user_router
 from kjemidagen.auth import auth_router
 from kjemidagen.company import company_router
 from kjemidagen.database import init_database
+from kjemidagen import config
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "https://www.kjemidagen.no",
-    "https://kjemidagen.no",
-    "http://frontend",
-    "http://caddy",
-]
+origins = ["https://kjemidagen.no", "https://www.kjemidagen.no"]
+if config.dev:
+    origins += [
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "https://kjemidagen.localhost",
+        "http://kjemidagen.localhost",
+        "http://frontend",
+        "http://caddy",
+    ]
 
 app.add_middleware(
     CORSMiddleware,
