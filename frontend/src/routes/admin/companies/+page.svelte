@@ -3,3 +3,6 @@
 </script>
 
 <div>company admin</div>
+{#each companies as company}
+  <div>{company}</div>
+{/each}

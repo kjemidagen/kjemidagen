@@ -1,6 +1,12 @@
 import type { PageLoad } from "./$types";
-// import { userData } from "/stores";
+import { kjemiFetch } from "$lib/kjemiFetch";
 
-export const load: PageLoad = () => {
+const apiUrl: string = import.meta.env.VITE_PUBLIC_API_URL;
+
+export const load: PageLoad = async ({ fetch }) => {
   console.log("loading users");
+  const res = await kjemiFetch(fetch, apiUrl + "/v1/users");
+  const data = await res.json();
+  console.log("users", data);
+  return { companies: "user 1" };
 };
