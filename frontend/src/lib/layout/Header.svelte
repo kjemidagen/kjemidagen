@@ -18,27 +18,27 @@
 
   const routes = [
     {
-      link: `/{$locale}/`,
+      link: `/${$locale}`,
       label: $t('common.home')
     },
     {
-      link: `/{$locale}/about`,
+      link: `/${$locale}/about`,
       label: $t('common.about')
     },
     {
-      link: `/{$locale}/program`,
+      link: `/${$locale}/program`,
       label: $t('common.program')
     },
     {
-      link: `/{$locale}/companies`,
+      link: `/${$locale}/companies`,
       label: $t('common.companies')
     },
     {
-      link: `/{$locale}/sponsors`,
+      link: `/${$locale}/sponsors`,
       label: $t('common.sponsors')
     },
     {
-      link: `/{$locale}/login`,
+      link: `/${$locale}/login`,
       label: $t('common.login')
     }
   ];
@@ -67,7 +67,8 @@
     <ul class="language list-none col-span-4 overflow-hidden lg:w-40">
       {#each $locales as lc}
         <li class="h-full flex flex-col px-2 float-left md:float-right ">
-          <a class="justify-self-center m-auto text-white" href="/{lc}/{currentRouteNoLang}">{lc}</a
+          <a class="justify-self-center m-auto text-white" href={`/${lc}/${currentRouteNoLang}`}
+            >{lc}</a
           >
         </li>
       {/each}

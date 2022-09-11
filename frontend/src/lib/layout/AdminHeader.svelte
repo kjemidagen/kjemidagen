@@ -6,6 +6,8 @@
   import logo from '$lib/assets/logo_inverted.svg';
   import hamburgerMenuPic from '$lib/assets/hamburgermeny.svg';
 
+  let username: string | undefined;
+
   let currentRoute = '';
   $: {
     currentRoute = $page.routeId || '';
@@ -24,7 +26,7 @@
   <div class="text-white px-6 flex h-16 justify-between md:justify-evenly">
     <a class="flex text-lg text-white items-center color-white lg:w-40" href={'/'}>
       <img class="mr-1" src={logo} alt="logo" width="40" />
-      <span class="hidden lg:inline">Kjemidagen</span>
+      <span class="hidden lg:inline">Kjemidagen-admin</span>
     </a>
     <ul class="list-none hidden md:block flex-grow max-w-5xl mx-4 overflow-hidden">
       {#each routes as route}
@@ -44,6 +46,11 @@
     >
       <img class="w-8 m-auto" src={hamburgerMenuPic} alt="hamburgermeny" />
     </button>
+    {#if username !== undefined}
+      <div>
+        {username}
+      </div>
+    {/if}
   </div>
   {#if navOpen}
     <MobileMenu

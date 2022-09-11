@@ -21,7 +21,7 @@ export async function kjemiFetch(
     console.error("Error, not logged in.");
   }
   const headers = options?.headers || new Headers();
-  headers.append("Authorization", user?.accessToken || "");
+  headers.append("Authorization", "Bearer " + user?.accessToken || "");
   return await fetch(url, {
     headers: headers
   });

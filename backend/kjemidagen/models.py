@@ -130,3 +130,4 @@ class TokenResponse(CamelBaseModel):
     email: EmailStr
     access_token: str
     access_token_exp: int
+    token_type: str = "bearer"

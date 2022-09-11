@@ -34,7 +34,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
             raise credentials_exception
     except JWTError:
         raise credentials_exception
-    user = User.get(user_id)  # type: ignore
+    user = await User.get(user_id)  # type: ignore
     if user is None:
         raise credentials_exception
     return user
@@ -97,6 +97,7 @@ async def login_for_refresh_token(
         email=user.username,
         access_token=tokens["access_token"],
         access_token_exp=tokens["access_token_exp"],
+        token_type="bearer",
     )
 
 
@@ -142,6 +143,7 @@ async def refresh_access_token(
         email=user.username,
         access_token=tokens["access_token"],
         access_token_exp=tokens["access_token_exp"],
+        token_type="bearer",
     )
 
 
