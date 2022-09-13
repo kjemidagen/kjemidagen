@@ -19,7 +19,7 @@
       <h1 class="text-3xl mb-8">{$t('common.about')}</h1>
       <p class="text-md mb-2">{$t('about.paragraph')}</p>
       <h3 class="mt-5 mb-5 text-2xl">{$t('about.theboard')}</h3>
-      <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 lg:-mx-20">
+      <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 xl:-mx-20">
         <AboutCard
           imgSrc={lederSrc}
           name="Pia Nedreås"

@@ -6,8 +6,8 @@
 </script>
 
 <article class="mb-8 mx-auto">
-  <img src={imgSrc} alt={title} class="h-96 w-80 object-cover" />
+  <img src={imgSrc} alt={title} class="h-96 w-80 object-cover xl:h-64 xl:w-52" />
   <h4 class="text-lg">{name}</h4>
   <h5 class="text-md">{title}</h5>
-  <h5 class="text-red"><a href="mailto:{email}">{email}</a></h5>
+  <h5 class="text-red text-sm"><a href="mailto:{email}">{email}</a></h5>
 </article>
