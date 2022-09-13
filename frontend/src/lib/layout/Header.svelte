@@ -36,11 +36,11 @@
     {
       link: `/${$locale}/sponsors`,
       label: $t('common.sponsors')
-    },
-    {
-      link: `/${$locale}/login`,
-      label: $t('common.login')
     }
+    // {
+    //   link: `/${$locale}/login`,
+    //   label: $t('common.login')
+    // }
   ];
 
   let navOpen = false;
