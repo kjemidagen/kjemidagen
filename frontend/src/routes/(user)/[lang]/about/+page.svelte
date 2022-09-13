@@ -36,7 +36,7 @@
           imgSrc={okonomisjefSrc}
           name="Herman Berggren"
           title={$t('about.economist')}
-          email="okonomisjef@kjemidagen.no"
+          email="okonomiansvarlig@kjemidagen.no"
         />
         <AboutCard
           imgSrc={prsjefSrc}

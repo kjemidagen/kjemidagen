@@ -47,7 +47,7 @@ class UserCreateResponse(CamelBaseModel):
     """Contains fields returned on user creation"""
 
     username: EmailStr
-    id: int
+    id: uuid.UUID
     is_admin: bool
 
 
@@ -55,7 +55,7 @@ class UserGetResponse(CamelBaseModel):
     """Contains fields returned from get requests"""
 
     username: EmailStr
-    id: int
+    id: uuid.UUID
     is_admin: bool
 
 
@@ -69,7 +69,7 @@ class UserUpdate(CamelBaseModel):
 
 class UserUpdateResponse(CamelBaseModel):
     username: EmailStr
-    id: int
+    id: uuid.UUID
     is_admin: bool
 
 
@@ -105,7 +105,7 @@ class CompanyAndUserCreate(CompanyBase):
 
 class CompanyCreateResponse(CompanyBase):
     username: EmailStr
-    id: int
+    id: uuid.UUID
     password: str
 
 
@@ -118,7 +118,7 @@ class CompanyUpdate(CamelBaseModel):
 
 class CompanyUpdateResponse(CompanyBase):
     username: EmailStr
-    id: int
+    id: uuid.UUID
 
 
 class RefreshToken(Document):

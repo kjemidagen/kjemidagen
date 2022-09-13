@@ -26,7 +26,7 @@ user_router = APIRouter()
     "/", dependencies=[Depends(get_current_admin)], response_model=List[UserGetResponse]
 )
 async def get_users():
-    users = User.find_all()
+    users = await User.find_all().to_list()
     if not users:
         raise HTTPException(status_code=404, detail="No users")
     return users
