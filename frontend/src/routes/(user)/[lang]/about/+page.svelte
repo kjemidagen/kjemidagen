@@ -1,5 +1,3 @@
-
-
 <script lang="ts">
   import AboutCard from '$lib/components/AboutCard.svelte';
   import { t } from '$lib/translations/translations';
@@ -7,8 +5,8 @@
   import nestlederSrc from '$lib/assets/styret/nestleder.jpg';
   import okonomisjefSrc from '$lib/assets/styret/okonomisjef.jpg';
   import prsjefSrc from '$lib/assets/styret/pr-sjef.jpg';
-  // import riggsjefSrc from '$lib/assets/styret/rigg-sjef.jpg';
-  import riggsjefSrc from '$lib/assets/styret/default.jpg';
+  import riggsjefSrc from '$lib/assets/styret/rigg-sjef.jpg';
+  // import riggsjefSrc from '$lib/assets/styret/default.jpg';
 </script>
 
 <svelte:head>
@@ -21,7 +19,7 @@
       <h1 class="text-3xl mb-8">{$t('common.about')}</h1>
       <p class="text-md mb-2">{$t('about.paragraph')}</p>
       <h3 class="mt-5 mb-5 text-2xl">{$t('about.theboard')}</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-2 m-auto">
+      <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 lg:-mx-20">
         <AboutCard
           imgSrc={lederSrc}
           name="Pia Nedreås"
@@ -38,7 +36,7 @@
           imgSrc={okonomisjefSrc}
           name="Herman Berggren"
           title={$t('about.economist')}
-          email="økonomisjef@kjemidagen.no"
+          email="okonomisjef@kjemidagen.no"
         />
         <AboutCard
           imgSrc={prsjefSrc}
