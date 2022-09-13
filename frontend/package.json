@@ -8,15 +8,14 @@
     "build": "vite build",
     "package": "svelte-kit package",
     "preview": "vite preview",
-    "prepare": "svelte-kit sync",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@sveltejs/adapter-node": "1.0.0-next.77",
-    "@sveltejs/kit": "next",
+    "@sveltejs/adapter-node": "1.0.0-next.88",
+    "@sveltejs/kit": "1.0.0-next.465",
     "@types/cookie": "^0.5.1",
     "@types/three": "^0.141.0",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
@@ -35,7 +34,7 @@
     "tailwindcss": "^3.1.6",
     "tslib": "^2.3.1",
     "typescript": "^4.7.2",
-    "vite": "^2.9.13"
+    "vite": "^3.1.0-beta.1"
   },
   "type": "module",
   "dependencies": {
@@ -44,7 +43,6 @@
     "cookie": "^0.4.1",
     "install-peers": "^1.0.3",
     "svelte-cubed": "^0.2.1",
-    "svelte-kit": "^1.0.0",
     "sveltekit-i18n": "^2.2.2",
     "three": "^0.142.0"
   }

@@ -8,13 +8,13 @@ services:
       - ./frontend/static:/app/static:ro
       - ./frontend/src:/app/src:ro
     working_dir: /app/
-    ports:
-      - 3000:3000
     depends_on:
       - backend
     environment:
-      - VITE_PUBLIC_API_URL=http://backend:8000
-    command: /bin/sh -c "npm run build; node build/index.js"
+      - VITE_SSR_API_URL=http://backend:8000
+    ports:
+      - "3000:3000"
+    command: /bin/sh -c "npm i; npm run build; node build/index.js"
   backend:
     build:
       context: ./backend
@@ -24,10 +24,10 @@ services:
     working_dir: /app/
     depends_on:
       - mongodb
-    ports:
-      - 8000:8000
     environment:
       - DBServer=mongodb
+    ports:
+      - "8000:8000"
     command: uvicorn kjemidagen.main:app --proxy-headers --host 0.0.0.0 --port 8000
   mongodb:
     image: mongo:5.0
@@ -39,7 +39,7 @@ services:
     ports:
       - 27017:27017
     restart: unless-stopped
-
 volumes:
   database:
   build:
+  caddy:

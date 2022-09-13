@@ -22,14 +22,14 @@ jobs:
       - uses: actions/checkout@v3
         with:
           # Dont delete stray files on checkout, means we get to keep the local .env
-          clean: 'false'
+          clean: "false"
 
       # Runs a set of commands using the runners shell
       - name: Build the docker images
         run: docker compose build
-        
+
       - name: Start docker compose
         run: docker compose up --force-recreate -d
-      
+
       - name: Start reverse proxy
         run: caddy start

@@ -115,10 +115,10 @@ const config: Config = {
       routes: ['/sponsors'],
       loader: async () => (await import('./en/sponsors.json')).default
     }
-  ]
-  // log: {
-  //   level: 'debug'
-  // }
+  ],
+  log: {
+    level: 'error'
+  }
 };
 
 export const defaultLocale = 'no';

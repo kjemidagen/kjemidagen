@@ -8,7 +8,10 @@ module.exports = {
         current: 'currentColor',
         red: {
           DEFAULT: '#a92f0f',
-          light: '#f18065'
+          light: '#f18065',
+          dark: '#661C09',
+          darker: '#330A00'
+
         }
       }
     }

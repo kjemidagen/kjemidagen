@@ -3,7 +3,7 @@
   import * as SC from 'svelte-cubed';
   import Backdrop from './Backdrop.svelte';
   import Logo from './Logo.svelte';
-  import { load } from './texture';
+  import bgUrl from '$lib/assets/hero-bg.png';
 
   let w = 1;
   let h = 1;
@@ -11,7 +11,8 @@
 
   let loaded = false;
 
-  const map = load('/hero-bg.png', () => {
+  import { load } from './texture';
+  const map = load(bgUrl, () => {
     loaded = true;
   });
 

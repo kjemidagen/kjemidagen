@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   import * as THREE from 'three';
   import * as SC from 'svelte-cubed';
+  import type { Texture } from 'three';
 
-  /** @type {import('three').Texture} */
-  export let map;
+  export let map: Texture;
 
   let w = 1;
   let h = 1;

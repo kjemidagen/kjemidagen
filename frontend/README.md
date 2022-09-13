@@ -2,17 +2,19 @@
 
 ## Developing
 
-Once you've created a project and installed dependencies with `yarn install`, start a development server:
+Once you've created a project and installed dependencies with `npm run install`, start a development server:
 
 ```bash
-yarn dev
+npm run dev
 
 # or start the server and open the app in a new browser tab
-yarn dev -- --open
+npm run dev -- --open
 ```
 
 ## Building
 
 Building gjøres med docker, se Readme i foreldre-mappe.
 
-TODO: Husk å unpinne versjonen til adapter-node i package.json når <https://github.com/sveltejs/kit/issues/5431> er fiksa
+## Sikkerhet
+
+Les om sikkerhet på Auth0 sine sider. Vi bruker ikke Auth0, men vi bruker prinsippene. [Auth0 docs](https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation)
