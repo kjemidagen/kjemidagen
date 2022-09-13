@@ -5,7 +5,7 @@
   const dispatch = createEventDispatcher();
 
   export let currentRoute: string;
-  export let routes: { label: string; link: string }[];
+  export let routes: { label: string; link: string; linkNoLang: string }[];
 </script>
 
 <div
@@ -23,12 +23,12 @@
 >
   {#each routes as route}
     <li
-      class:bg-red-light={route.link === currentRoute}
+      class:bg-red-light={route.linkNoLang === currentRoute}
       on:click={() => {
         dispatch('closemenu');
       }}
     >
-      <a class="block px-2 py-4 " href={route.link}>
+      <a class="block px-2 py-4 text-white" href={route.link}>
         {route.label}
       </a>
     </li>

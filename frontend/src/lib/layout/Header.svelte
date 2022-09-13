@@ -7,41 +7,46 @@
   import logo from '$lib/assets/logo_inverted.svg';
   import hamburgerMenuPic from '$lib/assets/hamburgermeny.svg';
 
-  let currentRoute = '';
-  let currentRouteNoLang = '';
-  $: {
-    currentRoute = $page.routeId || '';
-  }
-  $: {
-    currentRouteNoLang = $page.routeId?.split('/').splice(1, undefined).join('/') || '';
-  }
+  $: currentRoute = $page.routeId?.split('/').slice(1, undefined).join('/') || '';
+  $: currentRouteNoLang = currentRoute.split('/').slice(1, undefined).join('/');
 
-  const routes = [
+  $: routes = [
     {
       link: `/${$locale}`,
-      label: $t('common.home')
+      label: $t('common.home'),
+      linkNoLang: ``
     },
     {
       link: `/${$locale}/about`,
-      label: $t('common.about')
+      label: $t('common.about'),
+      linkNoLang: `about`
     },
     {
       link: `/${$locale}/program`,
-      label: $t('common.program')
+      label: $t('common.program'),
+      linkNoLang: `program`
     },
     {
       link: `/${$locale}/companies`,
-      label: $t('common.companies')
+      label: $t('common.companies'),
+      linkNoLang: `companies`
     },
     {
       link: `/${$locale}/sponsors`,
-      label: $t('common.sponsors')
+      label: $t('common.sponsors'),
+      linkNoLang: `sponsors`
     }
     // {
     //   link: `/${$locale}/login`,
-    //   label: $t('common.login')
+    //   label: $t('common.login'),
+    //   linkNoLang: `/login`
     // }
   ];
+
+  $: langRoutes = $locales.map((locale) => ({
+    link: `/${locale}/${currentRouteNoLang}`,
+    label: locale
+  }));
 
   let navOpen = false;
 </script>
@@ -56,7 +61,7 @@
       {#each routes as route}
         <li
           class="h-full flex flex-col float-left px-2"
-          class:bg-red-light={currentRoute === route.link}
+          class:bg-red-light={currentRouteNoLang === route.linkNoLang}
         >
           <a class="justify-self-center m-auto text-white" href={route.link}>
             {route.label}
@@ -65,11 +70,9 @@
       {/each}
     </ul>
     <ul class="language list-none col-span-4 overflow-hidden lg:w-40">
-      {#each $locales as lc}
+      {#each langRoutes as lc}
         <li class="h-full flex flex-col px-2 float-left md:float-right ">
-          <a class="justify-self-center m-auto text-white" href={`/${lc}/${currentRouteNoLang}`}
-            >{lc}</a
-          >
+          <a class="justify-self-center m-auto text-white" href={lc.link}>{lc.label}</a>
         </li>
       {/each}
     </ul>
@@ -85,7 +88,7 @@
   {#if navOpen}
     <MobileMenu
       {routes}
-      {currentRoute}
+      currentRoute={currentRouteNoLang}
       on:closemenu={() => {
         navOpen = false;
       }}
