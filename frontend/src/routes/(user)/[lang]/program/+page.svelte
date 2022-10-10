@@ -9,24 +9,66 @@
 <section class="program" id="program">
   <div class="content">
     <h1 class="text-3xl mb-8">{$t('program.title')}</h1>
-    <figure class="tablee grid max-w-lg mb-16 text-lg mx-auto font-medium ">
-      <div>10:00</div>
-      <div>{$t('program.opening')}</div>
-      <div>10:15 - 15:00</div>
-      <div>{$t('program.stands')}</div>
-      <div>10:15 - 15:00</div>
-      <div>{$t('program.speedinterview')}</div>
-      <div>11:00 - 13:00</div>
-      <div>{$t('program.cvphoto')}</div>
-      <div>11:15 - 12:00</div>
-      <div>{$t('program.summerjob')}</div>
-      <div>12:30 - 13:15</div>
-      <div>{$t('program.motivationalspeaking')}</div>
-      <div>14:15 - 14:45</div>
-      <div>{$t('program.jobmarathon')}</div>
-      <div>18:30</div>
-      <div>{$t('program.banquet')}</div>
-    </figure>
+    <div class="flex flex-col">
+      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+          <div class="overflow-hidden">
+            <table
+              class="table-auto mb-16 text-lg min-w-full text-center font-medium border-spacing-80"
+            >
+              <tbody>
+                <tr>
+                  <td>10:00</td>
+                  <td>
+                    {$t('program.opening')}
+                  </td>
+                </tr>
+                <tr>
+                  <td> 10:15 - 15:00 </td>
+                  <td>
+                    {$t('program.stands')}
+                  </td>
+                </tr>
+                <tr>
+                  <td> 10:15 - 15:00 </td>
+                  <td>
+                    {$t('program.speedinterview')}
+                  </td>
+                </tr>
+                <tr>
+                  <td> 11:00 - 13:00 </td>
+                  <td>
+                    {$t('program.cvphoto')}
+                  </td>
+                </tr>
+                <tr>
+                  <td> 11:15 - 12:00 </td>
+                  <td>
+                    {$t('program.summerjob')}
+                  </td>
+                </tr>
+                <tr>
+                  <td> 12:30 - 13:15 </td>
+                  <td>
+                    {$t('program.motivationalspeaking')}
+                  </td>
+                </tr>
+                <tr>
+                  <td> 14:15 - 14:45 </td>
+                  <td>
+                    {$t('program.jobmarathon')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>18:30</td>
+                  <td>{$t('program.banquet')}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="my-8">
       <h3 class="font-medium text-xl my-4">{$t('program.speedinterview')}</h3>
       <p>
@@ -40,6 +82,10 @@
       <p>
         {$t('program.jobmarathon_p')}
       </p>
+      <h3 class="font-medium text-xl my-4">{$t('program.motivationalspeaking')}</h3>
+      <p>
+        {$t('program.motivationalspeaking_p')}
+      </p>
       <h3 class="font-medium text-xl my-4">{$t('program.banquet')}</h3>
       <p>
         {$t('program.banquet_p')}
@@ -49,7 +95,7 @@
 </section>
 
 <style>
-  .tablee {
-    grid-template-columns: minmax(auto, 1fr) 1fr;
+  td {
+    text-align: left;
   }
 </style>
