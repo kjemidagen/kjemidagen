@@ -44,19 +44,19 @@
                 <tr>
                   <td> 11:15 - 12:00 </td>
                   <td>
-                    {$t('program.summerjob')}
+                    R9 - {$t('program.summerjob')}
                   </td>
                 </tr>
                 <tr>
                   <td> 12:30 - 13:15 </td>
                   <td>
-                    {$t('program.motivationalspeaking')}
+                    R5 - {$t('program.motivationalspeaking')}
                   </td>
                 </tr>
                 <tr>
                   <td> 14:15 - 14:45 </td>
                   <td>
-                    {$t('program.jobmarathon')}
+                    R9 - {$t('program.jobmarathon')}
                   </td>
                 </tr>
                 <tr>
