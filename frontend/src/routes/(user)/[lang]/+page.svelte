@@ -1,5 +1,3 @@
-
-
 <script lang="ts">
   import { t } from '$lib/translations/translations';
   import Hero from '$lib/3D/Hero.svelte';
@@ -11,7 +9,7 @@
 
 <section class="hero" id="hero">
   <!-- fake border top -->
-  <div class="relative -top-2 left-0 z-30 border-4 -mx-2 border-red-light" />
+  <div class="relative -top-2 left-0 z-30 border-t-8 -mx-2 border-red-light" />
   <Hero />
   <div class="force-space flex h-[80vh] mx-auto max-w-3xl pointer-events-none">
     <div
@@ -23,5 +21,5 @@
     </div>
   </div>
   <!-- fake border bottom -->
-  <div class="relative -bottom-2 left-0 z-30 border-4 -mx-2 border-red-light" />
+  <div class="relative -bottom-2 left-0 z-30 border-b-8 -mx-2 border-red-light" />
 </section>

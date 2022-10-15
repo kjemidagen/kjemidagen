@@ -1,4 +1,4 @@
-name: Restart backend
+name: Restart everything
 
 # Controls when the workflow will run
 on:
@@ -30,4 +30,4 @@ jobs:
         run: docker compose up backend frontend --force-recreate -d
 
       - name: restart caddy with new config if any
-        run: caddy restart
+        run: caddy reload

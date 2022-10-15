@@ -32,7 +32,7 @@
         type="password"
         name="password"
         placeholder="password"
-        id="email"
+        id="password"
         bind:value={password}
       />
     </div>
