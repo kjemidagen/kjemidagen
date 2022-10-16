@@ -36,8 +36,6 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=kjemidagen
     volumes:
       - database:/data/db
-    ports:
-      - 27017:27017
     restart: unless-stopped
 volumes:
   database:
