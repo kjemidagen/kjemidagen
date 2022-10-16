@@ -15,6 +15,7 @@ export async function login(fetch: fetchFunc, email: string, password: string) {
     body: formData,
     credentials: 'include' //'same-origin'
   });
+  // TODO: handle bad credidentials
   const data = await res.json();
   userData.set(data);
 }

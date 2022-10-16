@@ -1,5 +1,6 @@
 from typing import List
 from fastapi import APIRouter, HTTPException, Depends, status
+from uuid import UUID
 
 from kjemidagen.crypto import hash_password
 from kjemidagen.auth import get_current_user, get_current_admin
@@ -29,11 +30,14 @@ async def get_users():
     users = await User.find_all().to_list()
     if not users:
         raise HTTPException(status_code=404, detail="No users")
-    return users
+    return [
+        UserGetResponse(id=user.id, username=user.username, is_admin=user.is_admin)
+        for user in users
+    ]
 
 
 @user_router.get("/{user_id}", response_model=UserGetResponse)
-async def get_user(user_id: int, current_user: User = Depends(get_current_user)):
+async def get_user(user_id: UUID, current_user: User = Depends(get_current_user)):
     if not (current_user.is_admin or current_user.id == user_id):
         raise credentials_exception
     user = await User.get(user_id)  # type: ignore

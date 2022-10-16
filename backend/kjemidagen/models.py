@@ -2,7 +2,7 @@ import datetime
 import uuid
 import pymongo
 import re
-from beanie import Document, Indexed, Link, Insert, Replace, SaveChanges, before_event
+from beanie import Document, Indexed, Link, Replace, SaveChanges, before_event
 from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 
