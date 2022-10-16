@@ -1,6 +1,6 @@
 http://kjemidagen.localhost {
 	respond /caddytest "Caddy is up"
-	reverse_proxy /v1/* localhost:8000 
+	reverse_proxy /v1/* localhost:8000
 	reverse_proxy /docs* localhost:8000
 	reverse_proxy /openapi.json localhost:8000
 	reverse_proxy localhost:3000 # if using docker
@@ -8,7 +8,7 @@ http://kjemidagen.localhost {
 }
 
 kjemidagen.no {
-	reverse_proxy /v1/* localhost:8000 
+	reverse_proxy /v1/* localhost:8000
 	reverse_proxy /docs* localhost:8000
 	reverse_proxy /openapi.json localhost:8000
 	reverse_proxy localhost:3000
