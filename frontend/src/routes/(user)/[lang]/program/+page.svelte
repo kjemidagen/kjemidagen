@@ -20,6 +20,7 @@
                 <tr>
                   <td>10:00</td>
                   <td>
+                    {$t('program.opening_loc')} -
                     {$t('program.opening')}
                   </td>
                 </tr>
