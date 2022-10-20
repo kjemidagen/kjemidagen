@@ -114,6 +114,24 @@ const config: Config = {
       key: 'sponsors',
       routes: ['/sponsors'],
       loader: async () => (await import('./en/sponsors.json')).default
+    },
+    {
+      locale: 'no',
+      key: 'map',
+      routes: ['/map'],
+      loader: async () => (await import('./no/map.json')).default
+    },
+    {
+      locale: 'nn',
+      key: 'map',
+      routes: ['/map'],
+      loader: async () => (await import('./nn/map.json')).default
+    },
+    {
+      locale: 'en',
+      key: 'map',
+      routes: ['/map'],
+      loader: async () => (await import('./en/map.json')).default
     }
   ],
   log: {

@@ -35,6 +35,11 @@
       link: `/${$locale}/sponsors`,
       label: $t('common.sponsors'),
       linkNoLang: `sponsors`
+    },
+    {
+      link: `/${$locale}/map`,
+      label: $t('common.map'),
+      linkNoLang: `map`
     }
     // {
     //   link: `/${$locale}/login`,
