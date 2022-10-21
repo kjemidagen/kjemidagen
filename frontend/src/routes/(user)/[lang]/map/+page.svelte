@@ -1,6 +1,7 @@
 <script lang="ts">
   import { t } from '$lib/translations/translations';
-  import companyMap from '$lib/assets/map.jpg';
+  import companyMap1 from '$lib/assets/standkart/1.jpg';
+  import companyMapU1 from '$lib/assets/standkart/u1.jpg';
 </script>
 
 <svelte:head>
@@ -11,6 +12,13 @@
   <div class="content" id="map">
     <h1 class="text-3xl mb-8">{$t('common.map')}</h1>
     <p class="text-lg">{$t('map.intro')}</p>
-    <img src={companyMap} alt="Map of the stands" />
+    <div class="flex flex-col lg:flex-row lg:gap-2 lg:-mx-20">
+      <div class="my-1">
+        <img src={companyMap1} alt="Map of the stands in etg 1" />
+      </div>
+      <div class="my-1">
+        <img src={companyMapU1} alt="Map of the stands in etg u1" />
+      </div>
+    </div>
   </div>
 </section>
