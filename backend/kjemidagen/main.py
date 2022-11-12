@@ -1,3 +1,5 @@
+import logging
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -36,6 +38,7 @@ app.include_router(company_router, prefix="/v1/companies", tags=["companies"])
 @app.on_event("startup")
 async def connect_to_db():
     await init_database()
+    logging.basicConfig(filename="kjemidagen.log", level=logging.INFO)
 
 
 @app.get("/v1/")

@@ -91,19 +91,15 @@ class Company(Document):
         validate_on_save = True
 
 
-class CompanyBase(CamelBaseModel):
+class CompanyAndUserCreate(CamelBaseModel):
     username: EmailStr
     title: str
+    number_of_representatives: Optional[int] = 0
     public_email: EmailStr
-    number_of_representatives: int
     additional_data: Optional[str]
 
 
-class CompanyAndUserCreate(CompanyBase):
-    username: EmailStr
-
-
-class CompanyCreateResponse(CompanyBase):
+class CompanyCreateResponse(CamelBaseModel):
     username: EmailStr
     id: uuid.UUID
     password: str
@@ -116,7 +112,7 @@ class CompanyUpdate(CamelBaseModel):
     additional_data: Optional[str]
 
 
-class CompanyUpdateResponse(CompanyBase):
+class CompanyUpdateResponse(CamelBaseModel):
     username: EmailStr
     id: uuid.UUID
 

@@ -1,4 +1,5 @@
 import datetime
+import logging
 import os
 import uuid
 from dotenv import load_dotenv
@@ -86,7 +87,7 @@ async def login_for_refresh_token(
     ):
         raise HTTPException(status_code=400, detail="Incorrect username or password")
     tokens = await get_tokens(user)
-    ## Set refresh token
+    # Set refresh token
     response.set_cookie(
         key="refresh",
         value=tokens["refresh_token"],
@@ -107,11 +108,9 @@ async def refresh_access_token(
     refresh_token: str | None = Cookie(default=None, alias="refresh"),
 ):
     try:
-        print(refresh_token)
         old_token: dict = jwt.decode(
             refresh_token, REFRESH_TOKEN_KEY, algorithms=[ALGORITHM]  # type: ignore
         )
-        print(old_token)
         user_id: int = old_token.get("user_id")  # type:ignore
         if user_id is None:
             raise credentials_exception

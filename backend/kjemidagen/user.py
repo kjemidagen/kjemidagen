@@ -33,7 +33,7 @@ async def get_users():
     return [
         UserGetResponse(id=user.id, username=user.username, is_admin=user.is_admin)
         for user in users
-    ]
+    ]  # Yucky but nessecary because casting doesnt work
 
 
 @user_router.get("/{user_id}", response_model=UserGetResponse)
@@ -43,7 +43,7 @@ async def get_user(user_id: UUID, current_user: User = Depends(get_current_user)
     user = await User.get(user_id)  # type: ignore
     if not user:
         raise HTTPException(status_code=404, detail="No users")
-    return user
+    return UserGetResponse(id=user.id, username=user.username, is_admin=user.is_admin)
 
 
 @user_router.get("/self}", response_model=UserGetResponse)
@@ -51,7 +51,11 @@ async def get_user_self(user_id: int, current_user: User = Depends(get_current_u
     """Get info about current user"""
     if not (current_user.is_admin or current_user.id == user_id):
         raise credentials_exception
-    return current_user
+    return UserGetResponse(
+        id=current_user.id,
+        username=current_user.username,
+        is_admin=current_user.is_admin,
+    )
 
 
 @user_router.post(

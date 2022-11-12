@@ -22,22 +22,35 @@ credentials_exception = HTTPException(
 company_router = APIRouter()
 
 
-@company_router.get("/", dependencies=[Depends(get_current_admin)])
+@company_router.get(
+    "/",
+    dependencies=[Depends(get_current_admin)],
+    response_model=list[CompanyCreateResponse],
+)
 async def get_companies():
-    companies = await Company.find_all().to_list()
+    companies = await Company.find({}, fetch_links=True).to_list()
     if not companies:
-        raise credentials_exception
-    return companies
+        return []
+    return [
+        CompanyCreateResponse(
+            username=company.user.username,  # type: ignore
+            id=company.id,
+        )
+        for company in companies
+    ]
 
 
-@company_router.get("/{company_id}")
+@company_router.get("/{company_id}", response_model=CompanyCreateResponse)
 async def get_company(company_id, current_user: User = Depends(get_current_user)):
     if not (current_user.is_admin or current_user.id == company_id):
         raise credentials_exception
     company = await Company.get(company_id)
     if not company:
         raise HTTPException(status_code=404, detail=f"No company with id {company_id}")
-    return company
+    return CompanyCreateResponse(
+        username=company.user.username,  # type: ignore
+        id=company.id,
+    )
 
 
 @company_router.post(
@@ -73,7 +86,7 @@ async def create_company(company: CompanyAndUserCreate):
     )
 
 
-@company_router.patch("/{company_id}")
+@company_router.patch("/{company_id}", response_model=CompanyUpdateResponse)
 async def edit_company(
     company_id: int,
     updated_company: CompanyUpdate,
