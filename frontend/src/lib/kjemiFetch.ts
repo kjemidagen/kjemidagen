@@ -3,6 +3,8 @@ import { get } from "svelte/store";
 
 export interface fetchOptions {
   headers?: Headers;
+  method?: "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
+  data?: BodyInit;
 }
 
 export type fetchFunc =
@@ -23,6 +25,8 @@ export async function kjemiFetch(
   const headers = options?.headers || new Headers();
   headers.append("Authorization", "Bearer " + user?.accessToken || "");
   return await fetch(url, {
-    headers: headers
+    headers: headers,
+    method: options?.method,
+    body: options?.data
   });
 }
