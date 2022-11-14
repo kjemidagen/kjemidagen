@@ -26,6 +26,8 @@
     {/each}
   </div>
   <div>
-    <a href="/admin/users/create">create user</a>
+    <a href="/admin/users/create" class="border-red bg-red-light px-2 py-1 text-white text-bold"
+      >create user</a
+    >
   </div>
 </div>

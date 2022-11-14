@@ -24,12 +24,12 @@
 </script>
 
 <div class="content">
-  <h1 class="text-lg text-red">Create user</h1>
+  <h1 class="text-2xl text-red">Create user</h1>
   <form on:submit|preventDefault={onSubmit} class="flex flex-col">
     <div>
       <label for="email">Email</label>
       <input
-        class="border-2 border-red-light"
+        class="border-2 border-red-light rounded px-2"
         type="email"
         label="email"
         placeholder="email"
@@ -41,7 +41,7 @@
     <div>
       <label for="password">Password</label>
       <input
-        class="border-2 border-red-light"
+        class="border-2 border-red-light rounded px-2"
         type="password"
         label="password"
         placeholder="password"
@@ -52,7 +52,7 @@
     <div>
       <label for="repeatpass">Repeat password</label>
       <input
-        class="border-2 border-red-light"
+        class="border-2 border-red-light rounded px-2"
         type="password"
         label="repeat password"
         placeholder="repeat password"
@@ -62,7 +62,11 @@
       />
     </div>
     <div>
-      <button type="submit" class="border-2 border-red-light">Create</button>
+      <button
+        type="submit"
+        class="border-2 border-red rounded px-2 py-1 text-white font-extrabold bg-red-light"
+        >Create</button
+      >
     </div>
   </form>
 </div>

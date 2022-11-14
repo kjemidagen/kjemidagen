@@ -1,9 +1,12 @@
+import logging
 from typing import List
 from fastapi import APIRouter, HTTPException, Depends, status
 from uuid import UUID
 
+from kjemidagen import config
 from kjemidagen.crypto import hash_password
 from kjemidagen.auth import get_current_user, get_current_admin
+from kjemidagen.logger import LoggerRoute
 
 from kjemidagen.models import (
     User,
@@ -19,8 +22,10 @@ credentials_exception = HTTPException(
     detail="Could not validate credentials",
     headers={"WWW-Authenticate": "Bearer"},
 )
-
-user_router = APIRouter()
+if False:  # config.dev: # Perhaps too dangerous
+    user_router = APIRouter(route_class=LoggerRoute)
+else:
+    user_router = APIRouter()
 
 
 @user_router.get(
@@ -68,6 +73,7 @@ async def create_user(user: UserCreate):
     new_user = User(
         username=user.username, hashed_password=hash_password(password=user.password)
     )
+    logging.info(f"Created users username is {user.username}")
     await new_user.insert()
     return UserCreateResponse(
         username=new_user.username, id=new_user.id, is_admin=new_user.is_admin

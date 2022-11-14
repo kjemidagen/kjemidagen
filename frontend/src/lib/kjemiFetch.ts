@@ -24,6 +24,7 @@ export async function kjemiFetch(
   }
   const headers = options?.headers || new Headers();
   headers.append("Authorization", "Bearer " + user?.accessToken || "");
+  headers.append("Content-Type", "application/json");
   return await fetch(url, {
     headers: headers,
     method: options?.method,
