@@ -11,15 +11,16 @@
     <h1 class="text-lg">user admin</h1>
     {#each data.users as user}
       <div>
-        <span>
-          {user.username}
-        </span>
-        <span>
-          {user.isAdmin}
-        </span>
-        <span>
-          {user.id}
-        </span>
+        <a href="/admin/users/{user.id}">
+          {#if user.isAdmin}
+            <span class="text-red">admin</span>
+          {:else}
+            <span class="text-red">company</span>
+          {/if}
+          <span class="text-black">
+            {user.username}
+          </span>
+        </a>
       </div>
     {:else}
       <div>No users</div>

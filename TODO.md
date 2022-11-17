@@ -1,3 +1,4 @@
 # TODO
 
-Sett opp logging
+- [x] Sett opp logging
+- [ ] Skriv om til SQLModel med MySQL, fuck MongoDB
