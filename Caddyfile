@@ -1,17 +1,16 @@
 http://kjemidagen.localhost {
 	respond /caddytest "Caddy is up"
-	reverse_proxy /v1/* localhost:8000
-	reverse_proxy /docs* localhost:8000
-	reverse_proxy /openapi.json localhost:8000
-	reverse_proxy localhost:3000 # if using docker
-	# reverse_proxy localhost:5173 # if using npm run dev
+	reverse_proxy /v1/* kjemi-backend:8000
+	reverse_proxy /docs* kjemi-backend:8000
+	reverse_proxy /openapi.json kjemi-backend:8000
+	reverse_proxy kjemi-frontend:5173
 }
 
 kjemidagen.no {
-	reverse_proxy /v1/* localhost:8000
-	reverse_proxy /docs* localhost:8000
-	reverse_proxy /openapi.json localhost:8000
-	reverse_proxy localhost:3000
+	reverse_proxy /v1/* kjemi-backend:8000
+	reverse_proxy /docs* kjemi-backend:8000
+	reverse_proxy /openapi.json kjemi-backend:8000
+	reverse_proxy kjemi-frontend:3000
 }
 
 www.kjemidagen.no {

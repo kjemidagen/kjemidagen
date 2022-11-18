@@ -1,21 +1,35 @@
 version: "3.8"
 services:
+  
+  caddy:
+    container_name: kjemi-caddy
+    image: caddy:2.0.0
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - caddy:/data
+      - ./Caddyfile:/etc/caddy/Caddyfile
   frontend:
+    container_name: kjemi-frontend
     build:
       context: ./frontend
       dockerfile: frontend.dockerfile
     volumes:
-      - ./frontend/static:/app/static:ro
-      - ./frontend/src:/app/src:ro
-    working_dir: /app/
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.svelte-kit
+      # - ./frontend/static:/app/static:ro
+      # - ./frontend/src:/app/src:ro
     depends_on:
       - backend
     environment:
-      - VITE_SSR_API_URL=http://backend:8000
+      - VITE_SSR_API_URL=http://kjemi-backend:8000
     ports:
-      - "3000:3000"
-    command: /bin/sh -c "npm i; npm run build; node build/index.js"
+      - 5173:5173
+    # command: /bin/sh -c "npm i; npm run build; node build/index.js"
   backend:
+    container_name: kjemi-backend
     build:
       context: ./backend
       dockerfile: backend.dockerfile
@@ -25,18 +39,17 @@ services:
     depends_on:
       - mongodb
     environment:
-      - DBServer=mongodb
-    ports:
-      - "8000:8000"
+      - DBServer=kjemi-mongo
     command: uvicorn kjemidagen.main:app --proxy-headers --host 0.0.0.0 --port 8000
   mongodb:
+    container_name: kjemi-mongo
     image: mongo:5.0
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=kjemidagen
     volumes:
       - database:/data/db
-    restart: unless-stopped
+    restart: on-failure
 volumes:
   database:
   build:
