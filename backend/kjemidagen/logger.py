@@ -5,6 +5,10 @@ from fastapi import Request, Response
 from fastapi.routing import APIRoute
 
 
+# This can be used for logging but is obnoxious
+# user_router = APIRouter(route_class=LoggerRoute)
+
+
 class LoggerRoute(APIRoute):
     def get_route_handler(self) -> Callable:
         original_route_handler = super().get_route_handler()

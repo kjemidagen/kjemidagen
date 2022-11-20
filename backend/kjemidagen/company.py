@@ -1,7 +1,9 @@
 from fastapi import APIRouter, Depends, status
 from fastapi.exceptions import HTTPException
+from sqlmodel import Session, select
 from kjemidagen.auth import get_current_admin, get_current_user
 from kjemidagen.crypto import generate_random_password, hash_password
+from kjemidagen.database import get_session
 
 from kjemidagen.models import (
     Company,
@@ -27,8 +29,8 @@ company_router = APIRouter()
     dependencies=[Depends(get_current_admin)],
     response_model=list[CompanyCreateResponse],
 )
-async def get_companies():
-    companies = await Company.find({}, fetch_links=True).to_list()
+async def get_companies(session: Session = Depends(get_session)):
+    companies = session.exec(select(Company)).all()
     if not companies:
         return []
     return [
@@ -41,10 +43,16 @@ async def get_companies():
 
 
 @company_router.get("/{company_id}", response_model=CompanyCreateResponse)
-async def get_company(company_id, current_user: User = Depends(get_current_user)):
+async def get_company(
+    company_id: int,
+    current_user: User = Depends(get_current_user),
+    session: Session = Depends(get_session),
+):
     if not (current_user.is_admin or current_user.id == company_id):
         raise credentials_exception
-    company = await Company.get(company_id)
+    company = session.exec(
+        select(Company).where(Company.id == company_id)
+    ).one_or_none()
     if not company:
         raise HTTPException(status_code=404, detail=f"No company with id {company_id}")
     return CompanyCreateResponse(
@@ -56,12 +64,16 @@ async def get_company(company_id, current_user: User = Depends(get_current_user)
 @company_router.post(
     "/", dependencies=[Depends(get_current_admin)], response_model=CompanyCreateResponse
 )
-async def create_company(company: CompanyAndUserCreate):
+async def create_company(
+    company: CompanyAndUserCreate, session: Session = Depends(get_session)
+):
     generated_password = generate_random_password()
     user = User(
         username=company.username, hashed_password=hash_password(generated_password)
     )
-    await user.insert()
+    session.add(user)
+    session.commit()
+    session.refresh(user)
 
     company_in_db = Company(
         id=user.id,
@@ -71,7 +83,10 @@ async def create_company(company: CompanyAndUserCreate):
         additional_data=company.additional_data,
         user=user,
     )
-    await company_in_db.insert()
+
+    session.add(company_in_db)
+    session.commit()
+    session.refresh(company_in_db)
 
     return CompanyCreateResponse(
         username=company_in_db.user.username,  # type: ignore
@@ -91,10 +106,15 @@ async def edit_company(
     company_id: int,
     updated_company: CompanyUpdate,
     current_user: User = Depends(get_current_user),
+    session: Session = Depends(get_session),
 ):
     if not (current_user.is_admin or current_user.id == company_id):
         raise credentials_exception
-    company = await Company.get(company_id)  # type: ignore
+
+    company = session.exec(
+        select(Company).where(Company.id == company_id)
+    ).one_or_none()
+
     if not company:
         raise HTTPException(status_code=404, detail="User not found")
     updated_data = updated_company.dict(
@@ -107,7 +127,9 @@ async def edit_company(
     for field, value in updated_data.items():
         setattr(company, field, value)
 
-    await company.save()
+    session.add(company)
+    session.commit()
+
     return CompanyUpdateResponse(
         id=company.id,
         title=company.title,

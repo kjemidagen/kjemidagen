@@ -1,14 +1,15 @@
 import datetime
-import logging
 import os
 import uuid
 from dotenv import load_dotenv
-from fastapi import APIRouter, Cookie, Request, status, HTTPException, Depends, Response
+from fastapi import APIRouter, Cookie, status, HTTPException, Depends, Response
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
+from sqlmodel import Session, select
 
 from kjemidagen.crypto import verify_password
 from kjemidagen.models import User, RefreshToken, TokenResponse
+from kjemidagen.database import get_session
 
 
 load_dotenv()
@@ -47,7 +48,8 @@ async def get_current_admin(current_user: User = Depends(get_current_user)):
 
 
 async def get_tokens(user: User):
-    user_id = user.id.hex
+    session: Session = next(get_session())
+    user_id = user.id
     access_token_data = {
         "user_id": user_id,
         "is_admin": user.is_admin,
@@ -58,9 +60,11 @@ async def get_tokens(user: User):
     )
 
     refresh_token_in_db = RefreshToken()
-    await refresh_token_in_db.create()
+    session.add(refresh_token_in_db)
+    session.commit()
+    session.refresh(refresh_token_in_db)
 
-    refresh_token_data = {"user_id": user_id, "token_id": refresh_token_in_db.id.hex}
+    refresh_token_data = {"user_id": user_id, "token_id": refresh_token_in_db.id}
     refresh_token: str = jwt.encode(
         refresh_token_data, REFRESH_TOKEN_KEY, algorithm=ALGORITHM
     )
@@ -77,9 +81,13 @@ auth_router = APIRouter()
 
 @auth_router.post("/login", response_model=TokenResponse)
 async def login_for_refresh_token(
-    response: Response, form_data: OAuth2PasswordRequestForm = Depends()
+    response: Response,
+    form_data: OAuth2PasswordRequestForm = Depends(),
+    session: Session = Depends(get_session),
 ):
-    user = await User.find_one(User.username == form_data.username)
+    user = session.exec(
+        select(User).where(User.username == form_data.username)
+    ).one_or_none()
     if user is None:
         raise HTTPException(status_code=400, detail="Incorrect username or password")
     if not verify_password(

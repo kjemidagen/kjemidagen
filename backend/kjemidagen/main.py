@@ -6,13 +6,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from kjemidagen.user import user_router
 from kjemidagen.auth import auth_router
 from kjemidagen.company import company_router
-from kjemidagen.database import init_database
-from kjemidagen import config
+from kjemidagen.config import Config
 
 app = FastAPI()
 
 origins = ["https://kjemidagen.no", "https://www.kjemidagen.no"]
-if config.dev:
+if Config.dev:
     origins += [
         "http://localhost:3000",
         "http://localhost:3001",
@@ -37,7 +36,6 @@ app.include_router(company_router, prefix="/v1/companies", tags=["companies"])
 
 @app.on_event("startup")
 async def connect_to_db():
-    await init_database()
     logging.basicConfig(filename="kjemidagen.log", level=logging.INFO)
 
 
