@@ -103,7 +103,7 @@ class CompanyUpdateResponse(CamelBaseModel):
     id: int
 
 
-class RefreshToken(SQLModel):
+class RefreshToken(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)  # type: ignore
     is_revoked: bool = False
 

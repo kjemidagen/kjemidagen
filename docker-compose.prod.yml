@@ -1,0 +1,15 @@
+services:
+  caddy:
+    volumes:
+      - ./Caddyfile.prod:/etc/caddy/Caddyfile
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: frontend.prod.dockerfile
+    volumes:
+      - sveltekit_build:/app/build
+  backend:
+    command: uvicorn kjemidagen.main:app --proxy-headers --host 0.0.0.0 --port 8000 --workers 4
+
+volumes:
+  sveltekit_build:

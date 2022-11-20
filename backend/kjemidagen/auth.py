@@ -1,6 +1,5 @@
 import datetime
 import os
-import uuid
 from dotenv import load_dotenv
 from fastapi import APIRouter, Cookie, status, HTTPException, Depends, Response
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
@@ -13,6 +12,7 @@ from kjemidagen.database import get_session
 
 
 load_dotenv()
+# Todo: flytt disse til config
 ACCESS_TOKEN_KEY = os.getenv("ACCESS_TOKEN_KEY")
 REFRESH_TOKEN_KEY = os.getenv("REFRESH_TOKEN_KEY")
 ALGORITHM = os.getenv("ALGORITHM") or "HS256"
@@ -29,6 +29,7 @@ credentials_exception = HTTPException(
 
 
 async def get_current_user(token: str = Depends(oauth2_scheme)):
+    session = next(get_session())
     try:
         payload = jwt.decode(token, ACCESS_TOKEN_KEY, algorithms=[ALGORITHM])
         user_id: str = payload.get("user_id")  # type: ignore
@@ -36,7 +37,9 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
             raise credentials_exception
     except JWTError:
         raise credentials_exception
-    user = await User.get(user_id)  # type: ignore
+    user: User | None = session.exec(
+        select(User).where(User.id == user_id)
+    ).one_or_none()
     if user is None:
         raise credentials_exception
     return user
@@ -114,30 +117,39 @@ async def login_for_refresh_token(
 async def refresh_access_token(
     response: Response,
     refresh_token: str | None = Cookie(default=None, alias="refresh"),
+    session: Session = Depends(get_session),
 ):
     try:
         old_token: dict = jwt.decode(
             refresh_token, REFRESH_TOKEN_KEY, algorithms=[ALGORITHM]  # type: ignore
         )
-        user_id: int = old_token.get("user_id")  # type:ignore
+        user_id = int(old_token.get("user_id"))  # type: ignore
+        token_id = int(old_token.get("token_id"))  # type: ignore
         if user_id is None:
             raise credentials_exception
     except JWTError:
         raise credentials_exception
     except AttributeError:
         raise credentials_exception
+    except ValueError:
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST, detail="corrupt data in refresh token"
+        )
 
     # Check if token already has been used
-    old_token_in_db: RefreshToken = await RefreshToken.get(  # type: ignore
-        uuid.UUID(old_token.get("token_id"))  # type: ignore
-    )
+    old_token_in_db = session.exec(
+        select(RefreshToken).where(RefreshToken.id == token_id)
+    ).one()
+
     if old_token_in_db.is_revoked:
         raise credentials_exception
-
     # Mark token as used
-    await old_token_in_db.set({RefreshToken.is_revoked: True})  # type: ignore
+    old_token_in_db.is_revoked = True
+    session.add(old_token_in_db)
+    session.commit()
 
-    user: User = await User.get(user_id)  # type: ignore
+    user: User = session.exec(select(User).where(User.id == user_id)).one()
+
     tokens = await get_tokens(user)  # type: ignore
     ## Set refresh token
     response.set_cookie(
@@ -158,26 +170,37 @@ async def refresh_access_token(
 async def logout(
     response: Response,
     refresh_token: str | None = Cookie(default=None, alias="refresh"),
+    session: Session = Depends(get_session),
 ):
     try:
         old_token: dict = jwt.decode(
             refresh_token, REFRESH_TOKEN_KEY, algorithms=[ALGORITHM]  # type: ignore
         )
-        user_id: int = old_token.get("user_id")  # type: ignore
+        user_id = int(old_token.get("user_id"))  # type: ignore
+        token_id = int(old_token.get("token_id"))  # type: ignore
         if user_id is None:
             raise credentials_exception
     except JWTError:
         raise credentials_exception
+    except AttributeError:
+        raise credentials_exception
+    except ValueError:
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST, detail="corrupt data in refresh token"
+        )
 
     # Check if token already has been used
-    old_token_in_db: RefreshToken = await RefreshToken.get(  # type: ignore
-        uuid.UUID(old_token.get("token_id"))  # type: ignore
-    )
+    old_token_in_db = session.exec(
+        select(RefreshToken).where(RefreshToken.id == token_id)
+    ).one()
+
     if old_token_in_db.is_revoked:
         raise credentials_exception
-
     # Mark token as used
-    await old_token_in_db.set({RefreshToken.is_revoked: True})  # type: ignore
+    old_token_in_db.is_revoked = True
+    session.add(old_token_in_db)
+    session.commit()
+
     response.delete_cookie(
         key="refresh"
     )  # , path="/v1/auth/token") # unsets the cookie

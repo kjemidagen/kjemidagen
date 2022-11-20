@@ -1,6 +1,6 @@
 # Kjemidagens API
 
-Alt av endpoints og slik ligger på `localhost:8000/docs`
+Alt av endpoints og slik ligger på `kjemidagen.localhost/docs`
 
 ## Dokumentasjon
 
@@ -8,23 +8,21 @@ FastAPI og SQLModel har begge fantastisk dokumentasjon. Den finner du på [fasta
 
 ## Testing
 
-Testing fungerer ikke lengre etter vi byttet til mongodb. ~~Testing er støttet av pytest og kjøres enkelt ved å kjøre `pytest`.~~
+Testing er ikke implementert. ~~Testing er støttet av pytest og kjøres enkelt ved å kjøre `pytest`.~~
 
 ### Admin-kontrollpanel
 
-Få tilgang ved ~~`docker compose exec backend python -m kjemidagen.server_scripts.create_initial_user`. ~~
-Ser ut til at dette ^ lager en separat mongo server...
 Bruk heller cli fra docker desktop appen.  
 ![docker cli](./imgs/docker_cli.png =300x)  
-Kjør kommandoen `python -m kjemidagen.server_scripts.create_initial_user` for å opprette en bruker.
+Kjør kommandoen `python admin.py create-initial-user` for å opprette en bruker.
 
-Brukes til å f.eks. opprette den første admin-brukeren.
+Brukes til å opprette den første admin-brukeren.
 
 ### Refresh-token-rullering
 
 Auth-systemet er jeg redd kan være noe porøst fordi det rullerer refresh tokens. Det vil si at hver gang en refresh token brukes blir den invalidert og brukeren får en ny. Dette betyr muligens at hvis noen velger feil øyeblikk å spamklikke på så mister de den eneste valide tokenen og må logge inn på nytt. Jeg skal prøve å designe frontend for å unngå dette, men hvis brukere rapporterer å bli utelåst er nok dette grunnen.
 
-## PGSQL Command line
+## Mariadb Command line
 
-Komme til cli: `docker-compose exec mongodb bash -it` eller docker desktop cli.
-For å koble til: `mongo -u <brukernavn> -p <passord>`. Resten får du google.
+Komme til cli: `docker-compose exec db bash -it` eller docker desktop cli -> terminal -> `bash`.
+For å koble til: `mariadb -u <brukernavn> -p`. Resten får du google.
