@@ -1,8 +1,11 @@
+import logging
 from typing import List
 from fastapi import APIRouter, HTTPException, Depends, status
+from sqlmodel import Session, select
 
-from kjemidagen.crypto import hash_password
 from kjemidagen.auth import get_current_user, get_current_admin
+from kjemidagen.crypto import hash_password
+from kjemidagen.database import get_session
 
 from kjemidagen.models import (
     User,
@@ -25,21 +28,28 @@ user_router = APIRouter()
 @user_router.get(
     "/", dependencies=[Depends(get_current_admin)], response_model=List[UserGetResponse]
 )
-async def get_users():
-    users = await User.find_all().to_list()
+async def get_users(session: Session = Depends(get_session)):
+    users = session.exec(select(User)).all()
     if not users:
         raise HTTPException(status_code=404, detail="No users")
-    return users
+    return [
+        UserGetResponse(id=user.id, username=user.username, is_admin=user.is_admin)
+        for user in users
+    ]  # Yucky but nessecary because casting doesnt work
 
 
 @user_router.get("/{user_id}", response_model=UserGetResponse)
-async def get_user(user_id: int, current_user: User = Depends(get_current_user)):
+async def get_user(
+    user_id: int,
+    current_user: User = Depends(get_current_user),
+    session: Session = Depends(get_session),
+):
     if not (current_user.is_admin or current_user.id == user_id):
         raise credentials_exception
-    user = await User.get(user_id)  # type: ignore
+    user = session.exec(select(User).where(User.id == user_id)).one_or_none()
     if not user:
         raise HTTPException(status_code=404, detail="No users")
-    return user
+    return UserGetResponse(id=user.id, username=user.username, is_admin=user.is_admin)
 
 
 @user_router.get("/self}", response_model=UserGetResponse)
@@ -47,20 +57,30 @@ async def get_user_self(user_id: int, current_user: User = Depends(get_current_u
     """Get info about current user"""
     if not (current_user.is_admin or current_user.id == user_id):
         raise credentials_exception
-    return current_user
+    return UserGetResponse(
+        id=current_user.id,
+        username=current_user.username,
+        is_admin=current_user.is_admin,
+    )
 
 
 @user_router.post(
     "/", dependencies=[Depends(get_current_admin)], response_model=UserCreateResponse
 )
-async def create_user(user: UserCreate):
-    check_if_taken = await User.find(User.username == user.username).to_list()
+async def create_user(user: UserCreate, session: Session = Depends(get_session)):
+    check_if_taken = session.exec(select(User)).all()
+
     if len(check_if_taken) > 0:
         raise HTTPException(status_code=409, detail="Username already taken")
     new_user = User(
         username=user.username, hashed_password=hash_password(password=user.password)
     )
-    await new_user.insert()
+    logging.info(f"Created users username is {user.username}")
+
+    session.add(new_user)
+    session.commit()
+    session.refresh(new_user)
+
     return UserCreateResponse(
         username=new_user.username, id=new_user.id, is_admin=new_user.is_admin
     )

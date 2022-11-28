@@ -117,9 +117,6 @@ dmypy.json
 .dbdata/
 postgres-data/
 
-; # Docker files
-; Dockerfile
-; docker-compose.yml
+# logs
+kjemidagen.log
 
-; # Secrets
-; bantre/util/config.py

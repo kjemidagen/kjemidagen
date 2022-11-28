@@ -17,7 +17,7 @@
     { label: 'Hjem', link: '/admin' },
     { label: 'Brukere', link: '/admin/users' },
     { label: 'Bedrifter', link: '/admin/companies' }
-  ];
+  ].map((route) => ({ ...route, linkNoLang: route.link }));
 
   let navOpen = false;
 </script>

@@ -1,9 +1,7 @@
 import datetime
-import uuid
-import pymongo
 import re
-from beanie import Document, Indexed, Link, Insert, Replace, SaveChanges, before_event
-from pydantic import BaseModel, EmailStr, Field
+from sqlmodel import SQLModel, Field, Relationship
+from pydantic import BaseModel, EmailStr
 from typing import Optional
 
 
@@ -22,20 +20,14 @@ class CamelBaseModel(BaseModel):
         allow_population_by_field_name = True
 
 
-class User(Document):
-    id: uuid.UUID = Field(default_factory=uuid.uuid4)  # type: ignore
-    username: Indexed(str, index_type=pymongo.TEXT, unique=True)  # type: ignore
+class User(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)  # type: ignore
+    username: str = Field(index=True)  # type: ignore
     hashed_password: str
     is_admin: bool = False
     created_at: datetime.datetime = Field(default_factory=datetime.datetime.now)
     updated_at: datetime.datetime = Field(default_factory=datetime.datetime.now)
-
-    @before_event([Replace, SaveChanges])
-    def set_updated_time(self):
-        self.updated_at = datetime.datetime.now()
-
-    class Settings:
-        validate_on_save = True
+    company: Optional["Company"] = Relationship(back_populates="user")
 
 
 class UserCreate(CamelBaseModel):
@@ -47,7 +39,7 @@ class UserCreateResponse(CamelBaseModel):
     """Contains fields returned on user creation"""
 
     username: EmailStr
-    id: uuid.UUID
+    id: int
     is_admin: bool
 
 
@@ -55,7 +47,7 @@ class UserGetResponse(CamelBaseModel):
     """Contains fields returned from get requests"""
 
     username: EmailStr
-    id: uuid.UUID
+    id: int
     is_admin: bool
 
 
@@ -69,43 +61,33 @@ class UserUpdate(CamelBaseModel):
 
 class UserUpdateResponse(CamelBaseModel):
     username: EmailStr
-    id: uuid.UUID
+    id: int
     is_admin: bool
 
 
-class Company(Document):
-    id: uuid.UUID = Field(default_factory=uuid.uuid4)  # type: ignore
-    user: Link[User]
-    title: Indexed(str)  # type: ignore
+class Company(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)  # type: ignore
+    user_id: int = Field(default=None, index=True, foreign_key="user.id")
+    user: User = Relationship(back_populates="company")
+    title: str = Field(index=True)  # type: ignore
     public_email: EmailStr
-    number_of_representatives: int
+    number_of_representatives: Optional[int]
     additional_data: Optional[str]
     created_at: datetime.datetime = Field(default_factory=datetime.datetime.now)
     updated_at: datetime.datetime = Field(default_factory=datetime.datetime.now)
 
-    @before_event([Replace, SaveChanges])
-    def set_updated_time(self):
-        self.updated_at = datetime.datetime.now()
 
-    class Settings:
-        validate_on_save = True
-
-
-class CompanyBase(CamelBaseModel):
+class CompanyAndUserCreate(CamelBaseModel):
     username: EmailStr
     title: str
+    number_of_representatives: Optional[int] = 0
     public_email: EmailStr
-    number_of_representatives: int
     additional_data: Optional[str]
 
 
-class CompanyAndUserCreate(CompanyBase):
+class CompanyCreateResponse(CamelBaseModel):
     username: EmailStr
-
-
-class CompanyCreateResponse(CompanyBase):
-    username: EmailStr
-    id: uuid.UUID
+    id: int
     password: str
 
 
@@ -116,13 +98,13 @@ class CompanyUpdate(CamelBaseModel):
     additional_data: Optional[str]
 
 
-class CompanyUpdateResponse(CompanyBase):
+class CompanyUpdateResponse(CamelBaseModel):
     username: EmailStr
-    id: uuid.UUID
+    id: int
 
 
-class RefreshToken(Document):
-    id: uuid.UUID = Field(default_factory=uuid.uuid4)  # type: ignore
+class RefreshToken(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)  # type: ignore
     is_revoked: bool = False
 
 

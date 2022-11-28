@@ -1,17 +1,19 @@
-import os
-from beanie import init_beanie
-import motor.motor_asyncio
-from dotenv import load_dotenv
-from kjemidagen.models import User, RefreshToken, Company
+from sqlmodel import Session, create_engine
 
-load_dotenv()
-host = os.getenv("DBServer")
-user = os.getenv("DBUser")
-password = os.getenv("DBPassword")
-port = os.getenv("DBPort")
+from kjemidagen.config import Config
 
-DATABASE_URL = f"mongodb://{user}:{password}@{host}:{port}"
 
-async def init_database():
-    client = motor.motor_asyncio.AsyncIOMotorClient(DATABASE_URL)
-    await init_beanie(database=client.db_name, document_models=[User, Company, RefreshToken])
+user = Config.db_user
+password = Config.db_password
+host = Config.db_host
+port = Config.db_port
+name = Config.db_name
+
+DATABASE_URL = f"mysql+mysqldb://{user}:{password}@{host}/{name}"
+
+engine = create_engine(DATABASE_URL)
+
+
+def get_session():
+    with Session(engine) as session:
+        yield session
