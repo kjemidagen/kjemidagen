@@ -5,7 +5,3 @@ http://kjemidagen.localhost {
 	reverse_proxy /openapi.json kjemi-backend:8000
 	reverse_proxy kjemi-frontend:5173
 }
-
-www.kjemidagen.no {
-	redir https://kjemidagen.no{uri}
-}

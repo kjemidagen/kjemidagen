@@ -43,6 +43,7 @@ services:
     image: mariadb:10.10
     environment:
       - MYSQL_ROOT_PASSWORD=Kjemidagen
+      - MYSQL_DATABASE=kjemidagen
     volumes:
       - dbdata:/var/lib/mysql
 

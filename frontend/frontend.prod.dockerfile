@@ -1,16 +1,16 @@
-FROM node:18
+FROM node:18-alpine
 
 RUN mkdir /app
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-# At least one of these is needed to generate types
-COPY svelte.config.js vite.config.js ./
+COPY *.config.js *.config.cjs *.config.mjs ./
 RUN npm i
 
 COPY ./src /app/src
 COPY ./static /app/static
+COPY .env .env
 
 RUN ["npm", "run", "build"]
 
-CMD ["node", "build/index.js"]
+CMD ["node", "build"]

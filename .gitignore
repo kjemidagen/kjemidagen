@@ -4,3 +4,5 @@ database/
 # code workspace file 
 *.code-workspace
 
+# secrets
+**/.env

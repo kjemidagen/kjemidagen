@@ -1,11 +1,19 @@
-name: Restart everything
+name: Build or restart everything
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push for the "main" branch
   push:
     branches: ["main"]
-    paths: ["backend/**", "frontend/**", "Caddyfile"]
+    paths:
+      [
+        "backend/**",
+        "frontend/**",
+        "Caddyfile.prod",
+        "docker-compose.prod.yml",
+        "docker-compose.yml",
+        "caddy.dockerfile",
+      ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,11 +31,8 @@ jobs:
         with:
           clean: "false"
 
-      - name: Build the backend with the recent changes
-        run: docker compose build backend frontend
+      - name: Build with the recent changes
+        run: docker compose build
 
-      - name: Start the newly built backend
-        run: docker compose up backend frontend --force-recreate -d
-
-      - name: restart caddy with new config if any
-        run: caddy reload
+      - name: Start the newly built images
+        run: docker compose up --force-recreate -d
