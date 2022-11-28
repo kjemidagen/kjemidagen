@@ -30,7 +30,7 @@ services:
     container_name: kjemi-db
     image: mariadb:10.10
     environment:
-      - MYSQL_ROOT_PASSWORD=Kjemidagen
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=kjemidagen
     volumes:
       - dbdata:/var/lib/mysql

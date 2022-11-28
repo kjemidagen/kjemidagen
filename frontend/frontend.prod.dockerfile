@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 COPY *.config.js *.config.cjs *.config.mjs ./
-RUN npm i
+RUN npm ci
 
 COPY ./src /app/src
 COPY ./static /app/static
