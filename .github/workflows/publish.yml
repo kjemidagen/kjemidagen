@@ -32,7 +32,7 @@ jobs:
           clean: "false"
 
       - name: Build with the recent changes
-        run: docker compose build
+        run: docker compose -f docker-compose.prod.yml build
 
       - name: Start the newly built images
-        run: docker compose up --force-recreate -d
+        run: docker compose -f docker-compose.prod.yml up --force-recreate -d
