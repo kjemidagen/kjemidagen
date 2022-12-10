@@ -1,5 +1,8 @@
 import { userData } from "./stores";
 import { get } from "svelte/store";
+import { refresh } from "$lib/auth";
+
+// const apiUrl: string = import.meta.env.VITE_PUBLIC_API_URL;
 
 export interface fetchOptions {
   headers?: Headers;
@@ -17,10 +20,10 @@ export async function kjemiFetch(
   url: string,
   options?: fetchOptions
 ): Promise<Response> {
-  // TODO: refresh token middleware
-  const user = get(userData);
-  if (user === undefined) {
-    console.error("Error, not logged in.");
+  let user = get(userData);
+  if (user === undefined || user?.accessTokenExp < Date.now()) {
+    await refresh(fetch);
+    user = get(userData);
   }
   const headers = options?.headers || new Headers();
   headers.append("Authorization", "Bearer " + user?.accessToken || "");

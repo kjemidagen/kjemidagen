@@ -7,7 +7,7 @@
   import logo from '$lib/assets/logo_inverted.svg';
   import hamburgerMenuPic from '$lib/assets/hamburgermeny.svg';
 
-  $: currentRoute = $page.routeId?.split('/').slice(1, undefined).join('/') || '';
+  $: currentRoute = $page.route.id?.split('/').slice(1, undefined).join('/') || '';
   $: currentRouteNoLang = currentRoute.split('/').slice(1, undefined).join('/');
 
   $: routes = [

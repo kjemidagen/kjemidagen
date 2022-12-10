@@ -10,7 +10,7 @@
 
   let currentRoute = '';
   $: {
-    currentRoute = $page.routeId || '';
+    currentRoute = $page.route.id || '';
   }
 
   const routes = [

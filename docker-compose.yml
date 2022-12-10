@@ -24,7 +24,6 @@ services:
       - backend
     environment:
       - VITE_SSR_API_URL=http://kjemi-backend:8000
-    # command: /bin/sh -c "npm i; npm run build; node build/index.js"
   backend:
     container_name: kjemi-backend
     build:

@@ -15,9 +15,12 @@ export async function login(fetch: fetchFunc, email: string, password: string) {
     body: formData,
     credentials: 'include' //'same-origin'
   });
-  // TODO: handle bad credidentials
+  if (res.status !== 200) {
+    return res;
+  }
   const data = await res.json();
   userData.set(data);
+  return res;
 }
 
 export async function refresh(fetch: fetchFunc) {
@@ -29,7 +32,7 @@ export async function refresh(fetch: fetchFunc) {
   });
   const data = await res.json();
   userData.set(data);
-  return res.headers;
+  return res;
 }
 
 export async function logout(fetch: fetchFunc) {

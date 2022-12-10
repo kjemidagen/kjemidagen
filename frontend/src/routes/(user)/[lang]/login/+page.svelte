@@ -3,9 +3,15 @@
   import { login } from '$lib/auth';
   let email: string;
   let password: string;
+  let feedback: string = '';
   async function onSubmit() {
-    await login(fetch, email, password);
-    goto(`/admin`);
+    const res = await login(fetch, email, password);
+    const status = res.status;
+    if (status === 200) {
+      goto(`/admin`);
+    } else {
+      feedback = 'Wrong password or email';
+    }
   }
 </script>
 
@@ -43,6 +49,11 @@
         value="Logg Inn"
       />
     </div>
+    {#if feedback}
+      <div>
+        <p>{feedback}</p>
+      </div>
+    {/if}
   </form>
   <div class="h-full">
     <h2 class="text-xl mb-8">Informasjon om innlogging</h2>

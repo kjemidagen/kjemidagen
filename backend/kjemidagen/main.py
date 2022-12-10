@@ -10,15 +10,18 @@ from kjemidagen.config import Config
 
 app = FastAPI()
 
-origins = ["https://kjemidagen.no", "https://www.kjemidagen.no"]
+origins = [
+    "https://kjemidagen.no",
+    "https://www.kjemidagen.no",
+    "http://kjemi-frontend",
+]
 if Config.dev:
     origins += [
         "http://localhost:3000",
         "http://localhost:3001",
         "https://kjemidagen.localhost",
         "http://kjemidagen.localhost",
-        "http://frontend",
-        "http://caddy",
+        "http://kjemi-frontend",
     ]
 
 app.add_middleware(

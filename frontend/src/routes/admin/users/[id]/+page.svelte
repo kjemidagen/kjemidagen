@@ -11,14 +11,14 @@
 
 <div class="grid grid-cols-3 content">
   <div class=" col-span-2">
-    <h1 class="text-lg">user admin</h1>
+    <h1 class="text-lg">User admin</h1>
     {#if data.user}
       <div>
         <span>
           {data.user.username}
         </span>
         <span>
-          {data.user.isAdmin}
+          {data.user.isAdmin ? 'Admin' : 'Not admin'}
         </span>
         <span>
           {data.user.id}
@@ -32,7 +32,7 @@
     <div>
       <a
         href="/admin/users{data.id}/edit"
-        class="border-red bg-red-light px-2 py-1 text-white text-bold">create user</a
+        class="border-red bg-red-light px-2 py-1 text-white text-bold">Edit user</a
       >
     </div>
   {/if}

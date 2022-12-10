@@ -1,10 +1,16 @@
 <script lang="ts">
+  // import { refresh, logout } from '$lib/auth';
+
   import { userData } from '$lib/stores';
-  import { refresh, logout } from '$lib/auth';
 </script>
 
-<div><p>Logged in</p></div>
-<div>{$userData !== undefined ? $userData.email : ''}</div>
-<div class="break-all">{$userData !== undefined ? $userData.accessToken : ''}</div>
-<button on:click={() => refresh(fetch)}>Refresh</button>
-<button on:click={() => logout(fetch)}>Logout</button>
+<div class="content">
+  <div><p>Logged in</p></div>
+  <div>{$userData?.email ?? 'Not logged in'}</div>
+  <form action="/logout">
+    <button type="submit">Logg ut</button>
+  </form>
+
+  <div><a href="admin/users">Brukeradmin</a></div>
+  <div><a href="admin/companies">Bedriftsadmin</a></div>
+</div>

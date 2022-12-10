@@ -5,13 +5,13 @@
 </script>
 
 <div class="grid grid-cols-3 content">
-  <h1 class="text-lg">user admin</h1>
+  <h1 class="text-lg">Edit {user.username}</h1>
   <div>
     <span>
       {user.username}
     </span>
     <span>
-      {user.isAdmin}
+      {user.isAdmin ? 'Admin' : 'Not admin'}
     </span>
     <span>
       {user.id}

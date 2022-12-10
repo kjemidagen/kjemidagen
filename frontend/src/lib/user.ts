@@ -9,7 +9,7 @@ export interface User {
   isAdmin: boolean;
 }
 
-export async function createUser(email: string, password: string) {
+export async function createUser(email: string, password: string): Promise<{ status: number, message: string; }> {
   console.log(email, password);
   const res = await kjemiFetch(
     fetch,
@@ -20,5 +20,5 @@ export async function createUser(email: string, password: string) {
     }
   );
   const data = await res.json();
-  return data;
+  return { status: res.status, message: data["id"] };
 }

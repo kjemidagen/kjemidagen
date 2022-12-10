@@ -1,6 +1,6 @@
 <script lang="ts">
   import Header from '$lib/layout/AdminHeader.svelte';
-  import Footer from '$lib/layout/Footer.svelte';
+  import Footer from '$lib/layout/AdminFooter.svelte';
 </script>
 
 <div class="flex flex-col justify-between h-screen">

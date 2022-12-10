@@ -8,10 +8,10 @@
 
 <div class="grid grid-cols-3 content">
   <div class=" col-span-2">
-    <h1 class="text-lg">user admin</h1>
+    <h1 class="text-lg">User admin</h1>
     {#each data.users as user}
       <div>
-        <a href="/admin/users/{user.id}">
+        <a href="/admin/users/{user.id}" class="hover:underline decoration-black">
           {#if user.isAdmin}
             <span class="text-red">admin</span>
           {:else}

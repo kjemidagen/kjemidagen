@@ -1,5 +1,6 @@
 <script lang="ts">
   import { createUser } from '$lib/user';
+  import { goto } from '$app/navigation';
   let email: string = '';
   let password: string = '';
   let repeatpass: string = '';
@@ -11,15 +12,21 @@
     if (feedback === 'creating user') {
     }
     feedback = undefined;
-    if (password === repeatpass && password !== '') {
-      feedback = 'creating user';
-      const response = await createUser(email, password);
-      console.log(response);
-      repeatpassField.setCustomValidity('');
-    } else {
+    if (password !== repeatpass || password === '') {
       repeatpassField.setCustomValidity('Does not match password field');
       repeatpassField.reportValidity();
+      return;
     }
+    feedback = 'creating user';
+    const response = await createUser(email, password);
+    if (response.status === 200) {
+      goto(`/admin/users/${response.message}`);
+    }
+  }
+
+  function onTextChange() {
+    repeatpassField.setCustomValidity('');
+    repeatpassField.reportValidity();
   }
 </script>
 

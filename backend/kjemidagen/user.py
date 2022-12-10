@@ -68,7 +68,9 @@ async def get_user_self(user_id: int, current_user: User = Depends(get_current_u
     "/", dependencies=[Depends(get_current_admin)], response_model=UserCreateResponse
 )
 async def create_user(user: UserCreate, session: Session = Depends(get_session)):
-    check_if_taken = session.exec(select(User)).all()
+    check_if_taken = session.exec(
+        select(User).where(User.username == user.username)
+    ).all()
 
     if len(check_if_taken) > 0:
         raise HTTPException(status_code=409, detail="Username already taken")
