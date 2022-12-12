@@ -9,17 +9,17 @@
 
 <section class="hero" id="hero">
   <!-- fake border top -->
-  <div class="relative -top-2 left-0 z-30 border-t-8 -mx-2 border-red-light" />
+  <div class="relative -top-2 left-0 z-30 -mx-2 border-t-8 border-red-light" />
   <Hero />
-  <div class="force-space flex h-[80vh] mx-auto max-w-3xl pointer-events-none">
+  <div class="force-space pointer-events-none mx-auto flex h-[80vh] max-w-3xl">
     <div
-      class="px-6 py-8 m-auto md:p-16 bg-black/60 backdrop-blur-md rounded-xl border-red/20 border z-10 pointer-events-auto"
+      class="pointer-events-auto z-10 m-auto rounded-xl border border-red/20 bg-black/60 px-6 py-8 backdrop-blur-md md:p-16"
     >
-      <h1 class="mb-4 font-bold text-red text-4xl md:text-7xl">{$t('common.chemday')}</h1>
+      <h1 class="mb-4 text-4xl font-bold text-red md:text-7xl">{$t('common.chemday')}</h1>
       <h2 class="mb-2 text-lg text-white md:text-3xl">{$t('frontpage.when')}</h2>
       <h2 class="mb-1 text-lg text-white md:text-3xl">{$t('frontpage.where')}</h2>
     </div>
   </div>
   <!-- fake border bottom -->
-  <div class="relative -bottom-2 left-0 z-30 border-b-8 -mx-2 border-red-light" />
+  <div class="relative -bottom-2 left-0 z-30 -mx-2 border-b-8 border-red-light" />
 </section>

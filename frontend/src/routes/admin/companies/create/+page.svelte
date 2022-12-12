@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createUser } from '$lib/user';
+  import { createCompany } from '$lib/company';
   import { goto } from '$app/navigation';
   let email: string = '';
   let password: string = '';
@@ -9,7 +9,7 @@
   let repeatpassField: HTMLInputElement;
 
   async function onSubmit() {
-    if (feedback === 'creating user') {
+    if (feedback === 'creating company') {
     }
     feedback = undefined;
     if (password !== repeatpass || password === '') {
@@ -18,9 +18,9 @@
       return;
     }
     feedback = 'creating user';
-    const response = await createUser(email, password);
+    const response = await createCompany(email, password);
     if (response.status === 200) {
-      goto(`/admin/users/${response.message}`);
+      goto(`/admin/companies/${response.message}`);
     }
   }
 
@@ -31,7 +31,7 @@
 </script>
 
 <div class="content">
-  <h1 class="text-2xl text-red">Create user</h1>
+  <h1 class="text-2xl text-red">Create company</h1>
   <form on:submit|preventDefault={onSubmit} on:change={onTextChange} class="flex flex-col">
     <div>
       <label for="email">Email</label>

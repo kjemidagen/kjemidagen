@@ -93,10 +93,16 @@ async def edit_user(
     user_id: int,
     updated_user: UserUpdate,
     current_user: User = Depends(get_current_user),
+    session: Session = Depends(get_session),
 ):
+    # todo: Egne exceptions for innlogget men ikke tilgang
     if not (current_user.is_admin or current_user.id == user_id):
         raise credentials_exception
-    user = await User.get(user_id)  # type: ignore
+    if updated_user.is_admin and not current_user.is_admin:
+        raise credentials_exception
+
+    user = session.exec(select(User).where(User.id == user_id)).one_or_none()
+
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
     updated_data = updated_user.dict(
@@ -107,16 +113,27 @@ async def edit_user(
         setattr(user, "hashed_password", hashed_password)
     for field, value in updated_data.items():
         setattr(user, field, value)
-    await user.save()
+
+    session.add(user)
+    session.commit()
+    session.refresh(user)
+
     return UserCreateResponse(
         username=user.username, id=user.id, is_admin=user.is_admin
     )
 
 
 @user_router.delete("/{user_id}", dependencies=[Depends(get_current_admin)])
-async def delete_user(user_id: int):
-    user = await User.get(user_id)  # type: ignore
+async def delete_user(
+    user_id: int,
+    session: Session = Depends(get_session),
+):
+    user = session.exec(select(User).where(User.id == user_id)).one_or_none()
+
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    await user.delete()
+
+    session.delete(user)
+    session.commit()
+
     return {"ok": True}

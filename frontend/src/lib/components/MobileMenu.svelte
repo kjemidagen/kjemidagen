@@ -9,7 +9,7 @@
 </script>
 
 <div
-  class="absolute bg-black/20 h-screen w-full backdrop-blur-sm"
+  class="absolute h-screen w-full bg-black/20 backdrop-blur-sm"
   on:click={() => {
     dispatch('closemenu');
   }}
@@ -17,7 +17,7 @@
   out:fade|local={{ duration: 50 }}
 />
 <ul
-  class="absolute w-full bg-red border-red-light border-y-8 text-white"
+  class="absolute w-full border-y-8 border-red-light bg-red text-white"
   in:slide|local={{ duration: 200 }}
   out:slide|local={{ duration: 50 }}
 >

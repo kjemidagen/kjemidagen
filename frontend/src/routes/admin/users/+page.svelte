@@ -6,12 +6,12 @@
   };
 </script>
 
-<div class="grid grid-cols-3 content">
+<div class="content grid grid-cols-3">
   <div class=" col-span-2">
     <h1 class="text-lg">User admin</h1>
     {#each data.users as user}
       <div>
-        <a href="/admin/users/{user.id}" class="hover:underline decoration-black">
+        <a href="/admin/users/{user.id}" class="decoration-black hover:underline">
           {#if user.isAdmin}
             <span class="text-red">admin</span>
           {:else}
@@ -27,7 +27,7 @@
     {/each}
   </div>
   <div>
-    <a href="/admin/users/create" class="border-red bg-red-light px-2 py-1 text-white text-bold"
+    <a href="/admin/users/create" class="text-bold border-red bg-red-light px-2 py-1 text-white"
       >create user</a
     >
   </div>

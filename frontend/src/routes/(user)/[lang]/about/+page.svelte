@@ -6,20 +6,20 @@
   import okonomisjefSrc from '$lib/assets/styret/okonomisjef.jpg';
   import prsjefSrc from '$lib/assets/styret/pr-sjef.jpg';
   import riggsjefSrc from '$lib/assets/styret/rigg-sjef.jpg';
-  // import riggsjefSrc from '$lib/assets/styret/default.jpg';
+  // import riggsjefSrc from '$lib/assets/styret/default.jpg'; // Default pic
 </script>
 
 <svelte:head>
-  <title>{$t('common.about')}</title>
+  <title>{$t('common.about')} • {$t('common.chemday')}</title>
 </svelte:head>
 
 <section class="about" id="about">
   <div class="flex flex-col">
     <div class="content m-auto">
-      <h1 class="text-3xl mb-8">{$t('common.about')}</h1>
+      <h1 class="mb-8 text-3xl">{$t('common.about')}</h1>
       <p class="text-md mb-2">{$t('about.paragraph')}</p>
       <h3 class="mt-5 mb-5 text-2xl">{$t('about.theboard')}</h3>
-      <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 xl:-mx-20">
+      <div class="m-auto grid grid-cols-1 gap-2 md:grid-cols-3 xl:-mx-20 xl:grid-cols-5">
         <AboutCard
           imgSrc={lederSrc}
           name="Pia Nedreås"

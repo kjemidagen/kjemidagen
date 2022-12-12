@@ -61,7 +61,7 @@
 <svelte:window bind:scrollY={y} bind:innerWidth={w} bind:innerHeight={h} />
 
 <div
-  class="hero w-full top-0 left-0 md:w-[calc(100%_-_16px)] md:left-[8px]"
+  class="hero top-0 left-0 w-full md:left-[8px] md:w-[calc(100%_-_16px)]"
   class:visible={loaded}
   on:mousedown={onMouseDown}
   on:touchstart={onTouchStart}

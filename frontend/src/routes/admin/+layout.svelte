@@ -3,10 +3,14 @@
   import Footer from '$lib/layout/AdminFooter.svelte';
 </script>
 
-<div class="flex flex-col justify-between h-screen">
+<svelte:head>
+  <title>Admin • Kjemidagen</title>
+</svelte:head>
+
+<div class="flex h-screen flex-col justify-between">
   <Header />
 
-  <main id="main" class="border-y-8 border-red-light p-0 flex-grow px-2 md:border-x-8">
+  <main id="main" class="flex-grow border-y-8 border-red-light p-0 px-2 md:border-x-8">
     <slot />
   </main>
 

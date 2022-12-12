@@ -3,18 +3,18 @@
 </script>
 
 <svelte:head>
-  <title>{$t('common.program')}</title>
+  <title>{$t('common.program')} • {$t('common.chemday')}</title>
 </svelte:head>
 
 <section class="program" id="program">
   <div class="content">
-    <h1 class="text-3xl mb-8">{$t('program.title')}</h1>
+    <h1 class="mb-8 text-3xl">{$t('program.title')}</h1>
     <div class="flex flex-col">
       <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
           <div class="overflow-hidden">
             <table
-              class="table-auto mb-16 text-lg min-w-full text-center font-medium border-spacing-80"
+              class="mb-16 min-w-full table-auto border-spacing-80 text-center text-lg font-medium"
             >
               <tbody>
                 <tr>
@@ -71,23 +71,23 @@
       </div>
     </div>
     <div class="my-8">
-      <h3 class="font-medium text-xl my-4">{$t('program.speedinterview')}</h3>
+      <h3 class="my-4 text-xl font-medium">{$t('program.speedinterview')}</h3>
       <p>
         {$t('program.speedinterview_p')}
       </p>
-      <h3 class="font-medium text-xl my-4">{$t('program.summerjob')}</h3>
+      <h3 class="my-4 text-xl font-medium">{$t('program.summerjob')}</h3>
       <p>
         {$t('program.summerjob_p')}
       </p>
-      <h3 class="font-medium text-xl my-4">{$t('program.jobmarathon')}</h3>
+      <h3 class="my-4 text-xl font-medium">{$t('program.jobmarathon')}</h3>
       <p>
         {$t('program.jobmarathon_p')}
       </p>
-      <h3 class="font-medium text-xl my-4">{$t('program.motivationalspeaking')}</h3>
+      <h3 class="my-4 text-xl font-medium">{$t('program.motivationalspeaking')}</h3>
       <p>
         {$t('program.motivationalspeaking_p')}
       </p>
-      <h3 class="font-medium text-xl my-4">{$t('program.banquet')}</h3>
+      <h3 class="my-4 text-xl font-medium">{$t('program.banquet')}</h3>
       <p>
         {$t('program.banquet_p')}
       </p>

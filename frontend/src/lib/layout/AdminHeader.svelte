@@ -22,29 +22,29 @@
   let navOpen = false;
 </script>
 
-<header id="header" class="bg-red px-25 sticky top-0 left-0 z-50">
-  <div class="text-white px-6 flex h-16 justify-between md:justify-evenly">
-    <a class="flex text-lg text-white items-center color-white lg:w-40" href={'/'}>
+<header id="header" class="px-25 sticky top-0 left-0 z-50 bg-red">
+  <div class="flex h-16 justify-between px-6 text-white md:justify-evenly">
+    <a class="color-white flex items-center text-lg text-white lg:w-40" href={'/'}>
       <img class="mr-1" src={logo} alt="logo" width="40" />
       <span class="hidden lg:inline">Kjemidagen-admin</span>
     </a>
-    <ul class="list-none hidden md:block flex-grow max-w-5xl mx-4 overflow-hidden">
+    <ul class="mx-4 hidden max-w-5xl flex-grow list-none overflow-hidden md:block">
       {#each routes as route}
         <li
-          class="h-full flex flex-col float-left px-2"
+          class="float-left flex h-full flex-col px-2"
           class:bg-red-light={currentRoute === route.link}
         >
-          <a class="justify-self-center m-auto text-white" href={route.link}>{route.label}</a>
+          <a class="m-auto justify-self-center text-white" href={route.link}>{route.label}</a>
         </li>
       {/each}
     </ul>
     <button
-      class="md:hidden items-right"
+      class="items-right md:hidden"
       on:click|preventDefault={() => {
         navOpen = !navOpen;
       }}
     >
-      <img class="w-8 m-auto" src={hamburgerMenuPic} alt="hamburgermeny" />
+      <img class="m-auto w-8" src={hamburgerMenuPic} alt="hamburgermeny" />
     </button>
     {#if username !== undefined}
       <div>

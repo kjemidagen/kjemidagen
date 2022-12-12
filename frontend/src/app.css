@@ -36,9 +36,7 @@ a {
   @apply text-red-light;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  body {
-    color: white;
-    background-color: #3b2e2b;
-  }
-} */
+input[type='text'],
+input[type='password'] {
+  @apply m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding px-4 py-2 text-xl font-normal text-gray-700 transition ease-in-out focus:border-red focus:bg-white focus:text-gray-700 focus:outline-none;
+}

@@ -77,6 +77,14 @@ class Company(SQLModel, table=True):
     updated_at: datetime.datetime = Field(default_factory=datetime.datetime.now)
 
 
+class CompanyGetResponse(CamelBaseModel):
+    id: int
+    user_id: int
+    title: str
+    public_email: EmailStr
+    additional_data: Optional[str]
+
+
 class CompanyAndUserCreate(CamelBaseModel):
     username: EmailStr
     title: str

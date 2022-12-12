@@ -1,32 +1,33 @@
 {
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features",
-        "editor.tabSize": 2
-    },
-    "[javascript][javascriptreact][typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features",
-        "editor.tabSize": 2
-    },
-    "[json][jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features",
-        "editor.tabSize": 4
-    },
-    "[css][scss][less]": {
-        "editor.defaultFormatter": "vscode.css-language-features",
-        "editor.tabSize": 2
-    },
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.tabSize": 4,
-    },
-    "[svelte]": {
-        "editor.defaultFormatter": "svelte.svelte-vscode",
-        "editor.tabSize": 2
-    },
-    "files.insertFinalNewline": true,
-    "typescript.format.semicolons": "insert",
-    "python.analysis.typeCheckingMode": "basic",
-    "python.linting.mypyEnabled": true
-    // "editor.formatOnSave": true // Anbefaler å legge denne inn i user settings, vil ikke påtvinge noen
-    // Ellers kan man formatte med Shift+Alt+F
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascript][javascriptreact][typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
+  "[css][scss][less]": {
+    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.tabSize": 2
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.tabSize": 4
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode",
+    "editor.tabSize": 2
+  },
+  "files.insertFinalNewline": true,
+  "typescript.format.semicolons": "insert",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.linting.mypyEnabled": true,
+  "prettier.configPath": "./frontend/.prettierrc"
+  // "editor.formatOnSave": true // Anbefaler å legge denne inn i user settings, vil ikke påtvinge noen
+  // Ellers kan man formatte med Shift+Alt+F
 }
