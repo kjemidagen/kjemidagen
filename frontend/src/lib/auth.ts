@@ -1,5 +1,3 @@
-import { userData } from '$lib/stores';
-
 const apiUrl: string = import.meta.env.VITE_PUBLIC_API_URL;
 
 type fetchFunc = (input: RequestInfo, init?: RequestInit) => Promise<Response>;
@@ -18,8 +16,6 @@ export async function login(fetch: fetchFunc, email: string, password: string) {
   if (res.status !== 200) {
     return res;
   }
-  const data = await res.json();
-  userData.set(data);
   return res;
 }
 
@@ -31,8 +27,7 @@ export async function refresh(fetch: fetchFunc) {
     credentials: 'include' // 'same-origin'
   });
   const data = await res.json();
-  userData.set(data);
-  return res;
+  return { res, data };
 }
 
 export async function logout(fetch: fetchFunc) {
@@ -41,8 +36,8 @@ export async function logout(fetch: fetchFunc) {
     credentials: 'include' // 'same-origin'
   });
   if (res.status === 200) {
-    userData.set(undefined);
+    // TODO
   } else {
-    console.error(res.status);
+    console.error('logout status', res.status);
   }
 }

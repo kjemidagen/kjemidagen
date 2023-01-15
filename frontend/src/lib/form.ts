@@ -39,7 +39,7 @@ export function enhance(
       } else if (error) {
         error(res, null, form);
       } else {
-        console.error(await res.text());
+        console.error('Error in form enhancer', await res.text());
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {

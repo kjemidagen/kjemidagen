@@ -1,12 +1,12 @@
 <script lang="ts">
-  // import { refresh, logout } from '$lib/auth';
-
-  import { userData } from '$lib/stores';
+  export let data: {
+    email: string
+  }
 </script>
 
 <div class="content">
   <div><p>Logged in</p></div>
-  <div>{$userData?.email ?? 'Not logged in'}</div>
+  <div>{ data.email ?? 'Not logged in' }</div>
   <form action="/logout">
     <button type="submit">Logg ut</button>
   </form>

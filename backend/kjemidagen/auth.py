@@ -1,25 +1,15 @@
 import datetime
-import os
-from dotenv import load_dotenv
 from fastapi import APIRouter, Cookie, status, HTTPException, Depends, Response
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm, OAuth2
 from jose import JWTError, jwt
 from sqlmodel import Session, select
 
 from kjemidagen.crypto import verify_password
+from kjemidagen.config import Config
 from kjemidagen.models import User, RefreshToken, TokenResponse
 from kjemidagen.database import get_session
 
-
-load_dotenv()
-# Todo: flytt disse til config
-ACCESS_TOKEN_KEY = os.getenv("ACCESS_TOKEN_KEY")
-REFRESH_TOKEN_KEY = os.getenv("REFRESH_TOKEN_KEY")
-ALGORITHM = os.getenv("ALGORITHM") or "HS256"
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/v1/auth/login")
-assert ACCESS_TOKEN_KEY is not None
-assert REFRESH_TOKEN_KEY is not None
-
 
 credentials_exception = HTTPException(
     status_code=status.HTTP_401_UNAUTHORIZED,
@@ -31,7 +21,9 @@ credentials_exception = HTTPException(
 async def get_current_user(token: str = Depends(oauth2_scheme)):
     session = next(get_session())
     try:
-        payload = jwt.decode(token, ACCESS_TOKEN_KEY, algorithms=[ALGORITHM])
+        payload = jwt.decode(
+            token, Config.access_token_key, algorithms=[Config.hash_algorithm]
+        )
         user_id: str = payload.get("user_id")  # type: ignore
         if user_id is None:
             raise credentials_exception
@@ -59,7 +51,7 @@ async def get_tokens(user: User):
         "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=30),
     }
     access_token: str = jwt.encode(
-        access_token_data, ACCESS_TOKEN_KEY, algorithm=ALGORITHM
+        access_token_data, Config.access_token_key, algorithm=Config.hash_algorithm
     )
 
     refresh_token_in_db = RefreshToken()
@@ -69,7 +61,7 @@ async def get_tokens(user: User):
 
     refresh_token_data = {"user_id": user_id, "token_id": refresh_token_in_db.id}
     refresh_token: str = jwt.encode(
-        refresh_token_data, REFRESH_TOKEN_KEY, algorithm=ALGORITHM
+        refresh_token_data, Config.refresh_token_key, algorithm=Config.hash_algorithm
     )
 
     return {
@@ -121,7 +113,7 @@ async def refresh_access_token(
 ):
     try:
         old_token: dict = jwt.decode(
-            refresh_token, REFRESH_TOKEN_KEY, algorithms=[ALGORITHM]  # type: ignore
+            refresh_token, Config.refresh_token_key, algorithms=[Config.hash_algorithm]  # type: ignore
         )
         user_id = int(old_token.get("user_id"))  # type: ignore
         token_id = int(old_token.get("token_id"))  # type: ignore
@@ -174,7 +166,7 @@ async def logout(
 ):
     try:
         old_token: dict = jwt.decode(
-            refresh_token, REFRESH_TOKEN_KEY, algorithms=[ALGORITHM]  # type: ignore
+            refresh_token, Config.refresh_token_key, algorithms=[Config.hash_algorithm]  # type: ignore
         )
         user_id = int(old_token.get("user_id"))  # type: ignore
         token_id = int(old_token.get("token_id"))  # type: ignore

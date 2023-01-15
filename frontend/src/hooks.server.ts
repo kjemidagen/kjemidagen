@@ -45,9 +45,29 @@ export const handle: Handle = async ({ event, resolve }) => {
 const publicApiUrl: string = import.meta.env.VITE_PUBLIC_API_URL; // https://www.kjemidagen.com
 const localApiUrl: string = import.meta.env.VITE_SSR_API_URL; // https://backend:8000
 
-export const handleFetch: HandleFetch = async ({ request }) => {
-  if (request.url.startsWith(publicApiUrl)) {
-    request = new Request(request.url.replace(publicApiUrl, localApiUrl), request);
+export const handleFetch: HandleFetch = async ({ request, event }) => {
+  if (!request.url.startsWith(publicApiUrl)) {
+    return fetch(request);
   }
-  return fetch(request);
+  // Manually sets cookies for ssr
+  const incomingCookie = event.request.headers.get('cookie') || '';
+  request = new Request(request.url.replace(publicApiUrl, localApiUrl), request);
+  request.headers.set('cookie', incomingCookie);
+  const res = await fetch(request);
+  const returnedCookie = res.headers.get('Set-Cookie') || '';
+  console.log(returnedCookie);
+  const listy = returnedCookie.split(';');
+  const [cookieName, cookieVal] = listy.splice(0, 1)[0].split('=');
+  const options: any = {};
+  for (const opt of listy) {
+    const keyVal = opt.split('=');
+    if (keyVal.length === 1) {
+      options[keyVal[0]] = true;
+    } else {
+      options[keyVal[0]] = keyVal[1];
+    }
+  }
+  event.cookies.set(cookieName, cookieVal, options);
+
+  return res;
 };

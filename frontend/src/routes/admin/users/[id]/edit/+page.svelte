@@ -5,6 +5,7 @@
   export let data: {
     user: User;
     id: string;
+    accessToken: string;
   };
   let new_is_admin: boolean = data.user.isAdmin;
   let new_password: string = '';
@@ -18,7 +19,7 @@
         send_password = new_password;
       }
     }
-    const res = await editUser(data.user.id, send_password, new_is_admin);
+    const res = await editUser(data.user.id, send_password, new_is_admin, data.accessToken);
     if (res.status === 200) {
       goto(`/admin/users/${res.message}`);
     }

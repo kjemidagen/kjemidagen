@@ -15,9 +15,10 @@ export async function createCompany(
   title: string,
   numberOfRepresentatives: number,
   publicEmail: string,
-  additionalData: string
+  additionalData: string,
+  accessToken: string
 ): Promise<{ status: number; message: string }> {
-  const res = await kjemiFetch(fetch, apiUrl + '/v1/companies/', {
+  const res = await kjemiFetch(fetch, apiUrl + '/v1/companies/', accessToken, {
     method: 'POST',
     data: JSON.stringify({
       username: email,
@@ -33,9 +34,10 @@ export async function createCompany(
 
 export async function editCompany(
   password: string | undefined,
-  isAdmin: boolean | undefined
+  isAdmin: boolean | undefined,
+  accessToken: string
 ): Promise<{ status: number; message: string }> {
-  const res = await kjemiFetch(fetch, apiUrl + '/v1/companies/', {
+  const res = await kjemiFetch(fetch, apiUrl + '/v1/companies/', accessToken, {
     method: 'PATCH',
     data: JSON.stringify({ password: password, isAdmin: isAdmin })
   });

@@ -38,7 +38,6 @@
       <input
         class="rounded border-2 border-red-light px-2"
         type="email"
-        label="email"
         placeholder="email"
         bind:value={email}
         bind:this={emailField}
@@ -50,7 +49,6 @@
       <input
         class="rounded border-2 border-red-light px-2"
         type="password"
-        label="password"
         placeholder="password"
         bind:value={password}
         required
@@ -61,7 +59,6 @@
       <input
         class="rounded border-2 border-red-light px-2"
         type="password"
-        label="repeat password"
         placeholder="repeat password"
         bind:value={repeatpass}
         bind:this={repeatpassField}

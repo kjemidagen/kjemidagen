@@ -22,12 +22,11 @@
     });
   
 
-
+// TODO: fix mouse handler
 // Handling click and drag
 function onMouseDown() {
   addEventListener('mousemove', onMouseMove);
   addEventListener('mouseup', onMouseUp);
-  console.log("mouse downed");
 }
 
 function onMouseMove(event: MouseEvent) {
@@ -71,6 +70,5 @@ function onTouchEnd() {
   scale={0.015}
   castShadow
   interactive 
-  on:click={() => console.log("clickdd")}
 >
 </T.Mesh>
