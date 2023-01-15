@@ -7,6 +7,9 @@ const config = {
     watch: {
       usePolling: true
     }
+  },
+  ssr: {
+    noExternal: ['three', 'troika-three-text']
   }
 };
 

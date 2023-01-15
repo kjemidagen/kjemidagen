@@ -8,6 +8,7 @@
   let emailField: HTMLInputElement;
   let repeatpassField: HTMLInputElement;
 
+  // TODO: Lag form med alle de forskjellige paramaterene createCompany tar
   async function onSubmit() {
     if (feedback === 'creating company') {
     }
@@ -18,7 +19,7 @@
       return;
     }
     feedback = 'creating user';
-    const response = await createCompany(email, password);
+    const response = await createCompany(email, password); 
     if (response.status === 200) {
       goto(`/admin/companies/${response.message}`);
     }

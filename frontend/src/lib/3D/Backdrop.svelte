@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as THREE from 'three';
-  import * as SC from 'svelte-cubed';
+  import { T } from "@threlte/core";
   import type { Texture } from 'three';
 
   export let map: Texture;
@@ -14,12 +14,16 @@
 
 <svelte:window bind:scrollY={y} bind:innerWidth={w} bind:innerHeight={h} />
 
-<SC.Mesh
+<T.Mesh
   geometry={backdrop}
   material={new THREE.MeshStandardMaterial({
-    map
+    map,
+    flatShading: true,
+    metalness: 1
   })}
   position={[0, 0, -15]}
   scale={15 * Math.max(w / h, 1)}
   receiveShadow
-/>
+>
+</T.Mesh>
+
