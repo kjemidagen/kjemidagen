@@ -3,7 +3,8 @@
   "theboard": "The Board",
   "leader": "Head of Kjemidagen",
   "deputy": "Deputy Head of Kjemidagen",
-  "economist": "CFO",
-  "prboss": "Public Relations Officer",
-  "rigg": "Chief Rigger"
+  "cfo": "CFO",
+  "pr_officer": "Public Relations Officer",
+  "rigger": "Chief Rigger",
+  "event": "Event Manager"
 }

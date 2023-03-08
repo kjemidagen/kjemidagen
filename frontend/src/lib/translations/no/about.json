@@ -3,7 +3,8 @@
   "theboard": "Styret",
   "leader": "Leder",
   "deputy": "Nestleder",
-  "economist": "Økonomiansvarlig",
-  "prboss": "PR-Sjef",
-  "rigg": "Riggeansvarlig"
+  "cfo": "Økonomiansvarlig",
+  "pr_officer": "PR-Sjef",
+  "rigger": "Riggeansvarlig",
+  "event": "Arrangementansvarlig"
 }
