@@ -1,15 +1,14 @@
-# Kjemidagen frontend i sveltekit
+# Kjemidagen frontend i Sveltekit
 
-## Developing
+## Development
 
-Once you've created a project and installed dependencies with `npm run install`, start a development server:
+For at man ikke skal få feilmeldinger i IDE-en, bør man installere dependencies lokalt. 
 
+Kjør følgende kommando i `frontend`-mappen:
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm install
 ```
+
 
 ## Building
 
