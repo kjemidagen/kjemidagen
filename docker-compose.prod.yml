@@ -12,14 +12,12 @@ services:
       - caddy_data:/data
   frontend:
     container_name: kjemi-frontend
-    build:
-      context: ./frontend
-      dockerfile: frontend.prod.dockerfile
+    image: ghcr.io/kjemidagen/frontend:latest
+    env_file:
+      - ./frontend/.env
   backend:
     container_name: kjemi-backend
-    build:
-      context: ./backend
-      dockerfile: backend.dockerfile
+    image: ghcr.io/kjemidagen/backend:latest
     working_dir: /app/
     depends_on:
       - db

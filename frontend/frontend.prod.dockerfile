@@ -9,7 +9,6 @@ RUN npm ci
 
 COPY ./src /app/src
 COPY ./static /app/static
-COPY .env .env
 
 RUN ["npm", "run", "build"]
 
