@@ -56,7 +56,7 @@
           imgSrc={eventManagerSrc}
           name="Christine Laetare"
           title={$t('about.event')}
-          email="arrangementsansvarlig@kjemidagen.no"
+          email="arrangement@kjemidagen.no"
         />
       </div>
     </div>
