@@ -1,0 +1,37 @@
+name: Deploy Images to GHCR
+env:
+  DOTNET_VERSION: "6.0.x"
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      [
+        "backend/**",
+        "frontend/**",
+      ]
+
+jobs:
+  push-docker-images:
+    name: Build and Push Docker Images
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout GitHub Action"
+        uses: actions/checkout@v3.3.0
+
+      - name: "Login to GitHub Container Registry"
+        uses: docker/login-action@v2.1.0
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+
+      - name: "Build Backend Image"
+        run: |
+          docker build ./backend/backend.dockerfile --tag ghcr.io/kjemidagen/backend:latest
+          docker push ghcr.io/kjemidagen/backend:latest
+
+      - name: "Build Frontend Image"
+        run: |
+          docker build ./frontend/frontend.prod.dockerfile --tag ghcr.io/kjemidagen/frontend:latest
+          docker push ghcr.io/kjemidagen/frontend:latest
