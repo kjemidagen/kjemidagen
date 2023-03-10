@@ -31,10 +31,10 @@ jobs:
 
       - name: "Build Backend Image"
         run: |
-          docker build ./backend/backend.dockerfile --tag ghcr.io/kjemidagen/backend:latest
+          docker build ./backend -f ./backend/backend.dockerfile --tag ghcr.io/kjemidagen/backend:latest
           docker push ghcr.io/kjemidagen/backend:latest
 
       - name: "Build Frontend Image"
         run: |
-          docker build ./frontend/frontend.prod.dockerfile --tag ghcr.io/kjemidagen/frontend:latest
+          docker build ./frontend -f ./frontend/frontend.prod.dockerfile --tag ghcr.io/kjemidagen/frontend:latest
           docker push ghcr.io/kjemidagen/frontend:latest
