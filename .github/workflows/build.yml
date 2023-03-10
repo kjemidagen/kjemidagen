@@ -11,6 +11,9 @@ on:
         "frontend/**",
       ]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 jobs:
   push-docker-images:
     name: Build and Push Docker Images
