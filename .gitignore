@@ -1,8 +1,16 @@
-# database data
-database/
-
 # code workspace file 
 *.code-workspace
 
 # secrets
 **/.env
+
+
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.vercel
+.output
+.vercel_build_output
