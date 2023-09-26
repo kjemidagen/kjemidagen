@@ -30,20 +30,17 @@ TODO: Fiks slik at ssr har tilgang til backend
 Innloggingsinfo bør du ha. Logg inn på digitalocean for å se ip-adressen eller ssh til
 Alle filene ligger under `/github-actions-runner/_work/kjemidagen/kjemidagen`. Der kan du endre .env-filer og manuelt skru av og på docker services.
 
-
-
-
 # Kjemidagen frontend i Sveltekit
 
 ## Development
 
-For at man ikke skal få feilmeldinger i IDE-en, bør man installere dependencies lokalt. 
+For at man ikke skal få feilmeldinger i IDE-en, bør man installere dependencies lokalt.
 
 Kjør følgende kommando i `frontend`-mappen:
+
 ```bash
 npm install
 ```
-
 
 ## Building
 

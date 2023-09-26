@@ -1,4 +1,3 @@
-
 import { dev } from '$app/environment';
 import { loadTranslations } from '$lib/translations/translations';
 

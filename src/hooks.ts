@@ -9,7 +9,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   // If this request is a route request
   if (routeRegex.test(pathname)) {
-    if (pathname.slice(0, 6) === "/admin") {
+    if (pathname.slice(0, 6) === '/admin') {
       return resolve(event);
     }
 

@@ -7,8 +7,8 @@
   import logo from '$lib/assets/logo_inverted.svg';
   import hamburgerMenuPic from '$lib/assets/hamburgermeny.svg';
 
-  $: currentRoute = $page.routeId?.split('/').slice(1, undefined).join('/') || '';
-  $: currentRouteNoLang = currentRoute.split('/').slice(1, undefined).join('/');
+  $: currentRoute = $page.route.id?.split('/').slice(1, undefined).join('/') || '';
+  $: currentRouteNoLang = currentRoute.split('/').slice(2, undefined).join('/');
 
   $: routes = [
     {
@@ -76,7 +76,7 @@
     </ul>
     <ul class="language list-none col-span-4 overflow-hidden lg:w-40">
       {#each langRoutes as lc}
-        <li class="h-full flex flex-col px-2 float-left md:float-right ">
+        <li class="h-full flex flex-col px-2 float-left md:float-right">
           <a class="justify-self-center m-auto text-white" href={lc.link}>{lc.label}</a>
         </li>
       {/each}

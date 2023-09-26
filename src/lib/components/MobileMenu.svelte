@@ -4,7 +4,7 @@
 
   const dispatch = createEventDispatcher();
 
-  export let currentRoute: string;
+  export let currentRoute = "";
   export let routes: { label: string; link: string; linkNoLang: string }[];
 </script>
 

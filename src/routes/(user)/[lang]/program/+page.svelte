@@ -12,7 +12,7 @@
     <p>
       {$t('program.description')}
     </p>
-    <hr class="h-px my-8 bg-gray-200 border-0">
+    <hr class="h-px my-8 bg-gray-200 border-0" />
     <h1 class="text-3xl mb-8">{$t('program.last_year')}</h1>
     <div class="flex flex-col">
       <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">

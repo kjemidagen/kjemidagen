@@ -34,7 +34,7 @@
   }
 
   // Same but for mobile
-  let touchStartY: number = 0;
+  let touchStartY = 0;
   function onTouchStart(event: TouchEvent) {
     touchStartY = event.targetTouches[0].clientX;
     addEventListener('touchmove', onTouchMove);
