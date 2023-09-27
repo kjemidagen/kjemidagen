@@ -1,6 +1,6 @@
 <script lang="ts">
   import { t } from '$lib/translations/translations';
-  import companyImage from '$lib/assets/bedrifter.jpg';
+  import companyImage from '$lib/assets/participant-logos.jpg';
 </script>
 
 <svelte:head>
