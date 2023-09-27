@@ -28,19 +28,16 @@ const config: Config = {
     {
       locale: 'no',
       key: 'frontpage',
-      routes: [''],
       loader: async () => (await import('./no/frontpage.json')).default
     },
     {
       locale: 'nn',
       key: 'frontpage',
-      routes: [''],
       loader: async () => (await import('./nn/frontpage.json')).default
     },
     {
       locale: 'en',
       key: 'frontpage',
-      routes: [''],
       loader: async () => (await import('./en/frontpage.json')).default
     },
     {

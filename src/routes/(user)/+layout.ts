@@ -5,7 +5,7 @@ export const load: LayoutLoad = async ({ url }) => {
   const { pathname } = url;
   const defaultLocale = 'no';
 
-  const lang = `${pathname.match(/[^/]+?(?=\/|$)/) || defaultLocale}`;
+  const lang = pathname.match(/[^/]+?(?=\/|$)/)?.[0] || defaultLocale;
 
   const route = pathname.replace(new RegExp(`^/${lang}`), '');
 
