@@ -1,19 +1,19 @@
 {
-  "title": "Program kommer snart!",
-  "description": "Programmet for Kjemidagen 2023 er ikke klart enda. Se gjerne på programmet fra i fjor for å få et inntrykk av hva du kan vente deg på årets Kjemidagen.",
-  "last_year": "Programmet for Kjemidagen 2022",
+  "title": "Program for Kjemidagen 2023!",
+  "description": "Vi gleder oss til en dag fullspekket av aktiviteter.",
   "opening": "Åpning med ballongslipp",
   "opening_loc": "Utenfor R1",
   "stands": "Bedriftsstands",
   "speedinterview": "Speedintervju",
   "speedinterview_p": "Alle bedriftene vil på forhånd ha mulighet til å reservere et eget rom for speedintervju i løpet av dagen. Dette er en spennende mulighet for studenter og bedrifter, og en fin mulighet for deltakende bedrift å finne sin neste kollega.",
   "cvphoto": "CV-fotografering",
-  "motivationalspeaking": "Motivasjonsforedrag v/ Dennis Siva Lie og Stian Sandø",
-  "motivationalspeaking_p": "Årets motivasjonsforedrag skal holdes av Dennis Siva Lie og Stian Sandø! Dennis kjenner du kanskje igjen som programleder for “God kveld Norge” og deltaker på “Kompani Lauritzen”. Stian har tidligere deltatt på “Farmen Kjendis” og “Fangene på fortet”. Begge to er tidligere programledere for “Newton”, og  har utdanningsbakgrunn innen realfag og teknologi. Foredraget vil handle om hvordan man som student kan ha det gøy samtidig som man må balansere skole og det sosiale, og hvordan man kan få hverdagen til å gå opp.",
+  "motivationalspeaking": "Motivasjonsforedrag v/ Linn-Kristin \"Linka\" Riegelhuth Koren",
+  "motivationalspeaking_p": "Årets motivasjonsforedrag skal holdes av Linn-Kristin \"Linka\" Riegelhuth Koren. Linka kjenner du kanskje igjen som tidligere landslagsspiller i håndball, og som deltaker i Mesternes mester. Dessuten er hun gründer av et Tech-selskap. Hun har en master i helsefremmende arbeid, med fordypning i organisasjon og ledelse, og bachelorgrad både i ernæring og sykepleie.",
   "summerjob": "Sommerjobbmaraton",
   "summerjob_p": "Sommerjobbmaraton er et event hvor alle bedrifter som deltar på Kjemidagen får to minutter til rådighet for å presentere sine sommerjobber og sommerprogram. Dette er et meget populært arrangement med gode tilbakemeldinger fra både bedrifter og studenter.",
   "jobmarathon": "Jobbmaraton",
   "jobmarathon_p": "Jobbmaraton er et liknende event som sommerjobbmaraton, men istedenfor sommerjobber får deltakende bedrifter mulighet til å kort presentere sine graduate- program, traineestillinger, internships, masteroppgaver, Ph.d.-stillinger, og fulltidsstillinger.",
-  "banquet": "Bankett på Thon Hotel Prinsen",
-  "banquet_p": "På kvelden vil det arrangeres en bankett med bedriftsrepresentanter og 4. og 5. årsstudenter. Banketten er en viktig del av Kjemidagen, og en fin mulighet for bedriftene til å bli bedre kjent med våre studenter."
+  "banquet": "Bankett",
+  "banquet_p": "På kvelden vil det arrangeres en bankett med bedriftsrepresentanter og 4. og 5. årsstudenter. Banketten er en viktig del av Kjemidagen, og en fin mulighet for bedriftene til å bli bedre kjent med våre studenter.",
+  "banquet_loc": "Frimurerlogen"
 }

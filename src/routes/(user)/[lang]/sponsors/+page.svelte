@@ -12,15 +12,16 @@
   <div class="content" id="sponsors">
     <h1 class="text-3xl mb-8">{$t('sponsors.sponsors')}</h1>
     <p class="text-lg">{$t('sponsors.intro')}</p>
-    <img src={jotunImage} alt="jotun logo" class="w-4/5 md:w-2/4" />
-    <img src={samarbeidsForumImage} alt="samarbeidsforum logo" class="w-4/5 md:w-2/4" />
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 my-4">
+      <img src={jotunImage} alt="Jotun logo" class="w-full h-full object-contain object-center" />
+      <img src={samarbeidsForumImage} alt="Samarbeidsforum logo" class="w-full h-full object-contain object-center" />
+    </div>
     <p class="text-lg">
       {$t('sponsors.institutes')}
     </p>
     <ul class="text-lg list-disc list-inside">
-      <li>{$t('sponsors.ibt')}</li>
       <li>{$t('sponsors.ikp')}</li>
-      <li>{$t('sponsors.ima')}</li>
+      <li>{$t('sponsors.ibt')}</li>
     </ul>
   </div>
 </section>
