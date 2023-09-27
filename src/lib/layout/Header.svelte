@@ -41,11 +41,6 @@
       label: $t('common.map'),
       linkNoLang: `map`
     }
-    // {
-    //   link: `/${$locale}/login`,
-    //   label: $t('common.login'),
-    //   linkNoLang: `/login`
-    // }
   ];
 
   $: langRoutes = $locales.map((locale) => ({
@@ -65,7 +60,7 @@
     <ul class="list-none hidden md:block flex-grow max-w-5xl mx-4 overflow-hidden">
       {#each routes as route}
         <li
-          class="h-full flex flex-col float-left px-2"
+          class="h-full flex flex-col float-left px-4 hover:text-lg hover:font-bold transition-all duration-200"
           class:bg-red-light={currentRouteNoLang === route.linkNoLang}
         >
           <a class="justify-self-center m-auto text-white" href={route.link}>
@@ -76,7 +71,7 @@
     </ul>
     <ul class="language list-none col-span-4 overflow-hidden lg:w-40">
       {#each langRoutes as lc}
-        <li class="h-full flex flex-col px-2 float-left md:float-right">
+        <li class="h-full flex flex-col px-2 float-left md:float-right hover:text-lg hover:font-bold transition-all duration-200">
           <a class="justify-self-center m-auto text-white" href={lc.link}>{lc.label}</a>
         </li>
       {/each}
