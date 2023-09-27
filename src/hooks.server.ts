@@ -1,4 +1,4 @@
-import type { Handle, ExternalFetch } from '@sveltejs/kit';
+import type { Handle } from '@sveltejs/kit';
 import { defaultLocale, locales } from '$lib/translations/translations';
 
 const routeRegex = new RegExp(/^\/[^.]*([?#].*)?$/);
@@ -9,10 +9,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   // If this request is a route request
   if (routeRegex.test(pathname)) {
-    if (pathname.slice(0, 6) === '/admin') {
-      return resolve(event);
-    }
-
     // Get defined locales
     const supportedLocales = locales.get();
 
@@ -22,7 +18,7 @@ export const handle: Handle = async ({ event, resolve }) => {
     );
 
     // If route locale is not supported
-    if (!locale) {
+    if (locale === undefined) {
       // Get user preferred locale
       // locale = `${`${request.headers.get('accept-language')}`.match(
       //   /[a-zA-Z]+?(?=-|_|,|;)/
@@ -45,14 +41,4 @@ export const handle: Handle = async ({ event, resolve }) => {
     });
   }
   return resolve(event);
-};
-
-const publicApiUrl: string = import.meta.env.VITE_PUBLIC_API_URL; // https://www.kjemidagen.com
-const localApiUrl: string = import.meta.env.VITE_SSR_API_URL; // https://backend:8000
-
-export const externalFetch: ExternalFetch = async (request) => {
-  if (request.url.startsWith(publicApiUrl)) {
-    request = new Request(request.url.replace(publicApiUrl, localApiUrl), request);
-  }
-  return fetch(request);
 };
