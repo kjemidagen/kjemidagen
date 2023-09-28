@@ -3,12 +3,44 @@
   import { page } from '$app/stores';
 
   import MobileMenu from '$lib/components/MobileMenu.svelte';
+  import InfoPill from '$lib/components/InfoPill.svelte';
 
   import logo from '$lib/assets/logo_inverted.svg';
   import hamburgerMenuPic from '$lib/assets/hamburgermeny.svg';
 
+  import { writable } from 'svelte/store';
+  import { onMount } from 'svelte';
+
+  const createWritableStore = (key: string, startValue: any) => {
+    const { subscribe, set } = writable(startValue);
+
+    return {
+      subscribe,
+      set,
+      useLocalStorage: () => {
+        const json = localStorage.getItem(key);
+        if (json) {
+          set(JSON.parse(json));
+        }
+
+        subscribe((current) => {
+          localStorage.setItem(key, JSON.stringify(current));
+        });
+      }
+    };
+  };
+
+  export const visitedStore = createWritableStore('visited', ['program']);
+
+  onMount(() => {
+    visitedStore.set([]);
+    visitedStore.useLocalStorage();
+  });
+
   $: currentRoute = $page.route.id?.split('/').slice(1, undefined).join('/') || '';
   $: currentRouteNoLang = currentRoute.split('/').slice(2, undefined).join('/');
+
+  $: visitedStore.set([...new Set([...$visitedStore, currentRouteNoLang])]);
 
   $: routes = [
     {
@@ -24,7 +56,8 @@
     {
       link: `/${$locale}/program`,
       label: $t('common.program'),
-      linkNoLang: `program`
+      linkNoLang: `program`,
+      new: !$visitedStore.includes('program')
     },
     {
       link: `/${$locale}/companies`,
@@ -51,38 +84,47 @@
   let navOpen = false;
 </script>
 
-<header id="header" class="bg-red px-25 sticky top-0 left-0 z-50">
-  <div class="text-white px-6 flex h-16 justify-between md:justify-evenly">
-    <a class="flex text-lg text-white items-center color-white lg:w-40" href={'/'}>
+<header id="header" class="bg-red px-25 sticky left-0 top-0 z-50">
+  <div class="flex h-16 justify-between px-6 text-white md:justify-evenly">
+    <a class="color-white flex items-center text-lg text-white lg:w-40" href={'/'}>
       <img class="mr-1" src={logo} alt="logo" width="40" />
       <span class="hidden lg:inline">{$t('common.chemday')}</span>
     </a>
-    <ul class="list-none hidden md:block flex-grow max-w-5xl mx-4 overflow-hidden">
+    <ul class="mx-4 hidden max-w-5xl flex-grow list-none overflow-hidden md:block">
       {#each routes as route}
         <li
-          class="h-full flex flex-col float-left px-4 hover:text-lg hover:font-bold transition-all duration-200"
+          class="float-left inline-flex h-full items-center justify-center px-4"
           class:bg-red-light={currentRouteNoLang === route.linkNoLang}
         >
-          <a class="justify-self-center m-auto text-white" href={route.link}>
-            {route.label}
+          <a class="m-auto justify-self-center text-white" href={route.link}>
+            <span class="transition-all duration-200 hover:text-lg hover:font-bold"
+              >{route.label}</span
+            >
+            <InfoPill
+              class="transistion-all ml-2 h-fit duration-500 {route.new
+                ? 'visible'
+                : 'hidden'} bg-blue-500 text-sm"
+            ></InfoPill>
           </a>
         </li>
       {/each}
     </ul>
-    <ul class="language list-none col-span-4 overflow-hidden lg:w-40">
+    <ul class="language col-span-4 list-none overflow-hidden lg:w-40">
       {#each langRoutes as lc}
-        <li class="h-full flex flex-col px-2 float-left md:float-right hover:text-lg hover:font-bold transition-all duration-200">
-          <a class="justify-self-center m-auto text-white" href={lc.link}>{lc.label}</a>
+        <li
+          class="float-left flex h-full flex-col px-2 transition-all duration-200 hover:text-lg hover:font-bold md:float-right"
+        >
+          <a class="m-auto justify-self-center text-white" href={lc.link}>{lc.label}</a>
         </li>
       {/each}
     </ul>
     <button
-      class="md:hidden items-right"
+      class="items-right md:hidden"
       on:click|preventDefault={() => {
         navOpen = !navOpen;
       }}
     >
-      <img class="w-8 m-auto" src={hamburgerMenuPic} alt="hamburgermeny" />
+      <img class="m-auto w-8" src={hamburgerMenuPic} alt="hamburgermeny" />
     </button>
   </div>
   {#if navOpen}

@@ -3,8 +3,8 @@
   import { Icon } from '@steeze-ui/svelte-icon';
 
   export let title: string;
-  export let time: string = "";
-  export let location: string = "";
+  export let time = "";
+  export let location = "";
 </script>
 
 <div class="bg-red my-2 p-4 pb-6 text-white">
