@@ -5,7 +5,10 @@
   "opening_loc": "Utenfor R1",
   "stands": "Bedriftsstands",
   "speedinterview": "Speedintervju",
-  "speedinterview_p": "Alle bedriftene vil på forhånd ha mulighet til å reservere et eget rom for speedintervju i løpet av dagen. Dette er en spennende mulighet for studenter og bedrifter, og en fin mulighet for deltakende bedrift å finne sin neste kollega.",
+  "speedinterview_cambi": "Bli med på speedintervju med Cambi! Dette er en spennende mulighet for studenter til å møte bedriften. Ta med deg CV-en din og ta sjansen; plutselig er du deres neste kollega.",
+  "speedinterview_norconsult": "Bli med på speedintervju med Norconsult! Bli bedre kjent med bedriften og vis hva du kan. Finn ut hva Norconsult kan tilby deg som student. Ta med deg CV-en din og ta sjansen; plutselig er du deres neste kollega.",
+  "speedinterview_reinertsen": "Bli med på speedintervju med Reinertsen! Dette er en spennende mulighet for studenter til å møte bedriften. Ta med deg CV-en din og ta sjansen; plutselig er du deres neste kollega.",
+  "speedinterview_carboncircle": "Bli med på speedintervju med Carbon Circle! Bli bedre kjent med bedriften og vis hva du kan. Finn ut hva Carbon Circle kan tilby deg som student. Ta med deg CV-en din og ta sjansen; plutselig er du deres neste kollega.",
   "cvphoto": "CV-fotografering",
   "motivationalspeaking": "Motivasjonsforedrag v/ Linn-Kristin \"Linka\" Riegelhuth Koren",
   "motivationalspeaking_p": "Årets motivasjonsforedrag skal holdes av Linn-Kristin \"Linka\" Riegelhuth Koren. Linka kjenner du kanskje igjen som tidligere landslagsspiller i håndball, og som deltaker i Mesternes mester. Dessuten er hun gründer av et Tech-selskap. Hun har en master i helsefremmende arbeid, med fordypning i organisasjon og ledelse, og bachelorgrad både i ernæring og sykepleie.",
@@ -15,5 +18,6 @@
   "jobmarathon_p": "Jobbmaraton er et liknende event som sommerjobbmaraton, men istedenfor sommerjobber får deltakende bedrifter mulighet til å kort presentere sine graduate- program, traineestillinger, internships, masteroppgaver, Ph.d.-stillinger, og fulltidsstillinger.",
   "banquet": "Bankett",
   "banquet_p": "På kvelden vil det arrangeres en bankett med bedriftsrepresentanter og 4. og 5. årsstudenter. Banketten er en viktig del av Kjemidagen, og en fin mulighet for bedriftene til å bli bedre kjent med våre studenter.",
-  "banquet_loc": "Frimurerlogen"
+  "banquet_loc": "Frimurerlogen",
+  "day_after": "Torsdag 26. oktober 2023"
 }

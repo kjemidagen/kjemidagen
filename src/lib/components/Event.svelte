@@ -5,33 +5,39 @@
   export let title: string;
   export let time = "";
   export let location = "";
+  export let image = "";
 </script>
 
-<div class="bg-red my-2 p-4 pb-6 text-white">
-  <h3 class="mt-4 mb-2 text-2xl font-medium">
-    {title}
-  </h3>
-  {#if (location || time)}
-    <span class="inline-flex items-center justify-center">
-      {#if time}
-        <Icon
-          src={Clock}
-          size="1.5em"
-          theme="solid"
-          class="my-auto mr-2 inline leading-none text-white"
-        />
-        <strong class="leading-1 mr-8 block text-white">{time}</strong>
-      {/if}
-      {#if location}
-        <Icon
-          src={MapPin}
-          size="1.5em"
-          theme="solid"
-          class="my-auto mr-2 inline leading-none text-white"
-        />
-        <strong class="leading-1 text-white">{location}</strong>
-      {/if}
-    </span>
+<div class="bg-red p-4 text-white {image ? "flex flex-col lg:flex-row gap-4" : ""}">
+  <div class="flex-1">
+    <h3 class="mt-4 mb-2 text-2xl font-medium">
+      {title}
+    </h3>
+    {#if (location || time)}
+      <span class="inline-flex items-center justify-center">
+        {#if time}
+          <Icon
+            src={Clock}
+            size="1.5em"
+            theme="solid"
+            class="my-auto mr-2 inline leading-none text-white"
+          />
+          <strong class="leading-1 mr-8 block text-white">{time}</strong>
+        {/if}
+        {#if location}
+          <Icon
+            src={MapPin}
+            size="1.5em"
+            theme="solid"
+            class="my-auto mr-2 inline leading-none text-white"
+          />
+          <strong class="leading-1 text-white">{location}</strong>
+        {/if}
+      </span>
+    {/if}
+    <slot />
+  </div>
+  {#if image}
+  <img src={image} alt="{title} image" class="col-span-1 aspect-video lg:aspect-square content-center object-contain bg-white p-4 order-first lg:order-last lg:w-1/5" />
   {/if}
-  <slot />
 </div>
