@@ -21,7 +21,7 @@
     </p>
     <ul class="text-lg list-disc list-inside">
       <li>{$t('sponsors.ikp')}</li>
-      <li>{$t('sponsors.ibt')}</li>
+      <li>{$t('sponsors.ima')}</li>
     </ul>
   </div>
 </section>

@@ -23,7 +23,7 @@
           {$t('program.speedinterview_p')}
         </p>
       </Event>
-      <Event title={$t('program.cvphoto')} time="11:00 - 13:00"></Event>
+      <Event title={$t('program.cvphoto')} time="11:00 - 13:00" location="R21"></Event>
       <Event title={$t('program.summerjob')} time="11:15 - 12:00" location="R5">
         <p class="leading-7 mt-3">
           {$t('program.summerjob_p')}

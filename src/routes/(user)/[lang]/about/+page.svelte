@@ -22,7 +22,7 @@
       <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3">
         <AboutCard
           imgSrc={headSrc}
-          name="Emilie Sundt Hennisen"
+          name="Emilie Sundt Hennissen"
           title={$t('about.leader')}
           email="leder@kjemidagen.no"
         />
