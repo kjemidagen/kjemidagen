@@ -13,12 +13,12 @@ const config: Config = {
     {
       locale: 'no',
       key: 'common',
-      loader: async () => (await import('./no/common.json')).default
+      loader: async () => (await import('./nb-NO/common.json')).default
     },
     {
       locale: 'nn',
       key: 'common',
-      loader: async () => (await import('./nn/common.json')).default
+      loader: async () => (await import('./nn-NO/common.json')).default
     },
     {
       locale: 'en',
@@ -28,12 +28,12 @@ const config: Config = {
     {
       locale: 'no',
       key: 'frontpage',
-      loader: async () => (await import('./no/frontpage.json')).default
+      loader: async () => (await import('./nb-NO/frontpage.json')).default
     },
     {
       locale: 'nn',
       key: 'frontpage',
-      loader: async () => (await import('./nn/frontpage.json')).default
+      loader: async () => (await import('./nn-NO/frontpage.json')).default
     },
     {
       locale: 'en',
@@ -44,13 +44,13 @@ const config: Config = {
       locale: 'no',
       key: 'about',
       routes: ['/about'],
-      loader: async () => (await import('./no/about.json')).default
+      loader: async () => (await import('./nb-NO/about.json')).default
     },
     {
       locale: 'nn',
       key: 'about',
       routes: ['/about'],
-      loader: async () => (await import('./nn/about.json')).default
+      loader: async () => (await import('./nn-NO/about.json')).default
     },
     {
       locale: 'en',
@@ -62,13 +62,13 @@ const config: Config = {
       locale: 'no',
       key: 'companies',
       routes: ['/companies'],
-      loader: async () => (await import('./no/companies.json')).default
+      loader: async () => (await import('./nb-NO/companies.json')).default
     },
     {
       locale: 'nn',
       key: 'companies',
       routes: ['/companies'],
-      loader: async () => (await import('./nn/companies.json')).default
+      loader: async () => (await import('./nn-NO/companies.json')).default
     },
     {
       locale: 'en',
@@ -80,13 +80,13 @@ const config: Config = {
       locale: 'no',
       key: 'program',
       routes: ['/program'],
-      loader: async () => (await import('./no/program.json')).default
+      loader: async () => (await import('./nb-NO/program.json')).default
     },
     {
       locale: 'nn',
       key: 'program',
       routes: ['/program'],
-      loader: async () => (await import('./nn/program.json')).default
+      loader: async () => (await import('./nn-NO/program.json')).default
     },
     {
       locale: 'en',
@@ -98,13 +98,13 @@ const config: Config = {
       locale: 'no',
       key: 'sponsors',
       routes: ['/sponsors'],
-      loader: async () => (await import('./no/sponsors.json')).default
+      loader: async () => (await import('./nb-NO/sponsors.json')).default
     },
     {
       locale: 'nn',
       key: 'sponsors',
       routes: ['/sponsors'],
-      loader: async () => (await import('./nn/sponsors.json')).default
+      loader: async () => (await import('./nn-NO/sponsors.json')).default
     },
     {
       locale: 'en',
@@ -116,13 +116,13 @@ const config: Config = {
       locale: 'no',
       key: 'map',
       routes: ['/map'],
-      loader: async () => (await import('./no/map.json')).default
+      loader: async () => (await import('./nb-NO/map.json')).default
     },
     {
       locale: 'nn',
       key: 'map',
       routes: ['/map'],
-      loader: async () => (await import('./nn/map.json')).default
+      loader: async () => (await import('./nn-NO/map.json')).default
     },
     {
       locale: 'en',

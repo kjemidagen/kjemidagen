@@ -26,7 +26,11 @@
   "files.insertFinalNewline": true,
   "typescript.format.semicolons": "insert",
   "python.analysis.typeCheckingMode": "basic",
-  "python.linting.mypyEnabled": true
+  "python.linting.mypyEnabled": true,
+  "i18n-ally.localesPaths": "src/lib/translations",
+  "i18n-ally.namespace": true,
+  "i18n-ally.pathMatcher": "{locale}/{namespace}.json",
+  "i18n-ally.keystyle": "flat"
   // "editor.formatOnSave": true // Anbefaler å legge denne inn i user settings, vil ikke påtvinge noen
   // Ellers kan man formatte med Shift+Alt+F
 }

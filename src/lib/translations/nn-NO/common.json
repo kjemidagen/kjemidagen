@@ -1,12 +1,13 @@
 {
   "chemday": "Kjemidagen",
-  "home": "Hjem",
+  "home": "Heim",
   "about": "Om Kjemidagen",
   "program": "Program",
   "companies": "Bedrifter",
-  "sponsors": "Sponsorer",
+  "sponsors": "Sponsorar",
   "login": "Logg inn",
   "skiptocontent": "Hopp til innhold",
   "contactus": "Ta kontakt",
-  "map": "Standkart"
+  "map": "Standkart",
+  "jobs": "Jobbar"
 }
