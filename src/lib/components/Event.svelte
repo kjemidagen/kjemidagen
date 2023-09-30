@@ -3,15 +3,16 @@
   import { Icon } from '@steeze-ui/svelte-icon';
 
   export let title: string;
-  export let time = "";
-  export let location = "";
+  export let time = '';
+  export let location = '';
+  export let loc_link = '';
 </script>
 
 <div class="bg-red my-2 p-4 pb-6 text-white">
-  <h3 class="mt-4 mb-2 text-2xl font-medium">
+  <h3 class="mb-2 mt-4 text-2xl font-medium">
     {title}
   </h3>
-  {#if (location || time)}
+  {#if location || time}
     <span class="inline-flex items-center justify-center">
       {#if time}
         <Icon
@@ -29,7 +30,11 @@
           theme="solid"
           class="my-auto mr-2 inline leading-none text-white"
         />
+        {#if loc_link}
+        <a href={loc_link} target="_blank" rel="noopener noreferrer"><strong class="leading-1 text-white">{location}</strong></a>
+        {:else}
         <strong class="leading-1 text-white">{location}</strong>
+        {/if}
       {/if}
     </span>
   {/if}
