@@ -56,7 +56,7 @@
           <img
             src={presenterImg}
             alt="Foredragsholder"
-            class="order-first aspect-square h-auto w-full rounded-full object-cover object-top lg:order-last lg:-translate-y-8"
+            class="aspect-square h-auto w-full rounded-full object-cover object-top lg:-translate-y-8"
           />
         </div>
       </Event>

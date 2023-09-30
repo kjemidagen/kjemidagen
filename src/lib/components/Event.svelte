@@ -3,17 +3,17 @@
   import { Icon } from '@steeze-ui/svelte-icon';
 
   export let title: string;
-  export let time = "";
-  export let location = "";
-  export let image = "";
+  export let time = '';
+  export let location = '';
+  export let image = '';
 </script>
 
-<div class="bg-red p-4 text-white {image ? "flex flex-col lg:flex-row gap-4" : ""}">
+<div class="bg-red p-4 text-white {image ? 'flex flex-col gap-4 lg:flex-row' : ''}">
   <div class="flex-1">
-    <h3 class="mt-4 mb-2 text-2xl font-medium">
+    <h3 class="mb-2 mt-4 text-2xl font-medium">
       {title}
     </h3>
-    {#if (location || time)}
+    {#if location || time}
       <span class="inline-flex items-center justify-center">
         {#if time}
           <Icon
@@ -38,6 +38,10 @@
     <slot />
   </div>
   {#if image}
-  <img src={image} alt="{title} image" class="col-span-1 aspect-video lg:aspect-square content-center object-contain bg-white p-4 order-first lg:order-last lg:w-1/5" />
+    <img
+      src={image}
+      alt="{title} image"
+      class="order-first col-span-1 aspect-[3/1] content-center bg-white object-contain p-8 lg:order-last lg:aspect-square lg:w-1/5 lg:p-4"
+    />
   {/if}
 </div>
