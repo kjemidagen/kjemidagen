@@ -24,12 +24,12 @@
         </p>
       </Event>
       <Event title={$t('program.cvphoto')} time="11:00 - 13:00" location="R21" loc_link="https://link.mazemap.com/Qw6ZzVYJ"></Event>
-      <Event title={$t('program.summerjob')} time="11:15 - 12:00" location="R5" loc_link="https://link.mazemap.com/TFErG7Yc">
+      <Event title={$t('program.summerjob')} time="11:15 - 12:00" location="R8" loc_link="https://link.mazemap.com/TFErG7Yc">
         <p class="mt-3 leading-7">
           {$t('program.summerjob_p')}
         </p>
       </Event>
-      <Event title={$t('program.motivationalspeaking')} time="12:30 - 13:15" location="R5" loc_link="https://link.mazemap.com/TFErG7Yc">
+      <Event title={$t('program.motivationalspeaking')} time="12:15 - 13:00" location="R5" loc_link="https://link.mazemap.com/TFErG7Yc">
         <div class="grid grid-cols-1 gap-8 lg:-mb-8 lg:mr-8 lg:grid-cols-3">
           <p class="mt-3 leading-7 lg:col-span-2">
             {$t('program.motivationalspeaking_p')}
