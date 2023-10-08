@@ -32,7 +32,7 @@
       <Event title={$t('program.motivationalspeaking')} time="12:15 - 13:00" location="R5" loc_link="https://link.mazemap.com/TFErG7Yc">
         <div class="grid grid-cols-1 gap-8 lg:-mb-8 lg:mr-8 lg:grid-cols-3">
           <p class="mt-3 leading-7 lg:col-span-2">
-            {$t('program.motivationalspeaking_p')}
+            {@html $t('program.motivationalspeaking_p')}
           </p>
           <img
             src={presenterImg}
