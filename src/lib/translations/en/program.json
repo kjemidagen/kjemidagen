@@ -5,7 +5,10 @@
   "opening_loc": "Outside R1",
   "stands": "Company stands",
   "speedinterview": "Speed-interview",
-  "speedinterview_p": "All companies will have the opportunity in advance to reserve a separate room for a speed interview during the day. This is an exciting opportunity for students and companies, and a great opportunity for participating companies to find their next colleague.",
+  "speedinterview_cambi": "Participate in a speed-interview with Cambi! This is an exciting opportunity for students to meet the company and get further insights into what what happens at Cambi. Bring your CV and take the chance; there might be a job offer waiting for you as their next colleague.",
+  "speedinterview_norconsult": "Participate in a speed-interview with Norconsult! This is an exciting opportunity for students to meet the company. Bring your CV and take the chance; there might be a job offer waiting for you as their next colleague.",
+  "speedinterview_reinertsen": "Participate in a speed-interview with Reinertsen! This is an exciting opportunity for students to meet the company and get further insights into what what happens at Reinertsen. Bring your CV and take the chance; there might be a job offer waiting for you as their next colleague.",
+  "speedinterview_carboncircle": "Participate in a speed-interview with Carbon Circle! This is an exciting opportunity for students to meet the company. Bring your CV and take the chance; there might be a job offer waiting for you as their next colleague.",
   "cvphoto": "Taking of photos for CV",
   "motivationalspeaking": "Motivational speech w/ Linn-Kristin \"Linka\" Riegelhuth Koren",
   "motivationalspeaking_p": "This year's speaker speaker at the motivational lecture is Linn-Kristin \"Linka\" Riegelhuth Koren. She is a former handball player and participant in the Norwegian TV-program \"Mesternes Mester\".\n<br />\nFurthermore, she is founder of a Tech-company and has a Master's degree in helth promoting efforts, with specialization in leadership and organization, and a Bachelor's degree in nutrition and healthcare.\n<br />\nLinka is going to talk about how you can learn from mistakes and take control of your everyday life. With the right mindset, you can achieve whatever you want.\n",
@@ -15,5 +18,6 @@
   "jobmarathon_p": "Job marathon is a similar event to summer job marathon, but instead of summer jobs, participating companies are given the opportunity to briefly present their graduate programs, trainee positions, internships, master's theses, PhD positions, and full-time positions.",
   "banquet": "Banquet",
   "banquet_p": "In the evening, a banquet will be arranged with company representatives and 4th and 5th year students. The banquet is an important part of Chemistry Day, and a great opportunity for companies to get to know our students better.",
-  "banquet_loc": "Frimurerlogen"
+  "banquet_loc": "Frimurerlogen",
+  "day_after": "Thursday, 26 October 2023"
 }
