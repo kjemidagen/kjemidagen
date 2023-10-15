@@ -63,7 +63,7 @@
       link: `/${$locale}/companies`,
       label: $t('common.companies'),
       linkNoLang: `companies`,
-      new: !$visitedStore.includes('program')
+      new: !$visitedStore.includes('companies')
     },
     {
       link: `/${$locale}/sponsors`,
