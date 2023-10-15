@@ -86,7 +86,7 @@
   let navOpen = false;
 </script>
 
-<header id="header" class="bg-red px-25 sticky left-0 top-0 z-50">
+<header id="header" class="px-25 sticky left-0 top-0 z-50 bg-red">
   <div class="flex h-16 justify-between px-6 text-white md:justify-evenly">
     <a class="color-white flex items-center text-lg text-white lg:w-40" href={'/'}>
       <img class="mr-1" src={logo} alt="logo" width="40" />
@@ -98,10 +98,13 @@
           class="float-left inline-flex h-full items-center justify-center px-4"
           class:bg-red-light={currentRouteNoLang === route.linkNoLang}
         >
-          <a class="m-auto justify-self-center text-white" href={route.link}>
-            <span class="transition-all duration-200 hover:text-lg hover:font-bold"
-              >{route.label}</span
-            >
+          <a class="m-auto justify-self-center text-white flex-inline flex" href={route.link}>
+            <span class="group transition duration-300">
+              {route.label}
+              <span
+                class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+              />
+            </span>
             <InfoPill
               class="transistion-all ml-2 h-fit duration-500 {route.new
                 ? 'visible'
@@ -114,9 +117,14 @@
     <ul class="language col-span-4 list-none overflow-hidden lg:w-40">
       {#each langRoutes as lc}
         <li
-          class="float-left flex h-full flex-col px-2 transition-all duration-200 hover:text-lg hover:font-bold md:float-right"
+          class="float-left flex h-full flex-col px-2 transition-all duration-200 md:float-right"
         >
-          <a class="m-auto justify-self-center text-white" href={lc.link}>{lc.label}</a>
+          <a class="m-auto justify-self-center text-white group transition duration-300" href={lc.link}>
+            {lc.label}
+            <span
+                class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+              />
+          </a>
         </li>
       {/each}
     </ul>
