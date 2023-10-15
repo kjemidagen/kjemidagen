@@ -62,7 +62,8 @@
     {
       link: `/${$locale}/companies`,
       label: $t('common.companies'),
-      linkNoLang: `companies`
+      linkNoLang: `companies`,
+      new: !$visitedStore.includes('program')
     },
     {
       link: `/${$locale}/sponsors`,
@@ -72,7 +73,8 @@
     {
       link: `/${$locale}/map`,
       label: $t('common.map'),
-      linkNoLang: `map`
+      linkNoLang: `map`,
+      new: !$visitedStore.includes('map')
     }
   ];
 
