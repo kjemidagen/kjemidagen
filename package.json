@@ -45,7 +45,7 @@
     "@steeze-ui/heroicons": "^2.2.3",
     "@steeze-ui/svelte-icon": "^1.5.0",
     "@vercel/analytics": "^1.0.2",
-    "cookie": "^0.4.1",
+    "cookie": "^0.5.0",
     "install-peers": "^1.0.3",
     "svelte-cubed": "^0.2.1",
     "sveltekit-i18n": "^2.4.2",
