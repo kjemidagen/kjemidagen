@@ -6,6 +6,7 @@
   import norconsultLogo from '$lib/assets/norconsult.svg';
   import reinertsenLogo from '$lib/assets/reinertsen.svg';
   import carboncircleLogo from '$lib/assets/carbon_circle.svg';
+  import bcsLogo from '$lib/assets/bcs.png';
 </script>
 
 <svelte:head>
@@ -49,6 +50,7 @@
         title="{$t('program.speedinterview')} Cambi"
         time="10:30 - 13:00"
         location="BU1-108"
+        loc_link="https://link.mazemap.com/d0Blfvvu"
         image={cambiLogo}
       >
         <p class="mt-3 leading-7">
@@ -74,7 +76,8 @@
       <Event
         title="{$t('program.speedinterview')} Norconsult"
         time="12:00 - 16:00"
-        location="K4-173"
+        location="K 4.173"
+        loc_link="https://link.mazemap.com/0b6z9O7d"
         image={norconsultLogo}
       >
         <p class="mt-3 leading-7">
@@ -101,7 +104,8 @@
       <Event
         title="{$t('program.speedinterview')} Reinertsen"
         time="13:00 - 15:00"
-        location="K4-172"
+        location="K 4.172"
+        loc_link="https://link.mazemap.com/EqfbkoQI"
         image={reinertsenLogo}
       >
         <p class="mt-3 leading-7">
@@ -116,6 +120,17 @@
       >
         <p class="mt-3 leading-7">
           {$t('program.jobmarathon_p')}
+        </p>
+      </Event>
+      <Event
+        title="{$t('program.speedinterview')} Bergen Carbon Solutions"
+        time="14:00 - 15:00"
+        location="BU1-108"
+        loc_link="https://link.mazemap.com/xfpEZ82x"
+        image={bcsLogo}
+      >
+        <p class="mt-3 leading-7">
+          {$t('program.speedinterview_reinertsen')}
         </p>
       </Event>
       <Event
@@ -134,7 +149,8 @@
       <Event
         title="{$t('program.speedinterview')} Carbon Circle"
         time="10:00 - 15:00"
-        location="K4-173"
+        location="K 4.173"
+        loc_link="https://link.mazemap.com/0b6z9O7d"
         image={carboncircleLogo}
       >
         <p class="mt-3 leading-7">
