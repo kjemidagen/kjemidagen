@@ -18,6 +18,19 @@
     <p>
       {$t('program.description')}
     </p>
+    <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_before')}</h3>
+    <div class="flex flex-col gap-2">
+      <Event
+          title={$t('program.mingle')}
+          time="18:15"
+          location={$t('program.mingle_loc')}
+          loc_link="https://link.mazemap.com/kqxQiA3U"
+        >
+          <p class="mt-3 leading-7">
+            {@html $t('program.mingle_p')}
+          </p>
+        </Event>
+    </div>
     <h3 class="mb-2 mt-8 text-2xl">{$t('frontpage.when')}</h3>
     <div class="flex flex-col gap-2">
       <Event

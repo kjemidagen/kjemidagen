@@ -19,5 +19,9 @@
   "banquet": "Banquet",
   "banquet_p": "In the evening, a banquet will be arranged with company representatives and 4th and 5th year students. The banquet is an important part of Chemistry Day, and a great opportunity for companies to get to know our students better.",
   "banquet_loc": "Frimurerlogen",
-  "day_after": "Thursday, 26 October 2023"
+  "day_after": "Thursday, 26 October 2023",
+  "mingle": "Social gathering",
+  "mingle_loc": "Cafeteria at Kjelhuset",
+  "mingle_p": "Last year, Kjemidagen announced a social gathering as a pilot project, where students and company representatives could meet in a causual setting. We want to repeat last year's great success! Students from HC and Timini in their 3rd to 5th year are invited to join the social gathering. There will be pizza and quiz with winning prizes. \n<br /><br />\nCompanies with representatives at the social gathering are Elkem, Rana Gruber, NOAH, Borregaard, Cambi Group, Jotun, Carbon Circle, Worley Origo Process and Pharmaq.\n<br /><br />\n<a href=\"https://hc.ntnu.no/arrangementer/420/\">Sign-up link for HC</a> (log-in required).<br />\n<a href=\"https://www.timini.no/event/view/150334\">Sign-up link for Timini</a> (log-in required).",
+  "day_before": "24. October 2023"
 }
