@@ -130,7 +130,7 @@
         image={bcsLogo}
       >
         <p class="mt-3 leading-7">
-          {$t('program.speedinterview_reinertsen')}
+          {$t('program.speedinterview_bcs')}
         </p>
       </Event>
       <Event
