@@ -74,14 +74,14 @@
         </p>
       </Event>
       <Event
-        title="{$t('program.speedinterview')} Norconsult"
-        time="12:00 - 16:00"
-        location="K 4.173"
-        loc_link="https://link.mazemap.com/0b6z9O7d"
-        image={norconsultLogo}
+        title="{$t('program.speedinterview')} Carbon Circle"
+        time="12:00 - 14:00"
+        location="BU1-106"
+        loc_link="https://link.mazemap.com/TbeK2X1e"
+        image={carboncircleLogo}
       >
         <p class="mt-3 leading-7">
-          {$t('program.speedinterview_norconsult')}
+          {$t('program.speedinterview_carboncircle')}
         </p>
       </Event>
       <Event
@@ -141,20 +141,6 @@
       >
         <p class="mt-3 leading-7">
           {$t('program.banquet_p')}
-        </p>
-      </Event>
-    </div>
-    <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_after')}</h3>
-    <div class="flex flex-col gap-2">
-      <Event
-        title="{$t('program.speedinterview')} Carbon Circle"
-        time="10:00 - 15:00"
-        location="K 4.173"
-        loc_link="https://link.mazemap.com/0b6z9O7d"
-        image={carboncircleLogo}
-      >
-        <p class="mt-3 leading-7">
-          {$t('program.speedinterview_carboncircle')}
         </p>
       </Event>
     </div>
