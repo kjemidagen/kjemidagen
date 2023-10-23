@@ -37,7 +37,7 @@
     visitedStore.useLocalStorage();
   });
 
-  $: currentRoute = $page.route.id?.split('/').slice(1, undefined).join('/') || '';
+  $: currentRoute = $page.url.pathname;
   $: currentRouteNoLang = currentRoute.split('/').slice(2, undefined).join('/');
 
   $: visitedStore.set([...new Set([...$visitedStore, currentRouteNoLang])]);
@@ -75,6 +75,12 @@
       label: $t('common.map'),
       linkNoLang: `map`,
       new: !$visitedStore.includes('map')
+    },
+    {
+      link: `/${$locale}/jobs`,
+      label: $t('common.jobs'),
+      linkNoLang: `jobs`,
+      new: !$visitedStore.includes('jobs')
     }
   ];
 
@@ -86,7 +92,7 @@
   let navOpen = false;
 </script>
 
-<header id="header" class="px-25 sticky left-0 top-0 z-50 bg-red">
+<header id="header" class="px-25 fixed w-full left-0 top-0 z-50 bg-red border-b-8 border-red-light">
   <div class="flex h-16 justify-between px-6 text-white md:justify-evenly">
     <a class="color-white flex items-center text-lg text-white lg:w-40" href={'/'}>
       <img class="mr-1" src={logo} alt="logo" width="40" />

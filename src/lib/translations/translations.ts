@@ -129,6 +129,21 @@ const config: Config = {
       key: 'map',
       routes: ['/map'],
       loader: async () => (await import('./en/map.json')).default
+    },
+    {
+      locale: 'no',
+      key: 'jobs',
+      loader: async () => (await import('./nb-NO/jobs.json')).default
+    },
+    {
+      locale: 'nn',
+      key: 'jobs',
+      loader: async () => (await import('./nn-NO/jobs.json')).default
+    },
+    {
+      locale: 'en',
+      key: 'jobs',
+      loader: async () => (await import('./en/jobs.json')).default
     }
   ],
   log: {
