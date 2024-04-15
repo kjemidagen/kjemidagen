@@ -13,12 +13,12 @@
     <h1 class="text-3xl mb-8">{$t('map.title')}</h1>
     <p class="text-lg">{$t('map.intro')}</p>
     <div class="flex flex-col lg:flex-row lg:gap-2 lg:-mx-20 mt-3">
-      <div class="my-1">
+      <!--<div class="my-1">
         <img src={companyMap1} alt="Map of the stands in etg 1" />
       </div>
       <div class="my-1">
-        <img src={companyMapU1} alt="Map of the stands in etg u1" />
-      </div>
+        <img src={companyMapU1} alt="Map of the stands in etg u1" /> 
+      </div> -->
     </div>
   </div>
 </section>
