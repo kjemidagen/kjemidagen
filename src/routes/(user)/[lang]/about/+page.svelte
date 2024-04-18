@@ -34,7 +34,7 @@
         />
         <AboutCard
           imgSrc={cfoSrc}
-          name="Olaug Aalen"
+          name="Olaug Marie Aalen"
           title={$t('about.cfo')}
           email="okonomiansvarlig@kjemidagen.no"
         />
