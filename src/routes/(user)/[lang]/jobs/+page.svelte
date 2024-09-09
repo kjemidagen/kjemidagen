@@ -15,7 +15,7 @@
     <p>
       {$t('jobs.description')}
     </p>
-    <!--<div class="mt-4 grid grid-cols-1 gap-4">
+    <div class="mt-4 grid grid-cols-1 gap-4">
       {#each jobsMap as job}
         <Advert
           title={$t(`jobs.${job.slug}.title`)}
@@ -30,7 +30,7 @@
             {job.short_description}
         </Advert>
       {/each}
-    </div> -->
+    </div>
   </div>
 </section>
 
