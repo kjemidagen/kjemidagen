@@ -3,7 +3,7 @@
   import yaraLogo from '$lib/assets/yara.svg';
   import borregaardLogo from '$lib/assets/borregaard.svg'
   import hydroLogo from '$lib/assets/hydro.svg';
-  import elkemLogo from '$lib/assets/elkemLogo.png';
+  import elkemLogo from '$lib/assets/elkem_logo_120.png';
   import { t } from '$lib/translations/translations';
 
   export const jobsMap = [
