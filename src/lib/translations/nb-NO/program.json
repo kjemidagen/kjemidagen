@@ -1,5 +1,5 @@
 {
-  "title": "Program for Kjemidagen 2024!",
+  "title": "Årets program",
   "description": "Vi gleder oss til en dag fullspekket av aktiviteter!",
   "opening": "Åpning med ballongslipp",
   "opening_loc": "Utenfor R1",
@@ -7,27 +7,14 @@
   "stands_loc": "Realfagbygget",
   "cv_check": "CV sjekk",
   "cv_check_loc": "Realfagbygget",
-  "summerjob_marathon": "Sommerjobb maraton",
+  "summerjob_marathon": "Sommerjobbmaraton",
   "summerjob_marathon_loc": "Realfagbygget",
   "summerjob_marathon_desc": "Sommerjobbmaraton er et event hvor alle bedrifter som deltar på Kjemidagen får to minutter til rådighet for å presentere sine sommerjobber og sommerprogram. Dette er et meget populært arrangement med gode tilbakemeldinger fra både bedrifter og studenter.",
-  "job_marathon": "Jobb maraton",
+  "job_marathon": "Jobbmaraton",
   "job_marathon_loc": "Realfagbygget",
   "job_marathon_desc": "Jobbmaraton er et liknende event som sommerjobbmaraton, men istedenfor sommerjobber får deltakende bedrifter mulighet til å kort presentere sine graduate- program, traineestillinger, internships, masteroppgaver, Ph.d.-stillinger, og fulltidsstillinger.",
   "banquet": "Bankett",
   "banquet_loc": "Frimurerlogen",
   "banquet_desc": "På kvelden vil det arrangeres en bankett med bedriftsrepresentanter og 4. og 5. årsstudenter. Banketten er en viktig del av Kjemidagen, og en fin mulighet for bedriftene til å bli bedre kjent med våre studenter.",
-  "day": "Onsdag 23. oktober 2024",
-
-  "cvphoto": "CV-fotografering",
-  "motivationalspeaking": "Motivasjonsforedrag v/ Linn-Kristin \"Linka\" Riegelhuth Koren",
-  "motivationalspeaking_p": "Årets motivasjonsforedrag skal holdes av Linn-Kristin \"Linka\" Riegelhuth Koren. Linka kjenner du kanskje igjen som tidligere landslagsspiller i håndball, og som deltaker i Mesternes mester.\n<br />\nDet du kanskje ikke visste, er at hun gründer av et Tech-selskap. Hun har en master i helsefremmende arbeid, med fordypning i organisasjon og ledelse, og bachelorgrad både i ernæring og sykepleie.\n<br />\nLinka kommer til å snakke om hvordan man kan lære av sine feil og ta kontroll over hverdagen. Hun er opptatt av å ha riktig \"mindset\" – man får til det man vil.",
-  "summerjob": "Sommerjobbmaraton",
-  "summerjob_p": "Sommerjobbmaraton er et event hvor alle bedrifter som deltar på Kjemidagen får to minutter til rådighet for å presentere sine sommerjobber og sommerprogram. Dette er et meget populært arrangement med gode tilbakemeldinger fra både bedrifter og studenter.",
-  "jobmarathon": "Jobbmaraton",
-  "jobmarathon_p": "Jobbmaraton er et liknende event som sommerjobbmaraton, men istedenfor sommerjobber får deltakende bedrifter mulighet til å kort presentere sine graduate- program, traineestillinger, internships, masteroppgaver, Ph.d.-stillinger, og fulltidsstillinger.",
-  "banquet_p": "På kvelden vil det arrangeres en bankett med bedriftsrepresentanter og 4. og 5. årsstudenter. Banketten er en viktig del av Kjemidagen, og en fin mulighet for bedriftene til å bli bedre kjent med våre studenter.",
-  "mingle": "Minglekveld",
-  "mingle_loc": "Kantina i Kjelhuset",
-  "mingle_p": "I fjor lanserte Kjemidagen prøveprosjektet Minglekveld, som skulle være en lavterskel arena der studenter og bedriftsrepresentanter kunne møtes i en uformell setting. Dette ble et vellykket arrangement, og vi gjentar suksessen i år! Kjelhuset åpner dørene for studenter fra HC og Timini som går i 3. til 5. klasse tirsdag 24. oktober kl. 18:15. Det vil fortløpende bli servert pizzabuffet og avholdt quiz, med premie til vinnerlaget.\n<br /><br />\nMinglekveld vil altså være en glimrende anledning til å skaffe seg nye bekjente både i næringslivet og på tvers av linjeforeninger!\n<br /><br />\nBedriftene som deltar er Elkem, NOAH, Borregaard, Cambi Group, Jotun, Carbon Circle, Worley Origo Process og Pharmaq.\n<br /><br />\n<a href=\"https://hc.ntnu.no/arrangementer/bedpres/67/\">Påmeldingslink HC</a> (krever innlogging).<br />\n<a href=\"https://www.timini.no/event/view/150334\">Påmmeldingslink Timini</a> (krever innlogging).",
-  "day_before": "Tirsdag 24. oktober 2023"
+  "day": "Onsdag 23. oktober 2024"
 }
