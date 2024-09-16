@@ -22,19 +22,19 @@
       <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3">
         <AboutCard
           imgSrc={headSrc}
-          name="Emilie Sundt Hennissen"
+          name="Marie Bakke"
           title={$t('about.leader')}
           email="leder@kjemidagen.no"
         />
         <AboutCard
           imgSrc={deputyHeadSrc}
-          name="Synne Sæther Lande"
+          name="Marie Schefte"
           title={$t('about.deputy')}
           email="nestleder@kjemidagen.no"
         />
         <AboutCard
           imgSrc={cfoSrc}
-          name="Henrik Engen Ødegård"
+          name="Olaug Marie Aalen"
           title={$t('about.cfo')}
           email="okonomiansvarlig@kjemidagen.no"
         />
@@ -42,19 +42,19 @@
       <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3">
         <AboutCard
           imgSrc={prOfficerSrc}
-          name="Hilde-Marie H. Gransjøen"
+          name="Karianne Lindanger"
           title={$t('about.pr_officer')}
           email="pr-sjef@kjemidagen.no"
         />
         <AboutCard
           imgSrc={chiefRiggerSrc}
-          name="Tor Gunnar R. Hammer"
+          name="Sander Haugen"
           title={$t('about.rigger')}
           email="riggeansvarlig@kjemidagen.no"
         />
         <AboutCard
           imgSrc={eventManagerSrc}
-          name="Christine Laetare"
+          name="Caroline Bredoch"
           title={$t('about.event')}
           email="arrangement@kjemidagen.no"
         />

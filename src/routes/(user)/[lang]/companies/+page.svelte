@@ -11,6 +11,6 @@
   <div class="content" id="companies">
     <h1 class="text-3xl mb-8">{$t('companies.companies')}</h1>
     <p class="text-lg">{$t('companies.paragraph')}</p>
-    <img src={companyImage} alt="Collage of companies participating" />
+    <!--<img src={companyImage} alt="Collage of companies participating" /> -->
   </div>
 </section>

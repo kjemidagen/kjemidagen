@@ -19,128 +19,54 @@
     <p>
       {$t('program.description')}
     </p>
-    <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_before')}</h3>
-    <div class="flex flex-col gap-2">
-      <Event
-          title={$t('program.mingle')}
-          time="18:15"
-          location={$t('program.mingle_loc')}
-          loc_link="https://link.mazemap.com/kqxQiA3U"
-        >
-          <p class="mt-3 leading-7">
-            {@html $t('program.mingle_p')}
-          </p>
-        </Event>
-    </div>
-    <h3 class="mb-2 mt-8 text-2xl">{$t('frontpage.when')}</h3>
+    <h3 class="mb-2 mt-8 text-2xl">{$t('program.day')}</h3>
     <div class="flex flex-col gap-2">
       <Event
         title={$t('program.opening')}
         time="10:00"
         location={$t('program.opening_loc')}
-        loc_link="https://link.mazemap.com/Z9qjgaJT"
+        loc_link="https://link.mazemap.com/DsnEdMUa"
       />
       <Event
         title={$t('program.stands')}
         time="10:15 - 15:00"
-        location="Realfagbygget"
-        loc_link="https://maps.app.goo.gl/wuCwKedeZXWjpbH56"
+        location={$t('program.stands_loc')}
+        loc_link="https://link.mazemap.com/DsnEdMUa"
       />
       <Event
-        title="{$t('program.speedinterview')} Cambi"
-        time="10:30 - 13:00"
-        location="BU1-108"
-        loc_link="https://link.mazemap.com/d0Blfvvu"
-        image={cambiLogo}
-      >
-        <p class="mt-3 leading-7">
-          {$t('program.speedinterview_cambi')}
-        </p>
-      </Event>
+        title={$t('program.cv_check')}
+        time="10:15 - 15:00"
+        location={$t('program.cv_check_loc')}
+        loc_link="https://link.mazemap.com/DsnEdMUa"
+      />
       <Event
-        title={$t('program.cvphoto')}
-        time="11:00 - 13:00"
-        location="R21"
-        loc_link="https://link.mazemap.com/Qw6ZzVYJ"
-      ></Event>
-      <Event
-        title={$t('program.summerjob')}
+        title={$t('program.summerjob_marathon')}
         time="11:15 - 12:00"
-        location="R8"
-        loc_link="https://link.mazemap.com/TFErG7Yc"
+        location={$t('program.summerjob_marathon_loc')}
+        loc_link="https://link.mazemap.com/DsnEdMUa"
       >
         <p class="mt-3 leading-7">
-          {$t('program.summerjob_p')}
+          {$t('program.summerjob_marathon_desc')}
         </p>
       </Event>
       <Event
-        title="{$t('program.speedinterview')} Carbon Circle"
-        time="12:00 - 14:00"
-        location="BU1-106"
-        loc_link="https://link.mazemap.com/TbeK2X1e"
-        image={carboncircleLogo}
-      >
-        <p class="mt-3 leading-7">
-          {$t('program.speedinterview_carboncircle')}
-        </p>
-      </Event>
-      <Event
-        title={$t('program.motivationalspeaking')}
-        time="12:15 - 13:00"
-        location="R5"
-        loc_link="https://link.mazemap.com/TFErG7Yc"
-      >
-        <div class="grid grid-cols-1 gap-8 lg:-mb-8 lg:mr-8 lg:grid-cols-3">
-          <p class="mt-3 leading-7 lg:col-span-2">
-            {@html $t('program.motivationalspeaking_p')}
-          </p>
-          <img
-            src={presenterImg}
-            alt="Foredragsholder"
-            class="aspect-square h-auto w-full rounded-full object-cover object-top lg:-translate-y-8"
-          />
-        </div>
-      </Event>
-      <Event
-        title="{$t('program.speedinterview')} Reinertsen"
-        time="13:00 - 15:00"
-        location="K 4.172"
-        loc_link="https://link.mazemap.com/EqfbkoQI"
-        image={reinertsenLogo}
-      >
-        <p class="mt-3 leading-7">
-          {$t('program.speedinterview_reinertsen')}
-        </p>
-      </Event>
-      <Event
-        title={$t('program.jobmarathon')}
+        title={$t('program.job_marathon')}
         time="13:15 - 14:00"
-        location="R8"
-        loc_link="https://link.mazemap.com/3r8RBH45"
+        location={$t('program.job_marathon_loc')}
+        loc_link="https://link.mazemap.com/DsnEdMUa"
       >
         <p class="mt-3 leading-7">
-          {$t('program.jobmarathon_p')}
-        </p>
-      </Event>
-      <Event
-        title="{$t('program.speedinterview')} Bergen Carbon Solutions"
-        time="14:00 - 15:00"
-        location="BU1-108"
-        loc_link="https://link.mazemap.com/xfpEZ82x"
-        image={bcsLogo}
-      >
-        <p class="mt-3 leading-7">
-          {$t('program.speedinterview_bcs')}
+          {$t('program.job_marathon_desc')}
         </p>
       </Event>
       <Event
         title={$t('program.banquet')}
         time="18:30"
         location={$t('program.banquet_loc')}
-        loc_link="https://maps.app.goo.gl/MfvfL1mPSe1oVTQJ8"
+        loc_link="https://maps.app.goo.gl/ZAnRn2biMssEwtdo8"
       >
         <p class="mt-3 leading-7">
-          {$t('program.banquet_p')}
+          {$t('program.banquet_desc')}
         </p>
       </Event>
     </div>
