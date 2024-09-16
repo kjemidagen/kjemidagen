@@ -18,9 +18,9 @@
       {$t('sponsors.institutes')}
     </p>
     <ul class="text-lg list-disc list-inside">
-      <li>{$t('sponsors.ikp')}</li>
-      <li>{$t('sponsors.ima')}</li>
-      <li>{$t('sponsors.bom')}</li>      
+      <li>{$t('sponsors.kjemiskprostek')}</li>
+      <li>{$t('sponsors.materialtek')}</li>
+      <li>{$t('sponsors.biotek_og_matvit')}</li>      
     </ul>
   </div>
 </section>
