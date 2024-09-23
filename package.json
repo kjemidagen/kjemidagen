@@ -18,13 +18,13 @@
     "@sveltejs/adapter-vercel": "^3.0.3",
     "@sveltejs/kit": "^1.25.1",
     "@types/cookie": "^0.5.1",
-    "@types/three": "^0.141.0",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@types/three": "^0.157.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "autoprefixer": "^10.4.7",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-svelte": "^2.33.2",
+    "eslint-plugin-svelte": "^2.35.1",
     "postcss": "^8.4.14",
     "postcss-load-config": "^3.1.0",
     "prettier": "^3.0.3",
@@ -36,7 +36,7 @@
     "tailwindcss": "^3.1.6",
     "tslib": "^2.3.1",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9"
+    "vite": "^4.5.0"
   },
   "type": "module",
   "dependencies": {
@@ -45,10 +45,10 @@
     "@steeze-ui/heroicons": "^2.2.3",
     "@steeze-ui/svelte-icon": "^1.5.0",
     "@vercel/analytics": "^1.0.2",
-    "cookie": "^0.4.1",
+    "cookie": "^0.6.0",
     "install-peers": "^1.0.3",
     "svelte-cubed": "^0.2.1",
     "sveltekit-i18n": "^2.4.2",
-    "three": "^0.142.0"
+    "three": "^0.157.0"
   }
 }
