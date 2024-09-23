@@ -94,7 +94,7 @@
 
 <header id="header" class="px-25 fixed w-full left-0 top-0 z-50 bg-red border-b-8 border-red-light">
   <div class="flex h-16 justify-between px-6 text-white md:justify-evenly">
-    <a class="color-white flex items-center text-lg text-white lg:w-40" href={'/'}>
+    <a class="color-white flex items-center text-lg text-white lg:w-40" href={`/${locale}`}>
       <img class="mr-1" src={logo} alt="logo" width="40" />
       <span class="hidden lg:inline">{$t('common.chemday')}</span>
     </a>
