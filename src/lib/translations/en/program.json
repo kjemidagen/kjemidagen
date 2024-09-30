@@ -16,5 +16,15 @@
   "banquet": "Banquet",
   "banquet_loc": "Frimurerlogen",
   "banquet_desc": "In the evening, a banquet will be arranged with company representatives and 4th and 5th year students. The banquet is an important part of Kjemidagen, and a great opportunity for companies to get to know our students better.",
-  "day": "Wednesday, 23 October 2024"
+  "day_wednesday": "Wednesday, 23 October 2024",
+  "day_tuesday": "Tuesday, 22 October 2024",
+  "day_monday": "Monday, 21 October 2024",
+  "cv_photo": "CV photo",
+  "cv_photo_loc": "Realfagbygget",
+  "cv_photo_desc": "Get a professional CV photo taken at Kjemidagen!",
+  "mingle": "Networking",
+  "mingle_loc": "Realfagbygget",
+  "mingle_desc": "Networking is an important part of Kjemidagen, and a great opportunity for companies to get to know our students better.",
+  "motivation_speech": "Motivational lecture with Erik Thorstvedt",
+  "motivation_speech_loc": "Realfagbygget"
 }

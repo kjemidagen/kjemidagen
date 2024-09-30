@@ -16,5 +16,15 @@
   "banquet": "Bankett",
   "banquet_loc": "Frimurerlogen",
   "banquet_desc": "På kvelden vil det arrangeres ein bankett med bedriftsrepresentantar og 4. og 5. årsstudentar. Banketten er ein viktig del av Kjemidagen, og ei fin mogelegheit for bedriftene til å bli bedre kjent med studentane våre.",
-  "day": "Onsdag 23. oktober 2024"
+  "day_wednesday": "Onsdag 23. oktober 2024",
+  "day_tuesday": "Tirsdag 22. oktober 2024",
+  "day_monday": "Måndag 21. oktober 2024",
+  "cv_photo": "CV-foto",
+  "cv_photo_loc": "Realfagbygget",
+  "cv_photo_desc": "Få tatt et profesjonelt CV-foto på Kjemidagen!",
+  "mingle": "Mingling",
+  "mingle_loc": "Realfagbygget",
+  "mingle_desc": "Mingling er ein viktig del av Kjemidagen, og ei fin moglegheit for bedriftene til å bli betre kjent med studentane.",
+  "motivation_speech": "Motivasjonsforedrag med Erik Thorstvedt",
+  "motivation_speech_loc": "Realfagbygget"
 }
