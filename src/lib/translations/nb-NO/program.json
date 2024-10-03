@@ -8,10 +8,10 @@
   "cv_check": "CV sjekk",
   "cv_check_loc": "Realfagbygget",
   "summerjob_marathon": "Sommerjobbmaraton",
-  "summerjob_marathon_loc": "Realfagbygget",
+  "summerjob_marathon_loc": "R9",
   "summerjob_marathon_desc": "Sommerjobbmaraton er et event hvor alle bedrifter som deltar på Kjemidagen får to minutter til rådighet for å presentere sine sommerjobber og sommerprogram. Dette er et meget populært arrangement med gode tilbakemeldinger fra både bedrifter og studenter.",
   "job_marathon": "Jobbmaraton",
-  "job_marathon_loc": "Realfagbygget",
+  "job_marathon_loc": "R9",
   "job_marathon_desc": "Jobbmaraton er et liknende event som sommerjobbmaraton, men istedenfor sommerjobber får deltakende bedrifter mulighet til å kort presentere sine graduate- program, traineestillinger, internships, masteroppgaver, Ph.d.-stillinger, og fulltidsstillinger.",
   "banquet": "Bankett",
   "banquet_loc": "Frimurerlogen",
@@ -23,8 +23,10 @@
   "cv_photo_loc": "Realfagbygget",
   "cv_photo_desc": "Få tatt et profesjonelt CV-foto på Kjemidagen!",
   "mingle": "Mingling",
-  "mingle_loc": "Realfagbygget",
+  "mingle_loc": "Kjelhuset",
   "mingle_desc": "Mingling er en viktig del av Kjemidagen, og en fin mulighet for bedriftene til å bli bedre kjent med studentene.",
   "motivation_speech": "Motivasjonsforedrag med Erik Thorstvedt",
-  "motivation_speech_loc": "Realfagbygget"
+  "motivation_speech_loc": "Realfagbygget",
+  "speed_interview": "Speedintervjuer",
+  "speed_interview_loc": "Realfagbygget"
 }
