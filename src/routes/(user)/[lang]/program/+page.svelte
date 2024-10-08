@@ -1,12 +1,6 @@
 <script lang="ts">
   import { t } from '$lib/translations/translations';
   import Event from '$lib/components/Event.svelte';
-  import presenterImg from '$lib/assets/presenter.jpg';
-  import cambiLogo from '$lib/assets/cambi.svg';
-  import norconsultLogo from '$lib/assets/norconsult.svg';
-  import reinertsenLogo from '$lib/assets/reinertsen.svg';
-  import carboncircleLogo from '$lib/assets/carbon_circle.svg';
-  import bcsLogo from '$lib/assets/bcs.png';
 </script>
 
 <svelte:head>
@@ -19,7 +13,39 @@
     <p>
       {$t('program.description')}
     </p>
-    <h3 class="mb-2 mt-8 text-2xl">{$t('program.day')}</h3>
+    <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_monday')}</h3>
+      <div class="flex flex-col gap-2">
+        <Event
+          title={$t('program.motivation_speech')}
+          time="16:15"
+          location={$t('program.motivation_speech_loc')}
+          loc_link="https://link.mazemap.com/DsnEdMUa"
+        >
+        </Event>
+    <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_tuesday')}</h3>
+      <div class="flex flex-col gap-2">
+        <Event
+          title={$t('program.cv_photo')}
+          time="10:30 - 13:30"
+          location={$t('program.cv_photo_loc')}
+          loc_link="https://link.mazemap.com/DsnEdMUa"
+        >
+          <p class="mt-3 leading-7">
+            {$t('program.cv_photo_desc')}
+          </p>
+        </Event>
+        <Event
+          title={$t('program.mingle')}
+          time="18:15"
+          location={$t('program.mingle_loc')}
+          loc_link=""
+        >
+          <p class="mt-3 leading-7">
+            {$t('program.mingle_desc')}
+          </p>
+        </Event>
+      </div>
+    <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_wednesday')}</h3>
     <div class="flex flex-col gap-2">
       <Event
         title={$t('program.opening')}
@@ -34,16 +60,16 @@
         loc_link="https://link.mazemap.com/DsnEdMUa"
       />
       <Event
-        title={$t('program.cv_check')}
-        time="10:15 - 15:00"
-        location={$t('program.cv_check_loc')}
-        loc_link="https://link.mazemap.com/DsnEdMUa"
+      title={$t('program.speed_interview')}
+      time="10:15 - 15:00"
+      location={$t('program.speed_interview_loc')}
+      loc_link="https://link.mazemap.com/DsnEdMUa"
       />
       <Event
         title={$t('program.summerjob_marathon')}
         time="11:15 - 12:00"
         location={$t('program.summerjob_marathon_loc')}
-        loc_link="https://link.mazemap.com/DsnEdMUa"
+        loc_link="https://link.mazemap.com/yEsRxMn0"
       >
         <p class="mt-3 leading-7">
           {$t('program.summerjob_marathon_desc')}
@@ -51,9 +77,9 @@
       </Event>
       <Event
         title={$t('program.job_marathon')}
-        time="13:15 - 14:00"
+        time="14:15 - 14:45"
         location={$t('program.job_marathon_loc')}
-        loc_link="https://link.mazemap.com/DsnEdMUa"
+        loc_link="https://link.mazemap.com/yEsRxMn0"
       >
         <p class="mt-3 leading-7">
           {$t('program.job_marathon_desc')}
