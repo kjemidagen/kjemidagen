@@ -16,7 +16,7 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.1.1",
     "@sveltejs/adapter-vercel": "^3.1.0",
-    "@sveltejs/kit": "^1.25.1",
+    "@sveltejs/kit": "^2.6.3",
     "@types/cookie": "^0.6.0",
     "@typescript-eslint/eslint-plugin": "^6.18.0",
     "@types/three": "^0.157.0",
