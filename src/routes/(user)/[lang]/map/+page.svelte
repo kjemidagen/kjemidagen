@@ -1,7 +1,7 @@
 <script lang="ts">
   import { t } from '$lib/translations/translations';
-  import companyMap1 from '$lib/assets/standkart/stand_1.jpg';
-  import companyMapU1 from '$lib/assets/standkart/stand_u1.jpg';
+  import companyMap1 from '$lib/assets/standkart/stand_1.png';
+  import companyMapU1 from '$lib/assets/standkart/stand_u1.png';
 </script>
 
 <svelte:head>
