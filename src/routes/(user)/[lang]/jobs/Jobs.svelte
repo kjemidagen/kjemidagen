@@ -1,10 +1,7 @@
 <script lang="ts" context="module">
-  import sintefLogo from '$lib/assets/sintef.svg';
-  import yaraLogo from '$lib/assets/yara.svg';
-  import borregaardLogo from '$lib/assets/borregaard.svg'
-  import hydroLogo from '$lib/assets/hydro.svg';
   import elkemLogo from '$lib/assets/elkem_logo_120.png';
   import worleyLogo from '$lib/assets/worley_logo.png';
+  import traineeVANN_logo from '$lib/assets/traineeVANN_logo.png';
   import { t } from '$lib/translations/translations';
 
   export const jobsMap = [
@@ -59,6 +56,18 @@ Våre arbeidsoppgaver er varierte. Vi sørger for optimal design av prosessanleg
 Kvalitet, integritet og trivsel er sentrale verdier for å utvikle og bevare et prosesshus med solid kjernekompetanse innen prosess og prosessikkerhet kombinert med et godt arbeidsmiljø.
 <br><br>
 Worley Origo Process er en del av det australske Worley-konsernet, som på verdensbasis har rundt 50 000 ansatte.`
+    },
+    {
+      slug: "traineeVANN",
+      image: traineeVANN_logo,
+      company: "traineeVANN",
+      location:"Flere steder i Norge",
+      link: "https://traineevann.no",
+      applicationLink: "https://62553030.webcruiter.no/Main/Recruit/Public/4862015892?language=nb&link_source_id=2000",
+      short_description: "Lyst til å jobbe med miljø, spennende prosesser og utvikle ny teknologi i samfunnets viktigste bransje?",
+      long_description: `Lyst til å jobbe med miljø, spennende prosesser og utvikle ny teknologi i samfunnets viktigste bransje?
+      <br>
+      Trykk <a href="https://62553030.webcruiter.no/Main/Recruit/Public/4862015892?language=nb&link_source_id=2000">her</a> for mer informasjon!`
     }
   ];
 </script>
