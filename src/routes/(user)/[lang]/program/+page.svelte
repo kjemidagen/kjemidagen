@@ -83,7 +83,7 @@
       </Event>
       <Event
         title={$t('program.job_marathon')}
-        time="14:15 - 14:45"
+        time="13:15 - 13:45"
         location={$t('program.job_marathon_loc')}
         loc_link="https://link.mazemap.com/yEsRxMn0"
       >
