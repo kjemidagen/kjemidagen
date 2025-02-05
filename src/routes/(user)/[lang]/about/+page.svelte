@@ -3,7 +3,7 @@
   import { t } from '$lib/translations/translations';
   import headSrc from '$lib/assets/styret/head.jpg';
   import deputyHeadSrc from '$lib/assets/styret/deputy_head.jpg';
-  import cfoSrc from '$lib/assets/styret/default.jpg';
+  import cfoSrc from '$lib/assets/styret/cfo.jpg';
   import prOfficerSrc from '$lib/assets/styret/pr_officer.jpg';
   import chiefRiggerSrc from '$lib/assets/styret/chief_rigger.jpg';
   import eventManagerSrc from '$lib/assets/styret/event_manager.jpg';
