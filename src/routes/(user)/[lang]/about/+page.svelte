@@ -3,7 +3,7 @@
   import { t } from '$lib/translations/translations';
   import headSrc from '$lib/assets/styret/head.jpg';
   import deputyHeadSrc from '$lib/assets/styret/deputy_head.jpg';
-  import cfoSrc from '$lib/assets/styret/cfo.jpg';
+  import cfoSrc from '$lib/assets/styret/default.jpg';
   import prOfficerSrc from '$lib/assets/styret/pr_officer.jpg';
   import chiefRiggerSrc from '$lib/assets/styret/chief_rigger.jpg';
   import eventManagerSrc from '$lib/assets/styret/event_manager.jpg';
@@ -22,19 +22,19 @@
       <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3">
         <AboutCard
           imgSrc={headSrc}
-          name="Marie Bakke"
+          name="Emilie Hewitt"
           title={$t('about.leader')}
           email="leder@kjemidagen.no"
         />
         <AboutCard
           imgSrc={deputyHeadSrc}
-          name="Marie Schefte"
+          name="Stine Ødegård"
           title={$t('about.deputy')}
           email="nestleder@kjemidagen.no"
         />
         <AboutCard
           imgSrc={cfoSrc}
-          name="Olaug Marie Aalen"
+          name="Marcus Feruglio Tokvam"
           title={$t('about.cfo')}
           email="okonomiansvarlig@kjemidagen.no"
         />
@@ -42,19 +42,19 @@
       <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3">
         <AboutCard
           imgSrc={prOfficerSrc}
-          name="Karianne Lindanger"
+          name="Sofie Sponberg Gundersen"
           title={$t('about.pr_officer')}
           email="pr-sjef@kjemidagen.no"
         />
         <AboutCard
           imgSrc={chiefRiggerSrc}
-          name="Sander Haugen"
+          name="Linus Backen"
           title={$t('about.rigger')}
           email="riggeansvarlig@kjemidagen.no"
         />
         <AboutCard
           imgSrc={eventManagerSrc}
-          name="Caroline Bredoch"
+          name="Maja Christine Stahl"
           title={$t('about.event')}
           email="arrangement@kjemidagen.no"
         />
