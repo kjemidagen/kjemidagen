@@ -10,7 +10,7 @@
 <section class="sponsors">
   <div class="content" id="sponsors">
     <h1 class="text-3xl mb-8">{$t('sponsors.sponsors')}</h1>
-    <p class="text-lg">{$t('sponsors.intro')}</p>
+    <p class="text-lg">{$t('sponsors.moreinfo')}</p>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 my-4">
       <img src={nitoImage} alt="Nito logo" class="w-1/2 h-auto object-contain object-center" /> 
     </div>
