@@ -19,7 +19,7 @@
           title={$t('program.motivation_speech')}
           time="16:15"
           location={$t('program.motivation_speech_loc')}
-          loc_link="https://link.mazemap.com/zhakaej5"
+          loc_link="https://link.mazemap.com/YNpUWkqi"
         >
         </Event>
     <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_tuesday')}</h3>
@@ -28,12 +28,34 @@
           title={$t('program.cv_photo')}
           time="10:30 - 13:30"
           location={$t('program.cv_photo_loc')}
-          loc_link="https://link.mazemap.com/8uRg9xSW"
+          loc_link="https://link.mazemap.com/YNpUWkqi"
         >
           <p class="mt-3 leading-7">
             {$t('program.cv_photo_desc')}
           </p>
         </Event>
+        <Event
+          title={$t('program.stands')}
+          time="10:00 - 15:00"
+          location={$t('program.stands_loc')}
+          loc_link="https://link.mazemap.com/YNpUWkqi"
+      />
+        <Event
+          title={$t('program.speed_interview')}
+          time="10:00 - 15:00"
+          location={$t('program.speed_interview_loc')}
+          loc_link="https://link.mazemap.com/YNpUWkqi"
+        />
+        <Event
+          title={$t('program.job_marathon')}
+          time="13:15 - 14:00"
+          location={$t('program.job_marathon_loc')}
+          loc_link="https://link.mazemap.com/YNpUWkqi"
+        >
+          <p class="mt-3 leading-7">
+            {$t('program.job_marathon_desc')}
+          </p>
+      </Event>
         <Event
           title={$t('program.mingle')}
           time="18:15"
@@ -51,41 +73,31 @@
         title={$t('program.opening')}
         time="10:00"
         location={$t('program.opening_loc')}
-        loc_link="https://link.mazemap.com/DsnEdMUa"
+        loc_link="https://link.mazemap.com/YNpUWkqi"
       />
       <Event
         title={$t('program.stands')}
-        time="10:15 - 15:00"
+        time="10:00 - 15:00"
         location={$t('program.stands_loc')}
-        loc_link="https://link.mazemap.com/DsnEdMUa"
+        loc_link="https://link.mazemap.com/YNpUWkqi"
       />
       <Event
       title={$t('program.speed_interview')}
-      time="10:15 - 15:00"
+      time="10:00 - 15:00"
       location={$t('program.speed_interview_loc')}
-      loc_link="https://link.mazemap.com/DsnEdMUa"
+      loc_link="https://link.mazemap.com/YNpUWkqi"
       />
       <Event
         title={$t('program.cv_check')}
         time="10:15 - 15:00"
         location={$t('program.cv_check_loc')}
-        loc_link="https://link.mazemap.com/6t3jrdZx"
+        loc_link="https://link.mazemap.com/YNpUWkqi"
       />
       <Event
-        title={$t('program.summerjob_marathon')}
-        time="11:15 - 12:00"
-        location={$t('program.summerjob_marathon_loc')}
-        loc_link="https://link.mazemap.com/yEsRxMn0"
-      >
-        <p class="mt-3 leading-7">
-          {$t('program.summerjob_marathon_desc')}
-        </p>
-      </Event>
-      <Event
         title={$t('program.job_marathon')}
-        time="13:15 - 13:45"
+        time="13:15 - 14:00"
         location={$t('program.job_marathon_loc')}
-        loc_link="https://link.mazemap.com/yEsRxMn0"
+        loc_link="https://link.mazemap.com/YNpUWkqi"
       >
         <p class="mt-3 leading-7">
           {$t('program.job_marathon_desc')}
@@ -95,7 +107,7 @@
         title={$t('program.banquet')}
         time="18:30"
         location={$t('program.banquet_loc')}
-        loc_link="https://maps.app.goo.gl/ZAnRn2biMssEwtdo8"
+        loc_link=""
       >
         <p class="mt-3 leading-7">
           {$t('program.banquet_desc')}
