@@ -21,7 +21,7 @@
         <h2 class="mb-1 text-lg text-white md:text-3xl">{$t('frontpage.where')}</h2>
       </div>
       <a href="/{$locale}/interest">
-      <button class="py-3 px-5 m-2 mx-auto bg-black/60 backdrop-blur-md rounded-xl border-red/20 border z-10 pointer-events-auto">
+      <button class="py-3 px-5 m-2 mx-auto bg-black/60 backdrop-blur-md hover:bg-black/50 rounded-xl border-red/20 border z-10 pointer-events-auto">
         <span class="mb-1 text-lg text-white md:text-xl">{$t('frontpage.interest')}</span>
       </button>
       </a>
