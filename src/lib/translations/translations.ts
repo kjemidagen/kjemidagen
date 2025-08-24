@@ -144,7 +144,22 @@ const config: Config = {
       locale: 'en',
       key: 'jobs',
       loader: async () => (await import('./en/jobs.json')).default
-    }
+    },
+    {
+      locale: 'no',
+      key: 'for-companies',
+      loader: async () => (await import('./nb-NO/for-companies.json')).default
+    },
+    {
+      locale: 'nn',
+      key: 'for-companies',
+      loader: async () => (await import('./nn-NO/for-companies.json')).default
+    },
+    {
+      locale: 'en',
+      key: 'for-companies',
+      loader: async () => (await import('./en/for-companies.json')).default
+    },
   ],
   log: {
     level: 'error'
