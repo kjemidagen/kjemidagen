@@ -81,6 +81,11 @@
       label: $t('common.jobs'),
       linkNoLang: `jobs`,
       new: !$visitedStore.includes('jobs')
+    },
+    {
+      link: `/${$locale}/for-companies`,
+      label: $t('common.for-companies'),
+      linkNoLang: `for-companies`
     }
   ];
 
