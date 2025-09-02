@@ -1,5 +1,6 @@
 <script lang="ts">
   import { t } from '$lib/translations/translations';
+  import FaqItem from '$lib/components/Faq.svelte';
 </script>
 
 <svelte:head>
@@ -12,10 +13,31 @@
     <p class="text-lg mb-8">
       {$t('for-companies.information_description')}
     </p>
-    <h2 class="text-2xl mb-4">{$t('for-companies.equipment_header')}</h2>
-    <p class="text-lg">
-      {$t('for-companies.equipment_description')}
-      <a href="https://dtms.aiutrix.com/reg/kd/exhibitorstand" target="_blank" rel="noopener" class="text-blue-600 underline hover:text-blue-800">{$t('for-companies.equipment_link')}</a>
-    </p>
+    <div class="mt-6 space-y-4">
+      <FaqItem
+        question={$t('for-companies.order_screen_q')}
+        answer={$t('for-companies.order_screen_a')}
+      />
+      <FaqItem
+      question={$t('for-companies.equipment_q')}
+      answer={$t('for-companies.equipment_a')}
+      />
+      <FaqItem
+      question={$t('for-companies.address_q')}
+      answer={$t('for-companies.address_a')}
+      />
+      <FaqItem
+      question={$t('for-companies.deadline_q')}
+      answer={$t('for-companies.deadline_a')}
+      />
+      <FaqItem
+        question={$t('for-companies.signup_q')}
+        answer={$t('for-companies.signup_a')}
+      />
+      <FaqItem
+        question={$t('for-companies.job_positions_q')}
+        answer={$t('for-companies.job_positions_a')}
+      />
+    </div>
   </div>
 </section>
