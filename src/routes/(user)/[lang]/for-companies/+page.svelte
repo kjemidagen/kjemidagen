@@ -10,29 +10,27 @@
 <section class="for-companies">
   <div class="content" id="for-companies">
     <h1 class="text-3xl mb-8">{$t('for-companies.information_header')}</h1>
-    <p class="text-lg mb-8">
-      {$t('for-companies.information_description')}
-    </p>
+
     <div class="mt-6 space-y-4">
       <FaqItem
         question={$t('for-companies.order_screen_q')}
         answer={$t('for-companies.order_screen_a')}
+        linkUrl="https://example.com/order"
+        linkLabel={$t('for-companies.order_screen_link_label')}
       />
       <FaqItem
       question={$t('for-companies.equipment_q')}
       answer={$t('for-companies.equipment_a')}
+      linkUrl="https://example.com/order"
+      linkLabel={$t('for-companies.equipment_link_label')}
       />
       <FaqItem
       question={$t('for-companies.address_q')}
       answer={$t('for-companies.address_a')}
       />
       <FaqItem
-      question={$t('for-companies.deadline_q')}
-      answer={$t('for-companies.deadline_a')}
-      />
-      <FaqItem
-        question={$t('for-companies.signup_q')}
-        answer={$t('for-companies.signup_a')}
+      question={$t('for-companies.stand_q')}
+      answer={$t('for-companies.stand_a')}
       />
       <FaqItem
         question={$t('for-companies.job_positions_q')}
