@@ -57,13 +57,12 @@
       link: `/${$locale}/program`,
       label: $t('common.program'),
       linkNoLang: `program`,
-      new: $visitedStore.includes('program')
+      // new: $visitedStore.includes('program') - I dont see the use for this.
     },
     {
       link: `/${$locale}/companies`,
       label: $t('common.companies'),
       linkNoLang: `companies`,
-      new: $visitedStore.includes('companies')
     },
     {
       link: `/${$locale}/sponsors`,
@@ -74,19 +73,16 @@
       link: `/${$locale}/map`,
       label: $t('common.map'),
       linkNoLang: `map`,
-      new: $visitedStore.includes('map')
     },
     {
       link: `/${$locale}/jobs`,
       label: $t('common.jobs'),
       linkNoLang: `jobs`,
-      new: $visitedStore.includes('jobs')
     },
     {
       link: `/${$locale}/for-companies`,
       label: $t('common.for-companies'),
       linkNoLang: `for-companies`,
-      new: !$visitedStore.includes('jobs')
     }
   ];
 
