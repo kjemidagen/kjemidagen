@@ -19,12 +19,6 @@
         linkLabel={$t('for-companies.order_screen_link_label')}
       />
       <FaqItem
-      question={$t('for-companies.equipment_q')}
-      answer={$t('for-companies.equipment_a')}
-      linkUrl="https://dtms.aiutrix.com/reg/kd/exhibitorstand?fbclid=IwY2xjawMJNXRleHRuA2FlbQIxMQABHs-PbL0b9sQgs-7TH45eSTfCH8qbhX8Gc31ksJ7hvCfh4anfdenwP2nb1vFX_aem_pK70eJkuxTUcdtUalTYGZg"
-      linkLabel={$t('for-companies.equipment_link_label')}
-      />
-      <FaqItem
       question={$t('for-companies.address_q')}
       answer={$t('for-companies.address_a')}
       />
@@ -35,6 +29,8 @@
       <FaqItem
         question={$t('for-companies.job_positions_q')}
         answer={$t('for-companies.job_positions_a')}
+        linkUrl="mailto:kontakt@kjemidagen.no"
+        linkLabel="kontakt@kjemidagen.no"
       />
     </div>
   </div>

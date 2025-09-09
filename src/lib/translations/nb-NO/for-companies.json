@@ -1,20 +1,13 @@
 {
   "information_header": "Informasjon for bedrifter",
   "information_description": "Her finner dere alt dere trenger å vite om stands og utstyr.",
-  "equipment_header": "Skjermutstyr",
-  "equipment_description": "Dersom bedriften deres trenger skjermer til standen, kan dere bestille dette fra Trondheim Messeselskap (TMS):",
-  "equipment_link": "Bestill utstyr",
-
   "order_screen_q": "Bestille skjermer",
   "order_screen_a": "Dersom bedriften deres trenger skjermer til standen, kan dere bestille dette fra ",
   "order_screen_link_label": "Trondheim Messeselskap (TMS)",
-  "equipment_q": "Bestille Utstyr",
-  "equipment_a": "I utgangspunktet er det ikke inkludert noe utstyr i standplassene. Vi anbefaler å bestille nødvendig utstyr fra Trondheim Messeselskap. Vi stiller med hjelp til rigging og mottakelse av bestillinger til Realfagsbygget. Eget utstyr er fullt lov å ta med i tillegg, som f.eks roll-up.",
-  "equipment_link_label": "TMS - bestill utstyr her",
   "address_q": "Adresse",
-  "address_a": "Adresse ting kan sendes til: Realfagbygget, Høgskoleringen 5, 7034 TRONDHEIM. Bruk hovedinngangen. Ta kontakt med riggeansvarlig så kan de hjelpe å ta imot ting når det ankommer.",
+  "address_a": "Adresse utstyr kan sendes til: Realfagbygget, Høgskoleringen 5, 7034 TRONDHEIM. Bruk hovedinngangen. Ta kontakt med riggeansvarlig så kan de hjelpe å ta imot ting når det ankommer.",
   "stand_q": "Stand",
-  "stand_a": "Informasjon om hva dere har på stand.",
+  "stand_a": "Kjemidagen stiller med ett bord, to stoler og strømuttak.",
   "job_positions_q": "Legge ut stillingsannonse",
-  "job_positions_a": "Dersom deres bedrift ønsker å legge ut en stillingsannonse for summer internship eller graduate stillingsutlysning, ta kontakt med ???"
+  "job_positions_a": "Dersom deres bedrift ønsker å legge ut en stillingsannonse for summer internship eller graduate stillingsutlysning, ta kontakt med "
 }

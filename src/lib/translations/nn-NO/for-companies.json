@@ -1,7 +1,13 @@
 {
   "information_header": "Informasjon for bedrifter",
-  "information_description": "Her finn de alt dei treng å vite om stand og utstyr til Kjemidagen.",
-  "equipment_header": "Skjermutstyr",
-  "equipment_description": "Dersom bedrifta dykkar treng skjermar til standen, kan de bestille dette frå Trondheim Messeselskap (TMS):",
-  "equipment_link": "Bestill utstyr"
+  "information_description": "Her finn de alt de treng å vite om stands og utstyr.",
+  "order_screen_q": "Bestille skjermar",
+  "order_screen_a": "Dersom bedrifta dykkar treng skjermar til standen, kan de bestille dette frå ",
+  "order_screen_link_label": "Trondheim Messeselskap (TMS)",
+  "address_q": "Adresse",
+  "address_a": "Adresse utstyr kan sendast til: Realfagbygget, Høgskoleringen 5, 7034 TRONDHEIM. Bruk hovudinngangen. Ta kontakt med riggeansvarleg så kan dei hjelpe å ta imot ting når det kjem.",
+  "stand_q": "Stand",
+  "stand_a": "Kjemidagen stiller med eitt bord, to stolar og straumuttak.",
+  "job_positions_q": "Leggje ut stillingsannonse",
+  "job_positions_a": "Dersom bedrifta dykkar ønskjer å leggje ut ei stillingsannonse for sommarinternship eller graduate-stilling, ta kontakt med "
 }

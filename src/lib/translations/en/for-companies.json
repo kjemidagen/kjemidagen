@@ -1,7 +1,13 @@
 {
   "information_header": "Information for Companies",
-  "information_description": "Here you’ll find everything your company needs to know about stands and equipment",
-  "equipment_header": "Screen Equipment",
-  "equipment_description": "If your company needs screens for your stand, you can order it from Trondheim Messeselskap (TMS):",
-  "equipment_link": "Order equipment"
+  "information_description": "Here you’ll find everything you need to know about stands and equipment.",
+  "order_screen_q": "Order Screens",
+  "order_screen_a": "If your company needs screens for your stand, you can order them from ",
+  "order_screen_link_label": "Trondheim Messeselskap (TMS)",
+  "address_q": "Address",
+  "address_a": "Equipment can be sent to: Realfagbygget, Høgskoleringen 5, 7034 TRONDHEIM. Use the main entrance. Contact the rig manager and they can help receive items upon arrival.",
+  "stand_q": "Stand",
+  "stand_a": "Kjemidagen provides one table, two chairs, and a power outlet.",
+  "job_positions_q": "Post a Job Listing",
+  "job_positions_a": "If your company would like to post a job listing for a summer internship or graduate position, please contact "
 }
