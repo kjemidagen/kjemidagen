@@ -1,6 +1,14 @@
 {
   "apply": "Søk her",
-  "description": "Det er for øyeblikket ingen utlyste stillinger. Oppdateringer kommer fortløpende.",
+  "description": "Stillingsutlysninger fra årets bedrifter",
   "read_more": "Les mer",
-  "title": "Stillingsannonser"
+  "title": "Stillingsannonser",
+  "vianode_prosessingenior": {
+    "title": "Søk deg til laget vårt i ViaONE Herøya som PROSESSINGENIØR",
+    "deadline": "Snarest"
+  },
+  "elkem_technical_trainee": {
+    "title": "Technical trainee",
+    "deadline": "19.10.2025"
+  }
 }

@@ -1,6 +1,14 @@
 {
   "apply": "Apply",
-  "description": "There are currently no advertised positions. Updates will be provided continuously.",
+  "description": "Job announcements from this year's companies attending Kjemidagen",
   "read_more": "Read more",
-  "title": "Job adverts"
+  "title": "Job adverts",
+  "vianode_prosessingenior": {
+    "title": "Søk deg til laget vårt i ViaONE Herøya som PROSESSINGENIØR",
+    "deadline": "Snarest"
+  },
+  "elkem_technical_trainee": {
+    "title": "Technical trainee",
+    "deadline": "19.10.2025"
+  }
 }

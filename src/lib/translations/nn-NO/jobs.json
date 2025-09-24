@@ -1,6 +1,14 @@
 {
   "apply": "Søk her",
-  "description": "Det er for augneblinken ingen utlyste stillingar. Oppdateringar kjem fortløpande",
+  "description": "Stillingsutlysningar frå årets bedrifter",
   "read_more": "Les meir",
-  "title": "Stillingsannonsar"
+  "title": "Stillingsannonsar",
+  "vianode_prosessingenior": {
+    "title": "Søk deg til laget vårt i ViaONE Herøya som PROSESSINGENIØR",
+    "deadline": "Snarest"
+  },
+  "elkem_technical_trainee": {
+    "title": "Technical trainee",
+    "deadline": "19.10.2025"
+  }
 }

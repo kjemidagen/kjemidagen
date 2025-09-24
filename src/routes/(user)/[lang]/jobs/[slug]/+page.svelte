@@ -8,7 +8,7 @@
   import { jobsMap } from '../Jobs.svelte';
   import { error } from '@sveltejs/kit';
 
-  import { MapPin, Clock, Link, ArrowTopRightOnSquare } from '@steeze-ui/heroicons';
+  import { MapPin, Clock, Link, ArrowTopRightOnSquare, User } from '@steeze-ui/heroicons';
   import { Icon } from '@steeze-ui/svelte-icon';
 
   if (jobsMap.filter((e) => e.slug == $page.params.slug).length === 0) {
@@ -35,7 +35,7 @@
         class="aspect-[2/1] w-full bg-white object-contain object-center p-4"
       />
       <div class="md:col-span-4">
-        {#if job.company || job.location || $t(`jobs.${job.slug}.deadline`) || job.link}
+        {#if job.company || job.location || $t(`jobs.${job.slug}.deadline`) || job.link || job.position_type}
           <div class="mt-4 grid grid-cols-1 gap-2 text-white">
             {#if job.company}
               <div class="flex-inline items-center justify-center">
@@ -73,6 +73,17 @@
                   class="my-auto mr-2 inline leading-none "
                 />
                 <strong class="">{job.link}</strong>
+              </div>
+            {/if}
+            {#if job.position_type}
+              <div class="flex-inline flex items-center">
+                <Icon
+                  src={User}
+                  size="1.5em"
+                  theme="solid"
+                  class="my-auto mr-2 inline leading-none "
+                />
+                <strong class="">{job.position_type}</strong>
               </div>
             {/if}
           </div>
