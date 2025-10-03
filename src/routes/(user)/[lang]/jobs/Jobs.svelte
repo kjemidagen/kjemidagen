@@ -2,6 +2,7 @@
   import { t } from '$lib/translations/translations';
   import vianodeLogo from '$lib/assets/vianode.svg'
   import elkemLogo from '$lib/assets/elkem.svg'
+  import golarLogo from '$lib/assets/golar.svg'
   export const jobsMap = [
     {
       slug: "vianode_prosessingenior",
@@ -91,6 +92,63 @@
           You can read more about the graduate program on our website, and here you will also find our inspiring trainee blog.
         </p>
         <p class="mb-4">Feel free to write your application in English or Norwegian.</p>`
+    },
+    {
+      slug: "golar_lng_internship",
+      company: "Golar LNG",
+      image: golarLogo,
+      location: "Oslo",
+      link: "https://www.golarlng.com/",
+      applicationLink: "https://www.finn.no/job/ad/429899173?srsltid=AfmBOoqvMh7NVVNSItWmNH2gaTLsXEmEnQv29ogRxhMinR8mcOVuUGUI",
+      position_type: "Summer Internship",
+      short_description: "Unlock your potential with Golar LNG next summer!",
+      long_description: `<p class="mb-4">
+          Are you looking for a summer internship experience that will connect you to the world of LNG, Offshore, and Energy? Golar LNG is offering a unique opportunity for <strong>ambitious students</strong> who are ready to take on a challenge.
+        </p>
+        <p class="mb-4">
+          At our Oslo office, which is the main office for Golar LNG’s vessel operations and technical developments, you’ll spend 6/8 weeks working alongside experts shaping the future of energy, while contributing to real projects.
+        </p>
+        <p class="mb-2">
+          We are seeking curious and motivated <strong>3rd or 4th year</strong> students that have a strong interest in the field of Energy and/or the Offshore Industry, and are currently studying one of the following disciplines: Engineering, Technology, Business, Science, or related fields.
+        </p>
+        <p class="mb-2">You can apply for any of the following projects:</p>
+        <ul class="list-disc list-outside ml-6 mb-4">
+          <li>Technical Safety Engineer</li>
+          <li>Maintenance Engineer</li>
+          <li>Business Intelligence</li>
+          <li>Process Engineer (x2)</li>
+          <li>Barrier Management</li>
+          <li>ESG Analyst</li>
+          <li>IT Infrastructure</li>
+          <li>Business Development (London Based)</li>
+        </ul>
+        <p class="mb-2">In Golar, we are looking for individuals who possess a unique combination of qualities:</p>
+        <ul class="list-disc list-outside ml-6 mb-4">
+          <li>Adaptable</li>
+          <li>Curious</li>
+          <li>Positive, proactive and self-driven</li>
+          <li>Excellent communication skills, both verbal and written (in English); fluency in Norwegian is beneficial but not necessary</li>
+          <li>Identifies themselves with our core values – pioneering spirit, safety first, integrity, responsibility, teamwork, and accountability</li>
+        </ul>
+        <p class="mb-2">What we offer in return:</p>
+        <ul class="list-disc list-outside ml-6 mb-4">
+          <li>A welcoming and inclusive workplace</li>
+          <li>Learning and mentorship from experienced professionals</li>
+          <li>Meaningful projects with real responsibility</li>
+          <li>Competitive compensation</li>
+          <li>Social activities and networking opportunities</li>
+          <li>Office located conveniently in the centre of Oslo</li>
+        </ul>
+        <p class="mb-4">
+          Take advantage of this opportunity to explore the LNG and the offshore industry while learning from the best at Golar LNG. We believe that investing in our interns is paramount for a successful future. If you have what it takes, we would love to hear from you!
+        </p>
+        <p class="mb-2"><strong>Additional information</strong></p>
+        <ul class="list-disc list-outside ml-6 mb-4">
+          <li>Application deadline: 13.11.2025. Please attach your CV and transcripts from higher education.</li>
+          <li>Let us know which project you are most interested in joining when applying.</li>
+          <li>Candidates must submit their applications through our finn.no portal.</li>
+          <li>Candidates will be evaluated continuously.</li>
+        </ul>`
     }
   ];
 </script>
