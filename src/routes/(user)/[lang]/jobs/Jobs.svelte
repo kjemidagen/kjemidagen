@@ -3,6 +3,7 @@
   import vianodeLogo from '$lib/assets/vianode.svg'
   import elkemLogo from '$lib/assets/elkem.svg'
   import golarLogo from '$lib/assets/golar.svg'
+  import jotunLogo from '$lib/assets/jotun.svg'
   export const jobsMap = [
     {
       slug: "vianode_prosessingenior",
@@ -106,7 +107,7 @@
           Are you looking for a summer internship experience that will connect you to the world of LNG, Offshore, and Energy? Golar LNG is offering a unique opportunity for <strong>ambitious students</strong> who are ready to take on a challenge.
         </p>
         <p class="mb-4">
-          At our Oslo office, which is the main office for Golar LNG’s vessel operations and technical developments, you’ll spend 6/8 weeks working alongside experts shaping the future of energy, while contributing to real projects.
+          At our Oslo office, which is the main office for Golar LNG's vessel operations and technical developments, you'll spend 6/8 weeks working alongside experts shaping the future of energy, while contributing to real projects.
         </p>
         <p class="mb-2">
           We are seeking curious and motivated <strong>3rd or 4th year</strong> students that have a strong interest in the field of Energy and/or the Offshore Industry, and are currently studying one of the following disciplines: Engineering, Technology, Business, Science, or related fields.
@@ -128,7 +129,7 @@
           <li>Curious</li>
           <li>Positive, proactive and self-driven</li>
           <li>Excellent communication skills, both verbal and written (in English); fluency in Norwegian is beneficial but not necessary</li>
-          <li>Identifies themselves with our core values – pioneering spirit, safety first, integrity, responsibility, teamwork, and accountability</li>
+          <li>Identifies themselves with our core values - pioneering spirit, safety first, integrity, responsibility, teamwork, and accountability</li>
         </ul>
         <p class="mb-2">What we offer in return:</p>
         <ul class="list-disc list-outside ml-6 mb-4">
@@ -149,6 +150,88 @@
           <li>Candidates must submit their applications through our finn.no portal.</li>
           <li>Candidates will be evaluated continuously.</li>
         </ul>`
+    },
+    {
+      slug: "jotun_rd_summer_internship_2026",
+      company: "Jotun",
+      image: jotunLogo,
+      location: "Sandefjord",
+      link: "https://www.jotun.com/",
+      position_type: "Summer Internship",
+      short_description: "Jotun is hiring summer interns for our R&D organization!",
+      long_description: `<p class="mb-4">
+          For almost a century, Jotun has protected property - from iconic buildings to beautiful homes. As one of
+          the world's leading manufacturers of paints and coatings, we combine high quality with creativity and
+          innovation.
+        </p>
+        <p class="mb-4">
+          Jotun employs more than 10 000 employees around the world, where all our four segments -
+          Decorative Paints, Marine Coatings, Protective Coatings and Powder Coatings - are present.
+          Jotun has 67 companies in 46 countries with 40 production facilities in 23 countries and is represented
+          in more than 100 countries around the world. In addition, we have regional R&D laboratories in South
+          Korea, China, Malaysia, UAE, Turkey, UK and US.
+        </p>
+        <p class="mb-4">
+          Your workplace will be at our headquarters' state of the art R&D center, in Sandefjord, Norway. You will
+          be part of an exciting workplace, where more than 200 great employees are attached to R&D related
+          tasks.
+        </p>
+        <p class="mb-4">
+          We are incredibly proud that our paint from Sandefjord makes a mark on the world! And now we are looking
+          for young people who want to develop in an international company for our summer internship.
+        </p>
+        <h3 class="font-semibold mb-2">JOB DESCRIPTION</h3>
+        <p class="mb-4">
+          Jotun's Research and Development department is developing technically complex coating technology for
+          decorative, marine, protective and powder coating applications. In our R&D lab at our headquarters in
+          Sandefjord we are working with development of paint products, evaluation and characterization of paint
+          films, colloidal mixtures, polymers and more.
+        </p>
+        <p class="mb-4">
+          We are now looking for interns for the summer of 2026. As an intern at our laboratories, your work would
+          include small projects involving making and testing coating formulations, report findings in written reports
+          and presentations. For example, you can:
+        </p>
+        <ul class="list-disc list-outside ml-6 mb-4">
+          <li>Work alongside chemists and technicians in our product laboratories making and testing new
+          paint formulations, to improve paint performance and reduce environmental impact and/or
+          health risks of our new products.</li>
+          <li>Participate in projects in the analytical laboratory and use complex analytical techniques to
+          discover critical chemical information in either wet paint or dry paint film.</li>
+          <li>Participate in projects in the technology department and delve into new technology platforms
+          for marine and protective coatings, help develop profound insights and novel evaluation
+          techniques.</li>
+        </ul>
+        <h3 class="font-semibold mb-2">WHAT WE ARE LOOKING FOR</h3>
+        <p class="mb-4">
+          Students of chemistry, chemical engineering, chemical/industrial process, and material sciences are
+          especially encouraged to apply.
+        </p>
+        <h3 class="font-semibold mb-2">PERSONAL QUALITIES AND WHAT WE OFFER</h3>
+        <p class="mb-4">
+          We think a good candidate for this position can act on his/her own initiative and make things happen. You
+          adhere to company rules and procedures and use a methodical and systematic approach where you plan and
+          define clear priorities. You quickly understand and analyze complex issues and problems and demonstrate
+          knowledge in your own area. You also co-operate well with others, share knowledge, experience, and
+          information in support to others in the pursuit of team goals.
+        </p>
+        <p class="mb-2">We offer:</p>
+        <ul class="list-disc list-outside ml-6 mb-4">
+          <li>Paid summer internship</li>
+          <li>A friendly and supportive culture. It is an informal work environment with few hierarchies. We are
+          always striving to live our values: Loyalty, Care, Respect, Boldness.</li>
+          <li>Extensive opportunities for professional and personal development.</li>
+          <li>A professional and supportive work environment with focus on continuous improvement and
+          innovation.</li>
+          <li>Exciting challenges in a growing company with excellent financial results.</li>
+        </ul>
+        <p class="mb-4">
+          Send your application to: <br/>
+          <strong>Tone Hovde, Senior HR Advisor</strong><br/>
+          Mail: <a href="mailto:tone.hovde@jotun.com">tone.hovde@jotun.com</a><br/>
+          Please mark your application “R&D Summer Intern 2026”<br/>
+          <strong>Deadline: 16.11.2025</strong>
+        </p>`
     }
   ];
 </script>

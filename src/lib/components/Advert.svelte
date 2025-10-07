@@ -73,6 +73,7 @@
       >
         <strong>{$t(`jobs.read_more`)}</strong>
       </a>
+      {#if applicationLink}
       <a
         href={applicationLink}
         target="_blank"
@@ -86,6 +87,7 @@
           class="my-auto inline text-white"
         />
       </a>
+      {/if}
     </div>
   </div>
 </div>

@@ -88,6 +88,7 @@
             {/if}
           </div>
         {/if}
+        {#if job.applicationLink}
         <a
           href={job.applicationLink}
           target="_blank"
@@ -101,6 +102,7 @@
             class="my-auto inline text-white"
           />
         </a>
+        {/if}
       </div>
     </div>
   </div>
