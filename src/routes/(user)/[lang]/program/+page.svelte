@@ -82,7 +82,7 @@
         title={$t('program.opening')}
         time="10:00"
         location={$t('program.opening_loc')}
-        loc_link="https://link.mazemap.com/34QlnLCu"
+        loc_link="https://link.mazemap.com/oBYH0gJn"
       />
       <Event
         title={$t('program.stands')}
