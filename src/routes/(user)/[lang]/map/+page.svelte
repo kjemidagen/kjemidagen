@@ -1,7 +1,7 @@
 <script lang="ts">
   import { t } from '$lib/translations/translations';
   import companyMap1 from '$lib/assets/standkart/standkart_tirsdag_14_oktober.jpeg';
-  import companyMap2 from '$lib/assets/standkart/standkart_onsdag_15_oktober.jpeg';
+  import companyMap2 from '$lib/assets/standkart/standkart_onsdag_15_oktober.png';
 
   // Get today's date
   const today = new Date();
