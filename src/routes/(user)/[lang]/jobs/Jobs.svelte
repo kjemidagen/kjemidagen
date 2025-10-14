@@ -4,6 +4,7 @@
   import elkemLogo from '$lib/assets/elkem.svg'
   import golarLogo from '$lib/assets/golar.svg'
   import jotunLogo from '$lib/assets/jotun.svg'
+  import borregaardLogo from '$lib/assets/borregaard.svg'
   export const jobsMap = [
     {
       slug: "vianode_prosessingenior",
@@ -232,6 +233,154 @@
           Please mark your application “R&D Summer Intern 2026”<br/>
           <strong>Deadline: 16.11.2025</strong>
         </p>`
-    }
+    },
+    {
+      slug: "borregaard_summer_internship",
+      company: "Borregaard",
+      image: borregaardLogo,
+      location: "Sarpsborg",
+      link: "https://www.borregaard.com/",
+      applicationLink: "https://www.borregaard.com/no/karriere/ledige-stillinger/ledig-stilling?&rmpage=job&rmjob=504",
+      position_type: "Summer Internship",
+      short_description: "Ønsker du en spennende sommerjobb? Vi ser nå etter sommerstudenter innen kjemi/prosess!",
+      long_description: `<p class="mb-4">
+      Studerer du kjemi eller prosess på bachelor- eller masternivå? Har du lyst til å bruke sommeren på å jobbe med spennende prosjekter i et høyteknologisk industrimiljø? Da bør du lese videre!
+      </p>
+      
+      <p class="mb-4">
+      Borregaard er et av verdens mest avanserte bioraffinerier. Hos oss bruker vi tømmer som råstoff og utnytter hele treet til å produsere biobaserte produkter som kan erstatte oljebaserte alternativer. 
+      Med over 130 års industrihistorie kombinerer vi teknologi, forskning og bærekraft for å skape løsninger verden virkelig trenger. 
+      Vi er en internasjonal bedrift med virksomhet i 13 land og leverer til markeder innen blant annet mat, kosmetikk, bygg, batterier og biodrivstoff.
+      </p>
+      
+      <h3 class="font-semibold mb-2">HVORDAN ER DET Å VÆRE SOMMERSTUDENT HOS OSS?</h3>
+      <p class="mb-4">
+      Gjennom et 8 ukers sommerprosjekt får du jobbe med relevante oppgaver som binder teori og praksis sammen. 
+      Du vil få tett oppfølging fra en erfaren veileder og blir en del av et sterkt fagmiljø der idéer deles på tvers av fag og bakgrunn. 
+      I tillegg arrangeres det sosiale aktiviteter gjennom sommeren, som gjør det lettere å bli kjent med både medstudenter og ansatte.
+        </p>
+        <p class="mb-4">
+        Hvilket prosjekt du får tildelt, bestemmes noen uker før oppstart og tilpasses din faglige bakgrunn og våre aktuelle behov. 
+          Vi garanterer en relevant og lærerik erfaring du kan ta med deg videre, både i studiene og i karrieren.
+        </p>
+
+        <h3 class="font-semibold mb-2">VI SER ETTER DEG SOM</h3>
+        <ul class="list-disc list-outside ml-6 mb-4">
+          <li>Studerer kjemi eller prosess på bachelor- eller masternivå (2. til 5. studieår)</li>
+          <li>Er nysgjerrig, lærevillig og glad i å jobbe strukturert</li>
+          <li>Trives med samarbeid og har lyst til å bidra i et tverrfaglig miljø</li>
+          <li>Behersker norsk både muntlig og skriftlig</li>
+          </ul>
+          
+          <h3 class="font-semibold mb-2">HVORFOR SØKE HOS OSS?</h3>
+          <p class="mb-2">Hos Borregaard får du mer enn bare en sommerjobb. Du får:</p>
+          <ul class="list-disc list-outside ml-6 mb-4">
+          <li>Spennende og relevante oppgaver i et bærekraftig og høyteknologisk industrimiljø</li>
+          <li>Innsikt i hvordan prosess- og kjemikompetanse brukes til å løse konkrete utfordringer i produksjonen</li>
+          <li>Tett faglig oppfølging fra en erfaren veileder</li>
+          <li>Et sterkt, inkluderende arbeidsmiljø med høy kompetanse og lav terskel</li>
+          <li>Sosiale aktiviteter gjennom sommeren</li>
+        </ul>
+        
+        <p class="mb-4">
+          Kommer du langveis fra? Som sommerstudent har du mulighet til å leie et rom i vårt gjestehus til en rimelig pris, slik at du slipper å ordne bosted selv.
+        </p>
+        
+          
+        <h3 class="font-semibold mb-2">KONTAKT</h3>
+        <p class="mb-4">
+        <strong>Alette Marie Christian</strong><br/>
+        Tlf: 913 56 393<br/><br/>
+        <strong>Silje Sandbukt Simonsen</strong><br/>
+        Tlf: 404 52 107
+        </p>`
+    },
+    {
+      slug: "borregaard_summer_research_internship",
+      company: "Borregaard",
+      image: borregaardLogo,
+      location: "Sarpsborg",
+      link: "https://www.borregaard.com/",
+      applicationLink: "https://www.borregaard.com/no/karriere/ledige-stillinger/ledig-stilling?&rmpage=job&rmjob=502",
+      position_type: "Summer Internship",
+      short_description: "Er du student innenfor kjemi og bioteknologi? Vil du ha en utviklende og meningsfull sommerjobb?",
+      long_description: `<p class="mb-4">
+          Er du masterstudent innen kjemi eller bioteknologi? Ser du etter en sommerjobb som både utvikler deg faglig og gir deg en fot innenfor et spennende forskningsmiljø? Da bør du lese videre!
+        </p>
+
+        <p class="mb-4">
+          Borregaard er et av verdens mest avanserte bioraffinerier. Hos oss bruker vi tømmer som råstoff og utnytter hele treet til å produsere biobaserte produkter som kan erstatte oljebaserte alternativer.
+          Med over 130 års industrihistorie kombinerer vi teknologi, forskning og bærekraft for å skape løsninger verden virkelig trenger.
+          Vi er en internasjonal bedrift med virksomhet i 13 land og leverer til markeder innen blant annet mat, kosmetikk, bygg, batterier og biodrivstoff.
+        </p>
+
+        <p class="mb-4">
+          Hos Borregaard skjer innovasjon hver dag, og nå kan du bli en del av det.
+        </p>
+
+        <h3 class="font-semibold mb-2">HVORDAN ER DET Å VÆRE SOMMERSTUDENT HOS OSS?</h3>
+        <p class="mb-4">
+          Gjennom et 8 ukers sommerprosjekt får du jobbe med relevante oppgaver som binder teori og praksis sammen. 
+          Du vil få tett oppfølging fra en erfaren forsker og blir en del av et sterkt fagmiljø der idéer deles på tvers av fag og bakgrunn.
+          I tillegg arrangeres det sosiale aktiviteter gjennom sommeren, som gjør det lettere å bli kjent med både medstudenter og ansatte.
+        </p>
+
+        <p class="mb-4">
+          På vårt forskningssenter i Sarpsborg jobber rundt 70 engasjerte og faglig dyktige medarbeidere. 
+          Som sommerstudent hos oss vil du bidra i reelle forskningsprosjekter, og samtidig få verdifull erfaring, faglig utvikling og et innblikk i fremtidige karrieremuligheter.
+        </p>
+
+        <p class="mb-4">
+          Hvilket prosjekt du får tildelt, bestemmes noen uker før oppstart og tilpasses din faglige bakgrunn og våre aktuelle behov.
+          Oppgavene vil blant annet innebære laboratoriearbeid, analyser og rapportering.
+          Vi garanterer en relevant og lærerik erfaring du kan ta med deg videre, både i studiene og i karrieren.
+        </p>
+
+        <h3 class="font-semibold mb-2">VI SER ETTER DEG SOM</h3>
+        <ul class="list-disc list-outside ml-6 mb-4">
+          <li>Studerer kjemi, prosess eller bioteknologi på masternivå (3. eller 4. år)</li>
+          <li>Er nysgjerrig, lærevillig og glad i å jobbe strukturert</li>
+          <li>Trives med samarbeid og har lyst til å bidra i et tverrfaglig miljø</li>
+          <li>Behersker norsk og engelsk både muntlig og skriftlig</li>
+        </ul>
+
+        <h3 class="font-semibold mb-2">HVORFOR SØKE HOS OSS?</h3>
+        <p class="mb-2">
+          Hos Borregaard får du mer enn bare en sommerjobb. Du får:
+        </p>
+        <ul class="list-disc list-outside ml-6 mb-4">
+          <li>Spennende og relevante oppgaver i et bærekraftig og høyteknologisk industrimiljø</li>
+          <li>Innsikt i hvordan forskning brukes til å løse konkrete utfordringer hos våre kunder</li>
+          <li>Tett faglig oppfølging fra en erfaren forsker</li>
+          <li>Et sterkt, inkluderende arbeidsmiljø med høy kompetanse og lav terskel</li>
+          <li>Sosiale aktiviteter gjennom sommeren</li>
+        </ul>
+
+        <p class="mb-4">
+          Kommer du langveis fra? Som sommerstudent har du mulighet til å leie et rom i vårt gjestehus til en rimelig pris, slik at du slipper å ordne bosted selv.
+        </p>
+
+        <h3 class="font-semibold mb-2">SØKNADSINFORMASJON</h3>
+        <p class="mb-4">
+          <strong>Søknadsfrist: 1. januar 2026</strong><br/>
+          Vi ber om at vitnemål/karakterutskrifter lastes opp som vedlegg til den elektroniske søknaden.
+        </p>
+
+        <p class="mb-4">
+          For flere opplysninger eller spørsmål om stillingen, kontakt gruppeleder <strong>Anne-Grethe Strømnes</strong>.<br/>
+          Har du spørsmål rundt rekrutteringsprosessen, kontakt <strong>HR-partner Silje Sandbukt Simonsen</strong>.
+        </p>
+
+        <h3 class="font-semibold mb-2">KONTAKT</h3>
+        <p class="mb-4">
+          <strong>Silje Sandbukt Simonsen</strong><br/>
+          E-post: <a href="mailto:silje.sandbukt.simonsen@borregaard.com" class="text-blue-600 underline">silje.sandbukt.simonsen@borregaard.com</a><br/>
+          Tlf: 404 52 107
+        </p>
+        <p class="mb-8">
+          <strong>Anne-Grethe Strømnes</strong><br/>
+          Tlf: 995 05 818
+        </p>`
+    },
   ];
 </script>
