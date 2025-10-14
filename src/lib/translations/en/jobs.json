@@ -18,5 +18,13 @@
   "jotun_rd_summer_internship_2026": {
     "title": "R&D Summer Internship 2026",
     "deadline": "16.11.2025"
+  },
+  "borregaard_summer_internship": {
+    "title": "Sommerjobb innen kjemi/prosess",
+    "deadline": "01.01.2026"
+  },
+  "borregaard_summer_research_internship": {
+    "title": "Sommerjobb innen kjemi/bioteknologi",
+    "deadline": "01.01.2026"
   }
 }
