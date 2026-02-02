@@ -4,7 +4,6 @@
   import { t } from '$lib/translations/translations';
 </script>
 
-<a class="skiptocontent" href="#main">{$t('common.skiptocontent')}</a>
 <div class="flex flex-col justify-between h-screen">
   <Header />
 
@@ -23,24 +22,5 @@
     height: 285px;
     visibility: hidden;
     pointer-events: none;
-  }
-
-  .skiptocontent {
-    position: absolute;
-    top: 3px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -2000;
-    border: 1px solid var(--color-text-inverted);
-    color: var(--color-text-inverted);
-    padding: 0.3rem 1.5rem;
-    background-color: var(--color-bg-secondary);
-    border-radius: 0.2rem;
-    font-size: large;
-  }
-
-  .skiptocontent:focus,
-  .skiptocontent:active {
-    z-index: 2000;
   }
 </style>
