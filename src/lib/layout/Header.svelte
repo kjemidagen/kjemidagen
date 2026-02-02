@@ -11,6 +11,8 @@
   import { writable } from 'svelte/store';
   import { onMount } from 'svelte';
 
+  import { browser } from '$app/environment';
+
   const createWritableStore = (key: string, startValue: any) => {
     const { subscribe, set } = writable(startValue);
 
@@ -40,7 +42,9 @@
   $: currentRoute = $page.url.pathname;
   $: currentRouteNoLang = currentRoute.split('/').slice(2, undefined).join('/');
 
-  $: visitedStore.set([...new Set([...$visitedStore, currentRouteNoLang])]);
+  $: if (browser) {
+    visitedStore.set([...new Set([...$visitedStore, currentRouteNoLang])]);
+  }
 
   $: routes = [
     {
