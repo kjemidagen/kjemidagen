@@ -14,3 +14,4 @@ node_modules
 .vercel
 .output
 .vercel_build_output
+.env*.local

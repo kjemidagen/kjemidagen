@@ -13,6 +13,7 @@
     <p>
       {$t('program.description')}
     </p>
+    <!--
     <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_workshop')}</h3>
     <div class="flex flex-col gap-2">
       <Event
@@ -117,8 +118,9 @@
         </p>
       </Event>
     </div>
-  </div>
+  </div>-->
 </section>
 
 <style>
 </style>
+

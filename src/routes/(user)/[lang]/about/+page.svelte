@@ -22,19 +22,19 @@
       <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3">
         <AboutCard
           imgSrc={headSrc}
-          name="Emilie Hewitt"
+          name="Stine Sagmyr"
           title={$t('about.leader')}
           email="leder@kjemidagen.no"
         />
         <AboutCard
           imgSrc={deputyHeadSrc}
-          name="Stine Ødegård"
+          name="Astrid Fjeldstad Nerland"
           title={$t('about.deputy')}
           email="nestleder@kjemidagen.no"
         />
         <AboutCard
           imgSrc={cfoSrc}
-          name="Marcus Feruglio Tokvam"
+          name="Thea Marøy Haugland"
           title={$t('about.cfo')}
           email="okonomiansvarlig@kjemidagen.no"
         />
@@ -42,19 +42,19 @@
       <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3">
         <AboutCard
           imgSrc={prOfficerSrc}
-          name="Sofie Sponberg Gundersen"
+          name="Celina Klefstad Storaker"
           title={$t('about.pr_officer')}
           email="pr-sjef@kjemidagen.no"
         />
         <AboutCard
           imgSrc={chiefRiggerSrc}
-          name="Linus Backen"
+          name="Sivert Haga"
           title={$t('about.rigger')}
           email="riggeansvarlig@kjemidagen.no"
         />
         <AboutCard
           imgSrc={eventManagerSrc}
-          name="Maja Christine Stahl"
+          name="Anna Horrigmoe"
           title={$t('about.event')}
           email="arrangement@kjemidagen.no"
         />
