@@ -22,7 +22,7 @@
     </h1>
     
     <h2 class="text-red text-2xl md:text-4xl mb-2 drop-shadow-md">
-      14.-15. oktober 2025
+      13.-14. oktober 2026
     </h2>
 
     <h3 class="text-red text-lg md:text-2xl mb-6 drop-shadow-md">

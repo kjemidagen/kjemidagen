@@ -6,7 +6,7 @@
   import jotunLogo from '$lib/assets/jotun.svg'
   import borregaardLogo from '$lib/assets/borregaard.svg'
   export const jobsMap = [
-    {
+    /*{
       slug: "vianode_prosessingenior",
       company: "Vianode",
       image: vianodeLogo,
@@ -381,6 +381,6 @@
           <strong>Anne-Grethe Strømnes</strong><br/>
           Tlf: 995 05 818
         </p>`
-    },
+    },*/
   ];
 </script>

@@ -20,7 +20,7 @@
 <section class="map">
   <div class="content" id="map">
     <h1 class="text-3xl mb-8">{$t('map.title')}</h1>
-    <div class="flex mt-6 w-full px-2 gap-4 overflow-visible">
+    <!--<div class="flex mt-6 w-full px-2 gap-4 overflow-visible">
       <button
       class="folder-tab flex-1 px-6 py-3 rounded-t-sm border-b-2 transition-colors duration-200 font-semibold flex items-center justify-center
         {selectedDay === 1 ? 'bg-red text-white border-red-800 shadow-[0_10px_15px_rgba(0,0,0,0.6)]' : 'bg-red-light text-white border-red-700 opacity-60 shadow-[0_3px_6px_rgba(0,0,0,0.2)]'}"
@@ -54,4 +54,5 @@
   />
 </div>
   </div>
-</section>
+--></section>
+

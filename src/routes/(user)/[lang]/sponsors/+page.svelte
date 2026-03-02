@@ -12,13 +12,13 @@
     <p class="text-lg">{$t('sponsors.intro')}</p>
     <br>
     <br>
-    <p class="text-lg">
+    <!--<p class="text-lg">
       {$t('sponsors.institutes')}
     </p>
     <ul class="text-lg list-disc list-inside">
       <li>{$t('sponsors.kjemiskprostek')}</li>
       <li>{$t('sponsors.materialtek')}</li>
       <li>{$t('sponsors.biotek_og_matvit')}</li>      
-    </ul>
+    </ul>-->
   </div>
 </section>
