@@ -1,6 +1,6 @@
 {
   "title": "Årets program",
-  "description": "Her kjem programmet for Kjemidagen 2026. Vi gler oss til ein dag fylt med aktivitetar!",
+  "description": "Dette er programmet for Kjemidagen 2026. Vi gler oss til ein dag fylt med aktivitetar!",
   "opening": "Åpning med ballongslipp",
   "opening_loc": "U1 - utanfor R8",
   "stands": "Bedriftsstands",
@@ -13,18 +13,18 @@
   "banquet": "Bankett",
   "banquet_loc": "Frimurererlogen",
   "banquet_desc": "På kvelden vil det arrangeres ein bankett med bedriftsrepresentantar og 4. og 5. årsstudentar. Banketten er ein viktig del av Kjemidagen, og ei fin mogelegheit for bedriftene til å bli bedre kjent med studentane våre.",
-  "day_wednesday": "Onsdag 15. oktober 2025",
-  "day_tuesday": "Tirsdag 14. oktober 2025",
-  "day_monday": "Måndag 13. oktober 2025",
+  "day_wednesday": "Onsdag 14. oktober 2026",
+  "day_tuesday": "Tirsdag 13. oktober 2026",
+  "day_monday": "Måndag 12. oktober 2026",
   "day_workshop": "Tysdag 30. september 2025",
   "cv_photo": "CV-fotografering",
   "cv_photo_loc": "R21",
   "cv_photo_desc": "Få tatt et profesjonelt CV-foto på Kjemidagen!",
   "mingle": "Minglekveld",
-  "mingle_loc": "Lise og Smia",
+  "mingle_loc": "Lager 11",
   "mingle_desc": "Minglekvelden er meint å vere ein litt mindre formell møteplass for studentar og bedrifter.",
   "motivation_speech": "Motivasjonsforedrag",
   "motivation_speech_loc": "R5",
   "speed_interview": "Speedintervjuer",
-  "speed_interview_loc": "Grupperom"
-}
+  "speed_interview_loc": "Grupperom",
+  "undecided": "Kjem snart"}

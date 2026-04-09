@@ -13,95 +13,82 @@
     <p>
       {$t('program.description')}
     </p>
-    <!--
-    <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_workshop')}</h3>
-    <div class="flex flex-col gap-2">
-      <Event
-        title={$t('program.cv_check')}
-        time="16:00 - 18:00"
-        location={$t('program.cv_check_loc')}
-        loc_link="https://link.mazemap.com/YNpUWkqi"
-      />
-    </div>
+    
     <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_monday')}</h3>
     <div class="flex flex-col gap-2">
-        <Event
-          title={$t('program.motivation_speech')}
-          time="16:15"
-          location={$t('program.motivation_speech_loc')}
-          loc_link="https://link.mazemap.com/8Vx5vnjn"
-        >
-        </Event>
+      <Event
+        title={$t('program.cv_photo')}
+        time="10:00 - 15:00"
+        location={$t('program.undecided')}
+        loc_link=""
+      />
+    </div>
     <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_tuesday')}</h3>
-      <div class="flex flex-col gap-2">
-        <Event
-          title={$t('program.cv_photo')}
-          time="10:30 - 13:30"
-          location={$t('program.cv_photo_loc')}
-          loc_link="https://link.mazemap.com/Ak05ztxG"
-        >
-          <p class="mt-3 leading-7">
-            {$t('program.cv_photo_desc')}
-          </p>
-        </Event>
+    <div class="flex flex-col gap-2">
         <Event
           title={$t('program.stands')}
           time="10:00 - 15:00"
-          location={$t('program.stands_loc')}
-          loc_link="https://link.mazemap.com/Dy0ceICr"
-      />
+          location={$t('program.undecided')}
+          loc_link=""
+        >
+        </Event>
+        <div class="flex flex-col gap-2">
         <Event
           title={$t('program.speed_interview')}
           time="10:00 - 15:00"
-          location={$t('program.speed_interview_loc')}
-          loc_link="https://link.mazemap.com/YNpUWkqi"
-        />
+          location={$t('program.undecided')}
+          loc_link=""
+        >
+        </Event>
         <Event
           title={$t('program.job_marathon')}
           time="13:15 - 14:00"
-          location={$t('program.job_marathon_loc')}
-          loc_link="https://link.mazemap.com/8Vx5vnjn"
+          location={$t('program.undecided')}
+          loc_link=""
         >
           <p class="mt-3 leading-7">
             {$t('program.job_marathon_desc')}
           </p>
       </Event>
-        <Event
+      <Event
           title={$t('program.mingle')}
           time="18:15"
           location={$t('program.mingle_loc')}
-          loc_link="https://link.mazemap.com/8bJVnEzL"
+          loc_link="https://maps.app.goo.gl/1Zkf92DZ7Bri1f9f7"
         >
           <p class="mt-3 leading-7">
             {$t('program.mingle_desc')}
           </p>
         </Event>
+
+    
+        
       </div>
     <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_wednesday')}</h3>
     <div class="flex flex-col gap-2">
       <Event
         title={$t('program.opening')}
         time="10:00"
-        location={$t('program.opening_loc')}
-        loc_link="https://link.mazemap.com/oBYH0gJn"
+        location={$t('program.undecided')}
+        loc_link=""
       />
       <Event
         title={$t('program.stands')}
         time="10:00 - 15:00"
-        location={$t('program.stands_loc')}
-        loc_link="https://link.mazemap.com/YNpUWkqi"
+        location={$t('program.undecided')}
+        loc_link=""
       />
       <Event
       title={$t('program.speed_interview')}
       time="10:00 - 15:00"
-      location={$t('program.speed_interview_loc')}
-      loc_link="https://link.mazemap.com/YNpUWkqi"
+      location={$t('program.undecided')}
+      loc_link=""
       />
       <Event
         title={$t('program.job_marathon')}
         time="13:15 - 14:00"
-        location={$t('program.job_marathon_loc')}
-        loc_link="https://link.mazemap.com/8Vx5vnjn"
+        location={$t('program.undecided')}
+        loc_link=""
       >
         <p class="mt-3 leading-7">
           {$t('program.job_marathon_desc')}
@@ -118,7 +105,7 @@
         </p>
       </Event>
     </div>
-  </div>-->
+  </div>
 </section>
 
 <style>
