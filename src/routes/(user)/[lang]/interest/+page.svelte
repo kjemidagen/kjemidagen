@@ -1,13 +1,18 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { t, locale } from '$lib/translations/translations';
+  import { onMount, onDestroy } from "svelte";
+  import { t } from '$lib/translations/translations';
   
-  $: other_lang = $locale === "en" ? "no" : "en";
   let formUrl = "https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BWRw7RWtPeFLoYPXAOQ4SHJUREpPT0NSMkNIN05ZNVNOUkhHUklaVVdWOC4u"
   onMount(() => {
     const mainElement = document.getElementById('main');
     if (mainElement) {
-      mainElement.classList.add('px-0');
+      mainElement.classList.remove('px-2');
+    }
+  });
+  onDestroy(() => {
+    const mainElement = document.getElementById('main');
+    if (mainElement) {
+      mainElement.classList.add('px-2');
     }
   });
 </script>
@@ -20,7 +25,7 @@
   <iframe 
     title="interest-form"
     src={formUrl} 
-    class="flex-grow w-full"
+    class="flex-grow h-full w-full"
     frameborder="0" 
     allowfullscreen>
   </iframe>
