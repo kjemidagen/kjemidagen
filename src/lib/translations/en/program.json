@@ -1,6 +1,6 @@
 {
   "title": "This year's program",
-  "description": "The program for Kjemidagen 2026 will be posted here. We are looking forward to a great day with exciting events and activities!",
+  "description": "This is the program for Kjemidagen 2026. We are looking forward to a great day with exciting events and activities!",
   "opening": "Opening with balloon release",
   "opening_loc": "U1 - outside R8",
   "stands": "Company stands",
@@ -13,18 +13,19 @@
   "banquet": "Banquet",
   "banquet_loc": "Frimurererlogen",
   "banquet_desc": "In the evening, a banquet will be arranged with company representatives and 4th and 5th year students. The banquet is an important part of Kjemidagen, and a great opportunity for companies to get to know our students better.",
-  "day_wednesday": "Wednesday, 15 October 2025",
-  "day_tuesday": "Tuesday, 14 October 2025",
-  "day_monday": "Monday, 13 October 2025",
+  "day_wednesday": "Wednesday, 14 October 2026",
+  "day_tuesday": "Tuesday, 13 October 2026",
+  "day_monday": "Monday, 12 October 2026",
   "day_workshop": "Tuesday 30. september 2025",
   "cv_photo": "CV photography",
   "cv_photo_loc": "R21",
   "cv_photo_desc": "Get a professional CV photo taken at Kjemidagen!",
   "mingle": "Networking",
-  "mingle_loc": "Lise and Smia",
+  "mingle_loc": "Lager 11",
   "mingle_desc": "The networking evening is intended to be a slightly less formal setting for students and companies to connect.",
   "motivation_speech": "Motivational lecture",
   "motivation_speech_loc": "R5",
   "speed_interview": "Speed interviews",
-  "speed_interview_loc": "Group room"
+  "speed_interview_loc": "Group room",
+  "undecided": "To be announced"
 }
