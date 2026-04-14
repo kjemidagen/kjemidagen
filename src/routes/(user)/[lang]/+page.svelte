@@ -1,7 +1,5 @@
 <script lang="ts">
   import { t, locale } from '$lib/translations/translations';
-  import Hero from '$lib/3D/Hero.svelte';
-  import bg_image from '$lib/assets/Kjemidagen_bakgrunn_potensiell.png';
   import logo from '$lib/3D/logo.svg';
 </script>
 
@@ -30,24 +28,19 @@
     </h3>
 
     <hr class="my-8 border-red/30 mx-auto w-4/6" />
-<section class="hero" id="hero">
-  <!-- fake border top -->
-  <div class="relative -top-2 left-0 z-30 border-t-8 -mx-2 border-red-light" />
-  <Hero />
-  <div class="force-space flex flex-col h-[80vh] mx-auto max-w-3xl pointer-events-none">
-    <div class="m-auto flex flex-col items-center">
-    <div
-        class="px-6 py-8 md:p-16 bg-black/60 backdrop-blur-md rounded-xl border-red/20 border z-10 pointer-events-auto"
-      >
-        <h1 class="mb-4 font-bold text-red text-4xl md:text-7xl">{$t('common.chemday')}</h1>
-        <h2 class="mb-2 text-lg text-white md:text-3xl">{$t('frontpage.when')}</h2>
-        <h2 class="mb-1 text-lg text-white md:text-3xl">{$t('frontpage.where')}</h2>
-      </div>
-      <a href="/{$locale}/interest">
-      <button class="py-3 px-5 m-2 mx-auto bg-black/60 backdrop-blur-md hover:bg-black/50 rounded-xl border-red/20 border z-10 pointer-events-auto">
-        <span class="mb-1 text-lg text-white md:text-xl">{$t('frontpage.interest')}</span>
-      </button>
-      </a>
-    </div>
   </div>
+ <div class="flex justify-center">
+  <a href="/{$locale}/interest">
+    <button
+      class="py-3 px-8 mt-4 
+             bg-red hover:bg-red/90
+             text-white text-lg md:text-xl font-medium
+             rounded-xl 
+             shadow-lg hover:shadow-red/30
+             transition-all duration-300
+             border border-red/30">
+      {$t('frontpage.interest')}
+    </button>
+  </a>
+</div>
 </section>

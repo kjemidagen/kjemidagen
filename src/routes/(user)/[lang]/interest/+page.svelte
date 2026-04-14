@@ -2,7 +2,7 @@
   import { onMount, onDestroy } from "svelte";
   import { t } from '$lib/translations/translations';
   
-  let formUrl = "https://forms.office.com/Pages/ResponsePage.aspx?id=cgahCS-CZ0SluluzdZZ8BWRw7RWtPeFLoYPXAOQ4SHJUREpPT0NSMkNIN05ZNVNOUkhHUklaVVdWOC4u"
+  let formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfCrVdfxMUP9sTf_DZLrL9NT_dHbCVD4QwB7mQCFFqdlN92yg/viewform?usp=header"
   onMount(() => {
     const mainElement = document.getElementById('main');
     if (mainElement) {
