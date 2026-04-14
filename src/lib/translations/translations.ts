@@ -160,6 +160,21 @@ const config: Config = {
       key: 'for-companies',
       loader: async () => (await import('./en/for-companies.json')).default
     },
+    {
+      locale: 'no',
+      key: 'interest',
+      loader: async () => (await import('./nb-NO/interest.json')).default
+    },
+    {
+      locale: 'nn',
+      key: 'interest',
+      loader: async () => (await import('./nn-NO/interest.json')).default
+    },
+    {
+      locale: 'en',
+      key: 'interest',
+      loader: async () => (await import('./en/interest.json')).default
+    }
   ],
   log: {
     level: 'error'

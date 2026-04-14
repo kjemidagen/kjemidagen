@@ -1,7 +1,5 @@
 <script lang="ts">
-  import { t } from '$lib/translations/translations';
-  import Hero from '$lib/3D/Hero.svelte';
-  import bg_image from '$lib/assets/Kjemidagen_bakgrunn_potensiell.png';
+  import { t, locale } from '$lib/translations/translations';
   import logo from '$lib/3D/logo.svg';
 </script>
 
@@ -31,4 +29,18 @@
 
     <hr class="my-8 border-red/30 mx-auto w-4/6" />
   </div>
+ <div class="flex justify-center">
+  <a href="/{$locale}/interest">
+    <button
+      class="py-3 px-8 mt-4 
+             bg-red hover:bg-red/90
+             text-white text-lg md:text-xl font-medium
+             rounded-xl 
+             shadow-lg hover:shadow-red/30
+             transition-all duration-300
+             border border-red/30">
+      {$t('frontpage.interest')}
+    </button>
+  </a>
+</div>
 </section>
