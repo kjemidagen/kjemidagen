@@ -19,18 +19,28 @@
       <Event
         title={$t('program.cv_photo')}
         time="10:00 - 15:00"
-        location={$t('program.undecided')}
-        loc_link=""
-      />
+        location={$t('program.cv_photo_loc')}
+        loc_link="https://use.mazemap.com/?utm_medium=qr-code-mobile#v=1&campusid=1&center=10.405078,63.415505&zoom=18&zlevel=-2&sharepoitype=identifier&sharepoi=360-AU2-101"
+       >
+       <p class="mt-3 leading-7">
+            {$t('program.cv_photo_desc')}
+          </p>
+       </Event> 
+      
+      
     </div>
     <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_tuesday')}</h3>
     <div class="flex flex-col gap-2">
         <Event
           title={$t('program.stands')}
           time="10:00 - 15:00"
-          location={$t('program.undecided')}
+          location={$t('program.stands_loc')}
           loc_link=""
+          
         >
+         <p class="mt-3 leading-7">
+            {$t('program.stands_desc')}
+          </p>
         </Event>
         <div class="flex flex-col gap-2">
         <Event
@@ -39,6 +49,9 @@
           location={$t('program.undecided')}
           loc_link=""
         >
+          <p class="mt-3 leading-7">
+            {$t('program.speed_interview_desc')}
+          </p>
         </Event>
         <Event
           title={$t('program.job_marathon')}
@@ -69,21 +82,33 @@
       <Event
         title={$t('program.opening')}
         time="10:00"
-        location={$t('program.undecided')}
+        location={$t('program.opening_loc')}
         loc_link=""
-      />
+        >
+        <p class="mt-3 leading-7">
+            {$t('program.opening_desc')}
+          </p>
+      </Event>
       <Event
         title={$t('program.stands')}
         time="10:00 - 15:00"
-        location={$t('program.undecided')}
+        location={$t('program.stands_loc')}
         loc_link=""
-      />
+      >
+      <p class="mt-3 leading-7">
+            {$t('program.stands_desc')}
+          </p>
+      </Event>
       <Event
       title={$t('program.speed_interview')}
       time="10:00 - 15:00"
       location={$t('program.undecided')}
       loc_link=""
-      />
+      >
+        <p class="mt-3 leading-7">
+          {$t('program.speed_interview_desc')}
+        </p>
+      </Event>
       <Event
         title={$t('program.job_marathon')}
         time="13:15 - 14:00"
