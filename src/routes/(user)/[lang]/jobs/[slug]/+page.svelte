@@ -12,7 +12,7 @@
   import { Icon } from '@steeze-ui/svelte-icon';
 
   if (jobsMap.filter((e) => e.slug == $page.params.slug).length === 0) {
-    throw error(404, { message: 'Page not found' });
+    error(404, { message: 'Page not found' });
   }
   const job = jobsMap.filter((e) => e.slug == $page.params.slug)[0];
 </script>
