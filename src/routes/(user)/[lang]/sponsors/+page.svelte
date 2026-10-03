@@ -1,5 +1,7 @@
 <script lang="ts">
   import { t } from '$lib/translations/translations';
+  import CompanyBox from './CompanyBox.svelte';
+  import { companiesMap } from './Sponsors.svelte';
 </script>
 
 <svelte:head>
@@ -11,14 +13,51 @@
     <h1 class="text-3xl mb-8">{$t('sponsors.sponsors')}</h1>
     <p class="text-lg">{$t('sponsors.intro')}</p>
     <br>
-    <br>
-    <!--<p class="text-lg">
-      {$t('sponsors.institutes')}
-    </p>
-    <ul class="text-lg list-disc list-inside">
-      <li>{$t('sponsors.kjemiskprostek')}</li>
-      <li>{$t('sponsors.materialtek')}</li>
-      <li>{$t('sponsors.biotek_og_matvit')}</li>      
-    </ul>-->
+    
   </div>
 </section>
+
+<div class="company-grid">
+  {#each companiesMap as company}
+    <CompanyBox
+      picture={company.picture}
+      border={company.border}
+      link={company.link}
+    />
+  {/each}
+</div>
+
+<style>
+  .company-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .company-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .company-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 450px) {
+    .company-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+
+
+
+
