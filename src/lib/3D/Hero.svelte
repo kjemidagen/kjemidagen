@@ -5,18 +5,18 @@
   import Logo from './Logo.svelte';
   import bgUrl from '$lib/assets/hero-bg.png';
 
-  let w = 1;
-  let h = 1;
-  let y = 0;
+  let w = $state(1);
+  let h = $state(1);
+  let y = $state(0);
 
-  let loaded = false;
+  let loaded = $state(false);
 
   import { load } from './texture';
   const map = load(bgUrl, () => {
     loaded = true;
   });
 
-  let ry = 0;
+  let ry = $state(0);
 
   // Handling click and drag
   function onMouseDown() {
@@ -63,8 +63,8 @@
 <div
   class="hero w-full top-0 left-0 md:w-[calc(100%_-_16px)] md:left-[8px]"
   class:visible={loaded}
-  on:mousedown={onMouseDown}
-  on:touchstart={onTouchStart}
+  onmousedown={onMouseDown}
+  ontouchstart={onTouchStart}
 >
   <SC.Canvas
     background={new THREE.Color(0xdedede)}

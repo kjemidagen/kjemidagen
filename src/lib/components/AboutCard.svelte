@@ -2,10 +2,19 @@
   import { Envelope } from '@steeze-ui/heroicons';
   import { Icon } from '@steeze-ui/svelte-icon';
 
-  export let imgSrc: string;
-  export let name: string;
-  export let title: string;
-  export let email: string;
+  interface Props {
+    imgSrc: string;
+    name: string;
+    title: string;
+    email: string;
+  }
+
+  let {
+    imgSrc,
+    name,
+    title,
+    email
+  }: Props = $props();
 </script>
 
 <article class="mb-8 mx-auto">

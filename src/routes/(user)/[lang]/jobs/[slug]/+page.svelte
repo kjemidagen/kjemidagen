@@ -3,7 +3,7 @@
 
   import kdLogo from '$lib/assets/logo.svg';
   
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
   import { jobsMap } from '../Jobs.svelte';
   import { error } from '@sveltejs/kit';
@@ -11,10 +11,10 @@
   import { MapPin, Clock, Link, ArrowTopRightOnSquare, User } from '@steeze-ui/heroicons';
   import { Icon } from '@steeze-ui/svelte-icon';
 
-  if (jobsMap.filter((e) => e.slug == $page.params.slug).length === 0) {
+  if (jobsMap.filter((e) => e.slug == page.params.slug).length === 0) {
     error(404, { message: 'Page not found' });
   }
-  const job = jobsMap.filter((e) => e.slug == $page.params.slug)[0];
+  const job = jobsMap.filter((e) => e.slug == page.params.slug)[0];
 </script>
 
 <svelte:head>

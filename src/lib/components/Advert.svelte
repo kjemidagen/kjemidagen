@@ -3,14 +3,29 @@
   import { Icon } from '@steeze-ui/svelte-icon';
   import {t, locale} from '$lib/translations/translations';
 
-  export let title: string;
-  export let deadline = '';
-  export let location = '';
-  export let image = '';
-  export let link = '';
-  export let company = '';
-  export let slug = '';
-  export let applicationLink = '';
+  interface Props {
+    title: string;
+    deadline?: string;
+    location?: string;
+    image?: string;
+    link?: string;
+    company?: string;
+    slug?: string;
+    applicationLink?: string;
+    children?: import('svelte').Snippet;
+  }
+
+  let {
+    title,
+    deadline = '',
+    location = '',
+    image = '',
+    link = '',
+    company = '',
+    slug = '',
+    applicationLink = '',
+    children
+  }: Props = $props();
 </script>
 
 <div class="bg-red grid grid-cols-1 gap-2 p-4 text-white md:grid-cols-5 md:gap-8">
@@ -65,7 +80,7 @@
         {/if}
       </div>
     {/if}
-    <slot />
+    {@render children?.()}
     <div class="flex flex-row space-x-2">
       <a
         href="jobs/{slug}"

@@ -1,7 +1,11 @@
-<script>
-  export let picture;
-  export let border = false;
-  export let link = "#";
+<script lang="ts">
+  interface Props {
+    picture: any;
+    border?: boolean;
+    link?: string;
+  }
+
+  let { picture, border = false, link = "#" }: Props = $props();
 </script>
 
 <div class:bordered={border} class="company-box">

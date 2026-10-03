@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
   import elektroimportorenLogo from '$lib/assets/elektroimportoren.svg';
   import nitoLogo from '$lib/assets/nito.svg';
   import samarbeidsforumLogo from '$lib/assets/samarbeidsforum.svg';

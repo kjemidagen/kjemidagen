@@ -3,18 +3,27 @@
   import { ChevronDown } from '@steeze-ui/heroicons';
   import { slide } from 'svelte/transition';
 
-  export let question: string;
-  export let answer: string;
-  export let linkUrl: string | null = null;   // optional
-  export let linkLabel: string | null = null; // optional
+  interface Props {
+    question: string;
+    answer: string;
+    linkUrl?: string | null; // optional
+    linkLabel?: string | null; // optional
+  }
 
-  let open = false;
+  let {
+    question,
+    answer,
+    linkUrl = null,
+    linkLabel = null
+  }: Props = $props();
+
+  let open = $state(false);
 </script>
 
 <div class="bg-red text-white text-2xl font-medium p-5">
   <button
     class="w-full flex items-center justify-between text-left"
-    on:click={() => (open = !open)}
+    onclick={() => (open = !open)}
     aria-expanded={open}
   >
     <span class="font-medium break-words whitespace-normal">{question}</span>

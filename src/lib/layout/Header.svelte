@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { run, preventDefault } from 'svelte/legacy';
+
   import { t, locales, locale } from '$lib/translations/translations';
   import { page } from '$app/stores';
 
@@ -39,14 +41,16 @@
     visitedStore.useLocalStorage();
   });
 
-  $: currentRoute = $page.url.pathname;
-  $: currentRouteNoLang = currentRoute.split('/').slice(2, undefined).join('/');
+  let currentRoute = $derived($page.url.pathname);
+  let currentRouteNoLang = $derived(currentRoute.split('/').slice(2, undefined).join('/'));
 
-  $: if (browser) {
-    visitedStore.set([...new Set([...$visitedStore, currentRouteNoLang])]);
-  }
+  run(() => {
+    if (browser) {
+      visitedStore.set([...new Set([...$visitedStore, currentRouteNoLang])]);
+    }
+  });
 
-  $: routes = [
+  let routes = $derived([
     {
       link: `/${$locale}`,
       label: $t('common.home'),
@@ -88,14 +92,14 @@
       label: $t('common.for-companies'),
       linkNoLang: `for-companies`,
     }
-  ];
+  ]);
 
-  $: langRoutes = $locales.map((locale) => ({
+  let langRoutes = $derived($locales.map((locale) => ({
     link: `/${locale}/${currentRouteNoLang}`,
     label: locale
-  }));
+  })));
 
-  let navOpen = false;
+  let navOpen = $state(false);
 </script>
 
 <header id="header" class="px-25 fixed w-full left-0 top-0 z-50 bg-red border-b-8 border-red-light">
@@ -115,7 +119,7 @@
               {route.label}
               <span
                 class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
-              />
+></span>
             </span>
             <InfoPill
               class="transistion-all ml-2 h-fit duration-500 {route.new
@@ -135,16 +139,16 @@
             {lc.label}
             <span
                 class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
-              />
+></span>
           </a>
         </li>
       {/each}
     </ul>
     <button
       class="items-right md:hidden"
-      on:click|preventDefault={() => {
+      onclick={preventDefault(() => {
         navOpen = !navOpen;
-      }}
+      })}
     >
       <img class="m-auto w-8" src={hamburgerMenuPic} alt="hamburgermeny" />
     </button>

@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
   import { t } from '$lib/translations/translations';
   import bwoffshoreLogo from '$lib/assets/bwoffshore.svg'
   import fjordalgLogo from '$lib/assets/fjordalg.svg'

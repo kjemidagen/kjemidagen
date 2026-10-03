@@ -3,11 +3,15 @@
   import * as SC from 'svelte-cubed';
   import type { Texture } from 'three';
 
-  export let map: Texture;
+  interface Props {
+    map: Texture;
+  }
 
-  let w = 1;
-  let h = 1;
-  let y = 0;
+  let { map }: Props = $props();
+
+  let w = $state(1);
+  let h = $state(1);
+  let y = $state(0);
 
   const backdrop = new THREE.PlaneGeometry(2, 2);
 </script>

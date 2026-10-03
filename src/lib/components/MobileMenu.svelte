@@ -5,20 +5,24 @@
 
   const dispatch = createEventDispatcher();
 
-  export let currentRoute = '';
-  export let routes: { label: string; link: string; linkNoLang: string; new?: boolean }[];
+  interface Props {
+    currentRoute?: string;
+    routes: { label: string; link: string; linkNoLang: string; new?: boolean }[];
+  }
+
+  let { currentRoute = '', routes }: Props = $props();
 </script>
 
 <div 
   class="absolute h-screen w-full bg-black/20 backdrop-blur-sm" 
-  on:click={() => dispatch('closemenu')}
-  on:keydown={(e) => e.key === 'Escape' && dispatch('closemenu')}
+  onclick={() => dispatch('closemenu')}
+  onkeydown={(e) => e.key === 'Escape' && dispatch('closemenu')}
   role="button"
   tabindex="0"
   aria-label="Close menu"
   in:fade={{ duration: 200 }}
   out:fade={{ duration: 50 }}
-/>
+></div>
 <ul
   class="bg-red border-red-light absolute w-full border-y-8 text-white"
   in:slide={{ duration: 200 }}
@@ -29,7 +33,7 @@
       <a 
         class="block px-2 py-4 text-white" 
         href={route.link}
-        on:click={() => {
+        onclick={() => {
           dispatch('closemenu');
         }}
       >

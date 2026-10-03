@@ -1,10 +1,14 @@
-<script context="module" lang="ts">
+<script module lang="ts">
   import Error from '../../+error.svelte';
 </script>
 
 <script lang="ts">
   import type { PageData } from './$types';
-  export let data: PageData;
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
   const status: number = data.status;
 </script>
 
