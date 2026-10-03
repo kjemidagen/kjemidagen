@@ -5,7 +5,7 @@
     link?: string;
   }
 
-  let { picture, border = false, link = "#" }: Props = $props();
+  let { picture, border = false, link = '#' }: Props = $props();
 </script>
 
 <div class:bordered={border} class="company-box">
@@ -32,10 +32,12 @@
     border: 3px solid rgba(244, 132, 106, 0.45);
     border-radius: 12px;
 
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
   }
 
-  
   .company-box.bordered {
     border: 7px solid var(--kjemi-red);
     box-shadow:

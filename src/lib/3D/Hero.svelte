@@ -3,7 +3,7 @@
   import * as SC from 'svelte-cubed';
   import Backdrop from './Backdrop.svelte';
   import Logo from './Logo.svelte';
-  import bgUrl from '$lib/assets/hero-bg.png';
+  import bgUrl from '#lib/assets/hero-bg.png';
 
   let w = $state(1);
   let h = $state(1);
@@ -61,7 +61,7 @@
 <svelte:window bind:scrollY={y} bind:innerWidth={w} bind:innerHeight={h} />
 
 <div
-  class="hero w-full top-0 left-0 md:w-[calc(100%_-_16px)] md:left-[8px]"
+  class="hero left-0 top-0 w-full md:left-[8px] md:w-[calc(100%_-_16px)]"
   class:visible={loaded}
   onmousedown={onMouseDown}
   ontouchstart={onTouchStart}

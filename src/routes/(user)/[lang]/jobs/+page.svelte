@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { t } from '$lib/translations/translations';
-  import Advert from '$lib/components/Advert.svelte';
-  import kdlogo from '$lib/assets/logo.svg';
+  import { t } from '#lib/translations/translations.js';
+  import Advert from '#lib/components/Advert.svelte';
+  import kdlogo from '#lib/assets/logo.svg';
   import { jobsMap } from './Jobs.svelte';
 </script>
 
@@ -29,7 +29,7 @@
           slug={job.slug}
           applicationLink={job.applicationLink}
         >
-            {job.short_description}
+          {job.short_description}
         </Advert>
       {/each}
     </div>

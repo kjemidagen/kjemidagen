@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { t } from '$lib/translations/translations';
+  import { t } from '#lib/translations/translations.js';
   import CompanyBox from './CompanyBox.svelte';
   import { companiesMap } from './Sponsors.svelte';
 </script>
@@ -10,20 +10,15 @@
 
 <section class="sponsors">
   <div class="content" id="sponsors">
-    <h1 class="text-3xl mb-8">{$t('sponsors.sponsors')}</h1>
+    <h1 class="mb-8 text-3xl">{$t('sponsors.sponsors')}</h1>
     <p class="text-lg">{$t('sponsors.intro')}</p>
-    <br>
-    
+    <br />
   </div>
 </section>
 
 <div class="company-grid">
   {#each companiesMap as company}
-    <CompanyBox
-      picture={company.picture}
-      border={company.border}
-      link={company.link}
-    />
+    <CompanyBox picture={company.picture} border={company.border} link={company.link} />
   {/each}
 </div>
 
@@ -56,8 +51,3 @@
     }
   }
 </style>
-
-
-
-
-

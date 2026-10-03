@@ -1,4 +1,4 @@
-import { loadTranslations } from '$lib/translations/translations';
+import { loadTranslations } from '#lib/translations/translations.js';
 import type { LayoutLoad } from '../../../.svelte-kit/types/src/routes/$types';
 
 export const load: LayoutLoad = async ({ url }) => {

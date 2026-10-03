@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { t} from '$lib/translations/translations';
+  import { t } from '#lib/translations/translations.js';
 
-  import kdLogo from '$lib/assets/logo.svg';
-  
+  import kdLogo from '#lib/assets/logo.svg';
+
   import { page } from '$app/state';
 
   import { jobsMap } from '../Jobs.svelte';
@@ -22,13 +22,13 @@
 </svelte:head>
 
 <section class="jobs" id="jobs">
-  <div class="content grid grid-cols-1 gap-4 md:grid-cols-6 content-start items-start">
+  <div class="content grid grid-cols-1 content-start items-start gap-4 md:grid-cols-6">
     <div class="col-span-1 md:col-span-4">
       <h1 class="mb-8 text-3xl">{$t(`jobs.${job.slug}.title`)}</h1>
 
       {@html job.long_description}
     </div>
-    <div class="bg-red order-last p-4 md:col-span-2 self-start sticky top-20">
+    <div class="sticky top-20 order-last self-start bg-red p-4 md:col-span-2">
       <img
         src={jobsMap.filter((e) => e.slug == job.slug)[0].image}
         alt="${$t(`jobs.${job.slug}.title`)} logo"
@@ -89,19 +89,19 @@
           </div>
         {/if}
         {#if job.applicationLink}
-        <a
-          href={job.applicationLink}
-          target="_blank"
-          class="mt-4 flex-inline flex w-fit items-center space-x-2 rounded-lg border-2 border-white px-4 py-2"
-        >
-          <span class="text-white">Søk her</span>
-          <Icon
-            src={ArrowTopRightOnSquare}
-            size="1.5em"
-            theme="solid"
-            class="my-auto inline text-white"
-          />
-        </a>
+          <a
+            href={job.applicationLink}
+            target="_blank"
+            class="flex-inline mt-4 flex w-fit items-center space-x-2 rounded-lg border-2 border-white px-4 py-2"
+          >
+            <span class="text-white">Søk her</span>
+            <Icon
+              src={ArrowTopRightOnSquare}
+              size="1.5em"
+              theme="solid"
+              class="my-auto inline text-white"
+            />
+          </a>
         {/if}
       </div>
     </div>

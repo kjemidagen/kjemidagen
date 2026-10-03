@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { t } from '$lib/translations/translations';
-  import companyMap1 from '$lib/assets/standkart/standkart_tirsdag_14_oktober.jpeg';
-  import companyMap2 from '$lib/assets/standkart/standkart_onsdag_15_oktober.png';
+  import { t } from '#lib/translations/translations.js';
+  import companyMap1 from '#lib/assets/standkart/standkart_tirsdag_14_oktober.jpeg';
+  import companyMap2 from '#lib/assets/standkart/standkart_onsdag_15_oktober.png';
 
   // Get today's date
   const today = new Date();
@@ -19,7 +19,7 @@
 
 <section class="map">
   <div class="content" id="map">
-    <h1 class="text-3xl mb-8">{$t('map.title')}</h1>
+    <h1 class="mb-8 text-3xl">{$t('map.title')}</h1>
     <!--<div class="flex mt-6 w-full px-2 gap-4 overflow-visible">
       <button
       class="folder-tab flex-1 px-6 py-3 rounded-t-sm border-b-2 transition-colors duration-200 font-semibold flex items-center justify-center
@@ -54,5 +54,6 @@
   />
 </div>
   </div>
---></section>
-
+-->
+  </div>
+</section>

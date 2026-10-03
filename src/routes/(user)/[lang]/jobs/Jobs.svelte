@@ -1,26 +1,26 @@
 <script lang="ts" module>
-  import { t } from '$lib/translations/translations';
-  import bwoffshoreLogo from '$lib/assets/bwoffshore.svg'
-  import fjordalgLogo from '$lib/assets/fjordalg.svg'
-  import golarLogo from '$lib/assets/golarlng.svg'
-  import norconsultLogo from '$lib/assets/norconsult.svg'
+  import { t } from '#lib/translations/translations.js';
+  import bwoffshoreLogo from '#lib/assets/bwoffshore.svg';
+  import fjordalgLogo from '#lib/assets/fjordalg.svg';
+  import golarLogo from '#lib/assets/golarlng.svg';
+  import norconsultLogo from '#lib/assets/norconsult.svg';
 
-
-  import vianodeLogo from '$lib/assets/vianode.svg'
-  import elkemLogo from '$lib/assets/elkem.svg'
-  import jotunLogo from '$lib/assets/jotun.svg'
-  import borregaardLogo from '$lib/assets/borregaard.svg'
+  import vianodeLogo from '#lib/assets/vianode.svg';
+  import elkemLogo from '#lib/assets/elkem.svg';
+  import jotunLogo from '#lib/assets/jotun.svg';
+  import borregaardLogo from '#lib/assets/borregaard.svg';
   export const jobsMap = [
     {
-      slug: "norconsult_va_radgiver",
-      company: "Norconsult",
+      slug: 'norconsult_va_radgiver',
+      company: 'Norconsult',
       image: norconsultLogo,
-      location: "Sandvika Kjørbo",
-      link: "https://www.norconsult.com",
-      applicationLink: "https://norconsult.no/karriere/ledige-stillinger/req-6351/?promotion=kjemidagen-no",
-      position_type: "Fast stilling",
-      short_description: "Vil du lære mer om vannbehandling og avløpsrensing?",
-      long_description:`<p><strong>Vil du lære mer om vannbehandling og avløpsrensing?</strong></p>
+      location: 'Sandvika Kjørbo',
+      link: 'https://www.norconsult.com',
+      applicationLink:
+        'https://norconsult.no/karriere/ledige-stillinger/req-6351/?promotion=kjemidagen-no',
+      position_type: 'Fast stilling',
+      short_description: 'Vil du lære mer om vannbehandling og avløpsrensing?',
+      long_description: `<p><strong>Vil du lære mer om vannbehandling og avløpsrensing?</strong></p>
 <br>
 <p>I Norconsult finner du landets største rådgivende fagmiljø innen vann- og avløpsteknikk med over 300 medarbeidere i Norge. På avdeling Vann - Prosess ved Norconsults hovedkontor i Sandvika er vi rundt 50 medarbeidere med høy kompetanse og stor faglig bredde. Hos oss møter du engasjerte kolleger, fra unge nyutdannede til erfarne og kompetente seniorer med stort nettverk i bransjen. Vi har et arbeidsmiljø vi er stolte av!</p>
 <br>
@@ -78,19 +78,20 @@
 <p>Søknader blir vurdert fortløpende.</p>
 <br>
 <p>Vi ser frem til å motta din søknad!</p>`
-    
-    }, 
-  
-  {
-      slug: "norconsult_vvs",
-      company: "Norconsult",
+    },
+
+    {
+      slug: 'norconsult_vvs',
+      company: 'Norconsult',
       image: norconsultLogo,
-      location: "Sandvika Vestfjordgaten",
-      link: "https://www.norconsult.com",
-      applicationLink: "https://norconsult.no/karriere/ledige-stillinger/req-6376/?promotion=kjemidagen-no",
-      position_type: "Fast stilling",
-      short_description: "Vil du jobbe med utviklingen av fremtidens industri- og produksjonsanlegg?",
-      long_description:`<p><strong>Vil du jobbe med utviklingen av fremtidens industri- og produksjonsanlegg?</strong></p>
+      location: 'Sandvika Vestfjordgaten',
+      link: 'https://www.norconsult.com',
+      applicationLink:
+        'https://norconsult.no/karriere/ledige-stillinger/req-6376/?promotion=kjemidagen-no',
+      position_type: 'Fast stilling',
+      short_description:
+        'Vil du jobbe med utviklingen av fremtidens industri- og produksjonsanlegg?',
+      long_description: `<p><strong>Vil du jobbe med utviklingen av fremtidens industri- og produksjonsanlegg?</strong></p>
 <br>
 <p>Hos Norconsult blir du tidlig involvert i reelle oppdrag, samtidig som du får god oppfølging fra erfarne kolleger. Du får varierte oppgaver, gode utviklingsmuligheter og tilgang til et av Norges største tverrfaglige rådgivermiljøer.</p>
 <br>
@@ -155,19 +156,20 @@
 <p>Vi ser frem til å motta din søknad!</p>
 <br>
 <p>Vi gjør oppmerksom på at det kun er elektroniske søknader som blir behandlet.</p>`
-    
-    }, 
-  
+    },
+
     {
-      slug: "norconsult_sommerjobb_va",
-      company: "Norconsult",
+      slug: 'norconsult_sommerjobb_va',
+      company: 'Norconsult',
       image: norconsultLogo,
-      location: "Drammen, Hønefoss, Lillestrøm, Oslo",
-      link: "https://www.norconsult.com",
-      applicationLink: "https://norconsult.no/karriere/ledige-stillinger/req-6349/?promotion=kjemidagen-no",
-      position_type: "Sommerjobb",
-      short_description: "Sommerjobb innen vann og avløp i Norges største tverrfaglige rådgiverbedrift?",
-      long_description:`<p><strong>Sommerjobb innen vann og avløp i Norges største tverrfaglige rådgiverbedrift?</strong></p>
+      location: 'Drammen, Hønefoss, Lillestrøm, Oslo',
+      link: 'https://www.norconsult.com',
+      applicationLink:
+        'https://norconsult.no/karriere/ledige-stillinger/req-6349/?promotion=kjemidagen-no',
+      position_type: 'Sommerjobb',
+      short_description:
+        'Sommerjobb innen vann og avløp i Norges største tverrfaglige rådgiverbedrift?',
+      long_description: `<p><strong>Sommerjobb innen vann og avløp i Norges største tverrfaglige rådgiverbedrift?</strong></p>
 <br>
 <p>I Norconsult finner du landets største rådgivende fagmiljø innen vann- og avløpsteknikk. På forretningsenhet Vann og Vann Prosess ved Norconsults hovedkontor er vi rundt 150 medarbeidere med høy kompetanse og stor faglig bredde. Hos oss møter du engasjerte kolleger, fra unge nyutdannede til erfarne og kompetente seniorer med stort nettverk i bransjen. Vi har et arbeidsmiljø vi er stolte av!</p>
 <br>
@@ -221,18 +223,19 @@
 <p>For Norconsult er det en grunnleggende forutsetning at alle mennesker er likeverdige. Målet er at våre medarbeidere skal ha de samme mulighetene til å nå sitt fulle potensial uavhengig av hvem de er eller hvordan de identifiserer seg. Et bredere spekter av perspektiver hjelper oss å forstå alle deler av samfunnet, utfordrer oss i våre oppdrag og fører til en høyere grad av innovasjon. Vi ønsker derfor medarbeidere med ulik bakgrunn og erfaring velkommen.</p>
 <br>
 <p>Vi ser frem til å motta din søknad!</p>`
-    
-    }, 
+    },
     {
-      slug: "norconsult_sommerjobb_industri",
-      company: "Norconsult",
+      slug: 'norconsult_sommerjobb_industri',
+      company: 'Norconsult',
       image: norconsultLogo,
-      location: "Sandvika Vestfjordgaten",
-      link: "https://www.norconsult.com",
-      applicationLink: "https://norconsult.no/karriere/ledige-stillinger/req-6377/?promotion=kjemidagen-no",
-      position_type: "Sommerjobb",
-      short_description: "Vil du prøve deg som rådgivende ingeniør og få erfaring fra reelle industriprosjekter?",
-      long_description:`<p><strong>Vil du prøve deg som rådgivende ingeniør og få erfaring fra reelle industriprosjekter?</strong></p>
+      location: 'Sandvika Vestfjordgaten',
+      link: 'https://www.norconsult.com',
+      applicationLink:
+        'https://norconsult.no/karriere/ledige-stillinger/req-6377/?promotion=kjemidagen-no',
+      position_type: 'Sommerjobb',
+      short_description:
+        'Vil du prøve deg som rådgivende ingeniør og få erfaring fra reelle industriprosjekter?',
+      long_description: `<p><strong>Vil du prøve deg som rådgivende ingeniør og få erfaring fra reelle industriprosjekter?</strong></p>
 <br>
 <p>Som sommerstudent hos Norconsult får du relevante faglige oppgaver, god oppfølging og mulighet til å bli kjent med et stort tverrfaglig rådgivermiljø. Du blir en del av et sosialt og inkluderende studentmiljø gjennom sommeren.</p>
 <br>
@@ -295,19 +298,19 @@
 <p>Vi ser frem til å motta din søknad!</p>
 <br>
 <p>Vi gjør oppmerksom på at det kun er elektroniske søknader som blir behandlet.</p>`
-    
     },
-    
+
     {
-      slug: "golar_lng",
-      company: "Golar LNG",
+      slug: 'golar_lng',
+      company: 'Golar LNG',
       image: golarLogo,
-      location: "Oslo",
-      link: "https://www.golarlng.com/",
-      applicationLink: "https://www.finn.no/job/ad/477483379?promotion=kjemidagen-no",
-      position_type: "Sommerjobb",
-      short_description: "Vil du jobbe med utviklingen av fremtidens industri- og produksjonsanlegg?",
-      long_description:`<p><strong>Unlock your potential with Golar LNG next summer!</strong></p>
+      location: 'Oslo',
+      link: 'https://www.golarlng.com/',
+      applicationLink: 'https://www.finn.no/job/ad/477483379?promotion=kjemidagen-no',
+      position_type: 'Sommerjobb',
+      short_description:
+        'Vil du jobbe med utviklingen av fremtidens industri- og produksjonsanlegg?',
+      long_description: `<p><strong>Unlock your potential with Golar LNG next summer!</strong></p>
 <br>
 <p>Are you looking for a summer internship experience that will connect you to the world of LNG, Offshore and Energy? Golar LNG is offering a unique opportunity for <strong>ambitious students</strong> who are ready to take on a challenge.</p>
 <br>
@@ -363,18 +366,18 @@
 <p>For us to properly evaluate your application, please attach your CV and transcripts from higher education. When applying, <strong>let us know which project you are most interested in joining. If you do not state any projects in your application, you will not be considered for an internship position.</strong></p>
 <br>
 <p>Candidates must submit their applications through our finn.no portal.</p>`
-    
     },
 
     {
-      slug: "bw_offshore_graduate_engineer",
-      company: "BW Offshore",
+      slug: 'bw_offshore_graduate_engineer',
+      company: 'BW Offshore',
       image: bwoffshoreLogo,
-      location: "Singapore, Oslo",
-      link: "https://bwoffshore.com/",
-      applicationLink: "https://bwoffshore.csod.com/ux/ats/careersite/1/home/requisition/193?c=bwoffshore?promotion=kjemidagen-no",
-      position_type: "Fast stilling",
-      short_description: "Launch Your Global Engineering Career with BW Offshore",
+      location: 'Singapore, Oslo',
+      link: 'https://bwoffshore.com/',
+      applicationLink:
+        'https://bwoffshore.csod.com/ux/ats/careersite/1/home/requisition/193?c=bwoffshore?promotion=kjemidagen-no',
+      position_type: 'Fast stilling',
+      short_description: 'Launch Your Global Engineering Career with BW Offshore',
       long_description: `<p><strong>Launch Your Global Engineering Career with BW Offshore</strong></p>
 <br>
 <p>At BW Offshore, we engineer floating production solutions that power the world's energy needs. With operations and projects spanning the globe, we are committed to developing the next generation of leaders and technical experts who will help shape the future of our industry.</p>
@@ -445,19 +448,19 @@
 <p><strong>Our Commitment to Diversity and Inclusion</strong></p>
 <br>
 <p>BW Offshore is committed to providing equal employment opportunities for all. We believe in fostering a diverse and inclusive workplace and encourage all qualified candidates to apply, regardless of age, gender, disability, religion, or ethnic background.</p>`
-    
     },
 
     {
-      slug: "bw_offshore_summer_intern",
-      company: "BW Offshore",
+      slug: 'bw_offshore_summer_intern',
+      company: 'BW Offshore',
       image: bwoffshoreLogo,
-      location: "Oslo, Singapore",
-      link: "https://www.bwoffshore.com/",
-      applicationLink: "https://bwoffshore.csod.com/ux/ats/careersite/1/home/requisition/201?c=bwoffshore?promotion=kjemidagen-no",
-      position_type: "Sommerjobb",
+      location: 'Oslo, Singapore',
+      link: 'https://www.bwoffshore.com/',
+      applicationLink:
+        'https://bwoffshore.csod.com/ux/ats/careersite/1/home/requisition/201?c=bwoffshore?promotion=kjemidagen-no',
+      position_type: 'Sommerjobb',
       short_description: "Looking for an internship where you'll do more than observe?",
-      long_description:`<p><strong>Real Work. Real Impact. Real Growth.</strong></p>
+      long_description: `<p><strong>Real Work. Real Impact. Real Growth.</strong></p>
 <br>
 <p><strong>Looking for an internship where you'll do more than observe?</strong></p>
 <br>
@@ -535,19 +538,20 @@
 <p><strong>Our Commitment to Diversity and Inclusion</strong></p>
 <br>
 <p>BW Offshore is committed to providing equal employment opportunities for all. We believe in fostering a diverse and inclusive workplace and encourage all qualified candidates to apply, regardless of age, gender, disability, religion, or ethnic background.</p>`
-    
-    },  
+    },
 
-      {
-      slug: "fjordalg_prosessingenior",
-      company: "FjordAlg",
+    {
+      slug: 'fjordalg_prosessingenior',
+      company: 'FjordAlg',
       image: fjordalgLogo,
-      location: "Øvre Årdal",
-      link: "https://www.fjordalg.com",
-      applicationLink: "https://arbeidsplassen.nav.no/stillinger/stilling/3ab1c0e6-fc28-4fd2-b2c9-c2392dc3d9d9?promotion=kjemidagen-no",
-      position_type: "Sommervikar",
-      short_description: "Vi tilbyr muligheten til å arbeide i en vekstbedrift på sin ferd mot industriell produksjon.",
-      long_description:`
+      location: 'Øvre Årdal',
+      link: 'https://www.fjordalg.com',
+      applicationLink:
+        'https://arbeidsplassen.nav.no/stillinger/stilling/3ab1c0e6-fc28-4fd2-b2c9-c2392dc3d9d9?promotion=kjemidagen-no',
+      position_type: 'Sommervikar',
+      short_description:
+        'Vi tilbyr muligheten til å arbeide i en vekstbedrift på sin ferd mot industriell produksjon.',
+      long_description: `
       <p><strong>Sammendrag</strong></p>
 <br>
 <p>Sammendrag
@@ -639,19 +643,20 @@ oss til sommeren eller har spørsmål, tar du kontakt.</p>
 <p><strong>Om bedriften</strong></p>
 <br>
 <p>FjordAlg AS er en bioteknologibedrift i skjæringspunktet mellom startup og scaleup som utvikler nye løsninger for å selv produsere mikroalger i industriell skala. Vi skaper en ny bærekraftig industri gjennom utvikling av en bioteknologisk prosess og ny teknologi knyttet til denne.</p>`
-    
     },
-    
-      {
-      slug: "fjordalg_biokjemisk_ingenior",
-      company: "FjordAlg",
+
+    {
+      slug: 'fjordalg_biokjemisk_ingenior',
+      company: 'FjordAlg',
       image: fjordalgLogo,
-      location: "Øvre Årdal",
-      link: "https://www.fjordalg.com",
-      applicationLink: "https://arbeidsplassen.nav.no/stillinger/stilling/c77d534e-44c6-4794-ad8b-27eec333ccaf?promotion=kjemidagen-no",
-      position_type: "Sommervikar",
-      short_description: "Vi tilbyr muligheten til å arbeide i en vekstbedrift på sin ferd mot industriell produksjon.",
-      long_description:`
+      location: 'Øvre Årdal',
+      link: 'https://www.fjordalg.com',
+      applicationLink:
+        'https://arbeidsplassen.nav.no/stillinger/stilling/c77d534e-44c6-4794-ad8b-27eec333ccaf?promotion=kjemidagen-no',
+      position_type: 'Sommervikar',
+      short_description:
+        'Vi tilbyr muligheten til å arbeide i en vekstbedrift på sin ferd mot industriell produksjon.',
+      long_description: `
       
       <p><strong>Sammendrag</strong></p>
 <br>
@@ -742,12 +747,6 @@ teoretiske ferdigheter. Dersom du ønsker å samarbeide med oss til sommeren ell
 <p><strong>Om bedriften</strong></p>
 <br>
 <p>FjordAlg AS er en bioteknologibedrift i skjæringspunktet mellom startup og scaleup som utvikler nye løsninger for å ta mikroalger i bruk i laksefôr og som kosttilskudd. Vi skaper en ny bærekraftig industri gjennom utvikling av en bioteknologisk prosess og ny teknologi knyttet til denne.</p>`
-    
-    }, 
-
-
-
-
-
+    }
   ];
 </script>

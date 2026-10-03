@@ -1,5 +1,5 @@
-import { dev } from '$app/environment';
-import { loadTranslations } from '$lib/translations/translations';
+import { dev } from '$app/env';
+import { loadTranslations } from '#lib/translations/translations.js';
 
 import type { PageLoad } from './$types';
 

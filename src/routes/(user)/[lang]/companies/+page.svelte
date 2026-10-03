@@ -1,6 +1,7 @@
 <script lang="ts">
   import { t } from '$lib/translations/translations';
-  import companyImage from '$lib/assets/participant-logos.png';
+  import CompanyBox from './CompanyBox.svelte';
+  import { companiesMap } from './companiesMap.svelte';
 </script>
 
 <svelte:head>

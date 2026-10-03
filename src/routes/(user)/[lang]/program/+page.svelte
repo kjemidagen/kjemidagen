@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { t } from '$lib/translations/translations';
-  import Event from '$lib/components/Event.svelte';
+  import { t } from '#lib/translations/translations.js';
+  import Event from '#lib/components/Event.svelte';
 </script>
 
 <svelte:head>
@@ -13,7 +13,7 @@
     <p>
       {$t('program.description')}
     </p>
-    
+
     <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_monday')}</h3>
     <div class="flex flex-col gap-2">
       <Event
@@ -21,28 +21,25 @@
         time="10:00 - 15:00"
         location={$t('program.cv_photo_loc')}
         loc_link="https://use.mazemap.com/?utm_medium=qr-code-mobile#v=1&campusid=1&center=10.405078,63.415505&zoom=18&zlevel=-2&sharepoitype=identifier&sharepoi=360-AU2-101"
-       >
-       <p class="mt-3 leading-7">
-            {$t('program.cv_photo_desc')}
-          </p>
-       </Event> 
-      
-      
+      >
+        <p class="mt-3 leading-7">
+          {$t('program.cv_photo_desc')}
+        </p>
+      </Event>
     </div>
     <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_tuesday')}</h3>
     <div class="flex flex-col gap-2">
-        <Event
-          title={$t('program.stands')}
-          time="10:00 - 15:00"
-          location={$t('program.stands_loc')}
-          loc_link=""
-          
-        >
-         <p class="mt-3 leading-7">
-            {$t('program.stands_desc')}
-          </p>
-        </Event>
-        <div class="flex flex-col gap-2">
+      <Event
+        title={$t('program.stands')}
+        time="10:00 - 15:00"
+        location={$t('program.stands_loc')}
+        loc_link=""
+      >
+        <p class="mt-3 leading-7">
+          {$t('program.stands_desc')}
+        </p>
+      </Event>
+      <div class="flex flex-col gap-2">
         <Event
           title={$t('program.speed_interview')}
           time="10:00 - 15:00"
@@ -62,8 +59,8 @@
           <p class="mt-3 leading-7">
             {$t('program.job_marathon_desc')}
           </p>
-      </Event>
-      <Event
+        </Event>
+        <Event
           title={$t('program.mingle')}
           time="18:15"
           location={$t('program.mingle_loc')}
@@ -73,66 +70,63 @@
             {$t('program.mingle_desc')}
           </p>
         </Event>
-
-    
-        
       </div>
-    <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_wednesday')}</h3>
-    <div class="flex flex-col gap-2">
-      <Event
-        title={$t('program.opening')}
-        time="10:00"
-        location={$t('program.opening_loc')}
-        loc_link=""
+      <h3 class="mb-2 mt-8 text-2xl">{$t('program.day_wednesday')}</h3>
+      <div class="flex flex-col gap-2">
+        <Event
+          title={$t('program.opening')}
+          time="10:00"
+          location={$t('program.opening_loc')}
+          loc_link=""
         >
-        <p class="mt-3 leading-7">
+          <p class="mt-3 leading-7">
             {$t('program.opening_desc')}
           </p>
-      </Event>
-      <Event
-        title={$t('program.stands')}
-        time="10:00 - 15:00"
-        location={$t('program.stands_loc')}
-        loc_link=""
-      >
-      <p class="mt-3 leading-7">
+        </Event>
+        <Event
+          title={$t('program.stands')}
+          time="10:00 - 15:00"
+          location={$t('program.stands_loc')}
+          loc_link=""
+        >
+          <p class="mt-3 leading-7">
             {$t('program.stands_desc')}
           </p>
-      </Event>
-      <Event
-      title={$t('program.speed_interview')}
-      time="10:00 - 15:00"
-      location={$t('program.undecided')}
-      loc_link=""
-      >
-        <p class="mt-3 leading-7">
-          {$t('program.speed_interview_desc')}
-        </p>
-      </Event>
-      <Event
-        title={$t('program.job_marathon')}
-        time="13:15 - 14:00"
-        location={$t('program.undecided')}
-        loc_link=""
-      >
-        <p class="mt-3 leading-7">
-          {$t('program.job_marathon_desc')}
-        </p>
-      </Event>
-      <Event
-        title={$t('program.banquet')}
-        time="18:30"
-        location={$t('program.banquet_loc')}
-        loc_link="google.com/maps/place//data=!4m2!3m1!1s0x466d319bd29d55b3:0xe0e4e3fdf8991cd1?sa=X&ved=1t:8290&ictx=111"
-      >
-        <p class="mt-3 leading-7">
-          {$t('program.banquet_desc')}
-        </p>
-      </Event>
+        </Event>
+        <Event
+          title={$t('program.speed_interview')}
+          time="10:00 - 15:00"
+          location={$t('program.undecided')}
+          loc_link=""
+        >
+          <p class="mt-3 leading-7">
+            {$t('program.speed_interview_desc')}
+          </p>
+        </Event>
+        <Event
+          title={$t('program.job_marathon')}
+          time="13:15 - 14:00"
+          location={$t('program.undecided')}
+          loc_link=""
+        >
+          <p class="mt-3 leading-7">
+            {$t('program.job_marathon_desc')}
+          </p>
+        </Event>
+        <Event
+          title={$t('program.banquet')}
+          time="18:30"
+          location={$t('program.banquet_loc')}
+          loc_link="google.com/maps/place//data=!4m2!3m1!1s0x466d319bd29d55b3:0xe0e4e3fdf8991cd1?sa=X&ved=1t:8290&ictx=111"
+        >
+          <p class="mt-3 leading-7">
+            {$t('program.banquet_desc')}
+          </p>
+        </Event>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
 </style>
-
