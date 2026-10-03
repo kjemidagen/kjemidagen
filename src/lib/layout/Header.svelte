@@ -1,17 +1,19 @@
 <script lang="ts">
-  import { t, locales, locale } from '$lib/translations/translations';
-  import { page } from '$app/stores';
+  import { run, preventDefault } from 'svelte/legacy';
 
-  import MobileMenu from '$lib/components/MobileMenu.svelte';
-  import InfoPill from '$lib/components/InfoPill.svelte';
+  import { t, locales, locale } from '#lib/translations/translations.js';
+  import { page } from '$app/state';
 
-  import logo from '$lib/assets/logo_inverted.svg';
-  import hamburgerMenuPic from '$lib/assets/hamburgermeny.svg';
+  import MobileMenu from '#lib/components/MobileMenu.svelte';
+  import InfoPill from '#lib/components/InfoPill.svelte';
+
+  import logo from '#lib/assets/logo_inverted.svg';
+  import hamburgerMenuPic from '#lib/assets/hamburgermeny.svg';
 
   import { writable } from 'svelte/store';
   import { onMount } from 'svelte';
 
-  import { browser } from '$app/environment';
+  import { browser } from '$app/env';
 
   const createWritableStore = (key: string, startValue: any) => {
     const { subscribe, set } = writable(startValue);
@@ -39,14 +41,16 @@
     visitedStore.useLocalStorage();
   });
 
-  $: currentRoute = $page.url.pathname;
-  $: currentRouteNoLang = currentRoute.split('/').slice(2, undefined).join('/');
+  let currentRoute = $derived(page.url.pathname);
+  let currentRouteNoLang = $derived(currentRoute.split('/').slice(2, undefined).join('/'));
 
-  $: if (browser) {
-    visitedStore.set([...new Set([...$visitedStore, currentRouteNoLang])]);
-  }
+  run(() => {
+    if (browser) {
+      visitedStore.set([...new Set([...$visitedStore, currentRouteNoLang])]);
+    }
+  });
 
-  $: routes = [
+  let routes = $derived([
     {
       link: `/${$locale}`,
       label: $t('common.home'),
@@ -60,13 +64,13 @@
     {
       link: `/${$locale}/program`,
       label: $t('common.program'),
-      linkNoLang: `program`,
+      linkNoLang: `program`
       // new: $visitedStore.includes('program') - I dont see the use for this.
     },
     {
       link: `/${$locale}/companies`,
       label: $t('common.companies'),
-      linkNoLang: `companies`,
+      linkNoLang: `companies`
     },
     {
       link: `/${$locale}/sponsors`,
@@ -76,29 +80,31 @@
     {
       link: `/${$locale}/map`,
       label: $t('common.map'),
-      linkNoLang: `map`,
+      linkNoLang: `map`
     },
     {
       link: `/${$locale}/jobs`,
       label: $t('common.jobs'),
-      linkNoLang: `jobs`,
+      linkNoLang: `jobs`
     },
     {
       link: `/${$locale}/for-companies`,
       label: $t('common.for-companies'),
-      linkNoLang: `for-companies`,
+      linkNoLang: `for-companies`
     }
-  ];
+  ]);
 
-  $: langRoutes = $locales.map((locale) => ({
-    link: `/${locale}/${currentRouteNoLang}`,
-    label: locale
-  }));
+  let langRoutes = $derived(
+    $locales.map((locale) => ({
+      link: `/${locale}/${currentRouteNoLang}`,
+      label: locale
+    }))
+  );
 
-  let navOpen = false;
+  let navOpen = $state(false);
 </script>
 
-<header id="header" class="px-25 fixed w-full left-0 top-0 z-50 bg-red border-b-8 border-red-light">
+<header id="header" class="px-25 fixed left-0 top-0 z-50 w-full border-b-8 border-red-light bg-red">
   <div class="flex h-16 justify-between px-6 text-white md:justify-evenly">
     <a class="color-white flex items-center text-lg text-white lg:w-40" href={`/${$locale}`}>
       <img class="mr-1" src={logo} alt="logo" width="40" />
@@ -110,41 +116,42 @@
           class="float-left inline-flex h-full items-center justify-center px-4"
           class:bg-red-light={currentRouteNoLang === route.linkNoLang}
         >
-          <a class="m-auto justify-self-center text-white flex-inline flex" href={route.link}>
+          <a class="flex-inline m-auto flex justify-self-center text-white" href={route.link}>
             <span class="group transition duration-300">
               {route.label}
               <span
                 class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
-              />
+              ></span>
             </span>
             <InfoPill
               class="transistion-all ml-2 h-fit duration-500 {route.new
                 ? 'visible'
                 : 'hidden'} bg-blue-500 text-sm"
-            ></InfoPill>
+            />
           </a>
         </li>
       {/each}
     </ul>
     <ul class="language col-span-4 list-none overflow-hidden lg:w-40">
       {#each langRoutes as lc}
-        <li
-          class="float-left flex h-full flex-col px-2 transition-all duration-200 md:float-right"
-        >
-          <a class="m-auto justify-self-center text-white group transition duration-300" href={lc.link}>
+        <li class="float-left flex h-full flex-col px-2 transition-all duration-200 md:float-right">
+          <a
+            class="group m-auto justify-self-center text-white transition duration-300"
+            href={lc.link}
+          >
             {lc.label}
             <span
-                class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
-              />
+              class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+            ></span>
           </a>
         </li>
       {/each}
     </ul>
     <button
       class="items-right md:hidden"
-      on:click|preventDefault={() => {
+      onclick={preventDefault(() => {
         navOpen = !navOpen;
-      }}
+      })}
     >
       <img class="m-auto w-8" src={hamburgerMenuPic} alt="hamburgermeny" />
     </button>

@@ -15,7 +15,11 @@
   });
   geometry.center();
 
-  export let ry = 0;
+  interface Props {
+    ry?: number;
+  }
+
+  let { ry = 0 }: Props = $props();
 </script>
 
 <SC.Mesh

@@ -1,7 +1,7 @@
 <script>
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
-  const status = $page.status;
+  const status = page.status;
 </script>
 
 <div class="content">

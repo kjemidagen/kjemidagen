@@ -1,14 +1,14 @@
 <script lang="ts">
-  import AboutCard from '$lib/components/AboutCard.svelte';
-  import { t } from '$lib/translations/translations';
+  import AboutCard from '#lib/components/AboutCard.svelte';
+  import { t } from '#lib/translations/translations.js';
 
-  import heroSrc from '$lib/assets/styret/hero.jpg';
-  import headSrc from '$lib/assets/styret/head.jpg';
-  import deputyHeadSrc from '$lib/assets/styret/deputy_head.jpg';
-  import cfoSrc from '$lib/assets/styret/cfo.jpg';
-  import prOfficerSrc from '$lib/assets/styret/pr_officer.jpg';
-  import chiefRiggerSrc from '$lib/assets/styret/chief_rigger.jpg';
-  import eventManagerSrc from '$lib/assets/styret/event_manager.jpg';
+  import heroSrc from '#lib/assets/styret/hero.jpg';
+  import headSrc from '#lib/assets/styret/head.jpg';
+  import deputyHeadSrc from '#lib/assets/styret/deputy_head.jpg';
+  import cfoSrc from '#lib/assets/styret/cfo.jpg';
+  import prOfficerSrc from '#lib/assets/styret/pr_officer.jpg';
+  import chiefRiggerSrc from '#lib/assets/styret/chief_rigger.jpg';
+  import eventManagerSrc from '#lib/assets/styret/event_manager.jpg';
 </script>
 
 <svelte:head>
@@ -25,8 +25,8 @@
         </div>
       </div>
       <p class="text-md mb-2">{$t('about.paragraph')}</p>
-      <h3 class="mt-5 mb-5 text-2xl">{$t('about.theboard')}</h3>
-      <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3">
+      <h3 class="mb-5 mt-5 text-2xl">{$t('about.theboard')}</h3>
+      <div class="m-auto grid grid-cols-1 gap-2 md:grid-cols-3 xl:grid-cols-3">
         <AboutCard
           imgSrc={headSrc}
           name="Stine Sagmyr"
@@ -46,7 +46,7 @@
           email="okonomiansvarlig@kjemidagen.no"
         />
       </div>
-      <div class="m-auto gap-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3">
+      <div class="m-auto grid grid-cols-1 gap-2 md:grid-cols-3 xl:grid-cols-3">
         <AboutCard
           imgSrc={prOfficerSrc}
           name="Celina Klefstad Storaker"

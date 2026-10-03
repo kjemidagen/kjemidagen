@@ -3,20 +3,20 @@
   import * as SC from 'svelte-cubed';
   import Backdrop from './Backdrop.svelte';
   import Logo from './Logo.svelte';
-  import bgUrl from '$lib/assets/hero-bg.png';
+  import bgUrl from '#lib/assets/hero-bg.png';
 
-  let w = 1;
-  let h = 1;
-  let y = 0;
+  let w = $state(1);
+  let h = $state(1);
+  let y = $state(0);
 
-  let loaded = false;
+  let loaded = $state(false);
 
   import { load } from './texture';
   const map = load(bgUrl, () => {
     loaded = true;
   });
 
-  let ry = 0;
+  let ry = $state(0);
 
   // Handling click and drag
   function onMouseDown() {
@@ -61,10 +61,10 @@
 <svelte:window bind:scrollY={y} bind:innerWidth={w} bind:innerHeight={h} />
 
 <div
-  class="hero w-full top-0 left-0 md:w-[calc(100%_-_16px)] md:left-[8px]"
+  class="hero left-0 top-0 w-full md:left-[8px] md:w-[calc(100%_-_16px)]"
   class:visible={loaded}
-  on:mousedown={onMouseDown}
-  on:touchstart={onTouchStart}
+  onmousedown={onMouseDown}
+  ontouchstart={onTouchStart}
 >
   <SC.Canvas
     background={new THREE.Color(0xdedede)}

@@ -1,386 +1,752 @@
-<script lang="ts" context="module">
-  import { t } from '$lib/translations/translations';
-  import vianodeLogo from '$lib/assets/vianode.svg'
-  import elkemLogo from '$lib/assets/elkem.svg'
-  import golarLogo from '$lib/assets/golar.svg'
-  import jotunLogo from '$lib/assets/jotun.svg'
-  import borregaardLogo from '$lib/assets/borregaard.svg'
+<script lang="ts" module>
+  import { t } from '#lib/translations/translations.js';
+  import bwoffshoreLogo from '#lib/assets/bwoffshore.svg';
+  import fjordalgLogo from '#lib/assets/fjordalg.svg';
+  import golarLogo from '#lib/assets/golarlng.svg';
+  import norconsultLogo from '#lib/assets/norconsult.svg';
+
+  import vianodeLogo from '#lib/assets/vianode.svg';
+  import elkemLogo from '#lib/assets/elkem.svg';
+  import jotunLogo from '#lib/assets/jotun.svg';
+  import borregaardLogo from '#lib/assets/borregaard.svg';
   export const jobsMap = [
-    /*{
-      slug: "vianode_prosessingenior",
-      company: "Vianode",
-      image: vianodeLogo,
-      location: "Porsgrunn",
-      link: "https://www.vianode.com",
-      applicationLink: "https://careers.vianode.com/jobs/6116931-sok-deg-til-laget-vart-i-viaone-heroya-som-prosessingenior?promotion=kjemidagen-no",
-      position_type: "Fast stilling",
-      short_description: "Bli med i teamet vårt som PROSESSINGENIØR for å forme fremtiden for batteriteknologi",
-      long_description: `<p><strong>Bli med i teamet vårt som PROSESSINGENIØR for å forme fremtiden for batteriteknologi</strong></p><br><p><strong>Om Vianode</strong></p><br><p>Vianode er et avansert batterimaterialeselskap som tilbyr bærekraftige anodegrafittløsninger for batteri- og EV-verdikjedene i Nord-Amerika og Europa. Vianodes banebrytende løsning muliggjør skreddersydd high-performance syntetisk anodegrafitt og helhetlig bærekraft som gir en 90 % reduksjon i CO2-avtrykk. Vianode driver verdens mest bærekraftige fullskala anodegrafittanlegg for batterier på Herøya, Norge.</p><br><p>Det neste trinnet innebærer å gjennomføre et trinnvis investeringsprogram på flere milliarder dollar dedikert til å etablere storskalaanlegg over hele Nord-Amerika og Europa.</p><br><p>Vianodes langsiktige ambisjon er å levere avanserte batterimaterialer til 3 millioner elbiler per år innen 2030. Vianode eies av det verdensledende finansselskapet Altor.</p><br><hr><p>Vi ser etter deg som gjerne har industriell erfaring og vil jobbe i operativ industri. Du&nbsp;tar eierskap og viser initiativ, utfører dine arbeidsoppgaver og er nysgjerrig, samt at du evner å tilpasse deg i en hverdag der vi bygger ny industri.</p><br><p>Du ser løsninger selv om andre ser problemer og tar ansvar for å skape et godt arbeidsmiljø i teamet og på arbeidsplassen vår.</p><br><p><strong>Norsk skriftlig og muntlig er et absolutt krav </strong>da du er ansvarlig for utarbeidelsen av prosedyrer og opplæring av prosessoperatører.</p><br><p>Arbeidstiden er fleksibel og du har overtid. Du må gjerne antyde hvor raskt du kan starte hos oss. Vi er en tariffbedrift.</p><br><p><strong>Ansvarsområder</strong></p><br><ul class="list-disc list-outside ml-6"> 
-        <li>Ansvarlig for daglig drift av prosesser i en av fabrikkens seksjoner</li>
-        <li>Ansvarlig for hele prosessen som en del av et team</li>
-        <li>Analyse av prosessdata, optimalisering av HMS/kvalitet/volum/kostnader</li>
-        <li>Forbedringsarbeid knyttet til prosess og støttesystemer</li>
-        <li>Etablere og sørge for at prosessen driftes etter gjeldende standarder</li>
-        <li>Nøkkelperson i ledelsen av forbedringsteam</li>
-        <li>Opplæring og støtte til prosessoperatører</li>
-        </ul><p><strong><br></strong></p><br><p><strong>Nøkkelkvalifikasjoner</strong></p><br><ul class="list-disc list-outside ml-6">
-        <li>Minimum BSc eller MSc grad innen en ingeniørdisiplin; elektro, kjemisk, automasjon</li>
-        <li>Helst erfaring som prosessingeniør i industriell produksjon</li>
-        <li>Kunnskap om prosessdesign, -optimalisering og -kontroll</li>
-        <li>Evne til å identifisere og løse komplekse tekniske problemer</li>
-        <li>God analytisk tenkning og evne til å tolke data i problemløsning.</li>
-        <li>Erfaring med å gjennomføre risikoanalyser og vurdere potensielle løsninger</li>
-        <li>Evne til å utføre tekniske beregninger og analyser</li>
-        <li>Sterk forståelse for ulike industrielle prosesser innen er en fordel;<ul class="list-disc list-outside ml-6">
-        <li>Kjemisk, petrokjemi, raffineri, metallurgi, elektro, automasjon, mekanisk</li>
-        </ul></li>
-        <li>Erfaring med å presentere tekniske konsepter og resultater til ulike målgrupper</li>
-        <li>Erfaringer med forbedringsarbeid i team</li>
-        <li>Erfaring med Lean er en fordel</li>
-        </ul><p> <strong>Personlige egenskaper</strong></p><br><ul class="list-disc list-outside ml-6">
-        <li>Nysgjerrig og motiveres av problemløsning for å finne innovative løsninger på komplekse prosess-, og teknologiutfordringer</li>
-        <li>Evne til å utarbeide prosjektplaner, overvåke detaljer og skape fremdrift og rapportere resultat</li>
-        <li>Evne til å arbeide effektivt i team og samarbeide med ulike interessenter, i et internasjonalt selskap</li>
-        <li>Løsningsorientert med faglige ambisjoner</li>
-        <li>Interesse for ny teknologi og forbedre eksisterende prosesser</li>
-        <li>Bevisst viktigheten av gode HMS regler og rutiner</li>
-        <li>Gode datakunnskaper</li>
-        <li>God muntlig og skriftlig fremstillingsevne i engelsk</li>
-        </ul><p>Vianode har gode ordninger og vi kan tilby et aktivt arbeidsmiljø med hyggelige og positive mennesker. Vi arrangerer sommerfest og julebord, samt har tilgang til medlemsfordeler på fritidstilbud i Grenlandsområdet. Vi er tilknyttet Bedriftsidretten og Bedriftshelsetjenesten i Telemark og har mange aktive kollegaer.</p><br><p>Kontaktpersoner:</p><p>Bjørn-Erik Bjørnstad - mob 913 03 601 eller Aleksander Kolstad mob. 958 28 911<em><br></em></p><br>` 
+    {
+      slug: 'norconsult_va_radgiver',
+      company: 'Norconsult',
+      image: norconsultLogo,
+      location: 'Sandvika Kjørbo',
+      link: 'https://www.norconsult.com',
+      applicationLink:
+        'https://norconsult.no/karriere/ledige-stillinger/req-6351/?promotion=kjemidagen-no',
+      position_type: 'Fast stilling',
+      short_description: 'Vil du lære mer om vannbehandling og avløpsrensing?',
+      long_description: `<p><strong>Vil du lære mer om vannbehandling og avløpsrensing?</strong></p>
+<br>
+<p>I Norconsult finner du landets største rådgivende fagmiljø innen vann- og avløpsteknikk med over 300 medarbeidere i Norge. På avdeling Vann - Prosess ved Norconsults hovedkontor i Sandvika er vi rundt 50 medarbeidere med høy kompetanse og stor faglig bredde. Hos oss møter du engasjerte kolleger, fra unge nyutdannede til erfarne og kompetente seniorer med stort nettverk i bransjen. Vi har et arbeidsmiljø vi er stolte av!</p>
+<br>
+<p>Vår arbeidsdag er preget av stor variasjon, og vi løser store og små oppgaver for et bredt spekter av kunder i alle prosjektfaser. For oss er det viktig å se helheten i kundens behov og at vår kunnskap bidrar til et mer verdifullt samfunn. Vi arbeider i tverrfaglige team for å finne bærekraftige løsninger på alt fra slambehandling og biogass til prosessanlegg for drikkevann, avløp og industri.</p>
+<br>
+<p>Vi ønsker å utvide vår virksomhet for å møte etterspørselen etter rådgivningstjenester i bransjen. Vi ser stor verdi i å ansette nyutdannede medarbeidere for å dra nytte av oppdatert fagkunnskap og kjennskap til nye verktøy. Har du lyst til å bidra til videreutvikling av vårt fagmiljø fra høsten 2027?</p>
+<br>
+<hr>
+<p><strong>Dine arbeidsoppgaver vil være:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Prosjektering av vannbehandlings- og avløpsrenseanlegg, slambehandlings- og biogassanlegg</li>
+    <li>Prosessberegninger</li>
+    <li>Tverrfaglig samarbeid for optimalisering av løsninger</li>
+    <li>Bruk av visualiseringsverktøy og innsynsmodeller</li>
+</ul>
+<p><strong><br></strong></p>
+<p><strong>For oss er det viktig at du:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Tar ansvar, er initiativrik og løsningsorientert</li>
+    <li>Bidrar til et godt faglig og sosialt miljø</li>
+    <li>Er engasjert og nysgjerrig</li>
+    <li>Har en relevant master-/bachelorgrad</li>
+    <li>Har gode norskkunnskaper, både skriftlig og muntlig</li>
+</ul>
+<p><strong><br></strong></p>
+<p><strong>Hos oss får du:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Spennende kompetansehevings- og karrieremuligheter innen marked, fag, linje og oppdrag</li>
+    <li>Verdibasert samfunnsplanlegging med fokus på fremtidsrettede og bærekraftige løsninger</li>
+    <li>Sterk bedriftskultur preget av uformelle kommunikasjonslinjer på tvers av organisasjon og geografi</li>
+    <li>Eget fora for yngre medarbeidere med direkte tilgang til konsernets toppledelse (Yngres Råd)</li>
+    <li>Fleksibel arbeidstid</li>
+    <li>Bonus knyttet til selskapets resultat</li>
+    <li>Aksjeprogram for eierskap i Norges største tverrfaglige rådgiverbedrift</li>
+    <li>Konkurransedyktige lønns- og ansettelsesbetingelser</li>
+    <li>Studieturer, interne fagsamlinger, ulike sosiale arrangementer, bedriftsidrettslag m.m.</li>
+</ul>
+<br>
+<p>Denne stillingen er plassert under avdeling Vann - Prosess, ved Norconsults hovedkontor. Innplassering på faggruppe vil avklares nærmere, på bakgrunn av interesse og behov.</p>
+<br>
+<p>Kontorsted: Hovedkontoret i Sandvika eller på et av selskapets øvrige lokasjoner i Norge.</p>
+<br>
+<hr>
+<p><strong>Om Norconsult</strong></p>
+<br>
+<p>Norconsult er et ledende nordisk rådgiverselskap. Vi kombinerer ingeniørfag med arkitektur og digital kompetanse, på tvers av små og store prosjekter i privat og offentlig sektor, innen infrastruktur, energi og industri, bygg, eiendom og arkitektur. Gjennom nyskaping og innovasjon, og med formålet «Hver dag forbedrer vi hverdagen», søker vi stadig etter mer bærekraftige, effektive og samfunnsnyttige løsninger. Med hovedkontor i Sandvika i Norge og om lag 7 200 medarbeidere fordelt på over 140 kontorer i Norge, Sverige, Danmark, Island, Polen og Finland, kombinerer vi tverrfaglig kompetanse med lokal tilstedeværelse.</p>
+<br>
+<p>For Norconsult er det en grunnleggende forutsetning at alle mennesker er likeverdige. Målet er at våre medarbeidere skal ha de samme mulighetene til å nå sitt fulle potensial uavhengig av hvem de er eller hvordan de identifiserer seg. Et bredere spekter av perspektiver hjelper oss å forstå alle deler av samfunnet, utfordrer oss i våre oppdrag og fører til en høyere grad av innovasjon. Vi ønsker derfor medarbeidere med ulik bakgrunn og erfaring velkommen.</p>
+<br>
+<p>Vi gjør oppmerksom på at det kun er elektroniske søknader som blir behandlet.</p>
+<br>
+<p>Søknader blir vurdert fortløpende.</p>
+<br>
+<p>Vi ser frem til å motta din søknad!</p>`
+    },
+
+    {
+      slug: 'norconsult_vvs',
+      company: 'Norconsult',
+      image: norconsultLogo,
+      location: 'Sandvika Vestfjordgaten',
+      link: 'https://www.norconsult.com',
+      applicationLink:
+        'https://norconsult.no/karriere/ledige-stillinger/req-6376/?promotion=kjemidagen-no',
+      position_type: 'Fast stilling',
+      short_description:
+        'Vil du jobbe med utviklingen av fremtidens industri- og produksjonsanlegg?',
+      long_description: `<p><strong>Vil du jobbe med utviklingen av fremtidens industri- og produksjonsanlegg?</strong></p>
+<br>
+<p>Hos Norconsult blir du tidlig involvert i reelle oppdrag, samtidig som du får god oppfølging fra erfarne kolleger. Du får varierte oppgaver, gode utviklingsmuligheter og tilgang til et av Norges største tverrfaglige rådgivermiljøer.</p>
+<br>
+<p>Norconsult er ledende innen rådgivning og prosjektering av tekniske systemer for industri. Vi kombinerer solid fagkompetanse, digitale verktøy, kunstig intelligens og tverrfaglig samarbeid for å utvikle effektive og bærekraftige løsninger for norsk industri.</p>
+<br>
+<p>Avdeling Industriell prosess og ventilasjon i Sandvika består av over 50 medarbeidere og er en del av Divisjon Industri ved hovedkontoret. Vi jobber med komplekse anlegg innen blant annet legemiddel- og næringsmiddelindustri, verks-, metall- og produksjonsindustri, renseanlegg, grønn industri og kraftverk. Oppdragene spenner fra tidligfase og konseptutvikling til detaljprosjektering og oppfølging under gjennomføring. Hos oss møter du et inkluderende miljø med både nyutdannede og erfarne medarbeidere, og tett samarbeid med andre tekniske fagområder der vi ofte utvikler prosjektene i tett dialog med kundene våre.</p>
+<br>
+<hr>
+<p><strong>Dine arbeidsoppgaver vil være:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Prosjektering av prosess-, ventilasjons- og VVS-tekniske anlegg</li>
+    <li>Utvikling og vurdering av tekniske konsepter og løsninger</li>
+    <li>Beregninger, analyser og dimensjonering</li>
+    <li>Utarbeidelse av tegninger, modeller, beskrivelser og annet teknisk underlag</li>
+    <li>Arbeid med BIM, 3D-modeller, KI og digitale prosjekteringsverktøy</li>
+    <li>Deltakelse i tverrfaglige prosjektteam</li>
+    <li>Kontakt og samarbeid med kunder, leverandører og andre fagmiljøer</li>
+    <li>Oppfølging av prosjekter gjennom ulike faser</li>
+</ul>
+<p>Dine konkrete arbeidsoppgaver vil bli tilpasset utdanningen, kompetansen og interessene dine.</p>
+<br>
+<p><strong>For oss er det viktig at du:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Fullfører bachelor- eller masterutdanning våren 2027 innen Kjemi, energi og miljø, VVS, maskin, prosess eller tilsvarende fagområde</li>
+    <li>Har faglig interesse og et ønske om å utvikle deg</li>
+    <li>Er nysgjerrig, initiativrik og løsningsorientert</li>
+    <li>Er ansvarsbevisst og opptatt av kvalitet i egne leveranser</li>
+    <li>Trives med samarbeid på tvers av fagområder</li>
+    <li>Kommuniserer godt på norsk, både muntlig og skriftlig</li>
+</ul>
+<br>
+
+<p>Relevant erfaring fra sommerjobb, praksis, prosjektarbeid eller studentaktiviteter er positivt, men ikke et krav.</p>
+<br>
+<p><strong>Hos oss får du:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>En trygg start på arbeidslivet med god faglig oppfølging, tilrettelagt opplæring og samarbeid med noen av de fremste fagmiljøene i bransjen</li>
+    <li>Varierte arbeidsoppgaver i spennende industriprosjekter, fra tidligfase og konseptutvikling til detaljprosjektering og gjennomføring</li>
+    <li>Gode utviklingsmuligheter innen fag, oppdragsledelse, marked og ledelse</li>
+    <li>Mulighet til å jobbe med ny teknologi, KI og digitale prosjekteringsmetoder</li>
+    <li>Stor fleksibilitet og mulighet til å påvirke egen arbeidshverdag</li>
+    <li>Et inkluderende arbeidsmiljø med sterke fagnettverk, Yngres Råd, fagsamlinger, sosiale arrangementer og bedriftsidrettslag</li>
+    <li>Konkurransedyktige betingelser, resultatbonus og mulighet for medeierskap gjennom Norconsults aksjeprogram</li>
+</ul>
+<br>
+<p>Kontorsted Sandvika.</p>
+<br>
+<p><strong>Innsendelse av søknad</strong></p>
+<br>
+<p>Søknad med CV og vitnemål eller karakterutskrift sendes via vårt elektroniske søknadsskjema på nettsiden vår. Skriv gjerne litt om hvilke fagområder du interesserer deg for, hva som motiverer deg og hvorfor du ønsker å arbeide med industriprosjekter. Bruk gjerne KI, men hold det kort og konsist.</p>
+<br>
+<hr>
+<p><strong>Norconsult</strong></p>
+<br>
+<p>Norconsult er et ledende nordisk rådgiverselskap. Vi kombinerer ingeniørfag med arkitektur og digital kompetanse, på tvers av små og store prosjekter i privat og offentlig sektor, innen infrastruktur, energi og industri, bygg, eiendom og arkitektur. Gjennom nyskaping og innovasjon, og med formålet «Hver dag forbedrer vi hverdagen», søker vi stadig etter mer bærekraftige, effektive og samfunnsnyttige løsninger. Med hovedkontor i Sandvika i Norge og over 7 200 medarbeidere fordelt på over 140 kontorer i Norge, Sverige, Danmark, Island, Polen og Finland, kombinerer vi tverrfaglig kompetanse med lokal tilstedeværelse.</p>
+<br>
+<p>For Norconsult er det en grunnleggende forutsetning at alle mennesker er likeverdige. Målet er at våre medarbeidere skal ha de samme mulighetene til å nå sitt fulle potensial uavhengig av hvem de er eller hvordan de identifiserer seg. Et bredere spekter av perspektiver hjelper oss å forstå alle deler av samfunnet, utfordrer oss i våre oppdrag og fører til en høyere grad av innovasjon. Vi ønsker derfor medarbeidere med ulik bakgrunn og erfaring velkommen.</p>
+<br>
+<p>Vi ser frem til å motta din søknad!</p>
+<br>
+<p>Vi gjør oppmerksom på at det kun er elektroniske søknader som blir behandlet.</p>`
+    },
+
+    {
+      slug: 'norconsult_sommerjobb_va',
+      company: 'Norconsult',
+      image: norconsultLogo,
+      location: 'Drammen, Hønefoss, Lillestrøm, Oslo',
+      link: 'https://www.norconsult.com',
+      applicationLink:
+        'https://norconsult.no/karriere/ledige-stillinger/req-6349/?promotion=kjemidagen-no',
+      position_type: 'Sommerjobb',
+      short_description:
+        'Sommerjobb innen vann og avløp i Norges største tverrfaglige rådgiverbedrift?',
+      long_description: `<p><strong>Sommerjobb innen vann og avløp i Norges største tverrfaglige rådgiverbedrift?</strong></p>
+<br>
+<p>I Norconsult finner du landets største rådgivende fagmiljø innen vann- og avløpsteknikk. På forretningsenhet Vann og Vann Prosess ved Norconsults hovedkontor er vi rundt 150 medarbeidere med høy kompetanse og stor faglig bredde. Hos oss møter du engasjerte kolleger, fra unge nyutdannede til erfarne og kompetente seniorer med stort nettverk i bransjen. Vi har et arbeidsmiljø vi er stolte av!</p>
+<br>
+<p>Vår arbeidsdag er preget av stor variasjon, og vi løser store og små oppgaver for et bredt spekter av kunder i alle prosjektfaser. For oss er det viktig å se helheten i kundens behov og at vår kunnskap bidrar til et mer verdifullt samfunn. Vi arbeider i tverrfaglige team for å finne bærekraftige løsninger på alt fra overvann- og ledningsanlegg til prosessanlegg for vann, avløp og industri.</p>
+<br>
+<p>Vi ønsker å bli kjent med dyktige og engasjerte studenter, og bruker sommerjobben som en aktiv arena for rekruttering av nye medarbeidere. Er du nysgjerrig på rådgiverbransjen og Norconsult som en potensiell fremtidig arbeidsgiver? Vil du ha sommerjobb hos oss sommeren 2027?</p>
+<br>
+<hr>
+<p><strong>Dine arbeidsoppgaver vil være:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Prosjektering av ledningsanlegg for vann, spillvann og overvann og/eller</li>
+    <li>Prosjektering av vannbehandlings- og avløpsrenseanlegg</li>
+    <li>Tverrfaglig samarbeid for optimalisering av løsninger</li>
+    <li>Bruk av visualiseringsverktøy og innsynsmodeller</li>
+</ul>
+<p><strong><br></strong></p>
+<p><strong>For oss er det viktig at du:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Fortrinnsvis er masterstudent på 3. eller 4. året, med relevante fagvalg, eller</li>
+    <li>Bachelorstudent på 2. eller 3. året, med relevante fagvalg</li>
+    <li>Er engasjert og nysgjerrig</li>
+    <li>Er strukturert og pliktoppfyllende</li>
+    <li>Bidrar til et godt sosialt og faglig miljø</li>
+    <li>Har gode norskkunnskaper, både skriftlig og muntlig</li>
+</ul>
+<p><strong><br></strong></p>
+<p><strong>Som sommerstudent hos oss får du:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Miljøbevisst samfunnsplanlegging</li>
+    <li>Fadderordning, sosiale og faglige arrangementer, bedriftsidrettslag m.m.</li>
+    <li>Sommerstudentdag i Oslo for hele landet</li>
+    <li>Konkurransedyktig lønns- og ansettelsesbetingelser</li>
+</ul>
+<br>
+<p>Denne stillingen er plassert under forretningsenhet Vann ved Norconsults hovedkontor. Innplassering på avdeling og gruppe vil avklares nærmere, på bakgrunn av interesse og behov. Skriv gjerne litt om dine faglige interesser i søknaden.</p>
+<br>
+<p>Kontorsted: Hovedkontoret i Sandvika eller på et av hovedkontorets øvrige lokasjoner (Oslo, Drammen, Hønefoss, Lillestrøm) i kombinasjon med Sandvika. Det er fint om du angir hvilken lokasjon som er mest aktuell for deg i søknaden.</p>
+<br>
+<p><strong>Innsendelse av søknad</strong></p>
+<br>
+<p>Søknad med CV, vitnemål og attester sendes via vårt elektroniske søknadsskjema på våre internettsider. Vi gjør oppmerksom på at det kun er elektroniske søknader som blir behandlet. Søknader blir vurdert fortløpende.</p>
+<br>
+<hr>
+<p><strong>Om Norconsult</strong></p>
+<br>
+<p>Norconsult er et ledende nordisk rådgiverselskap. Vi kombinerer ingeniørfag med arkitektur og digital kompetanse, på tvers av små og store prosjekter i privat og offentlig sektor, innen infrastruktur, energi og industri, bygg, eiendom og arkitektur. Gjennom nyskaping og innovasjon, og med formålet «Hver dag forbedrer vi hverdagen», søker vi stadig etter mer bærekraftige, effektive og samfunnsnyttige løsninger. Med hovedkontor i Sandvika i Norge og om lag 7 200 medarbeidere fordelt på over 140 kontorer i Norge, Sverige, Danmark, Island, Polen og Finland, kombinerer vi tverrfaglig kompetanse med lokal tilstedeværelse.</p>
+<br>
+<p>For Norconsult er det en grunnleggende forutsetning at alle mennesker er likeverdige. Målet er at våre medarbeidere skal ha de samme mulighetene til å nå sitt fulle potensial uavhengig av hvem de er eller hvordan de identifiserer seg. Et bredere spekter av perspektiver hjelper oss å forstå alle deler av samfunnet, utfordrer oss i våre oppdrag og fører til en høyere grad av innovasjon. Vi ønsker derfor medarbeidere med ulik bakgrunn og erfaring velkommen.</p>
+<br>
+<p>Vi ser frem til å motta din søknad!</p>`
     },
     {
-      slug: "elkem_technical_trainee",
-      company: "Elkem",
-      image: elkemLogo,
-      location: "Oslo",
-      link: "https://www.elkem.com/",
-      applicationLink: "https://elkem.easycruit.com/vacancy/application/send/3543061/77635?channel=kjemidagen-no",
-      position_type: "Permanent position",
-      short_description: "Eager to start your career in an innovative global company, creating sustainable solutions for tomorrow?",
-      long_description: `<p class="mb-4">
-          We are looking for tomorrows technical experts, with passion for sustainability, technology and continuous improvement. As our technical trainee, you will take part in our innovative projects to increase the sustainability and efficiency of our operations across the world.
-        </p>
-        <p class="mb-4">
-          In our two-year technical trainee program, you will be given challenging work assignments and projects, a personal sponsor and an individual development plan. This is a unique opportunity for personal and professional development and an excellent way to kick-start your career in the processing industry.
-        </p>
-        <p class="mb-4">
-          Our trainees are required to relocate 3 times during the two-year trainee period to learn about our activities and organisation. We focus on locations at our production plants, close to the value creating processes.
-        </p>
-
-        <p class="mb-2">The main work assignments will be based on your competences and interests, and could include:</p>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Operation-related issues, based on continuous improvement</li>
-          <li>Activities related to digital/automation/process control and cybernetics</li>
-          <li>Research and development projects on processes and products</li>
-          <li>Environmental and energy efficiency projects to increase sustainability</li>
-          <li>The work assignments will vary according to the needs of the receiving unit.</li>
-        </ul>
-
-        <p class="mb-2">Qualifications required for the position:</p>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Master of Science with great academic results from studies like metallurgy, materials technology, mechanical engineering, electro, energy &amp; environment, cybernetics, automation and control, nanotechnology, mechatronics, physics or chemical engineering</li>
-          <li>Recent graduates with maximum two years of relevant work experience</li>
-          <li>Good communication skills in English and a Scandinavian language, preferably Norwegian; Other important languages in Elkem are Chinese, French, and Portuguese.</li>
-          <li>Flexibility in challenges and mobility.</li>
-        </ul>
-
-        <p class="mb-4">
-          To thrive as a trainee in Elkem, we believe that you should be highly motivated to join a challenging and exciting trainee program where you will get to know many new colleagues and learn a lot about how we work.
-        </p>
-        <p class="mb-4">
-          You have excellent cooperation skills, show initiative, and take responsibility for your tasks. In order to succeed in the role of trainee, it is important that you have outstanding analytical skills and quickly can familiarise yourself with new disciplines and topics. You are curious and eager to learn and have a great desire to contribute to development and continuous improvement.
-        </p>
-        <p class="mb-4">
-          You can read more about the graduate program on our website, and here you will also find our inspiring trainee blog.
-        </p>
-        <p class="mb-4">Feel free to write your application in English or Norwegian.</p>`
+      slug: 'norconsult_sommerjobb_industri',
+      company: 'Norconsult',
+      image: norconsultLogo,
+      location: 'Sandvika Vestfjordgaten',
+      link: 'https://www.norconsult.com',
+      applicationLink:
+        'https://norconsult.no/karriere/ledige-stillinger/req-6377/?promotion=kjemidagen-no',
+      position_type: 'Sommerjobb',
+      short_description:
+        'Vil du prøve deg som rådgivende ingeniør og få erfaring fra reelle industriprosjekter?',
+      long_description: `<p><strong>Vil du prøve deg som rådgivende ingeniør og få erfaring fra reelle industriprosjekter?</strong></p>
+<br>
+<p>Som sommerstudent hos Norconsult får du relevante faglige oppgaver, god oppfølging og mulighet til å bli kjent med et stort tverrfaglig rådgivermiljø. Du blir en del av et sosialt og inkluderende studentmiljø gjennom sommeren.</p>
+<br>
+<p>Norconsult er ledende innen rådgivning og prosjektering av tekniske systemer for industri. Vi kombinerer solid fagkompetanse, digitale arbeidsmetoder og tverrfaglig samarbeid for å utvikle effektive og bærekraftige løsninger for norsk industri.</p>
+<br>
+<p>Avdeling Industriell prosess og ventilasjon i Sandvika består av over 50 medarbeidere og er en del av Divisjon Industri ved hovedkontoret. Vi jobber med komplekse anlegg innen blant annet legemiddel- og næringsmiddelindustri, verks-, metall- og produksjonsindustri, renseanlegg, grønn industri og kraftverk. Oppdragene spenner fra tidligfase og konseptutvikling til detaljprosjektering og oppfølging under gjennomføring. Som sommerstudent blir du en del av et fagmiljø med både unge og erfarne medarbeidere, og får oppgaver som er relevante for utdanningen din.</p>
+<br>
+<hr>
+<p><strong>Dine arbeidsoppgaver vil være:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Bistå med prosjektering av prosess-, ventilasjons- og VVS-tekniske anlegg</li>
+    <li>Delta i utvikling og vurdering av tekniske konsepter</li>
+    <li>Utføre beregninger, analyser og dimensjonering</li>
+    <li>Arbeide med BIM, 3D-modeller, KI og digitale prosjekteringsverktøy</li>
+    <li>Utarbeide tegninger, beskrivelser og annet teknisk underlag</li>
+    <li>Delta i tverrfaglige prosjektteam</li>
+    <li>Bidra i interne utviklingsoppgaver og faglige initiativer</li>
+</ul>
+<br>
+<p>Arbeidsoppgavene vil bli tilpasset utdanningen og interessene dine, samt hvilke prosjekter som pågår i sommerperioden.</p>
+<br>
+<p><strong>For oss er det viktig at du:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Studerer på 3. eller 4. året</li>
+    <li>Har fagområde innen energi og miljø, prosess, kjemi, maskin eller VVS</li>
+    <li>Har et faglig engasjement og ønsker å lære</li>
+    <li>Er nysgjerrig, initiativrik og løsningsorientert</li>
+    <li>Trives med å samarbeide med andre</li>
+    <li>Er ansvarsbevisst og arbeider strukturert</li>
+    <li>Ønsker å bli kjent med hverdagen som rådgivende ingeniør</li>
+</ul>
+<br>
+<p><strong>Hos oss får du:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Relevant arbeidserfaring fra reelle industriprosjekter og innblikk i hverdagen som rådgivende ingeniør</li>
+    <li>Faglig oppfølging fra erfarne kolleger og mulighet til å jobbe sammen med noen av bransjens sterkeste fagmiljøer</li>
+    <li>Erfaring med ulike fagområder, prosjektfaser og digitale verktøy, inkludert BIM, KI og moderne prosjekteringsmetoder</li>
+    <li>Et inkluderende arbeidsmiljø med fadderordning, faglige og sosiale arrangementer og felles sommerstudentdag i Sandvika</li>
+    <li>Konkurransedyktige lønns- og ansettelsesbetingelser</li>
+</ul>
+<br>
+<p><strong>Kontorsted</strong></p>
+<br>
+<p>Sandvika.</p>
+<br>
+<p><strong>Innsendelse av søknad</strong></p>
+<br>
+<p>Søknad med CV og vitnemål eller karakterutskrift sendes via vårt elektroniske søknadsskjema på nettsiden vår. Skriv gjerne litt om faginteressene dine, hva du ønsker å lære og hvorfor du søker sommerjobb hos oss.</p>
+<br>
+<hr>
+<p><strong>Norconsult</strong></p>
+<br>
+<p>Norconsult er et ledende nordisk rådgiverselskap. Vi kombinerer ingeniørfag med arkitektur og digital kompetanse, på tvers av små og store prosjekter i privat og offentlig sektor, innen infrastruktur, energi og industri, bygg, eiendom og arkitektur. Gjennom nyskaping og innovasjon, og med formålet «Hver dag forbedrer vi hverdagen», søker vi stadig etter mer bærekraftige, effektive og samfunnsnyttige løsninger. Med hovedkontor i Sandvika i Norge og om lag 7 200 medarbeidere fordelt på over 140 kontorer i Norge, Sverige, Danmark, Island, Polen og Finland, kombinerer vi tverrfaglig kompetanse med lokal tilstedeværelse.</p>
+<br>
+<p>For Norconsult er det en grunnleggende forutsetning at alle mennesker er likeverdige. Målet er at våre medarbeidere skal ha de samme mulighetene til å nå sitt fulle potensial uavhengig av hvem de er eller hvordan de identifiserer seg. Et bredere spekter av perspektiver hjelper oss å forstå alle deler av samfunnet, utfordrer oss i våre oppdrag og fører til en høyere grad av innovasjon. Vi ønsker derfor medarbeidere med ulik bakgrunn og erfaring velkommen.</p>
+<br>
+<p>Vi ser frem til å motta din søknad!</p>
+<br>
+<p>Vi gjør oppmerksom på at det kun er elektroniske søknader som blir behandlet.</p>`
     },
+
     {
-      slug: "golar_lng_internship",
-      company: "Golar LNG",
+      slug: 'golar_lng',
+      company: 'Golar LNG',
       image: golarLogo,
-      location: "Oslo",
-      link: "https://www.golarlng.com/",
-      applicationLink: "https://www.finn.no/job/ad/429899173?srsltid=AfmBOoqvMh7NVVNSItWmNH2gaTLsXEmEnQv29ogRxhMinR8mcOVuUGUI",
-      position_type: "Summer Internship",
-      short_description: "Unlock your potential with Golar LNG next summer!",
-      long_description: `<p class="mb-4">
-          Are you looking for a summer internship experience that will connect you to the world of LNG, Offshore, and Energy? Golar LNG is offering a unique opportunity for <strong>ambitious students</strong> who are ready to take on a challenge.
-        </p>
-        <p class="mb-4">
-          At our Oslo office, which is the main office for Golar LNG's vessel operations and technical developments, you'll spend 6/8 weeks working alongside experts shaping the future of energy, while contributing to real projects.
-        </p>
-        <p class="mb-2">
-          We are seeking curious and motivated <strong>3rd or 4th year</strong> students that have a strong interest in the field of Energy and/or the Offshore Industry, and are currently studying one of the following disciplines: Engineering, Technology, Business, Science, or related fields.
-        </p>
-        <p class="mb-2">You can apply for any of the following projects:</p>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Technical Safety Engineer</li>
-          <li>Maintenance Engineer</li>
-          <li>Business Intelligence</li>
-          <li>Process Engineer (x2)</li>
-          <li>Barrier Management</li>
-          <li>ESG Analyst</li>
-          <li>IT Infrastructure</li>
-          <li>Business Development (London Based)</li>
-        </ul>
-        <p class="mb-2">In Golar, we are looking for individuals who possess a unique combination of qualities:</p>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Adaptable</li>
-          <li>Curious</li>
-          <li>Positive, proactive and self-driven</li>
-          <li>Excellent communication skills, both verbal and written (in English); fluency in Norwegian is beneficial but not necessary</li>
-          <li>Identifies themselves with our core values - pioneering spirit, safety first, integrity, responsibility, teamwork, and accountability</li>
-        </ul>
-        <p class="mb-2">What we offer in return:</p>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>A welcoming and inclusive workplace</li>
-          <li>Learning and mentorship from experienced professionals</li>
-          <li>Meaningful projects with real responsibility</li>
-          <li>Competitive compensation</li>
-          <li>Social activities and networking opportunities</li>
-          <li>Office located conveniently in the centre of Oslo</li>
-        </ul>
-        <p class="mb-4">
-          Take advantage of this opportunity to explore the LNG and the offshore industry while learning from the best at Golar LNG. We believe that investing in our interns is paramount for a successful future. If you have what it takes, we would love to hear from you!
-        </p>
-        <p class="mb-2"><strong>Additional information</strong></p>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Application deadline: 13.11.2025. Please attach your CV and transcripts from higher education.</li>
-          <li>Let us know which project you are most interested in joining when applying.</li>
-          <li>Candidates must submit their applications through our finn.no portal.</li>
-          <li>Candidates will be evaluated continuously.</li>
-        </ul>`
+      location: 'Oslo',
+      link: 'https://www.golarlng.com/',
+      applicationLink: 'https://www.finn.no/job/ad/477483379?promotion=kjemidagen-no',
+      position_type: 'Sommerjobb',
+      short_description:
+        'Vil du jobbe med utviklingen av fremtidens industri- og produksjonsanlegg?',
+      long_description: `<p><strong>Unlock your potential with Golar LNG next summer!</strong></p>
+<br>
+<p>Are you looking for a summer internship experience that will connect you to the world of LNG, Offshore and Energy? Golar LNG is offering a unique opportunity for <strong>ambitious students</strong> who are ready to take on a challenge.</p>
+<br>
+<p>At our Oslo office, which is the main office for Golar LNG’s vessel operations and technical developments, you will spend <strong>6-8 weeks</strong> working alongside experts shaping the future of energy, while contributing to real projects.</p>
+<br>
+<p>We are looking for curious and motivated students in their <strong>3rd or 4th</strong> year of study who have an interest in the energy and offshore industry and are pursuing a degree in engineering, technology, business, science or a related field.</p>
+<br>
+<hr>
+<p><strong>You can apply for any of the following projects:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Business Development (London Based)</li>
+    <li>Legal (London Based)</li>
+    <li>ESG Analyst</li>
+    <li>Barrier Management (x2)</li>
+    <li>Process Engineer (x2)</li>
+    <li>Maintenance Management</li>
+    <li>Rotating Equipment</li>
+    <li>EICT Engineer</li>
+    <li>Digital Operations Engineer</li>
+    <li>IT Infrastructure</li>
+    <li>IT Security (GRC)</li>
+</ul>
+<br>
+<p><strong>In Golar, we are looking for individuals who possess a unique combination of qualities:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Adaptable</li>
+    <li>Curious</li>
+    <li>Positive, proactive and self-driven</li>
+    <li>Excellent communication skills, both verbal and written (in English); fluency in Norwegian is beneficial but not necessary</li>
+    <li>Identifies themselves with our core values – pioneering spirit, safety first, integrity, responsibility, teamwork, and accountability</li>
+</ul>
+<br>
+<p><strong>What you can expect as a Golar intern:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Exposure to an international and specialised business environment</li>
+    <li>Learning and mentorship from experienced professionals</li>
+    <li>Meaningful projects with real responsibility</li>
+    <li>Competitive compensation</li>
+    <li>Social activities and networking opportunities</li>
+    <li>Office located conveniently in the centre of Oslo</li>
+</ul>
+<br>
+<p>Take advantage of this opportunity to explore the LNG and offshore industry while learning from the best at Golar LNG. We believe that investing in our interns is paramount for a successful future. If you have what it takes, we would love to hear from you!</p>
+<br>
+<hr>
+<p><strong>Additional information</strong></p>
+<br>
+<p>The application deadline is 8th of November, but we encourage you to apply as soon as possible as we will be evaluating candidates continuously.</p>
+<br>
+<p>For us to properly evaluate your application, please attach your CV and transcripts from higher education. When applying, <strong>let us know which project you are most interested in joining. If you do not state any projects in your application, you will not be considered for an internship position.</strong></p>
+<br>
+<p>Candidates must submit their applications through our finn.no portal.</p>`
     },
+
     {
-      slug: "jotun_rd_summer_internship_2026",
-      company: "Jotun",
-      image: jotunLogo,
-      location: "Sandefjord",
-      link: "https://www.jotun.com/",
-      position_type: "Summer Internship",
-      short_description: "Jotun is hiring summer interns for our R&D organization!",
-      long_description: `<p class="mb-4">
-          For almost a century, Jotun has protected property - from iconic buildings to beautiful homes. As one of
-          the world's leading manufacturers of paints and coatings, we combine high quality with creativity and
-          innovation.
-        </p>
-        <p class="mb-4">
-          Jotun employs more than 10 000 employees around the world, where all our four segments -
-          Decorative Paints, Marine Coatings, Protective Coatings and Powder Coatings - are present.
-          Jotun has 67 companies in 46 countries with 40 production facilities in 23 countries and is represented
-          in more than 100 countries around the world. In addition, we have regional R&D laboratories in South
-          Korea, China, Malaysia, UAE, Turkey, UK and US.
-        </p>
-        <p class="mb-4">
-          Your workplace will be at our headquarters' state of the art R&D center, in Sandefjord, Norway. You will
-          be part of an exciting workplace, where more than 200 great employees are attached to R&D related
-          tasks.
-        </p>
-        <p class="mb-4">
-          We are incredibly proud that our paint from Sandefjord makes a mark on the world! And now we are looking
-          for young people who want to develop in an international company for our summer internship.
-        </p>
-        <h3 class="font-semibold mb-2">JOB DESCRIPTION</h3>
-        <p class="mb-4">
-          Jotun's Research and Development department is developing technically complex coating technology for
-          decorative, marine, protective and powder coating applications. In our R&D lab at our headquarters in
-          Sandefjord we are working with development of paint products, evaluation and characterization of paint
-          films, colloidal mixtures, polymers and more.
-        </p>
-        <p class="mb-4">
-          We are now looking for interns for the summer of 2026. As an intern at our laboratories, your work would
-          include small projects involving making and testing coating formulations, report findings in written reports
-          and presentations. For example, you can:
-        </p>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Work alongside chemists and technicians in our product laboratories making and testing new
-          paint formulations, to improve paint performance and reduce environmental impact and/or
-          health risks of our new products.</li>
-          <li>Participate in projects in the analytical laboratory and use complex analytical techniques to
-          discover critical chemical information in either wet paint or dry paint film.</li>
-          <li>Participate in projects in the technology department and delve into new technology platforms
-          for marine and protective coatings, help develop profound insights and novel evaluation
-          techniques.</li>
-        </ul>
-        <h3 class="font-semibold mb-2">WHAT WE ARE LOOKING FOR</h3>
-        <p class="mb-4">
-          Students of chemistry, chemical engineering, chemical/industrial process, and material sciences are
-          especially encouraged to apply.
-        </p>
-        <h3 class="font-semibold mb-2">PERSONAL QUALITIES AND WHAT WE OFFER</h3>
-        <p class="mb-4">
-          We think a good candidate for this position can act on his/her own initiative and make things happen. You
-          adhere to company rules and procedures and use a methodical and systematic approach where you plan and
-          define clear priorities. You quickly understand and analyze complex issues and problems and demonstrate
-          knowledge in your own area. You also co-operate well with others, share knowledge, experience, and
-          information in support to others in the pursuit of team goals.
-        </p>
-        <p class="mb-2">We offer:</p>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Paid summer internship</li>
-          <li>A friendly and supportive culture. It is an informal work environment with few hierarchies. We are
-          always striving to live our values: Loyalty, Care, Respect, Boldness.</li>
-          <li>Extensive opportunities for professional and personal development.</li>
-          <li>A professional and supportive work environment with focus on continuous improvement and
-          innovation.</li>
-          <li>Exciting challenges in a growing company with excellent financial results.</li>
-        </ul>
-        <p class="mb-4">
-          Send your application to: <br/>
-          <strong>Tone Hovde, Senior HR Advisor</strong><br/>
-          Mail: <a href="mailto:tone.hovde@jotun.com">tone.hovde@jotun.com</a><br/>
-          Please mark your application “R&D Summer Intern 2026”<br/>
-          <strong>Deadline: 16.11.2025</strong>
-        </p>`
+      slug: 'bw_offshore_graduate_engineer',
+      company: 'BW Offshore',
+      image: bwoffshoreLogo,
+      location: 'Singapore, Oslo',
+      link: 'https://bwoffshore.com/',
+      applicationLink:
+        'https://bwoffshore.csod.com/ux/ats/careersite/1/home/requisition/193?c=bwoffshore?promotion=kjemidagen-no',
+      position_type: 'Fast stilling',
+      short_description: 'Launch Your Global Engineering Career with BW Offshore',
+      long_description: `<p><strong>Launch Your Global Engineering Career with BW Offshore</strong></p>
+<br>
+<p>At BW Offshore, we engineer floating production solutions that power the world's energy needs. With operations and projects spanning the globe, we are committed to developing the next generation of leaders and technical experts who will help shape the future of our industry.</p>
+<br>
+<p>We are looking for ambitious and curious engineering graduates who want more than just a first job. Through meaningful experiences, global exposure and curated experiential learning, our Graduate Programme offers an opportunity to accelerate your development, broaden your perspective and build the foundations for a rewarding career in the energy industry.</p>
+<br>
+<hr>
+<p><strong>About the Programme</strong></p>
+<br>
+<p>Our 2-year Graduate Programme, commencing in August 2027, is designed to help you develop both the technical expertise and leadership capabilities needed to thrive in a global organization.</p>
+<br>
+<p>As a graduate, you will experience:</p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>A 9-week global orientation programme across Singapore, Oslo and Aberdeen</li>
+    <li>Curated learning experiences that build business insight, technical expertise and leadership capability</li>
+    <li>Mentorship and buddy support from experienced professionals</li>
+    <li>Capstone projects as a Cohort that encourage collaboration and problem solving</li>
+    <li>Opportunities to engage with senior leaders across the organization</li>
+    <li>Real responsibilities and meaningful work from day one</li>
+</ul>
+<br>
+<p><strong>Who We’re Looking For</strong></p>
+<br>
+<p>We’re seeking students in their final year of studies in:</p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Mechanical Engineering</li>
+    <li>Chemical Engineering</li>
+    <li>Naval Architecture</li>
+</ul>
+<br>
+<p>You may be a great fit if you are:</p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Curious and eager to learn</li>
+    <li>Passionate about engineering and solving complex challenges</li>
+    <li>Motivated to grow as a future leader or technical specialist</li>
+    <li>A strong communicator and collaborator</li>
+    <li>Adaptable and resilient in dynamic environments</li>
+    <li>Academically strong and driven to excel</li>
+    <li>Fluent in English, both written and spoken</li>
+</ul>
+<br>
+<p><strong>Why BW Offshore?</strong></p>
+<br>
+<p>At BW Offshore, you'll do more than develop technical skills.</p>
+<br>
+<p>You'll have the opportunity to:</p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Build a strong foundation for a long-term engineering career</li>
+    <li>Learn from experienced technical experts and leaders</li>
+    <li>Develop leadership skills through exposure, collaboration and real responsibility</li>
+    <li>Work on real projects with global impact</li>
+    <li>Build relationships across our international offices</li>
+</ul>
+<br>
+<p><strong>Be part of a collaborative and inclusive culture that invests in your growth.</strong></p>
+<br>
+<p><strong>Ready to Begin?</strong></p>
+<br>
+<p>Submit your application, resume, academic transcripts and a brief cover letter outlining your interest in joining BW Offshore.</p>
+<br>
+<p>Your future starts here. Let’s build it together.</p>
+<br>
+<hr>
+<p><strong>Our Commitment to Diversity and Inclusion</strong></p>
+<br>
+<p>BW Offshore is committed to providing equal employment opportunities for all. We believe in fostering a diverse and inclusive workplace and encourage all qualified candidates to apply, regardless of age, gender, disability, religion, or ethnic background.</p>`
     },
+
     {
-      slug: "borregaard_summer_internship",
-      company: "Borregaard",
-      image: borregaardLogo,
-      location: "Sarpsborg",
-      link: "https://www.borregaard.com/",
-      applicationLink: "https://www.borregaard.com/no/karriere/ledige-stillinger/ledig-stilling?&rmpage=job&rmjob=504",
-      position_type: "Summer Internship",
-      short_description: "Ønsker du en spennende sommerjobb? Vi ser nå etter sommerstudenter innen kjemi/prosess!",
-      long_description: `<p class="mb-4">
-      Studerer du kjemi eller prosess på bachelor- eller masternivå? Har du lyst til å bruke sommeren på å jobbe med spennende prosjekter i et høyteknologisk industrimiljø? Da bør du lese videre!
-      </p>
+      slug: 'bw_offshore_summer_intern',
+      company: 'BW Offshore',
+      image: bwoffshoreLogo,
+      location: 'Oslo, Singapore',
+      link: 'https://www.bwoffshore.com/',
+      applicationLink:
+        'https://bwoffshore.csod.com/ux/ats/careersite/1/home/requisition/201?c=bwoffshore?promotion=kjemidagen-no',
+      position_type: 'Sommerjobb',
+      short_description: "Looking for an internship where you'll do more than observe?",
+      long_description: `<p><strong>Real Work. Real Impact. Real Growth.</strong></p>
+<br>
+<p><strong>Looking for an internship where you'll do more than observe?</strong></p>
+<br>
+<p>At BW Offshore, we are committed to developing the next generation of leaders and technical experts who will help shape the future of our industry. Our Summer Internship Programme offers ambitious engineering students the opportunity to gain hands-on experience, contribute to meaningful work, and discover what a career in the global energy industry can look like.</p>
+<br>
+<p>From day one, you'll work alongside experienced professionals, contribute to real projects, and gain exposure to the challenges and opportunities of a global business.</p>
+<br>
+<p>BW Offshore leverages more than four decades of experience in operating advanced offshore production systems and executing complex projects. We are proud to have executed 40 FPSO and FSO projects, and have cultivated a culture of thorough engineering, trust and teamwork throughout the organisation.</p>
+<br>
+<p>BW Offshore is actively engaged in the energy transition by developing clean energy production solutions, applying our offshore engineering and operations capabilities to drive future value creation. Our aim is to create tailored energy solutions for evolving global energy markets.</p>
+<br>
+<hr>
+<p><strong>About the Internship:</strong></p>
+<br>
+<p>Our Summer Internship Programme runs from May/June to August 2027 in Oslo or Singapore. The summer interns in Norway will need to travel to Aberdeen.</p>
+<br>
+<p>This is not your typical internship. Through meaningful project work, mentorship and curated learning experiences, you'll gain valuable insight into BW Offshore, our business and the offshore energy industry.</p>
+<br>
+<p><strong>During your internship, you will:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Work on live projects that deliver real business value</li>
+    <li>Collaborate with engineers and professionals across functions</li>
+    <li>Gain insight into the offshore energy industry</li>
+    <li>Receive mentorship and guidance throughout your internship</li>
+    <li>Develop technical, professional and interpersonal skills</li>
+    <li>Build your network across BW Offshore</li>
+</ul>
+<br>
+<p><strong>Who we're looking for:</strong></p>
+<br>
+<p>We're inviting applications from undergraduates currently pursuing degrees in:</p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Mechanical Engineering</li>
+    <li>Chemical Engineering</li>
+    <li>Naval Architecture</li>
+</ul>
+<br>
+<p><strong>We're looking for individuals who are:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Curious and proactive learners</li>
+    <li>Strong communicators and team players</li>
+    <li>Analytical problem-solvers</li>
+    <li>Motivated to contribute and make an impact</li>
+    <li>Interested in developing as future technical experts and leaders</li>
+    <li>Academically strong</li>
+    <li>Fluent in English, both written and spoken</li>
+</ul>
+<br>
+<p><strong>Why BW Offshore?</strong></p>
+<br>
+<p>At BW Offshore, you'll gain more than industry experience.</p>
+<br>
+<p>You'll have the opportunity to:</p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Work on real projects with real impact</li>
+    <li>Learn from experienced technical experts and leaders</li>
+    <li>Experience our collaborative and inclusive culture</li>
+    <li>Build professional networks across the business</li>
+    <li>Gain exposure to a global engineering and energy company</li>
+    <li>Create a strong foundation for future career opportunities</li>
+    <li>Be considered for future opportunities within our Graduate Programme</li>
+</ul>
+<br>
+<p>Many of our graduates and interns have gone on to build long-term careers with BW Offshore across engineering, commercial and corporate functions.</p>
+<br>
+<p><strong>Ready to Get Started?</strong></p>
+<br>
+<p>Submit your application, resume, academic transcripts and a brief cover letter outlining your interest in joining BW Offshore.</p>
+<br>
+<hr>
+<p><strong>Our Commitment to Diversity and Inclusion</strong></p>
+<br>
+<p>BW Offshore is committed to providing equal employment opportunities for all. We believe in fostering a diverse and inclusive workplace and encourage all qualified candidates to apply, regardless of age, gender, disability, religion, or ethnic background.</p>`
+    },
+
+    {
+      slug: 'fjordalg_prosessingenior',
+      company: 'FjordAlg',
+      image: fjordalgLogo,
+      location: 'Øvre Årdal',
+      link: 'https://www.fjordalg.com',
+      applicationLink:
+        'https://arbeidsplassen.nav.no/stillinger/stilling/3ab1c0e6-fc28-4fd2-b2c9-c2392dc3d9d9?promotion=kjemidagen-no',
+      position_type: 'Sommervikar',
+      short_description:
+        'Vi tilbyr muligheten til å arbeide i en vekstbedrift på sin ferd mot industriell produksjon.',
+      long_description: `
+      <p><strong>Sammendrag</strong></p>
+<br>
+<p>Sammendrag
+FjordAlg AS søker kandidater med kompetanse innen kjemisk prosess og programmering, som fortrinnsvis går nest siste eller siste år av
+sitt studie. Arbeidsoppgavene er varierte og krever en kombinasjon av
+praktisk og teoretiske ferdigheter. Dersom du ønsker å samarbeide med
+oss til sommeren eller har spørsmål, tar du kontakt.</p>
+<br>
+      <p><strong>Introduksjon</strong></p>
+<br>
+<p>FjordAlg AS ble stiftet i 2016 av gründer og nåværende CEO Gabriel Ossenkamp og etablerte seg i Årdal sommeren 2020. For øyeblikket fokuserer bedriften på produksjon av naturlig astaxanthin. Astaxanthin er et høyverdi­produkt som kan produseres ved hjelp av mikroorganismer. Vi utarbeider teknologi for å selv kunne produsere på en industriell skala. FjordAlg har i dag en automatisert industripilot og rekke egenutviklede støttesystemer i kontinuerlig utvikling.</p>
+<br>
+<hr>
+<p><strong>Generelt</strong></p>
+<br>
+<p>Det er fire ansatte i bedriften, og FjordAlg er godt etablert i Årdal Teknologipark plassert i Øvre Årdal. Det er allerede gjennomført flere tester av dagens anlegg med gode resultater. Vi går mot en sommer med full aktivitet og søker derfor én ferieavløser til denne stillingen. Dette inkluderer også mulighet for fast jobb eller masteroppgave fra høsten 2027. Det vil ansettes totalt to ferieavløsere sommeren 2027. Nødvendig opplæring vil bli gitt.</p>
+<br>
+<p><strong>Tidsrom</strong></p>
+<br>
+<p>Stillingen ønskes besatt omtrent fra uke 24 til og med uke 33 2027. Vi prioriterer søkere som kan jobbe i minst åtte uker denne perioden. Arbeid før og etter tidsrommet kan avtales.</p>
+<br>
+<p><strong>Sted</strong></p>
+<br>
+<p>Driften er for tiden i Øvre Årdal. Årdal er en industrikommune tilknyttet Jotunheimen nasjonalpark med lang industrihistorie (Hydro). Vi bistår gjerne med å finne en privat utleier.</p>
+<br>
+<hr>
+<p><strong>Søknad</strong></p>
+<br>
+<p>Kort søknad, CV og vitnemål sendes til <a href="mailto:soknad@fjordalg.com">soknad@fjordalg.com</a> innen 25.10.2026.</p>
+<br>
+<p>Utvalgte søkere vil få tilsendt en test som skal besvares innen en uke. Kandidatene vi tror passer best til stillingen innkalles deretter til intervju. Etter intervjuet vil én kandidat bli gitt tilbud om stillingen.</p>
+<br>
+<hr>
+<p><strong>Kompetansekrav</strong></p>
+<br>
+<p>Vi leter etter deg som går nest siste eller siste år av din høyere utdanning innen kjemisk prosess og/eller programmering, trives med dataarbeid og laboratoriearbeid, samhandling og problemløsning i høyt tempo. Personer med fullført utdanning har også anledning til å søke.</p>
+<br>
+<p><strong>Ytterligere ønsker:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Kjemisk kompetanse innen prosess eller bioteknologi (med IT-interesse)</li>
+    <li>God prosessforståelse</li>
+    <li>Teknologiforståelse</li>
+    <li>Kommuniserer godt på norsk og engelsk</li>
+    <li>Fire måneder arbeidslivserfaring</li>
+    <li>Karaktersnitt på C eller høyere</li>
+</ul>
+<br>
+<hr>
+<p><strong>Arbeidsoppgave</strong></p>
+<br>
+<p>Arbeidsoppgavene er varierte. Stillingen «Junior prosessingeniør» kan innebære følgende oppgaver:</p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Planlegge og gjennomføre eksperimenter</li>
+    <li>Prosesstyring</li>
+    <li>Automasjon</li>
+    <li>Programmering (Python, ladder, FBD og SCL)</li>
+    <li>Laboratoriearbeid</li>
+    <li>Praktisk arbeid og problemløsning</li>
+    <li>Kjemiske analyser</li>
+    <li>Optimalisering av prosesser</li>
+    <li>Dokumentasjon og databehandling</li>
+</ul>
+<br>
+<p><strong>Hvorfor søke jobb hos oss?</strong></p>
+<br>
+<p>Vi tilbyr muligheten til å arbeide i en vekstbedrift på sin ferd mot industriell produksjon. Her vil du få samarbeide med dyktige ansatte om teoretiske og praktiske problemstillinger. Vi gir alltid arbeid som er knyttet til vår forskning, utvikling og daglig drift. Det er stort rom for å lære og utvikle ferdighetene dine innenfor et bredt spekter av oppgaver.</p>
+<br>
+<p>Dersom du er interessert i friluftsliv gir en jobb hos oss i Årdal gode muligheter til å ta en topptur ettermiddager, så vel som i helgene. Vi arrangerer fellesturer i løpet av sommeren dersom det er av interesse.</p>
+<br>
+<hr>
+<p><strong>Konklusjon</strong></p>
+<br>
+<p>FjordAlg AS skal ansette en eller flere sommervikarer med mulighet for fast jobb høsten 2027. Ta kontakt dersom du er interessert eller har spørsmål om stillingen.</p>
+<br>
+<p>#sommerjobbivest</p>
+<br>
+<p>Vi tar forbehold om at denne stillingsutlysningen inneholder feil og at endringer kan forekomme.</p>
+<br>
+<hr>
+<p><strong>Kontaktperson for stillingen</strong></p>
+<br>
+<p>Tor-Erik Dahl</p>
+<p>Driftsleder (COO)</p>
+<p><a href="mailto:t.dahl@fjordalg.com">t.dahl@fjordalg.com</a></p>
+<br>
+<hr>
+<p><strong>Om bedriften</strong></p>
+<br>
+<p>FjordAlg AS er en bioteknologibedrift i skjæringspunktet mellom startup og scaleup som utvikler nye løsninger for å selv produsere mikroalger i industriell skala. Vi skaper en ny bærekraftig industri gjennom utvikling av en bioteknologisk prosess og ny teknologi knyttet til denne.</p>`
+    },
+
+    {
+      slug: 'fjordalg_biokjemisk_ingenior',
+      company: 'FjordAlg',
+      image: fjordalgLogo,
+      location: 'Øvre Årdal',
+      link: 'https://www.fjordalg.com',
+      applicationLink:
+        'https://arbeidsplassen.nav.no/stillinger/stilling/c77d534e-44c6-4794-ad8b-27eec333ccaf?promotion=kjemidagen-no',
+      position_type: 'Sommervikar',
+      short_description:
+        'Vi tilbyr muligheten til å arbeide i en vekstbedrift på sin ferd mot industriell produksjon.',
+      long_description: `
       
-      <p class="mb-4">
-      Borregaard er et av verdens mest avanserte bioraffinerier. Hos oss bruker vi tømmer som råstoff og utnytter hele treet til å produsere biobaserte produkter som kan erstatte oljebaserte alternativer. 
-      Med over 130 års industrihistorie kombinerer vi teknologi, forskning og bærekraft for å skape løsninger verden virkelig trenger. 
-      Vi er en internasjonal bedrift med virksomhet i 13 land og leverer til markeder innen blant annet mat, kosmetikk, bygg, batterier og biodrivstoff.
-      </p>
-      
-      <h3 class="font-semibold mb-2">HVORDAN ER DET Å VÆRE SOMMERSTUDENT HOS OSS?</h3>
-      <p class="mb-4">
-      Gjennom et 8 ukers sommerprosjekt får du jobbe med relevante oppgaver som binder teori og praksis sammen. 
-      Du vil få tett oppfølging fra en erfaren veileder og blir en del av et sterkt fagmiljø der idéer deles på tvers av fag og bakgrunn. 
-      I tillegg arrangeres det sosiale aktiviteter gjennom sommeren, som gjør det lettere å bli kjent med både medstudenter og ansatte.
-        </p>
-        <p class="mb-4">
-        Hvilket prosjekt du får tildelt, bestemmes noen uker før oppstart og tilpasses din faglige bakgrunn og våre aktuelle behov. 
-          Vi garanterer en relevant og lærerik erfaring du kan ta med deg videre, både i studiene og i karrieren.
-        </p>
-
-        <h3 class="font-semibold mb-2">VI SER ETTER DEG SOM</h3>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Studerer kjemi eller prosess på bachelor- eller masternivå (2. til 5. studieår)</li>
-          <li>Er nysgjerrig, lærevillig og glad i å jobbe strukturert</li>
-          <li>Trives med samarbeid og har lyst til å bidra i et tverrfaglig miljø</li>
-          <li>Behersker norsk både muntlig og skriftlig</li>
-          </ul>
-          
-          <h3 class="font-semibold mb-2">HVORFOR SØKE HOS OSS?</h3>
-          <p class="mb-2">Hos Borregaard får du mer enn bare en sommerjobb. Du får:</p>
-          <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Spennende og relevante oppgaver i et bærekraftig og høyteknologisk industrimiljø</li>
-          <li>Innsikt i hvordan prosess- og kjemikompetanse brukes til å løse konkrete utfordringer i produksjonen</li>
-          <li>Tett faglig oppfølging fra en erfaren veileder</li>
-          <li>Et sterkt, inkluderende arbeidsmiljø med høy kompetanse og lav terskel</li>
-          <li>Sosiale aktiviteter gjennom sommeren</li>
-        </ul>
-        
-        <p class="mb-4">
-          Kommer du langveis fra? Som sommerstudent har du mulighet til å leie et rom i vårt gjestehus til en rimelig pris, slik at du slipper å ordne bosted selv.
-        </p>
-        
-          
-        <h3 class="font-semibold mb-2">KONTAKT</h3>
-        <p class="mb-4">
-        <strong>Alette Marie Christian</strong><br/>
-        Tlf: 913 56 393<br/><br/>
-        <strong>Silje Sandbukt Simonsen</strong><br/>
-        Tlf: 404 52 107
-        </p>`
-    },
-    {
-      slug: "borregaard_summer_research_internship",
-      company: "Borregaard",
-      image: borregaardLogo,
-      location: "Sarpsborg",
-      link: "https://www.borregaard.com/",
-      applicationLink: "https://www.borregaard.com/no/karriere/ledige-stillinger/ledig-stilling?&rmpage=job&rmjob=502",
-      position_type: "Summer Internship",
-      short_description: "Er du student innenfor kjemi og bioteknologi? Vil du ha en utviklende og meningsfull sommerjobb?",
-      long_description: `<p class="mb-4">
-          Er du masterstudent innen kjemi eller bioteknologi? Ser du etter en sommerjobb som både utvikler deg faglig og gir deg en fot innenfor et spennende forskningsmiljø? Da bør du lese videre!
-        </p>
-
-        <p class="mb-4">
-          Borregaard er et av verdens mest avanserte bioraffinerier. Hos oss bruker vi tømmer som råstoff og utnytter hele treet til å produsere biobaserte produkter som kan erstatte oljebaserte alternativer.
-          Med over 130 års industrihistorie kombinerer vi teknologi, forskning og bærekraft for å skape løsninger verden virkelig trenger.
-          Vi er en internasjonal bedrift med virksomhet i 13 land og leverer til markeder innen blant annet mat, kosmetikk, bygg, batterier og biodrivstoff.
-        </p>
-
-        <p class="mb-4">
-          Hos Borregaard skjer innovasjon hver dag, og nå kan du bli en del av det.
-        </p>
-
-        <h3 class="font-semibold mb-2">HVORDAN ER DET Å VÆRE SOMMERSTUDENT HOS OSS?</h3>
-        <p class="mb-4">
-          Gjennom et 8 ukers sommerprosjekt får du jobbe med relevante oppgaver som binder teori og praksis sammen. 
-          Du vil få tett oppfølging fra en erfaren forsker og blir en del av et sterkt fagmiljø der idéer deles på tvers av fag og bakgrunn.
-          I tillegg arrangeres det sosiale aktiviteter gjennom sommeren, som gjør det lettere å bli kjent med både medstudenter og ansatte.
-        </p>
-
-        <p class="mb-4">
-          På vårt forskningssenter i Sarpsborg jobber rundt 70 engasjerte og faglig dyktige medarbeidere. 
-          Som sommerstudent hos oss vil du bidra i reelle forskningsprosjekter, og samtidig få verdifull erfaring, faglig utvikling og et innblikk i fremtidige karrieremuligheter.
-        </p>
-
-        <p class="mb-4">
-          Hvilket prosjekt du får tildelt, bestemmes noen uker før oppstart og tilpasses din faglige bakgrunn og våre aktuelle behov.
-          Oppgavene vil blant annet innebære laboratoriearbeid, analyser og rapportering.
-          Vi garanterer en relevant og lærerik erfaring du kan ta med deg videre, både i studiene og i karrieren.
-        </p>
-
-        <h3 class="font-semibold mb-2">VI SER ETTER DEG SOM</h3>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Studerer kjemi, prosess eller bioteknologi på masternivå (3. eller 4. år)</li>
-          <li>Er nysgjerrig, lærevillig og glad i å jobbe strukturert</li>
-          <li>Trives med samarbeid og har lyst til å bidra i et tverrfaglig miljø</li>
-          <li>Behersker norsk og engelsk både muntlig og skriftlig</li>
-        </ul>
-
-        <h3 class="font-semibold mb-2">HVORFOR SØKE HOS OSS?</h3>
-        <p class="mb-2">
-          Hos Borregaard får du mer enn bare en sommerjobb. Du får:
-        </p>
-        <ul class="list-disc list-outside ml-6 mb-4">
-          <li>Spennende og relevante oppgaver i et bærekraftig og høyteknologisk industrimiljø</li>
-          <li>Innsikt i hvordan forskning brukes til å løse konkrete utfordringer hos våre kunder</li>
-          <li>Tett faglig oppfølging fra en erfaren forsker</li>
-          <li>Et sterkt, inkluderende arbeidsmiljø med høy kompetanse og lav terskel</li>
-          <li>Sosiale aktiviteter gjennom sommeren</li>
-        </ul>
-
-        <p class="mb-4">
-          Kommer du langveis fra? Som sommerstudent har du mulighet til å leie et rom i vårt gjestehus til en rimelig pris, slik at du slipper å ordne bosted selv.
-        </p>
-
-        <h3 class="font-semibold mb-2">SØKNADSINFORMASJON</h3>
-        <p class="mb-4">
-          <strong>Søknadsfrist: 1. januar 2026</strong><br/>
-          Vi ber om at vitnemål/karakterutskrifter lastes opp som vedlegg til den elektroniske søknaden.
-        </p>
-
-        <p class="mb-4">
-          For flere opplysninger eller spørsmål om stillingen, kontakt gruppeleder <strong>Anne-Grethe Strømnes</strong>.<br/>
-          Har du spørsmål rundt rekrutteringsprosessen, kontakt <strong>HR-partner Silje Sandbukt Simonsen</strong>.
-        </p>
-
-        <h3 class="font-semibold mb-2">KONTAKT</h3>
-        <p class="mb-4">
-          <strong>Silje Sandbukt Simonsen</strong><br/>
-          E-post: <a href="mailto:silje.sandbukt.simonsen@borregaard.com" class="text-blue-600 underline">silje.sandbukt.simonsen@borregaard.com</a><br/>
-          Tlf: 404 52 107
-        </p>
-        <p class="mb-8">
-          <strong>Anne-Grethe Strømnes</strong><br/>
-          Tlf: 995 05 818
-        </p>`
-    },*/
+      <p><strong>Sammendrag</strong></p>
+<br>
+<p>FjordAlg AS søker kandidater med kompetanse innen kjemi og/el-
+ler biologi, som fortrinnsvis går nest siste eller siste år av sitt studie.
+Arbeidsoppgavene er varierte og krever en kombinasjon av praktisk og
+teoretiske ferdigheter. Dersom du ønsker å samarbeide med oss til sommeren eller har spørsmål, tar du kontakt.</p>
+<br>
+      <p><strong>Introduksjon</strong></p>
+<br>
+<p>FjordAlg AS ble stiftet i 2016 av gründer og nåværende CEO Gabriel Ossenkamp. Etter en lengre tid i industrien dannet han et firma tuftet på en tro på at mikroalger kan bidra til bærekraftig produksjon av mat og næringsmidler. For øyeblikket fokuserer bedriften på produksjon av naturlig astaxanthin. Til dette benytter vi mikroalgen Haematococcus lacustris. Denne arten blir ofte rapportert å inneholde opptil 5% astaxanthin. Astaxanthin kan benyttes i helsekost og som fôringrediens for oppdrettsfisk. Ambisjonen vår er å gjøre det rosa i laksen grønt.</p>
+<br>
+<hr>
+<p><strong>Generelt</strong></p>
+<br>
+<p>I dag er det fire ansatte i bedriften. FjordAlg er godt etablert i Årdal Teknologipark plassert i Øvre Årdal. Vi har også gjennomført flere tester av vårt produkt i fisk og oppnådd gode resultater. Vi går mot en sommer med full aktivitet og trenger én ferieavløser til denne stillingen. Det vil ansettes totalt to ferieavløsere sommeren 2027. Nødvendig opplæring vil bli gitt.</p>
+<br>
+<p><strong>Tidsrom</strong></p>
+<br>
+<p>Stillingen ønskes besatt omtrent fra uke 24 til og med uke 33 2027. Vi prioriterer søkere som kan jobbe minst åtte uker denne perioden. Arbeid før og etter tidsrommet kan avtales.</p>
+<br>
+<p><strong>Sted</strong></p>
+<br>
+<p>Driften er for tiden i Øvre Årdal. Årdal er en industrikommune tilknyttet Jotunheimen nasjonalpark med lang industrihistorie (Hydro). Vi bistår gjerne med å finne en privat utleier.</p>
+<br>
+<hr>
+<p><strong>Søknad</strong></p>
+<br>
+<p>Kort søknad, CV og vitnemål sendes til <a href="mailto:soknad@fjordalg.com">soknad@fjordalg.com</a> innen 25.10.2026.</p>
+<br>
+<p>Utvalgte søkere vil få tilsendt en test som skal besvares innen en uke. Kandidatene vi tror passer best til stillingen innkalles deretter til intervju. Etter intervjuet vil én kandidat bli gitt tilbud om stillingen.</p>
+<br>
+<hr>
+<p><strong>Kompetansekrav</strong></p>
+<br>
+<p>Vi leter etter deg som går nest siste eller siste år av din høyere utdanning innen kjemi og/eller biologi, trives med laboratoriearbeid, samhandling og problemløsning i høyt tempo. Personer med fullført utdanning har også anledning til å søke.</p>
+<br>
+<p><strong>Ytterligere ønsker:</strong></p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Kjemisk kompetanse innen organisk, analytisk, prosess, eller bioteknologi</li>
+    <li>God prosessforståelse</li>
+    <li>Teknologiforståelse</li>
+    <li>Kommuniserer godt på norsk og engelsk</li>
+    <li>Har tatt emner med bioteknologisk eller mikrobiologisk overføringsverdi</li>
+    <li>Fire måneder arbeidslivserfaring</li>
+    <li>Karaktersnitt på C eller høyere</li>
+</ul>
+<br>
+<hr>
+<p><strong>Arbeidsoppgave</strong></p>
+<br>
+<p>Arbeidsoppgavene er varierte. Stillingen «Biokjemisk ingeniør» kan innebære følgende oppgaver:</p>
+<br>
+<ul class="list-disc list-outside ml-6">
+    <li>Planlegge og gjennomføre eksperimenter</li>
+    <li>Daglig tilsyn av PBR (Photo Bio Reactor)</li>
+    <li>Laboratoriearbeid</li>
+    <li>Praktisk arbeid og problemløsning</li>
+    <li>Kjemiske analyser</li>
+    <li>Optimalisering av prosesser</li>
+    <li>Dokumentasjon og databehandling</li>
+</ul>
+<br>
+<p><strong>Hvorfor søke jobb hos oss?</strong></p>
+<br>
+<p>Vi tilbyr muligheten til å arbeide i en vekstbedrift på sin ferd mot industriell produksjon. Her vil du få samarbeide med dyktige ansatte om teoretiske og praktiske problemstillinger. Vi gir alltid arbeid som er knyttet til vår forskning, utvikling og daglig drift. Det er stort rom for å lære og utvikle ferdighetene dine innenfor et bredt spekter av oppgaver.</p>
+<br>
+<p>Dersom du er interessert i friluftsliv gir en jobb hos oss i Årdal gode muligheter til å ta en topptur ettermiddager, så vel som i helgene. Vi arrangerer fellesturer i løpet av sommeren dersom det er av interesse.</p>
+<br>
+<hr>
+<p><strong>Konklusjon</strong></p>
+<br>
+<p>FjordAlg AS skal ansette en eller flere sommervikarer med mulighet for fast jobb høsten 2027. Ta kontakt dersom du er interessert eller har spørsmål om stillingen.</p>
+<br>
+<p>#sommerjobbivest</p>
+<br>
+<p>Vi tar forbehold om at denne stillingsutlysningen inneholder feil og at endringer kan forekomme.</p>
+<br>
+<hr>
+<p><strong>Kontaktperson for stillingen</strong></p>
+<br>
+<p>Tor-Erik Dahl</p>
+<p>Driftsleder (COO)</p>
+<p><a href="mailto:t.dahl@fjordalg.com">t.dahl@fjordalg.com</a></p>
+<br>
+<hr>
+<p><strong>Om bedriften</strong></p>
+<br>
+<p>FjordAlg AS er en bioteknologibedrift i skjæringspunktet mellom startup og scaleup som utvikler nye løsninger for å ta mikroalger i bruk i laksefôr og som kosttilskudd. Vi skaper en ny bærekraftig industri gjennom utvikling av en bioteknologisk prosess og ny teknologi knyttet til denne.</p>`
+    }
   ];
 </script>

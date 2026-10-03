@@ -6,7 +6,7 @@
   "opening_desc": "Dette er den offisielle opninga av Kjemidagen med underhaldning og moglegheit for å vinne ei rekkje kule premiar.",
   "stands": "Bedriftsstands",
   "stands_loc": "U1, Realfagsbygget",
-  "stands_desc":"Dette er ei fantastisk moglegheit til å møte relevante arbeidsgivarar og stille dei spørsmåla du brenn inne med. Bedriftsstandane er opne for alle studentar, uavhengig av klassetrinn og studieretning.",
+  "stands_desc": "Dette er ei fantastisk moglegheit til å møte relevante arbeidsgivarar og stille dei spørsmåla du brenn inne med. Bedriftsstandane er opne for alle studentar, uavhengig av klassetrinn og studieretning.",
   "cv_check": "CV-workshop",
   "cv_check_loc": "R2",
   "job_marathon": "Jobbmaraton",
@@ -30,4 +30,5 @@
   "speed_interview": "Speedintervjuer",
   "speed_interview_loc": "Grupperom",
   "speed_interview_desc": "Speedintervju er ein spennande moglegheit for både studentane og bedriftene til å bli betre kjende. Her har ein moglegheit til å snakke med bedriftene på tomannshand og vise seg fram frå si beste side.",
-  "undecided": "Kjem snart"}
+  "undecided": "Kjem snart"
+}

@@ -3,6 +3,52 @@
   "description": "Her kommer stillingsutlysninger fra årets bedrifter.",
   "read_more": "Les mer",
   "title": "Stillingsannonser",
+
+  "fjordalg_prosessingenior": {
+    "title": "Junior prosessingeniør (vikariat)",
+    "deadline": "25.10.2026"
+  },
+
+  "fjordalg_biokjemisk_ingenior": {
+    "title": "Biokjemisk ingeniør (vikariat)",
+    "deadline": "25.10.2026"
+  },
+
+  "golar_lng": {
+    "title": "Summer internship | 2027",
+    "deadline": "Snarest"
+  },
+
+  "norconsult_va_radgiver": {
+    "title": "Nyutdannet VA-rådgiver vannbehandling og avløpsrensing",
+    "deadline": "01.11.2026"
+  },
+
+  "norconsult_vvs": {
+    "title": "Nyutdannede - Industri - VVS/Prosess/Støttesystemer",
+    "deadline": "21.10.2026"
+  },
+
+  "norconsult_sommerjobb_va": {
+    "title": "Sommerjobb vann og avløp",
+    "deadline": "01.11.2026"
+  },
+
+  "norconsult_sommerjobb_industri": {
+    "title": "Sommerjobb Industri - VVS/Prosess/Støttesystemer",
+    "deadline": "21.10.2026"
+  },
+
+  "bw_offshore_summer_intern": {
+    "title": "Summer Intern Engineering",
+    "deadline": "30.11.2026"
+  },
+
+  "bw_offshore_graduate_engineer": {
+    "title": "Graduate Engineer",
+    "deadline": "30.11.2026"
+  },
+
   "vianode_prosessingenior": {
     "title": "Søk deg til laget vårt i ViaONE Herøya som PROSESSINGENIØR",
     "deadline": "Snarest"

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { t } from '$lib/translations/translations';
-  import linkedinSrc from '$lib/assets/linkedin.svg';
-  import facebookSrc from '$lib/assets/facebook.svg';
-  import instagramSrc from '$lib/assets/instagram.svg';
+  import { t } from '#lib/translations/translations.js';
+  import linkedinSrc from '#lib/assets/linkedin.svg';
+  import facebookSrc from '#lib/assets/facebook.svg';
+  import instagramSrc from '#lib/assets/instagram.svg';
   import { Envelope } from '@steeze-ui/heroicons';
   import { Icon } from '@steeze-ui/svelte-icon';
 </script>
@@ -19,13 +19,13 @@
     <div class="text-gray-200">
       <h6 class="text-lg">SoMe</h6>
       <a href="https://www.linkedin.com/company/kjemidagen/" class="text-gray-200"
-        ><img src={linkedinSrc} alt="" class="inline mr-1 h-4" /> LinkedIn</a
+        ><img src={linkedinSrc} alt="" class="mr-1 inline h-4" /> LinkedIn</a
       ><br />
       <a href="https://www.facebook.com/Kjemidagen/" class="text-gray-200"
-        ><img src={facebookSrc} alt="" class="inline mr-1 h-4" /> Facebook</a
+        ><img src={facebookSrc} alt="" class="mr-1 inline h-4" /> Facebook</a
       ><br />
       <a href="https://www.instagram.com/kjemidagen/" class="text-gray-200"
-        ><img src={instagramSrc} alt="" class="inline mr-1 h-4" /> Instagram</a
+        ><img src={instagramSrc} alt="" class="mr-1 inline h-4" /> Instagram</a
       ><br />
     </div>
     <div>

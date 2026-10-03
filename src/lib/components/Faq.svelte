@@ -3,23 +3,27 @@
   import { ChevronDown } from '@steeze-ui/heroicons';
   import { slide } from 'svelte/transition';
 
-  export let question: string;
-  export let answer: string;
-  export let linkUrl: string | null = null;   // optional
-  export let linkLabel: string | null = null; // optional
+  interface Props {
+    question: string;
+    answer: string;
+    linkUrl?: string | null; // optional
+    linkLabel?: string | null; // optional
+  }
 
-  let open = false;
+  let { question, answer, linkUrl = null, linkLabel = null }: Props = $props();
+
+  let open = $state(false);
 </script>
 
-<div class="bg-red text-white text-2xl font-medium p-5">
+<div class="bg-red p-5 text-2xl font-medium text-white">
   <button
-    class="w-full flex items-center justify-between text-left"
-    on:click={() => (open = !open)}
+    class="flex w-full items-center justify-between text-left"
+    onclick={() => (open = !open)}
     aria-expanded={open}
   >
-    <span class="font-medium break-words whitespace-normal">{question}</span>
+    <span class="whitespace-normal break-words font-medium">{question}</span>
     <span
-      class="transition-transform flex-shrink-0 duration-200"
+      class="flex-shrink-0 transition-transform duration-200"
       style:transform={`rotate(${open ? 180 : 0}deg)`}
     >
       <Icon src={ChevronDown} size="1.25em" theme="outline" />
@@ -27,15 +31,15 @@
   </button>
 
   {#if open}
-    <div class="mt-3 text-white/90 leading-7 text-base" transition:slide>
+    <div class="mt-3 text-base leading-7 text-white/90" transition:slide>
       {@html answer}
-      
+
       {#if linkUrl && linkLabel}
         <a
           href={linkUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-white underline hover:text-white/70 transition"
+          class="text-white underline transition hover:text-white/70"
         >
           {linkLabel}
         </a>

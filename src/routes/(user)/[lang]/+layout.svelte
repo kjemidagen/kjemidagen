@@ -1,14 +1,19 @@
 <script lang="ts">
-  import Header from '$lib/layout/Header.svelte';
-  import Footer from '$lib/layout/Footer.svelte';
-  import { t } from '$lib/translations/translations';
+  import Header from '#lib/layout/Header.svelte';
+  import Footer from '#lib/layout/Footer.svelte';
+  import { t } from '#lib/translations/translations.js';
+  interface Props {
+    children?: import('svelte').Snippet;
+  }
+
+  let { children }: Props = $props();
 </script>
 
-<div class="flex flex-col justify-between h-screen">
+<div class="flex h-screen flex-col justify-between">
   <Header />
 
-  <main id="main" class="mt-16 border-y-8 border-red-light p-0 flex-grow px-2 md:border-x-8">
-    <slot />
+  <main id="main" class="mt-16 flex-grow border-y-8 border-red-light p-0 px-2 md:border-x-8">
+    {@render children?.()}
   </main>
 
   <Footer />

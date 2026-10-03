@@ -2,14 +2,18 @@
   import { Envelope } from '@steeze-ui/heroicons';
   import { Icon } from '@steeze-ui/svelte-icon';
 
-  export let imgSrc: string;
-  export let name: string;
-  export let title: string;
-  export let email: string;
+  interface Props {
+    imgSrc: string;
+    name: string;
+    title: string;
+    email: string;
+  }
+
+  let { imgSrc, name, title, email }: Props = $props();
 </script>
 
-<article class="mb-8 mx-auto">
-  <div class="image-shell w-80 h-80 xl:w-60 xl:h-60">
+<article class="mx-auto mb-8">
+  <div class="image-shell h-80 w-80 xl:h-60 xl:w-60">
     <img src={imgSrc} alt={title} class="h-full w-full object-cover" />
   </div>
 
@@ -56,7 +60,9 @@
     border-radius: 9999px;
     background: rgba(198, 58, 45, 0.1);
     color: #c63a2d;
-    transition: background 0.15s ease, transform 0.15s ease;
+    transition:
+      background 0.15s ease,
+      transform 0.15s ease;
     flex-shrink: 0;
   }
 

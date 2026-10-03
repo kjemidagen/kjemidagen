@@ -2,11 +2,16 @@
   import { MapPin, Clock } from '@steeze-ui/heroicons';
   import { Icon } from '@steeze-ui/svelte-icon';
 
-  export let title: string;
-  export let time = '';
-  export let location = '';
-  export let loc_link = '';
-  export let image = '';
+  interface Props {
+    title: string;
+    time?: string;
+    location?: string;
+    loc_link?: string;
+    image?: string;
+    children?: import('svelte').Snippet;
+  }
+
+  let { title, time = '', location = '', loc_link = '', image = '', children }: Props = $props();
 </script>
 
 <div class="bg-red p-4 text-white {image ? 'flex flex-col gap-4 lg:flex-row' : ''}">
@@ -33,14 +38,16 @@
             class="my-auto mr-2 inline leading-none text-white"
           />
           {#if loc_link}
-          <a href={loc_link} target="_blank" rel="noopener noreferrer"><strong class="leading-1 text-white">{location}</strong></a>
+            <a href={loc_link} target="_blank" rel="noopener noreferrer"
+              ><strong class="leading-1 text-white">{location}</strong></a
+            >
           {:else}
-          <strong class="leading-1 text-white">{location}</strong>
+            <strong class="leading-1 text-white">{location}</strong>
           {/if}
         {/if}
       </span>
     {/if}
-    <slot />
+    {@render children?.()}
   </div>
   {#if image}
     <img
