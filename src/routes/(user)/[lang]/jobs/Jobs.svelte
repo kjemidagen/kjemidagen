@@ -9,6 +9,9 @@
   import elkemLogo from '#lib/assets/elkem.svg';
   import jotunLogo from '#lib/assets/jotun.svg';
   import borregaardLogo from '#lib/assets/borregaard.svg';
+  import sinteflogo from '#lib/assets/sintef.svg';
+  import mapeilogo from '#lib/assets/mapei.svg';
+
   export const jobsMap = [
     {
       slug: 'norconsult_va_radgiver',
@@ -747,6 +750,162 @@ teoretiske ferdigheter. Dersom du ønsker å samarbeide med oss til sommeren ell
 <p><strong>Om bedriften</strong></p>
 <br>
 <p>FjordAlg AS er en bioteknologibedrift i skjæringspunktet mellom startup og scaleup som utvikler nye løsninger for å ta mikroalger i bruk i laksefôr og som kosttilskudd. Vi skaper en ny bærekraftig industri gjennom utvikling av en bioteknologisk prosess og ny teknologi knyttet til denne.</p>`
+    },
+
+  {
+      slug: 'Jotun_summerintern_RD',
+      company: 'Jotun',
+      image: jotunLogo,
+      location: 'Sandefjord',
+      link: 'https://www.jotun.com',
+      applicationLink:
+        'https://www.jotun.com',
+      position_type: 'Sommervikar',
+      short_description: 'Vil du teste avanserte maling- og beleggteknologier?',
+      long_description: `<p><strong>Description</strong></p>
+<p>
+For more than a century, Jotun has protected property – from iconic buildings to beautiful homes. As
+one of the world’s leading manufacturers of paints and coatings, we combine high quality with creativity
+and innovation.
+</p>
+<br>
+<p>
+Jotun employs more than 11,000 employees around the world, where all our four segments –
+Decorative Paints, Marine Coatings, Protective Coatings and Powder Coatings - are present.
+</p>
+<br>
+<p>
+Jotun has 68 companies in 47 countries with 40 production facilities in 25 countries and is represented
+in more than 100 countries around the world. In addition, we have regional R&D laboratories in South
+Korea, China, Malaysia, UAE, Turkey, UK, India and US.
+</p>
+<p>
+Your workplace will be at our headquarters’ state of the art R&D center, in Sandefjord, Norway. You will
+be part of an exciting workplace, where more than 200 great employees are attached to R&D related
+tasks.
+</p>
+<p>
+We are incredibly proud that our paint from Sandefjord makes a mark on the world! And now we are
+looking for young people who want to develop in an international company for our summer internship.
+</p>
+<br>
+<hr>
+<p><strong>Job Description</strong></p>
+<br>
+<p>
+Jotun’s Research and Development department is developing technically complex coating technology for
+decorative, marine, protective and powder coating applications. In our R&D lab at our headquarters in
+Sandefjord we are working with development of paint products, evaluation and characterization of paint
+films, colloidal mixtures, polymers and more.
+</p>
+<p>
+We are now looking for interns for the summer of 2027. As an intern at our laboratories, your work
+would include small projects involving making and testing coating formulations, report findings in
+written reports and presentations. For example, you can:
+</p>
+<ul class="list-disc list-outside ml-6">
+    <li>
+        Work alongside chemists and technicians in our product laboratories making and testing new
+        paint formulations, to improve paint performance and reduce environmental impact and/or
+        health risks of our new products.
+    </li>
+    <li>
+        Participate in projects in the analytical laboratory and use complex analytical techniques to
+        discover critical chemical information in either wet paint or dry paint film.
+    </li>
+</ul>
+<p><strong><br></strong></p>
+<p><strong>What we are looking for</strong></p>
+<br>
+<p>
+Students of chemistry, chemical engineering, chemical/industrial process, and material sciences are
+especially encouraged to apply.
+</p>
+<p><strong><br></strong></p>
+<p><strong>Personal qualities and what we offer</strong></p>
+<br>
+<p>
+We think a good candidate for this position can act on his/her own initiative and make things happen.
+You adhere to company rules and procedures and use a methodical and systematic approach where you
+plan and define clear priorities. You quickly understand and analyze complex issues and problems and
+demonstrate knowledge in your own area. You also co-operate well with others, share knowledge,
+experience, and information in support to others in the pursuit of team goals.
+</p>
+<p><strong><br></strong></p>
+<p><strong>We offer</strong></p>
+
+<ul class="list-disc list-outside ml-6">
+    <li>Paid summer internship</li>
+    <li>
+        A friendly and supportive culture. It is an informal work environment with few hierarchies. We
+        are always striving to live our values: Loyalty, Care, Respect, Boldness.  
+    </li>
+    <li>
+        A professional and supportive work environment with focus on continuous improvement and innovation.
+    </li>
+</ul>
+<br>
+<p><strong>PSend your application to</strong></p>
+<br>
+<p>
+Trine Kjølstad, HR Advisor
+</p>
+</br>
+<ul class="list-disc list-outside ml-6">
+    <li>Mail: <a href="mailto:hrservices@jotun.no">hrservices@jotun.no</a></li>
+    <li>
+        Mark you application with <strong>"R&D Summer Intern 2027"</strong>
+    </li>
+    <li>
+        <strong>Deadline:</strong> 16.11.2026
+    </li>
+</ul></br>`,
+    },
+  {
+      slug: 'Mapei_summerjob',
+      company: 'MAPEI',
+      image: mapeilogo,
+      location: 'Sagstua',
+      link: 'https://www.mapei.com',
+      applicationLink:
+        'https://fa-elhu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/no/sites/CX/job/5193',
+      position_type: 'Sommervikar',
+      short_description: 'En sommerjobb der du analyser og tester byggematerialet!',
+      long_description: `<p><strong>Jobbeskrivelse</strong></p>
+<p>
+Bygg- og anleggsbransjen er midt i en stor omstilling. I Mapei jobber vi hver dag med å utvikle løsninger som tar fremtiden på alvor. Mapei er en teknologibedrift med et sterkt fokus på forskning og utvikling, og vi vet at vi ikke sitter på alle svarene selv. 
+</p>
+<br>
+<p>
+Hver sommer rekrutterer vi derfor engasjerte studenter som får jobbe tett på utviklingen av morgendagens byggematerialer. Her får du plass i et av våre fire laboratorier, der du blir en del av et inkluderende og faglig sterkt team. 
+</p>
+<br>
+<p>
+Arbeidsoppgavene varierer, men kan blant annet innebære analyser, rapportering, evalueringer og oppfølging av testprosesser. Her får du ikke bare innsikt i laboratoriearbeid, du får også bidra til reelle prosjekter med miljøfokus. Dere studenter er oppdatert på den nyeste forskningen og kan bidra med deres ferske perspektiver, nysgjerrighet og kunnskap om trendene innen sitt fagområde.
+</p>
+</br>
+<p>
+Du vil jobbe side om side med både fagfolk og andre studenter, og det blir gode muligheter for å utvide nettverket ditt og få relevant erfaring. 
+</p>
+<br>
+<p><strong>Studiestipend</strong></p>
+<br>
+<p>
+Som en del av vår satsing på teknologiutvikling og unge talenter, deler vi ut <strong>studiestipend</strong> for studieåret 2026/2027 til utvalgte studenter som har sommerjobb ved et av våre laboratorier. 
+</p>
+</br>
+<p>
+Studiestipendet, verdt <strong>20.000 kroner</strong>, er rettet mot studenter ved norske universiteter og høgskoler som studerer fag innen <strong>kjemi, materialteknologi og bygg</strong>. Stipendet utbetales på høsten, forutsatt normert studieframdrift og at du arbeider for Mapei den foregående sommeren.
+</p>
+</br>
+</hr>
+<p>
+Vi har stor tro på at morgendagens løsninger skapes i samarbeid, og at unge fagfolk spiller en viktig rolle i dette arbeidet. Er du nysgjerrig, lærevillig og opptatt av bærekraft, håper vi å høre fra deg. Kanskje blir akkurat du en del av vårt neste sommerteam? 
+</p>
+</br>
+<p>
+Ta det neste steget i din karriere, og søk nå! 
+</p>`,
     }
   ];
 </script>

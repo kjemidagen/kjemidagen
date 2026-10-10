@@ -54,7 +54,7 @@
           title={$t('program.cv_sjekk')}
           time="10:00 - 14:00"
           location={$t('program.cv_sjekk_loc')}
-          loc_link=""
+          loc_link="https://use.mazemap.com/#v=1&campusid=1&zlevel=2&center=10.406354,63.415827&zoom=18&sharepoitype=identifier&sharepoi=360-B2-126"
         >
           <p class="mt-3 leading-7">
             {$t('program.cv_sjekk_desc')}
@@ -63,8 +63,8 @@
         <Event
           title={$t('program.job_marathon')}
           time="13:15 - 14:00"
-          location={$t('program.undecided')}
-          loc_link=""
+          location={$t('program.job_marathon_loc')}
+          loc_link="https://use.mazemap.com/#v=1&campusid=1&zlevel=-1&center=10.405273,63.415647&zoom=18&sharepoitype=identifier&sharepoi=360-BU1-100"
         >
           <p class="mt-3 leading-7">
             {$t('program.job_marathon_desc')}
@@ -116,8 +116,8 @@
         <Event
           title={$t('program.job_marathon')}
           time="13:15 - 14:00"
-          location={$t('program.undecided')}
-          loc_link=""
+          location={$t('program.job_marathon_loc_2')}
+          loc_link="https://use.mazemap.com/#v=1&campusid=1&zlevel=-1&center=10.404620,63.415575&zoom=18&sharepoitype=identifier&sharepoi=360-AU1-105"
         >
           <p class="mt-3 leading-7">
             {$t('program.job_marathon_desc')}

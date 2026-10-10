@@ -11,6 +11,7 @@
   "cv_check_loc": "R2",
   "job_marathon": "Jobbmaraton",
   "job_marathon_loc": "R5",
+  "job_marathon_loc_2": "R7",
   "job_marathon_desc": "Jobbmaraton er et arrangement hvor bedrifter får mulighet til å presentere eventuelle sommerjobber, graduate-, trainee- og faste stillinger de utlyser. Hver bedrift får 3–4 minutter til å presentere seg. Erfaringsmessig har vi fått svært gode tilbakemeldinger på dette arrangementet, både fra studenter og bedrifter, og vi anbefaler på det sterkeste å delta.",
   "banquet": "Bankett",
   "banquet_loc": "Frimurerlogen",
@@ -32,6 +33,6 @@
   "speed_interview_desc": "Speedintervju er en spennende mulighet for både studentene og bedriftene til å bli bedre kjent. Her har man mulighet til å snakke med bedriftene på tomannshånd og vise seg frem fra sin beste side.",
   "undecided": "Kommer snart",
   "cv_sjekk":"CV-sjekk",
-  "cv_sjekk_desc":"CV-sjekk av Karrieresenteret Trøndelag Fylkeskommune. En gylden mulighet til å finpusse CV-en!",
+  "cv_sjekk_desc":"Karrieresenteret i Trøndelag kommer innom Kjemidagen for å hjelpe studenter med CV og jobbsøking. Dette er en gylden mulighet til å finpusse CV-en og få noen siste gode råd før man skal networke på Kjemidagen!",
   "cv_sjekk_loc":"R-Wöhler (B2-126)"
 }

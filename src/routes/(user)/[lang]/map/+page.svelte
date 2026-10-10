@@ -1,7 +1,7 @@
 <script lang="ts">
   import { t } from '#lib/translations/translations.js';
-  import companyMap1 from '#lib/assets/standkart/standkart_tirsdag_14_oktober.jpeg';
-  import companyMap2 from '#lib/assets/standkart/standkart_onsdag_15_oktober.png';
+  import companyMap1 from '#lib/assets/standkart/Standkart_tirsdag_2026.png';
+  import companyMap2 from '#lib/assets/standkart/Standkart_onsdag_2026.png';
 
   // Get today's date
   const today = new Date();
@@ -20,7 +20,7 @@
 <section class="map">
   <div class="content" id="map">
     <h1 class="mb-8 text-3xl">{$t('map.title')}</h1>
-    <!--<div class="flex mt-6 w-full px-2 gap-4 overflow-visible">
+    <div class="flex mt-6 w-full px-2 gap-4 overflow-visible">
       <button
       class="folder-tab flex-1 px-6 py-3 rounded-t-sm border-b-2 transition-colors duration-200 font-semibold flex items-center justify-center
         {selectedDay === 1 ? 'bg-red text-white border-red-800 shadow-[0_10px_15px_rgba(0,0,0,0.6)]' : 'bg-red-light text-white border-red-700 opacity-60 shadow-[0_3px_6px_rgba(0,0,0,0.2)]'}"
@@ -40,20 +40,18 @@
     </div>
 
     <div class="folder-content w-full relative aspect-[1.414/1]">
-  <img
-    src={companyMap1}
-    alt="Map of the stands in Realfagsbygget, first day"
-    class="w-full absolute top-0 left-0 transition-opacity duration-150
-           {selectedDay === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}"
-  />
-  <img
-    src={companyMap2}
-    alt="Map of the stands in Realfagsbygget, second day"
-    class="w-full absolute top-0 left-0 transition-opacity duration-150
-           {selectedDay === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0'}"
-  />
-</div>
-  </div>
--->
+      <img
+        src={companyMap1}
+        alt="Map of the stands in Realfagsbygget, first day"
+        class="w-full absolute top-0 left-0 transition-opacity duration-150
+              {selectedDay === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}"
+      />
+      <img
+        src={companyMap2}
+        alt="Map of the stands in Realfagsbygget, second day"
+        class="w-full absolute top-0 left-0 transition-opacity duration-150
+              {selectedDay === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0'}"
+      />
+    </div>
   </div>
 </section>

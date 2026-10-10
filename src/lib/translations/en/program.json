@@ -11,6 +11,7 @@
   "cv_check_loc": "R2",
   "job_marathon": "Job marathon",
   "job_marathon_loc": "R5",
+  "job_marathon_loc_2": "R7",
   "job_marathon_desc": "Jobbmarathon is an event where companies have the opportunity to present any summer jobs, graduate, trainee, or permanent positions they are advertising. Each company gets 3–4 minutes to present itself. Our experience has shown that this event has received very positive feedback from both students and companies, and we strongly recommend participating.",
   "banquet": "Banquet",
   "banquet_loc": "Frimurerlogen",
@@ -32,6 +33,6 @@
   "speed_interview_desc": "Speed interviews are an exciting opportunity for both students and companies to get to know each other better. Here, you have the chance to talk to companies one-on-one and present yourself in the best possible way.",
   "undecided": "To be announced",
   "cv_sjekk":"Resume check",
-  "cv_sjekk_desc":"Resume check by Karrieresenteret Trøndelag Fylkeskommune. A golden opportunity to polish your resume!",
+  "cv_sjekk_desc":"The Trøndelag Career Centre is visiting Kjemidagen to help students with their Resumes and job hunting. This is a golden opportunity to polish your resume and get some final, valuable advice before networking at Kjemidagen!",
   "cv_sjekk_loc":"R-Wöhler (B2-126)"
 }
