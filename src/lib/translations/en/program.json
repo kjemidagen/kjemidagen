@@ -30,5 +30,8 @@
   "speed_interview": "Speed interviews",
   "speed_interview_loc": "Group room",
   "speed_interview_desc": "Speed interviews are an exciting opportunity for both students and companies to get to know each other better. Here, you have the chance to talk to companies one-on-one and present yourself in the best possible way.",
-  "undecided": "To be announced"
+  "undecided": "To be announced",
+  "cv_sjekk":"Resume check",
+  "cv_sjekk_desc":"Resume check by Karrieresenteret Trøndelag Fylkeskommune. A golden opportunity to polish your resume!",
+  "cv_sjekk_loc":"R-Wöhler (B2-126)"
 }

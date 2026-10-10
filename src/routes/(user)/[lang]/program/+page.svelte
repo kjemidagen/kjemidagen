@@ -51,6 +51,16 @@
           </p>
         </Event>
         <Event
+          title={$t('program.cv_sjekk')}
+          time="10:00 - 14:00"
+          location={$t('program.cv_sjekk_loc')}
+          loc_link=""
+        >
+          <p class="mt-3 leading-7">
+            {$t('program.cv_sjekk_desc')}
+          </p>
+        </Event>
+        <Event
           title={$t('program.job_marathon')}
           time="13:15 - 14:00"
           location={$t('program.undecided')}

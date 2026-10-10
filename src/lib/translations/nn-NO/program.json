@@ -30,5 +30,8 @@
   "speed_interview": "Speedintervjuer",
   "speed_interview_loc": "Grupperom",
   "speed_interview_desc": "Speedintervju er ein spennande moglegheit for både studentane og bedriftene til å bli betre kjende. Her har ein moglegheit til å snakke med bedriftene på tomannshand og vise seg fram frå si beste side.",
-  "undecided": "Kjem snart"
+  "undecided": "Kjem snart",
+  "cv_sjekk":"CV-sjekk",
+  "cv_sjekk_desc":"CV-sjekk av Karrieresenteret Trøndelag Fylkeskommune. Ei gyllen moglegheit til å finpussa CV-en!",
+  "cv_sjekk_loc":"R-Wöhler (B2-126)"
 }

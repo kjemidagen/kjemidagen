@@ -11,8 +11,9 @@
   class="absolute inset-0 -z-10 h-full w-full bg-white bg-cover bg-center md:bg-[url('#lib/assets/Kjemidagen_bakgrunn_potensiell.png')]"
 ></div>
 
-<section class="bg-transparent py-20">
-  <div class="mx-auto max-w-2xl px-4 text-center">
+
+<section class="bg-transparent py-20 ">
+<div class="mx-auto max-w-2xl px-4 text-center">
     <img
       src={logo}
       alt="Kjemidagen logo"
