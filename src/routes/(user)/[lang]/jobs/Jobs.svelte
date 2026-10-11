@@ -759,8 +759,8 @@ teoretiske ferdigheter. Dersom du ønsker å samarbeide med oss til sommeren ell
       location: 'Sandefjord',
       link: 'https://www.jotun.com',
       applicationLink:
-        'https://www.jotun.com',
-      position_type: 'Sommervikar',
+       'mailto:hrservices@jotun.no?Subject=R%26D%20Summer%20Intern%202027',
+      position_type: 'Summer internship',
       short_description: 'Vil du teste avanserte maling- og beleggteknologier?',
       long_description: `<p><strong>Description</strong></p>
 <p>
@@ -869,7 +869,7 @@ Trine Kjølstad, HR Advisor
       link: 'https://www.mapei.com',
       applicationLink:
         'https://fa-elhu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/no/sites/CX/job/5193',
-      position_type: 'Sommervikar',
+      position_type: 'Sommerjobb',
       short_description: 'En sommerjobb der du analyser og tester byggematerialet!',
       long_description: `<p><strong>Jobbeskrivelse</strong></p>
 <p>
