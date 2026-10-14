@@ -2,6 +2,7 @@
   import { t } from '#lib/translations/translations.js';
   import CompanyBox from './CompanyBox.svelte';
   import { companiesMap } from './Sponsors.svelte';
+  import { instituteMap } from './Sponsors.svelte';
 </script>
 
 <svelte:head>
@@ -18,6 +19,18 @@
 
 <div class="company-grid">
   {#each companiesMap as company}
+    <CompanyBox picture={company.picture} border={company.border} link={company.link} />
+  {/each}
+</div>
+
+<section class="sponsors">
+  <div class="content" id="sponsors">
+    <p class="text-lg">{$t('sponsors.institutes')}</p>
+  </div>
+</section>
+
+<div class="company-grid">
+  {#each instituteMap as company}
     <CompanyBox picture={company.picture} border={company.border} link={company.link} />
   {/each}
 </div>
