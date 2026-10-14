@@ -80,5 +80,21 @@
   "Mapei_summerjob": {
     "title": "Summer Internship 2027",
     "deadline": "01.01.2027"
+  },
+  "Yara_intern": {
+    "title": "Summer internships",
+    "deadline": "Varies from 01.11.2026 til 19.11.2026"
+  },
+  "Borregaard_master": {
+    "title": "Sommerjobb",
+    "deadline": "01.01.2027"
+  },
+  "Fjordalg_prosessingenior": {
+    "title": "Prosessingeniør",
+    "deadline": "24.01.2027"
+  },
+  "Moss_grad": {
+    "title": "Graduate Engineer 2027",
+    "deadline": ""
   }
 }

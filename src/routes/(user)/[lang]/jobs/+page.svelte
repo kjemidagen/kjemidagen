@@ -36,5 +36,4 @@
   </div>
 </section>
 
-<style>
-</style>
+

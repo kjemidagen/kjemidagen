@@ -11,6 +11,8 @@
   import borregaardLogo from '#lib/assets/borregaard.svg';
   import sinteflogo from '#lib/assets/sintef.svg';
   import mapeilogo from '#lib/assets/mapei.svg';
+  import yaralogo from '#lib/assets/yara.svg';
+  import mosslogo from '#lib/assets/mossmaritime.svg';
 
   export const jobsMap = [
     {
@@ -906,6 +908,256 @@ Vi har stor tro på at morgendagens løsninger skapes i samarbeid, og at unge fa
 <p>
 Ta det neste steget i din karriere, og søk nå! 
 </p>`,
-    }
+    },
+  {
+    slug: 'SINTEF_summer_jobs',
+    company: 'SINTEF',
+    image: sinteflogo,
+    location: '',
+    link: 'https://www.sintef.no',
+    applicationLink:
+    'https://www.sintef.no/sintef-energi/sommerjobb_i_sintef_energi/',
+    position_type: 'Sommerjobb',
+    short_description: 'Søk opptil 3 sommerjobber med samme søknad!',
+    long_description: `<p><strong>Energisommerjobb for 2027 er lansert!</strong></p>
+<p>
+SINTEF Energi utvikler fremtidens bærekraftige energiløsninger. I tett samarbeid med NTNU, industri og næringsliv, forsker vi fram ny teknologi med visjonen teknologi for et bedre samfunn.</p>
+<br>
+<p>
+Hver sommer ansetter vi studenter for å forske sammen med oss på våre prosjekter, med tilgang til verdensledende laboratorier og veiledning fra våre forskere. Nå vil vi at du skal bli en av dem, og få mulighet til å utvikle bærekraftig energiteknologi som skal bidra til å redde verden.</p>
+<br>
+<p>
+    <strong>
+       <h2> Slik søker du: </h2>
+    </strong>
+</p>
+</br>
+<p>
+Søknad, CV og karakterutskrifter lastes opp der du søker.
+</p>
+<br>
+<p>
+Hos SINTEF Energi kan du søke på opptil tre (3) sommerjobber. Om du søker på flere sommerjobber sender du en samlet søknad. Jobbnummer for de ønskede jobbene legges som overskrift i søknadsteksten i prioritert rekkefølge (f.eks ET-01, FE-04 ...). Vi gjør oppmerksom på at søkere kan vurderes for andre sommerjobber enn de har søkt på.</p>
+</br>
+<p>
+Stillingene fylles fortløpende. Vi anbefaler deg derfor å søke tidlig.
+</p>
+</br>
+<p>
+    For å se Energisommerjobbene, følg "Søk her"-linken! Disse inkluderer;
+</p>
+</hr>
+<br>
+<p><strong>Avdeling for Energiteknologi</strong> </p>
+<ul class="list-disc list-outside ml-6">
+    <li>ET-01: Digitale tvillinger for fremtidens strømnett</li>
+    <li>ET-02: Kunstige lyn for et bærekraftig kraftnettt</li>
+    <li>ET-03: Transformatorisolasjon i framtidens dynamiske kraftnett</li>
+</ul>
+<br>
+<p><strong>Avdeling for Energiomstilling</strong> </p>
+<ul class="list-disc list-outside ml-6">
+    <li>EO-01: Sikre og kostnadseffektive fremtidens turbiner</li>
+    <li>EO-02: Varmeovergangsberegning for sikker CO2-transport</li>
+</ul>
+<br>
+<p><strong>Avdeling for Energibruk</strong> </p>
+<ul class="list-disc list-outside ml-6">
+    <li>EB-01: Modeller for klimavennlige kuldemedier</li>
+    <li>EB-02: Mål, analyser, visualiser! Vis hva varmepumpen egentlig gjør</li>
+    <li>EB-03: Fremtidens industrielle høytemperaturvarmepumper</li>
+</ul>
+<br>
+<p><strong>Avdeling for Fornyrbar Energi</strong> </p>
+<ul class="list-disc list-outside ml-6">
+    <li>FE-01: Datadrevet prediksjon av pris og volum i korte kraftmarkeder</li>
+    <li>FE-02: InterOpt – Integrasjon mellom maskinlæring og optimalisering</li>
+    <li>FE-03: En modell-hub for hele energisystemet</li>
+    <li>FE-04: Langsiktig vannkraftproduksjon</li>
+</ul>
+<br>
+<p><strong>Avdeling for Energisystemer</strong> </p>
+<ul class="list-disc list-outside ml-6">
+    <li>ES-01: Elektrifisering og resiliens i kraftsystemet</li>
+    <li>ES-02: Lokale beredskapsløsninger for å håndtere forsyningssikkerheten</li>
+    <li>ES-03: Kan havvindturbiner ta det med ro for å leve lenger?</li>
+    <li>ES-04: Prediksjon av morgendagens kraftflyt for kraftmarkedet</li>
+    <li>ES-05: Design av resiliente batterisystem for distribusjonsnettet</li>
+</ul>
+<br>`,
+    },
+    {
+    slug: 'Yara_intern',
+    company: 'Yara',
+    image: yaralogo,
+    location: 'Porsgrunn',
+    link: 'https://www.yara.com',
+    applicationLink:
+    'https://jobs.yara.com/search/?createNewAlert=false&q=Summer+intern&locationsearch=Porsgrunn&optionsFacetsDD_location=&optionsFacetsDD_customfield2=&optionsFacetsDD_department=&optionsFacetsDD_country=',
+    position_type: 'Summer Intern',
+    short_description: 'Sommerjobber hos Yara!',
+    long_description: `<p><strong>Nye sommerjobber har blir lagt ut på Yaras nettsider!</strong></p>
+<p>
+<br>
+<p><strong>Sjekk dem ut! Sommerjobbene inkluderer prosjekter innenfor:</strong></p>
+<ul class="list-disc list-outside ml-6">
+    <li>Technology Development and Catalyst Operations</li>
+    <li>Nitric Acid Process Catalyst</li>
+    <li>Computational Fluid Dynamics (CFD)</li>
+    <li>Optimizing production of NPK fertilizers</li>
+    <li>Characterization of calcium nitrate salt mixtures</li>
+    <li>Machinery Condition Monitoring Engineer</li>
+</ul>
+<br>
+<p>Følg linken for mer informasjon!</p>
+<br>`,
+    },
+    {
+    slug: 'Borregaard_master',
+    company: 'Borregaard',
+    image: borregaardLogo,
+    location: '',
+    link: 'https://www.borregaard.com',
+    applicationLink: 
+    'https://www.borregaard.com/career/vacant-positions/vacant-position?&rmpage=job&rmjob=562',
+    position_type: 'Sommerjobb',
+    short_description: 'Teori of praksis rundt bioraffineri!',
+    long_description: `<h1><strong>Er du masterstudent innen kjemi eller bioteknologi?</strong></h1>
+<br>
+<p>
+Ønsker du en sommerjobb hvor du får bruke det du lærer i studiene på reelle forskningsoppgaver og få nyttige erfaringer i forkant av masteroppgaven?
+</p>
+<br>
+<p>
+Som sommerstudent hos Borregaard blir du en del av et av Norges største industrielle forskningsmiljøer. Du får jobbe tett med forskere og andre spesialister som utvikler nye produkter og prosesser basert på fornybare råvarer.
+</p>
+<br>
+<p>
+Borregaard er et av verdens mest avanserte bioraffinerier. Ved å utnytte hele treet utvikler vi bærekraftige alternativer til oljebaserte produkter for markeder innen blant annet mat, kosmetikk, bygg, batterier og biodrivstoff.
+</p>
+<br>
+<p><strong>Hvordan er det å være sommerstudent hos oss?</strong></p>
+<br>
+<p>
+Gjennom et åtte ukers sommerprosjekt får du jobbe med oppgaver som kobler teori og praksis. Du blir en del av et fagmiljø med rundt 70 forskere og spesialister, og får tett oppfølging av en erfaren veileder gjennom hele sommeren.
+</p>
+<br>
+<p>
+Oppgavene varierer fra år til år, men vil gi deg mulighet til å jobbe med forskning og utvikling, fra planlegging og gjennomføring av laboratoriearbeid til evaluering og rapportering av resultater.
+</p>
+<br>
+<p>
+Du får bidra i pågående forsknings- og utviklingsprosjekter og oppleve hvordan forskning brukes til å løse konkrete utfordringer, utvikle nye løsninger og skape ytterligere verdi.
+</p>
+<br>
+<p><strong>Vi ser etter deg som</strong></p>
+<ul class="list-disc list-outside ml-6">
+    <li>Er masterstudent innen kjemi, prosess eller bioteknologi</li>
+    <li>Skal begynne på 4. eller helst 5.  studieår høsten 27</li>
+    <li>Er nysgjerrig og liker å lære nye ting</li>
+    <li>Trives med samarbeid og problemløsning</li>
+    <li>Behersker norsk og engelsk, muntlig og skriftlig</li>
+</ul>
+<br>
+<p><strong>Hvorfor velge Borregaard?</strong></p>
+<p>Hos oss får du:</p>
+<ul class="list-disc list-outside ml-6">
+    <li>Erfaring fra et ledende forsknings- og innovasjonsmiljø</li>
+    <li>Delta i forskning som omsetter ny kunnskap til produkter og løsninger med praktisk anvendelse</li>
+    <li>Tett oppfølging fra erfarne forskere</li>
+    <li>Et inkluderende arbeidsmiljø med høy faglig kompetanse</li>
+</ul>
+<br>
+<p>Søkndasfrist er <strong>1. januar 2027</strong></p>
+`
+},
+    {
+    slug: 'Fjordalg_prosessingenior',
+    company: 'FjordAlg AS',
+    image: fjordalgLogo,
+    location: 'Årdal',
+    link: 'https://fjordalg.com',
+    applicationLink: 
+    'https://arbeidsplassen.nav.no/stillinger/stilling/e0e690d7-e74c-4c38-a5d6-45aff9ee0584',
+    position_type: 'Prosessingeniør',
+    short_description: 'Prosessingeniør innen bioteknologisk produksjon',
+    long_description: `<h1><strong>Om Jobben</strong></h1>
+<br>
+<p><strong>Oppstart:</strong> 1. september 2027</p>
+<br>
+<p><strong>Stillingstittel:</strong> Prosessingeniør</p>
+<br>
+<p><strong>Ansettelse:</strong> Fast, heltid (100%)</p>
+<br>
+<p><strong>Antall stillinger:</strong> 1</p>
+<br>
+
+<p>
+FjordAlg ønsker å forsterke laget i Årdal med en prosessingeniør. 
+Vi ser etter deg som brenner for å løse praktiske og teoretiske problemer, og som vil hjelpe oss på veien mot etableringen av industriell mikroalgeproduksjon av naturlig astaxanthin. 
+Som del av et lite team vil ditt bidrag bety mye for fremdriften på tvers av en rekke disipliner (biokjemi, kjemi, mikrobiologi, instrumentering, produksjonsutstyr, styresystem m.m.) og under etableringen av en fabrikk for fremtiden. 
+Dersom vi skal lykkes sammen kreves det drivkraft, læringsevne, et analytisk tankesett og at du er god til å samarbeide.
+</p>
+<br>
+<p>
+FjordAlg er på god vei fra "start up" til "scale up" og trenger flere på laget som kan løfte organisasjonen til nye høyder.</p>
+<br>
+<p><strong>Kvalifikasjoner</strong></p>
+<ul class="list-disc list-outside ml-6">
+    <li>Høyere utdanning med ingeniørfag innen prosess, bioteknologi, kjemi eller lignende</li>
+    <li>Programmering (eksempelvis: Python/Matlab/ladder/FBD)</li>
+    <li>Er nysgjerrig og liker å lære nye ting</li>
+    <li>Utdanning eller erfaring innen bioteknologisk produksjon</li>
+    <li>Erfaring med industrielt produksjonsutstyr</li>
+</ul>
+<br>
+<p><strong>Arbeidsoppgaver</strong></p>
+<ul class="list-disc list-outside ml-6">
+    <li>Eksperimentelt design og gjennomføring</li>
+    <li>Forefallende arbeid og vedlikehold</li>
+    <li>Rotårsaksanalyse og avvikshåndtering</li>
+    <li>Dataanalyse og programmering</li>
+    <li>Prosessregulering</li>
+    <li>Prosessutvikling og optimalisering</li>
+    <li>Systemutvikling og systemvedlikehold (IKT, LEAN, P&ID)</li>
+    <li>Spesifisering og anskaffelse av prosessutstyr</li>
+    <li>Opplæring og oppfølging av operatøreryr</li>
+</ul>
+<br>
+<p><strong>Vi tilbyr:</strong></p>
+<ul class="list-disc list-outside ml-6">
+    <li>En variert arbeidshverdag</li>
+    <li>Faglige og praktiske utfordringer</li>
+    <li>Fleksibel arbeidstid</li>
+    <li>Muligheten til å gjøre en synlig forskjell og å skape noe nytt</li>
+</ul>
+<br>
+<p><strong>Slik søker du:</strong></p>
+<p>Send søknad, karakterutskrift og CV til <a href="mailto:soknad@fjordalg.com">soknad@fjordalg.com</a></p>
+`
+},
+    {
+    slug: 'Moss_grad',
+    company: 'Moss Marinetime AS',
+    image: mosslogo,
+    location: 'Lysaker, Bærum',
+    link: 'https://www.mossww.com',
+    applicationLink: 
+    'https://app.ncoreplat.com/jobposition/815258/graduates-2027-no/moss-marinetime-as',
+    position_type: 'Graduate Engineer',
+    short_description: 'Graduate engineering withinh offshore energy',
+    long_description: `<h1><strong>Graduates 2027</strong></h1>
+<br>
+<p>Would you like to develop design of floating offshore structures and installations, work with innovation and provide solutions for renewable energy?</p>
+<br>
+<p>We are looking for graduates to join us in 2027.
+Together with a group of graduates you will have the chance to work together with an engaged team of experts in key engineering disciplines, such as process, utility, mechanical, instrument, arrangement, naval and structural engineering.</p>
+<br>
+<p>In our company we cover all design stages from concept development to detail engineering. We seek to be at the forefront of developing leading technology and providing engineering expertise for the maritime and offshore energy industry.</p>
+<br>
+<p>If this triggers your curiosity, please contact HR, <a href="Lisbeth.Davies@mossww.com">Lisbeth.Davies@mossww.com</a>, and we will share more information about the job opportunities for "Graduates 2027".</p>
+<br>
+`
+}
   ];
 </script>
